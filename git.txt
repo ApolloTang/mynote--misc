@@ -1,0 +1,33 @@
+
+deleting branch
+```````````````
+    git branch -d branch_name
+      # delete a local branch
+
+    git push origin --delete <branchName>
+      # delete a remote branch
+
+    git fetch --all --prune
+      # propagate the deletion on all other machine
+
+tag
+```
+    git tag <tagName>
+      # create a tag on current branch
+
+    git push origin <tagName>
+
+    git push origin --tags
+      # push all tags to origin
+
+    git co tags/<tagName>
+      # check out a tag
+
+    git tag -d <tagName>
+      # delete a local tag
+
+    git tag --delete origin <tagname>
+      # delete a remote tag
+
+
+

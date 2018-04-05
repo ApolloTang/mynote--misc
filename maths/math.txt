@@ -1,0 +1,37 @@
+
+--------------------
+
+(abscissa, ordinate)
+
+--------------------
+
+Bijective fuction
+• x |-> f(x)
+• Uniquely maps all elements
+  in both domain and codomain
+  to each other
+• Aka: 1 to 1 *corresponding* mapping
+• Not to be confused with injective
+
+--------------------
+
+Cardinality of a set
+• |A|
+• A measure of num of element
+  in a set
+• Size of a set
+
+--------------------
+
+Cardinal number
+• number used for counting
+
+Nominal number
+• number used for naming or
+  identifying
+
+Ordinal number
+• number used for ordering
+
+--------------------
+

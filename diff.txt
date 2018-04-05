@@ -1,0 +1,10 @@
+
+Given two directory trees,
+find out which files differ
+```````````````````````````
+
+  diff --brief -Nr dir1/ dir2/
+
+  git diff --no-index dir1/ dir2/
+  git diff --no-index --name-only dir1/ dir2/
+

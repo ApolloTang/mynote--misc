@@ -1,0 +1,4 @@
+
+    npm -ls --depth 0
+      #list install modules
+
