@@ -1,0 +1,14 @@
+
+char  digraph official-name
+----------------------------
+←     <-      LEFTWARDS ARROW
+↑     -!      UPWARDS ARROW
+→     ->      RIGHTWARDS ARROW
+↓     -v      DOWNWARDS ARROW
+
+
+
+
+
+
+

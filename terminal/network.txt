@@ -1,5 +1,7 @@
 
-What is tying up a port
-```````````````````````
+Show process tying up a port 3000
+---------------------------------
 
-netstat -na | grep 8080
+# OsX
+sudo lsof -i tcp:3000
+
