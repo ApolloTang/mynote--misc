@@ -1,0 +1,10 @@
+sleep
+  = (ms)
+  => new Promise(
+    rs => setTimeout(rs,ms)
+  )
+
+
+Array
+  .apply(null, {length: 30})
+  .map(Number.call, Number);

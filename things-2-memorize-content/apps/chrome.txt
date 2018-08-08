@@ -1,0 +1,8 @@
+
+
+Next tab:
+  [opt][cmd][arrow]
+
+
+Reopen close tab:
+  [shf][cmd][t]

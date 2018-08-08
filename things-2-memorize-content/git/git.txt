@@ -29,5 +29,8 @@ tag
     git tag --delete origin <tagname>
       # delete a remote tag
 
+    git tag [-l <pattern>]
+      # list tag with pattern
+
 
 
