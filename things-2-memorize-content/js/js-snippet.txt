@@ -4,7 +4,27 @@ sleep
     rs => setTimeout(rs,ms)
   )
 
+- - - - - - - - - - - - -
 
 Array
-  .apply(null, {length: 30})
+  .apply(null, {length: 3})
+  // [undefined, undefined, undefined]
+
+Array
+  .apply(null, {length: 3})
   .map(Number.call, Number);
+  // [0, 1, 2]
+
+- - - - - - - - - - - - -
+
+let i = 0;
+while( i++ < 3) {
+  // i >>> 1, 2, 3
+};
+
+let j = 0;
+while( ++j < 3) {
+  // j >>> 1, 2
+};
+
+- - - - - - - - - - - - -

@@ -1,0 +1,7 @@
+
+[cmd][D]  Add next highlighted to selection.
+          Selection is case insensitive.
+
+[ctr][`]  Toggle btw code editor and terminal
+
+

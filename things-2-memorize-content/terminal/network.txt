@@ -1,7 +1,13 @@
 
 Show process tying up a port 3000
 ---------------------------------
-
 # OsX
 sudo lsof -i tcp:3000
 
+
+2 ways to show wired/ethernet address
+-------------------------------------
+$ ipconfig getifaddr en0
+192.168.0.89
+
+$ ifconfig | grep inet

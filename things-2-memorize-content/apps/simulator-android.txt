@@ -1,0 +1,7 @@
+
+## list available virtual device
+$ emulator -list-avds
+Pixel_2_API_28
+
+## launch a device
+$ emulator -avd Pixel_2_API_28

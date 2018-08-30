@@ -8,5 +8,14 @@ static propTypes = {
   optionalObject: PropTypes.object,
   optionalString: PropTypes.string,
   optionalSymbol: PropTypes.symbol,
+  
+  requiredAny: PropTypes.any.isRequired,
+
+  optionalUnion: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
 };
 
