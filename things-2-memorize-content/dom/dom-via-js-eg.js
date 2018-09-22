@@ -8,3 +8,14 @@ box.className = "some-class-name";
 box.innerHTML = 'some text';
 document.body.appendChild(box);
 
+
+// Append button to body
+const myButton = document.createElement('button');
+myButton.innerHTML = 'button text';
+const body = document.getElementsByTagName('body')[0];
+body.appendChild(myButton)
+
+
+
+
+

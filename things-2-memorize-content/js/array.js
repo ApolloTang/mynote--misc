@@ -1,6 +1,6 @@
 
-Arry mutation
-````````````
+Array mutation
+``````````````
 
 * will not modifiy the array:
 

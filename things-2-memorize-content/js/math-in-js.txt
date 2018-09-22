@@ -1,0 +1,17 @@
+
+Generate random integer btw 6 and 1
+(only for non nagative integer)
+
+  Math.floor(Math.random() * 6) + 1
+
+  Generic case:
+
+    function randomIntFromInterval(min,max) {
+      return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+- - - - - - - - - -
+
+
+
+
