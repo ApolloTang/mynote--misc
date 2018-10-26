@@ -1,0 +1,14 @@
+Pan (cursor moves with page):
+
+  (n)zt   " to top of screen
+  (n)zz   " to middle of screen
+  (n)zb   " to top of screen
+
+Move cursor to:
+
+  (n)H   " to top of page
+  (n)M   " to mid of page
+  (n)L   " to botton of page
+
+
+

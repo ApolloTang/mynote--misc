@@ -1,8 +1,16 @@
 
-Show process tying up a port 3000
----------------------------------
-# OsX
+
+Show process tying up a port 3000 (OSx)
+````````````````````````````````````````
 sudo lsof -i tcp:3000
+
+
+Show list of used port (OSx)
+````````````````````````````
+sudo netstat -atp tcp | grep -i "listen"
+
+
+
 
 
 2 ways to show wired/ethernet address

@@ -1,0 +1,9 @@
+
+copy current working dir path to paste board
+````````````````````````````````````````````
+  $ pwd | pbcopy
+
+list folder structure one level only
+````````````````````````````````````
+  $ tree dir/ -L 1
+
