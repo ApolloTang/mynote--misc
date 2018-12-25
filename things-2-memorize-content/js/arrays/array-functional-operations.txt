@@ -2,7 +2,7 @@
 Array mutation
 ``````````````
 
-* will not modifiy the array:
+* will not modify the array:
 
   concat()
   slice()

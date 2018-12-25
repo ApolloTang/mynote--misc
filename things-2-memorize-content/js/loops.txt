@@ -1,0 +1,22 @@
+
+=============================
+This following loop over same
+indexes but reverse order
+=============================
+
+  let C = 3;
+  let i = 0;
+  for (i; i<C; i++) {
+    // 0, 1, 2
+  }
+
+  let C = 3;
+  let i = C;
+  while (i--) {
+    // 2,1,0
+  }
+
+=============================
+
+
+

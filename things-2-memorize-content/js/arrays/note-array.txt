@@ -1,0 +1,65 @@
+
+Apply math terminology to Array
+===============================
+
+  Cardinality (size)          : length (L)
+  Ordinal     (order)         : [ 1st, 2nd, 3rd, ... <L-1>th, <L-0>th ]
+  Norminal    (index, naming) : [ 0,   1,   2,   ... <L-2>,   <L-1>   ]
+
+  Observation:
+    • The last item's ordinal is cardinality
+    • The last item's norminal is cardinal minus one
+
+Refered array element by index
+==============================
+
+  [ 0,   1,   2, ... L-3, L-2, L-1 ]
+  [ 0,   1,   2, ...  -3,  -2,  -1 ]   <-- drop the 'L'
+
+
+Mutation method
+===============
+
+  pop     : remove the last element
+  shift   : remove the first element
+  push    : add one or more elements to the end
+  unshift : add one or more elements to the front
+  reverse : reverse the order
+  sort    : sort the elements
+  splice  : add, replace, or remove elements (with great granularity)
+
+  The above method modify array.
+
+Non Mutation method
+===================
+
+  concat      : join the array with other array(s) or value(s)
+  join        : join all elements of the array into a string
+  slice       : extract a section of array
+  indexOf     : find the index of the 1st occurrence of a value
+  lastIndexOf : find the index of the last occurrence of a value
+
+  The above methods return some representation of the array in
+  a new array without changing the original array.
+
+Iteration Methods
+=================
+
+  filter : create a new array with only the elements for which a predicate is true.
+  map    : create a new array whose elements are values transformed by a function
+
+  returns a new array      : filter, map
+  returns calculated value : reduce, reduceRight
+  returns undefined        : forEach
+  returns boolean          : every, some
+
+
+::: ref:
+https://github.com/d3/d3-array/blob/master/README.md#d3-array
+
+
+
+
+
+
+
