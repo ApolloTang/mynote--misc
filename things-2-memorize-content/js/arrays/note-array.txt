@@ -9,6 +9,7 @@ Apply math terminology to Array
   Observation:
     • The last item's ordinal is cardinality
     • The last item's norminal is cardinal minus one
+    • The item's norminal is it's ordinal minus one
 
 Refered array element by index
 ==============================
