@@ -1,0 +1,17 @@
+Initializer
+===========
+
+  $ npm i -g create-react-app
+  $ create-react-app my-app
+
+  $ npx create-react-app my-app
+  $ npm init react-app my-app
+  $ yarn create react-app my-app
+
+
+Get version list
+================
+
+  $ npm info react time
+  $ yarn info react time
+

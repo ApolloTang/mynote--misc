@@ -1,0 +1,20 @@
+
+$ npm init react-app my-app && cd $_
+$ npm info react
+$ npm install react{,-dom}@next
+$ npm ls react
+$ npm ls react-dom
+$ npm start
+
+$ yarn create react-app my-app && cd $_
+$ yarn info react | grep next
+$ yarn add react{,-dom}@next
+$ yarn list react-dom
+$ yarn list react
+$ yarn start
+
+
+
+
+
+
