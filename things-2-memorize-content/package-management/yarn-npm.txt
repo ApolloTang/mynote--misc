@@ -1,6 +1,5 @@
 Initializer
 ===========
-
   $ npm i -g create-react-app
   $ create-react-app my-app
 
@@ -11,7 +10,11 @@ Initializer
 
 Get version list
 ================
-
   $ npm info react time
   $ yarn info react time
 
+
+Get a list package
+==================
+  $ yarn list --depth 0
+  $ npm list --depth 0
