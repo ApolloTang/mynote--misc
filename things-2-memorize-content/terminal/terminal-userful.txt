@@ -8,9 +8,14 @@ list folder structure one level only
 ------------------------------------
   $ tree dir/ -L 1
 
+
 show enviroment info
 --------------------
   $ npx envinfo
 
+
+rsync to exclude folder
+-----------------------
+  $ rsync -havpn ./proj/ ./projCopy --exclude node_modules --exclude .git
 
 

@@ -11,7 +11,9 @@
 // Class name
   const container = document.createElement('div');
   container.className='my-classname';
-  document.body.append(container)
+  document.body.append(container) // <-- this will break in IE11
+                                  // use document.body.appendChild()
+                                  // instead
 
 
 // Body
@@ -28,6 +30,8 @@
   const container = document.createElement('div');
   const textNode = document.createTextNode(text);
   container.appendChild(textNode)
-  document.body.append(container)
+  document.body.append(container) // <-- this will break in IE11
+                                  // use document.body.appendChild()
+
 
 

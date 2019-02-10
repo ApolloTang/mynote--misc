@@ -1,0 +1,20 @@
+::::::::::::
+::: Find :::
+::::::::::::
+
+
+Useful options:
+===============
+
+  -name {pattern}
+  -type {type}
+    t all
+    f file
+    d directories
+    l symbolic
+
+  $ find . -name '*.js'
+
+  $ find . -name '*.rb' -type f \
+    -exec sed -i -e 's/<pattern>/<replacement>/g' -- {} +
+    https://stackoverflow.com/a/2113224/3136861
