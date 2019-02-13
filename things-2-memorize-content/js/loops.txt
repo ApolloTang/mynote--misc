@@ -1,7 +1,7 @@
 
 =============================
-This following loop over same
-indexes but reverse order
+  Loop over same indexes but
+  order order is different
 =============================
 
   let C = 3;
@@ -13,10 +13,25 @@ indexes but reverse order
   let C = 3;
   let i = C;
   while (i--) {
-    // 2,1,0
+    // 2, 1, 0
   }
 
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
+====================
+  More While loop
+====================
+
+  let i = 0;
+  while( i++ < 3) {
+    // i >>> 1, 2, 3
+  };
+
+  let j = 0;
+  while( ++j < 3) {
+    // j >>> 1, 2
+  };
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

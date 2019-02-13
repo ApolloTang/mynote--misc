@@ -1,21 +1,25 @@
 
+  ┼─────────────┼──────────────────────────────┼────────────┼
+  │             │             Own:             │ Inherited: │
+  │             │ Object.getOwnPropertyNames() │            │
+  ┼─────────────┼──────────────────────────────┼────────────┼
+  │ Enumerable: │       Object.keys()          │            │
+  │  for...in   │                              │            │
+  ┼─────────────┼──────────────────────────────┼────────────┼
+  │     Non-    │                              │            │
+  │ enumerable: │                              │            │
+  ┼─────────────┼──────────────────────────────┼────────────┼
 
+  var a = {};
+  Object.defineProperties(a, {
+    one: {enumerable: true,  value: '1'},
+    two: {enumerable: false, value: '2'},
+  });
 
+  Object.keys(a);                // ["one"]
+  Object.getOwnPropertyNames(a); // ["one", "two"]
 
-                        │                Own:               │
-                        │                                   │
-                        │    Object.getOwnPropertyNames()   │        Inherited
-                        │                                   │
-   ─────────────────────┼───────────────────────────────────┼─────────────────────────────
-                        │                                   │
-        Enumerable:     │                                   │
-                        │           Object.keys()           │
-         for...in       │                                   │
-                        │                                   │
-   ─────────────────────┼───────────────────────────────────┼─────────────────────────────
-                        │                                   │
-      Non-enumerable:   │                                   │
-                        │                                   │
-                        │                                   │
-
+  for (var p in a) {
+    // p >>> "one"
+  }
 
