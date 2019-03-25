@@ -1,0 +1,2 @@
+
+/<C-R><C-W>   : Pull <cword> onto search/command line

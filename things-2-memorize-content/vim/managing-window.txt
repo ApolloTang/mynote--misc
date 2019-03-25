@@ -1,0 +1,12 @@
+
+Selection current window and make it full at top
+  <c-w>t <c-w>K
+
+Selection current window and make it full at bottom
+  <c-w>t <c-w>J
+
+Selection current window and make it full at left
+  <c-w>t <c-w>H
+
+Selection current window and make it full at right
+  <c-w>t <c-w>L
