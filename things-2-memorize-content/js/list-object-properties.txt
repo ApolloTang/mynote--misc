@@ -1,25 +1,76 @@
 
-  ┼─────────────┼──────────────────────────────┼────────────┼
-  │             │             Own:             │ Inherited: │
-  │             │ Object.getOwnPropertyNames() │            │
-  ┼─────────────┼──────────────────────────────┼────────────┼
-  │ Enumerable: │       Object.keys()          │            │
-  │  for...in   │                              │            │
-  ┼─────────────┼──────────────────────────────┼────────────┼
-  │     Non-    │                              │            │
-  │ enumerable: │                              │            │
-  ┼─────────────┼──────────────────────────────┼────────────┼
+  ┼───────────────┼──────────────────────────────┼────────────┼
+  │ 'prop' in obj │             Own:             │ Inherited: │
+  │               │ Object.getOwnPropertyNames() │            │
+  ┼───────────────┼──────────────────────────────┼────────────┼
+  │ Enumerable:   │                              │            │
+  │ for-in        │       Object.keys()          │            │
+  ┼───────────────┼──────────────────────────────┼────────────┼
+  │ Non           │                              │            │
+  │ enumerable:   │                              │            │
+  ┼───────────────┼──────────────────────────────┼────────────┼
 
-  var a = {};
-  Object.defineProperties(a, {
-    one: {enumerable: true,  value: '1'},
-    two: {enumerable: false, value: '2'},
+var B = function (){
+  Object.defineProperties(this, {
+    instE: {enumerable: true,  value: 'instE'},
+    instNE: {enumerable: false, value: 'instNE'},
   });
+}
+Object.defineProperties(B.prototype, {
+  inhE: {enumerable: true,  value: 'inhEnu'},
+  inhNE: {enumerable: false, value: 'inhNonEnu'},
+});
 
-  Object.keys(a);                // ["one"]
-  Object.getOwnPropertyNames(a); // ["one", "two"]
+const b = new B()
 
-  for (var p in a) {
-    // p >>> "one"
+// ====================================
+// for-in loop over
+// enumerable in both own and inherited
+// ====================================
+  for (let p in b) {
+    console.log(p) // instE, inhE
   }
+
+// ==================================
+// getOwnPropertyNames() see only own
+// enumerable or not
+// ==================================
+  console.log(Object.getOwnPropertyNames(b))
+    // ["instE", "instNE"]
+  console.log(Object.getOwnPropertyNames(B))
+    // ["length", "name", "prototype"]
+
+// ==========================================
+// Object.keys cannot see only own enumerable
+// ==========================================
+  console.log(Object.keys(b)) // ["instE"]
+  console.log(Object.keys(B)) // []
+
+// =============================================
+// 'in' operator
+// =============================================
+  console.log('instE'  in b) // true
+  console.log('instNE' in b) // true
+  console.log('inhE'   in b) // true
+  console.log('inhNE'  in b) // true
+  console.log('prototype' in b) //false
+
+  console.log('-----------------------')
+  console.log('instE'  in B) // false
+  console.log('instNE' in B) // false
+  console.log('inhE'   in B) // false
+  console.log('inhNE'  in B) // false
+
+  console.log('-----------------------')
+  console.log('prototype' in B) //true
+  console.log('length'    in B) //true
+  console.log('name'      in B) //true
+
+  console.log('-----------------------')
+  console.log('instE'  in B.prototype) //false
+  console.log('instNE' in B.prototype) //false
+
+  console.log('-----------------------')
+  console.log('inhE'  in B.prototype) //true
+  console.log('inhNE' in B.prototype) //true
 
