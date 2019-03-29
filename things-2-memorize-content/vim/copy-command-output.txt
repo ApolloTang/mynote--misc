@@ -1,0 +1,14 @@
+===============================
+copy command output to register
+multi line command
+===============================
+:redir @"
+:version
+:redir END
+
+
+===============================
+copy command output to register
+one line
+===============================
+:redir @" | version | redir END

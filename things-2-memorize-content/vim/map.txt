@@ -1,0 +1,6 @@
+
+:redir! > vim_keys.txt
+:silent verbose map
+:redir END
+
+ref: https://stackoverflow.com/a/15756785/3136861

@@ -1,0 +1,61 @@
+
+
+Basic syntax:
+=============
+
+  $ rg [opts] <pattern> <filename>
+  $ rg [opts] <pattern> [<path/to/search>]
+
+  If path is ignore then it is default of current directory
+
+
+Interprets pattern as a literal string
+======================================
+
+  $ rg 'fn write('
+
+
+Beware of file expansion:
+=========================
+
+  Enclose your patten with single quote to prevent shell
+  expansion like so:
+
+    $ rg '.*' ./file.txt
+
+  Here is an eg of got-cha:
+
+  You want to to search string '.*' in ./file.txt
+  and you type:
+
+    $ rg .* ./file.txt
+
+  will be expanded to:
+
+    $ rg . .. ./file.txt
+
+
+
+To ignore a path:
+`````````````````
+    $ rg <pattern> -g '!path/to/ignore' -g '!another/path/to/ignore'
+
+
+
+Useful flag:
+`````````````
+  -l              show file name only
+  -F              [Fix string] (ignore regex meta)
+  --no-ignore     don't obey .gitignore
+  -s              case sensitive
+  -i              case insenstive
+  -S              [Smart case] case insenstive unless there are
+                    uppercase letter in search literal
+  -w              match word
+  -file           print the file to search but don't search
+  -C              [Context] show the line surrounding a match
+  --color always  use this to pipe to less
+
+
+
+
