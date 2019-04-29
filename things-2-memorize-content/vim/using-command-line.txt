@@ -1,0 +1,20 @@
+
+:help user_20.txt     |" help for basic editing
+
+====================
+Command line editing
+====================
+
+  <C-b>/<C-e>        to begin/end of line
+  <S-[→]>/<S-[←]>    move cursor by word
+  <C-w>              delete a word
+  <C-u>              delete full line
+
+
+=======================
+Command line Completion
+=======================
+
+  <C-l><C-P>        auto complete full keyword forward/back
+  <C-d>             list all matched completable
+
