@@ -31,6 +31,12 @@ $   $
 *?  \{-}    \\{-}     n/a
 ?   \=      \\=       \?
 +   \+      \\+       \+
+(   \(
+)   \)
+|   \|
+    \<                                    begining of word zero-width
+    \>                                    end of word zero-width
+
 
 
 
