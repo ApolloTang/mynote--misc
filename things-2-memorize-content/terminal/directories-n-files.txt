@@ -1,0 +1,8 @@
+
+ls -d .*
+  # listing hidden file (and anything that begin with 'dot') in
+  # the current directory [1]
+
+
+----
+[1] https://unix.stackexchange.com/a/411327/62821

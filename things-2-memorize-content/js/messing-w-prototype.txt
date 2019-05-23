@@ -1,0 +1,19 @@
+Array.prototype.foo = () => 'foo'
+
+var a = [1,2,3]
+for ( i in a ) {
+  console.log(i)
+}
+// 1
+// 2
+// 3
+// 'foo' err, what ?
+
+for ( i in a ) {
+  if ( a.hasOwnProperty(i) ) {
+    console.log(i)
+  }
+}
+
+
+
