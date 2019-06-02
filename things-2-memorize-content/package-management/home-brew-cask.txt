@@ -1,0 +1,25 @@
+================
+Listing packages
+================
+
+  brew cask list
+
+
+==============
+Remove package
+==============
+
+  brew cask uninstall <pkg-name>
+
+
+===============
+upgrade package
+===============
+
+  brew cask reinstall  <pkg-name>
+
+  or
+
+  use: https://github.com/buo/homebrew-cask-upgrade
+  [ref] https://apple.stackexchange.com/a/253717/282542
+

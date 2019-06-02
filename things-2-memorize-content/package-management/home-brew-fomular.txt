@@ -1,0 +1,54 @@
+================
+Listing packages
+================
+[1]
+
+  Dependency tree
+  ```````````````
+    brew deps --tree --installed
+
+
+  List Outdated
+  `````````````
+    brew update && brew outdated
+
+
+  Excluding dependency
+  ````````````````````
+    brew leaves
+
+
+  Including dependency
+  ````````````````````
+    brew list
+
+
+  Installed by Caskroom
+  `````````````````````
+    brew cask list
+
+
+
+
+
+==============
+Remove package
+==============
+
+  brew uninstall <pkg-name>
+  brew uninstall <pkg-name> --force # this will remove all version
+
+
+===============
+upgrade package
+===============
+[2]
+
+  brew upgrade <pkg-name>
+  brew upgrade             # upgrade everything
+
+
+
+------
+[1] https://apple.stackexchange.com/questions/101090/list-of-all-packages-installed-using-homebrew
+[2] https://stackoverflow.com/questions/4523920/how-do-i-update-a-formula-with-homebrew

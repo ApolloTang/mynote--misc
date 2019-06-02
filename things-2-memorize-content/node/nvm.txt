@@ -1,0 +1,10 @@
+
+list all available
+``````````````````
+  nvm ls-remote
+
+update to latest lts node
+`````````````````````````
+  nvm install node --latest-npm --reinstall-packages-from=node
+
+  [1] https://github.com/nvm-sh/nvm/issues/1706
