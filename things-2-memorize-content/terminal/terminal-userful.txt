@@ -18,7 +18,5 @@ rsync to exclude folder
 -----------------------
   $ rsync -havpn ./proj/ ./projCopy --exclude node_modules --exclude .git
 
-list all dot file
------------------
-  $ ls -d .!(|.)
+
 

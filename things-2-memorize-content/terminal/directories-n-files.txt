@@ -1,8 +1,12 @@
 
-ls -d .*
-  # listing hidden file (and anything that begin with 'dot') in
-  # the current directory [1]
+Listing hidden file
+```````````````````
+  ls -d .*        #[1]
 
+  ls -ld .!(|.)   #[2]
+
+  find . -name ".*" -type l -maxdepth 1 -exec ls -al {} +
 
 ----
 [1] https://unix.stackexchange.com/a/411327/62821
+[2] https://askubuntu.com/questions/468901/how-to-show-only-hidden-files-in-terminal
