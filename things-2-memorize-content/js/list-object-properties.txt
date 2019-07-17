@@ -40,15 +40,15 @@ const b = new B()
   console.log(Object.getOwnPropertyNames(B))
     // ["length", "name", "prototype"]
 
-// ==========================================
-// Object.keys cannot see only own enumerable
-// ==========================================
+// ===================================
+// Object.keys see only own enumerable
+// ===================================
   console.log(Object.keys(b)) // ["instE"]
   console.log(Object.keys(B)) // []
 
-// =============================================
+// =============
 // 'in' operator
-// =============================================
+// =============
   console.log('instE'  in b) // true
   console.log('instNE' in b) // true
   console.log('inhE'   in b) // true

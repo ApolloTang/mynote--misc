@@ -14,7 +14,19 @@ Get version list
   $ yarn info react time
 
 
-Get a list package
-==================
+Get a list package installed
+============================
   $ yarn list --depth 0
   $ npm list --depth 0
+
+
+Get info of a package
+=====================
+  yarn info package
+  yarn info package  --json
+  yarn info package@version
+  yarn info package description
+  yarn info package time
+  yarn info package readme
+
+

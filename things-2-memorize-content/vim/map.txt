@@ -1,6 +1,20 @@
 
-:redir! > vim_keys.txt
-:silent verbose map
-:redir END
+:help map.txt
+:help key-notation
 
-ref: https://stackoverflow.com/a/15756785/3136861
+
+
+====================
+ list map to a file
+====================
+
+:redir! > vim_keys.txt | silent verbose map | redir END
+:redir! > vim_keys.txt | silent map | redir END
+
+Ref: https://stackoverflow.com/a/15756785/3136861
+
+
+======
+ Link
+======
+https://medium.com/vim-drops/understand-vim-mappings-and-create-your-own-shortcuts-f52ee4a6b8ed

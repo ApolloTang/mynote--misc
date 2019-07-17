@@ -3,11 +3,7 @@
 Show process tying up a port 3000 (OSx)
 ````````````````````````````````````````
 sudo lsof -i tcp:3000
-
-
-Show list of used port (OSx)
-````````````````````````````
-sudo netstat -atp tcp | grep -i "listen"
+netstat -vanp tcp | grep 3000
 
 
 

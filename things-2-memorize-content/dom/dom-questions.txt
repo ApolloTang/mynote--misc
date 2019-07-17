@@ -1,0 +1,15 @@
+<div class="a">
+    <span></span>
+</div>
+<div class="b"></div>
+
+
+const span = document.querySelector(‘span’);
+const divB = document.querySelector(‘.b’);
+divB.appendChild(span);
+
+ span will be moved to the new parent div B, not cloned.
+
+
+-----
+https://blog.angularindepth.com/here-is-why-appendchild-moves-a-dom-node-instead-of-cloning-it-f8ef7a31735c

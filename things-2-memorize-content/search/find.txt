@@ -13,13 +13,25 @@ Useful options:
     d directories
     l symbolic
 
-  $ find . -name '*.js'
+  example
+  -------
+  find . -name '*.js' -type l
+
+
+Delete found
+============
+  find . -name '*.png' -delete
+
+
+Execute found w a command
+=========================
+  find . -name '*.png' -exec compress {} \;
 
 
 Search n replace recursively in a dir
 =====================================
 
-  $ find . -name '*.rb' -type f \
+  find . -name '*.rb' -type f \
     -exec sed -i -e 's/<pattern>/<replacement>/g' -- {} +
 
   https://stackoverflow.com/a/2113224/3136861

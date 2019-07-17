@@ -12,3 +12,5 @@ copy command output to register
 one line
 ===============================
 :redir @* | version | redir END
+
+
