@@ -1,7 +1,7 @@
 
 
 Show process tying up a port 3000 (OSx)
-````````````````````````````````````````
+-------------------------------------
 sudo lsof -i tcp:3000
 netstat -vanp tcp | grep 3000
 
@@ -15,3 +15,9 @@ $ ipconfig getifaddr en0
 192.168.0.89
 
 $ ifconfig | grep inet
+
+
+
+kill node
+---------
+killall node

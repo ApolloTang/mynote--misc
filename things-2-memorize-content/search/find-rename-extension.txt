@@ -1,0 +1,75 @@
+
+
+Use find to rename the extension of files recursively
+=====================================================
+
+This is summarised from [1]. Also see [4] for more similar rename method.
+
+find /the/path -type f \
+               -name '*.abc' \
+               -execdir rename -n 's/(.+)\.abc$/version1_$1.abc/' '{}' \;
+
+Main point:
+
+  *  use -execdir instead of -exec:
+      -execdir command is run from the subdirectory containing the matched
+      file. so, instead of passing the whole path to rename, it only
+      passes the matched filename.  this makes it much easier
+      to write the regex. (see Note 3)
+
+  * the backslash at the end of the -execdir line is required.
+      it is there to escape the semicolon.
+      that semicolun terminates the command run by -execdir.
+
+  * the flag -n tell rename comand to do a dry run.
+
+
+
+Explanation of the regex:
+
+  * \.\/ match the leading ./ that -execdir passes in. Here the backslash
+    is used to escape the . and / metacharacters.
+
+  * (.+) match the filename. The parentheses capture the match for later use.
+
+  * \.abc escape the dot, match the abc.
+
+  * $ anchor the match at the end of the string.
+
+
+Explanation of the replacement part:
+
+  * version1_ add this text to every file name.
+
+  * $1 references the existing filename, because we captured it
+    with parentheses.
+      If you use multiple sets of parentheses in the "match" part,
+      you can refer to them here using $2, $3, etc.
+
+  * .abc the new file name will end in .abc. No need to excape the
+    dot metacharacter here in the "replace" section
+
+
+
+Note:
+========
+(1) 'rename' is a perl command and it is no installed on OSX [2], to
+    install use:
+
+    brew install rename
+
+(2) the substitude command is does not use vim regex, it is a perl regex
+    [3]
+
+(3) The original post said that `--execdir` pass in the leading
+     `./` in filename, but did not. So the `\.\/` part in the
+     regex is omitted.  May that is because I am on OSX not ubuntu.
+
+
+Reference:
+==========
+[1] https://askubuntu.com/a/196947/849866
+[2] https://apple.stackexchange.com/questions/334273/why-is-rename-command-missing-from-macos
+[3] https://askubuntu.com/questions/982090/rename-command-with-perl-expression
+[4] https://askubuntu.com/questions/35922/how-do-i-change-extension-of-multiple-files-recursively-from-the-command-line
+

@@ -4,6 +4,7 @@ Initializer
   $ create-react-app my-app
 
   $ npx create-react-app my-app
+
   $ npm init react-app my-app
   $ yarn create react-app my-app
 
@@ -20,13 +21,25 @@ Get a list package installed
   $ npm list --depth 0
 
 
+Save exact
+==========
+  $ yarn add prettier --dev --exact
+  $ npm install --save-dev --save-exact prettier
+
+
+Installation global
+===================
+  $ yarn global add prettier
+  $ npm install --global prettier
+
+
 Get info of a package
 =====================
-  yarn info package
-  yarn info package  --json
-  yarn info package@version
-  yarn info package description
-  yarn info package time
-  yarn info package readme
+  $ yarn info package
+  $ yarn info package  --json
+  $ yarn info package@version
+  $ yarn info package description
+  $ yarn info package time
+  $ yarn info package readme
 
 

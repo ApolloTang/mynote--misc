@@ -1,0 +1,20 @@
+
+Get first line of a shell command's output
+------------------------------------------
+
+  vim --version | head -n 1
+
+  vim --version | sed 1q         (quit after first line)
+  vim --version | sed -n 1p      (only print first line, but read everything)
+
+  vim --version | awk 'FNR == 1' (only print first line, but read everything)
+
+ If the command outputs anything to standard error that you would
+ like to capture in the same manner, you need to redirect the
+ standard error of the command to the standard output stream:
+
+  vim --vesrion 2>&1 | head -n 1
+
+ https://stackoverflow.com/questions/46021955/get-first-line-of-a-shell-commands-output
+
+
