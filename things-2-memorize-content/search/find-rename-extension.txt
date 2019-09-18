@@ -3,6 +3,20 @@
 Use find to rename the extension of files recursively
 =====================================================
 
+Usage
+-----
+
+  rename ts(x?) file type to js(x?):
+
+    find . -name '*.t*' -execdir rename 's/(.+)\.t(s.?)/$1.j$2/' '{}' \;
+
+
+
+
+
+Explanation
+-----------
+
 This is summarised from [1]. Also see [4] for more similar rename method.
 
 find /the/path -type f \
