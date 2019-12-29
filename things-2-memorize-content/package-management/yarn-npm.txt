@@ -20,6 +20,9 @@ Get a list package installed
   $ yarn list --depth 0
   $ npm list --depth 0
 
+  $ yarn global list
+  $ npm ls -g --depth 0
+
 
 Save exact
 ==========
@@ -41,5 +44,10 @@ Get info of a package
   $ yarn info package description
   $ yarn info package time
   $ yarn info package readme
+
+Search
+======
+  $ yarn global add npms-cli
+  $ npms search <desired package>
 
 
