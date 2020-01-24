@@ -1,0 +1,10 @@
+
+less with color
+===============
+
+  command | less -R
+  ls -la | grep --color=always bash | less -r
+  ls --color | less -R
+
+  yarn info core-js time | rg \'2\..?\..?\.\' -p | less -r
+

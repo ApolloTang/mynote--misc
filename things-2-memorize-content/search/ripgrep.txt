@@ -54,8 +54,12 @@ Useful flag:
   -w              match word
   -file           print the file to search but don't search
   -C              [Context] show the line surrounding a match
-  --color always  use this to pipe to less
+  -p              same as --color always  use this to pipe to less
 
 
 
+Useful example
+``````````````
+
+  yarn info core-js time | rg \'2\..?\..?\.\' -p | less -r
 
