@@ -1,0 +1,42 @@
+;(function () {
+
+// own property of bar enumerable
+// ------------------------------
+  const bar = [3, 5, 7]    // iterable-own
+  bar.fooKey = 'fooValue'  // non-iterable-own
+
+// enumerable, inherited by bar
+// ----------------------------
+Array.prototype.onArrKey = 'onArrValue'
+
+
+for (const i in bar) {
+  console.log(i);
+  // 0, 1, 2      <-- index of iterable
+  // "fooKey"     <-- key of own property
+  // "onArrkey"   <-- key of inherited
+}
+
+for (const i in bar) {
+  if (bar.hasOwnProperty(i)) {
+    console.log(i);
+    // 0, 1, 2    <-- index of iterable
+    // "fooKey",  <-- key of own property
+  }
+  // excluded:
+  // "onArrkey"  <-- key of inherited
+}
+
+
+for (const i of bar) {
+  console.log(i);
+  // 3, 5, 7       <-- value of iterable
+}
+
+// for-of excluded:
+// ----------------
+// "fooValue"     <-- non iterable key
+// "onArrValue"   <-- not own property key
+
+})()
+
