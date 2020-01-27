@@ -41,4 +41,14 @@ tag
     # list tag with pattern
 
 
+basic old cli command
+=====================
+  git reset HEAD <file>..."
+    # to unstage
+
+  git checkout -- <file>..."
+    # to discard changes in working directory
+
+
+
 
