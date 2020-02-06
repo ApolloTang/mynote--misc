@@ -1,3 +1,10 @@
 
 sudo chown -R <userId>:<group> /usr/local/Homebrew/
 sudo chown -R $(whoami) /usr/local/Cellar
+
+
+
+touch myscript.sh && chmod 744 $_ && vim $_
+#!/usr/bin/env bash
+
+744 === u+x
