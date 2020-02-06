@@ -1,2 +1,3 @@
+
 sudo chown -R <userId>:<group> /usr/local/Homebrew/
 sudo chown -R $(whoami) /usr/local/Cellar
