@@ -1,0 +1,115 @@
+
+[prefix] === [ctr-b]
+
+[prefix]:                      // enter command mode
+:source-file ~/.tmux.conf      // source configuration file
+
+
+Session
+=======
+Sessions are groups of windows. Each session is kind of like spaces in OSX.
+A typical workflow is to isolate projects to a single session, and name the session
+by the name of project, and then configure the default folder to project folder,
+and environment to that project, etc.
+
+tmux new -s <session-name>          // Start a new session, and go into it.
+tmux new -s <session-name> -d       // Start a detash new session (New session in background)
+
+tmux ls                             // List runing session
+[prefix]d                           // Detash (exit not kill) a session
+tmux attach -t <session-name>       // Attach tmux and set target session to <session-name>
+
+tmux kill-session -t <sesion-name>  // Kill a session
+
+[prefix]s                           // switch between session
+[prefix]$                           // rename session
+
+
+Window
+======
+Session can have child sessions called window
+
+tmux new -s <session-name> -n <window-name>
+// The above create a new session, with name for session and window
+//     If a name was not given to a window, it will
+//     name based on the application that is currently running.
+
+[prefix]c      // creat a window
+$exit          // close current window
+[prefix]&      // close current window with confirmation
+
+[prefix],      // rename current window
+
+[prefix].      // move window
+
+
+[prefix]n           // switch to next window
+[prefix]p           // switch to previous window
+[prefix]<window id> // switch to window by id
+
+[prefix]f           // find a window
+[prefix]m           // display a menu of window
+
+
+Split window into panes
+=======================
+
+Is the new pane, session or window ?
+
+[prefix]|  // verticlally split the screen, focus on the new pane and
+           // alias of [prefix]%
+
+[prefix]-  // like [prefix]% but horizontally.
+           // alias of [prefix]"
+
+[prefix]o            // cycle through panes.
+[prefix]<arrow-key>  // moments through panes.
+
+
+
+
+
+==========================
+
+
+[prefix]?  // list all binding
+
+
+
+Handling Text
+=============
+[prefix][                      // Entering copy mode
+press <Enter>                  // Exit copy mode
+
+[prefix]]                      // Paste buffer content
+
+tmux show-buffer               // show content of current buffer
+[prefix]=                      // list buffers and paste selected content of selected buffer
+
+
+
+
+    copy into buffer
+    ----------------
+    copy mode: <Space> // to start copying text into buffer,  activate/inactivate highlight
+                       // (alias to: v)
+    search mode: c-u   // clear search field
+
+
+
+plugin
+======
+
+    tmux-yank
+    ---------
+    https://github.com/tmux-plugins/tmux-yank
+
+    [prefix]y - copies text from the command line to clipboard.
+    [prefix]Y - copy current working directory to clipboard.
+
+    copy mode bindings:
+    y            // copy selection to system clipboard
+    Y            // (shift-y) - "put" selection into command line - equivalent to copying a selection, and pasting it to the command line
+
+
+

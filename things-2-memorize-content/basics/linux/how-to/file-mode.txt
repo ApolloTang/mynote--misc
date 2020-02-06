@@ -1,0 +1,72 @@
+::: Unix file permission  :::
+
+
+mod  own,grp,wrd  own,grp,wrd
+.............................
+644  110,100,100  rw-,r--,r--
+755  111,101,101  rwx,r-x,r-x
+444  100,100,100  r--,r--,r--
+555  101,101,101  r-x,r-x,r-x
+775  111,111,101  rwx,rwx,r-x
+
+To Remember:
+============
+
+    write-able >= 6
+    read-only  <= 5
+    even number executable
+    odd number not executable
+
+
+                     closer ------> farder
+    Group order is:  owner, group, world
+
+    1st bit = read  = 4
+    2nd bit = write = 2
+    3rd bit = exec  = 1
+
+        rwx
+    --------------------------------------
+    7 = 111 = read(4) + write(2) + exec(1)
+    6 = 110 = read(4) + write(2)
+    5 = 101 = read(4)            + exec(1)
+    4 = 100 = read(4)
+
+
+0755
+    owner( read, write, exe )
+    group (read, exe)
+    world (read, exe)
+
+0644
+    owner(read, write)
+    group(read)
+    word (read)
+
+0444
+    owner (read)
+    group (read)
+    world (read)
+
+0555
+    owner ( read, exe )
+    group ( read, exe)
+    world ( read, exe)
+
+if it is 4 digit the first digit "0" indicate the
+number is written in octal format (need to varify this)
+
+
+Binary basic
+------------
+
+000 = 0
+001 = 1
+010 = 2
+011 = 3
+100 = 4
+101 = 5
+110 = 6
+111 = 7
+
+
