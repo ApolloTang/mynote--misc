@@ -9,15 +9,21 @@ starting verdaccio
 authentication
 ==============
 
-  $ npm adduser --registry http://localhost:4873
-  Username: apollotang
-  Password: password
-  Email: (this IS public) tang.apollo@gmail.com
-  Logged in as apollotang on http://localhost:4873/
+  note: 'npm login' is alias to 'npm adduser'
 
-  The above will add an entry of
-    //localhost:4873
-  to .npmrc
+  $ npm adduser --registry http://localhost:4873
+    Username: apollotang
+    Password: password
+    Email: (this IS public) tang.apollo@gmail.com
+    Logged in as apollotang on http://localhost:4873/
+
+    The above will add an entry of
+      //localhost:4873/:_authToken=xxxx
+    to .npmrc
+
+  $ tail -5 ~/.npmrc   # check item was added
+
+
 
 publish to verdaccio
 ====================

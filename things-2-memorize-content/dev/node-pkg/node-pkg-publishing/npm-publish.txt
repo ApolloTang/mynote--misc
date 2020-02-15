@@ -1,5 +1,23 @@
 
 
+authentication
+==============
+
+  note: 'npm login' is alias to 'npm adduser'
+
+  $ npm adduser
+    Username: apollotang
+    Password: password
+    Email: (this IS public) tang.apollo@gmail.com
+    Logged in as apollotang on https://registry.npmjs.org/.
+
+    The above will add an entry of
+      //registry.npmjs.org/:_authToken=xxxxx
+    to .npmrc
+
+  $ tail -5 ~/.npmrc   # check item was added
+
+
 
 update version
 ===============
@@ -11,4 +29,22 @@ update version
   npm publish
   npm info <package>
   yarn info <package>
+
+
+Scope and publishing public repo
+================================
+
+  To publish to a scope, you can either:
+
+    1. Manually add a scope to the 'name' field in package.json:
+        @myscope/package-name
+    2. Run 'npm init --scope=myscope' instead of npm init
+
+  If your repository has a scope, you need to adjust the publish command:
+
+    npm publish --access public
+
+---
+  Ref: https://zellwk.com/blog/publish-to-npm/
+
 
