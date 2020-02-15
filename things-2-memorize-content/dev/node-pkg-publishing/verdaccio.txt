@@ -1,0 +1,42 @@
+
+
+starting verdaccio
+==================
+  yarn global add verdaccio
+  verdaccio
+
+
+authentication
+==============
+
+  $ npm adduser --registry http://localhost:4873
+  Username: apollotang
+  Password: password
+  Email: (this IS public) tang.apollo@gmail.com
+  Logged in as apollotang on http://localhost:4873/
+
+  The above will add an entry of
+    //localhost:4873
+  to .npmrc
+
+publish to verdaccio
+====================
+  npm publish --registry http://localhost:4873
+
+
+view registry info
+==================
+  npm view --registry http://localhost:4873
+
+
+install package from verdaccio
+==============================
+  yarn add <package-name> --registry http://localhost:4873
+
+
+unpublish from verdaccio
+========================
+  npm unpublish <package-name> --registry http://localhost:4873 --force
+
+
+

@@ -1,0 +1,14 @@
+
+
+
+update version
+===============
+  git commit -m 'bump vesrion to 1.0.2'
+  git push
+  git tag 1.0.2
+  git push --tags
+  npm login
+  npm publish
+  npm info <package>
+  yarn info <package>
+
