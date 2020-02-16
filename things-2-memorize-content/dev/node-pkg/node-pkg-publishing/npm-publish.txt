@@ -19,16 +19,7 @@ authentication
 
 
 
-update version
-===============
-  git commit -m 'bump vesrion to 1.0.2'
-  git push
-  git tag 1.0.2
-  git push --tags
-  npm login
-  npm publish
-  npm info <package>
-  yarn info <package>
+
 
 
 Scope and publishing public repo
@@ -44,7 +35,40 @@ Scope and publishing public repo
 
     npm publish --access public
 
+   ref: [1]
+
+
+update version
+===============
+  git commit -m 'bump vesrion to 1.0.2'
+  git push
+  git tag 1.0.2
+  git push --tags
+  npm login
+  npm publish
+  npm info <package>
+  yarn info <package>
+
+
+
+publish a beta version
+======================
+  git commit -am '... message'
+  git tag 1.4.0-beta.0
+  git tag -l
+  git push
+  git push --tags
+  npm publish --tag beta   # this add -->   dist-tags.beta: '1.4.0-beta.0'
+  npm info
+
+
+  now consumer app can install
+  ----------------------------
+    npm install <package-name>@beta     # this installs the latest beta
+
+
+
 ---
-  Ref: https://zellwk.com/blog/publish-to-npm/
+  Ref: [1] https://zellwk.com/blog/publish-to-npm/
 
 
