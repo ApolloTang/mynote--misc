@@ -1,0 +1,16 @@
+Capturing tasks
+=================
+[ctr][sht][spc]  quick entry
+[sht] 2x[enter]  add another task above
+[ctr] [enter]    add another task bellow
+[cmd][']         toggle note
+
+
+Convert
+==================
+[shf][cmd][1]    convert to project
+
+[shf][cmd][f]    focus on selected item
+
+[ctr][cmd][l]    Remove Next tag
+
