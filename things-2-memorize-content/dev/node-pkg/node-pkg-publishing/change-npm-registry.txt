@@ -1,0 +1,27 @@
+
+
+% npm config ls -l | rg registry
+  metrics-registry = "https://registry.npmjs.org/"
+  ; metrics-registry = null (overridden)
+  registry = "https://registry.npmjs.org/"
+
+
+% npm set registry http://localhost:4873/   # <--- change to verdaccio
+
+
+% npm config ls -l | rg registry
+  metrics-registry = "http://localhost:4873/"
+  registry = "http://localhost:4873/"
+  ; metrics-registry = null (overridden)
+  ; registry = "https://registry.npmjs.org/" (overridden)
+
+
+% npm config set registry https://registry.npmjs.org/   # <--- revert to default
+
+
+% npm config ls -l | rg registry
+  metrics-registry = "https://registry.npmjs.org/"
+  registry = "https://registry.npmjs.org/"
+  ; metrics-registry = null (overridden)
+
+
