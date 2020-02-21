@@ -58,3 +58,14 @@ https://docs.npmjs.com/configuring-your-registry-settings-as-an-npm-enterprise-u
   npmrc local
 
 
+
+
+=================================
+
+  Other solution
+
+  https://stackoverflow.com/questions/30114166/how-to-have-multiple-npm-users-set-up-locally
+
+
+
+

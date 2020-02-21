@@ -69,6 +69,9 @@ publish a beta version
 
 
 ---
-  Ref: [1] https://zellwk.com/blog/publish-to-npm/
+  Ref:
+    [1] https://zellwk.com/blog/publish-to-npm/
+    https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
+    https://docs.npmjs.com/misc/scope
 
 
