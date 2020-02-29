@@ -6,5 +6,6 @@ less with color
   ls -la | grep --color=always bash | less -r
   ls --color | less -R
 
-  yarn info core-js time | rg \'2\..?\..?\.\' -p | less -r
+  yarn info core-js time | rg \'2\..?\..?\.\' -p | less -r     // <--- does not work at work computer?
+  yarn info core-js time | rg \'2\...\?\...\?\' -p | less -r
 

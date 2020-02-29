@@ -1,0 +1,15 @@
+
+https://docs.npmjs.com/configuring-your-registry-settings-as-an-npm-enterprise-user#configuring-scopes-to-point-to-different-registries
+
+You can also map different scopes to different npm registries.
+ For eg, to use the scope @company-scope from your npm Enterprise
+ registry, while continuing to install public packages from the
+ public npm registry
+
+
+  npm login --scope=@company-scope --registry=https://registry.company-registry.npme.io/
+
+  I haven't try this but I think it means every time you $npm adduser,
+  with Username company-scope, it will set the registry for you ?
+
+

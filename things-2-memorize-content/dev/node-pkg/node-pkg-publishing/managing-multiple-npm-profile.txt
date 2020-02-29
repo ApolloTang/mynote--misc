@@ -1,0 +1,71 @@
+
+https://github.com/deoxxa/npmrc
+https://docs.npmjs.com/configuring-your-registry-settings-as-an-npm-enterprise-user
+
+
+# Create a npmrc profile call "local":
+--------------------------------------
+
+  % npmrc -c local
+    Initialising npmrc...
+    Creating /Users/apollo.tang/.npmrcs
+    Making /Users/apollo.tang/.npmrc the default npmrc file
+    Activating .npmrc "default"
+
+# Assign verdaccio to local:
+------------------------------
+
+  % npm config set registry http://localhost:4873
+
+
+# Varified
+----------
+
+  % npm config ls -l | rg registry
+    metrics-registry = "http://localhost:4873/"
+    registry = "http://localhost:4873/"
+    ; metrics-registry = null (overridden)
+    ; registry = "https://registry.npmjs.org/" (overridden)
+
+
+# Create a second profile for open-source project
+--------------------------------------------------
+
+  % npmrc -c open-source
+  % npm config set registry https://registry.npmjs.com/
+  % npm config ls -l | rg registry
+    metrics-registry = "https://registry.npmjs.com/"
+    registry = "https://registry.npmjs.com/"
+    ; metrics-registry = null (overridden)
+    ; registry = "https://registry.npmjs.org/" (overridden)
+
+
+# List available profile
+------------------------
+
+  % npmrc
+  Available npmrcs:
+
+     default
+     local
+   * open-source
+     test
+
+
+# Switch profiles to local
+--------------------------
+
+  npmrc local
+
+
+
+
+=================================
+
+  Other solution
+
+  https://stackoverflow.com/questions/30114166/how-to-have-multiple-npm-users-set-up-locally
+
+
+
+
