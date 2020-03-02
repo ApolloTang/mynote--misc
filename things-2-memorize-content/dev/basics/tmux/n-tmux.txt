@@ -67,6 +67,11 @@ Is the new pane, session or window ?
 
 
 
+Panes Management
+================
+(:swap-pane -U) - move current pane up
+(:swap-pane -D) - move current pane down
+
 
 
 ==========================
@@ -112,4 +117,6 @@ plugin
     Y            // (shift-y) - "put" selection into command line - equivalent to copying a selection, and pasting it to the command line
 
 
-
+Reference:
+=========
+  https://gist.github.com/Starefossen/5955406
