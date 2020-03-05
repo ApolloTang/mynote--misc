@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable */   <--- this will disable the entire file
 /* eslint-enable */
 
 // eslint-disable-next-line no-alert

@@ -1,0 +1,19 @@
+
+npx prettier path/to/file.tsx
+  # the above will echo the formated content to cli
+
+
+npx prettier path/to/file.tsx --write
+  # the above will write the formated content
+
+
+https://prettier.io
+https://prettier.io/docs/en/ignore.html
+
+
+// prettier-ignore
+
+<div>
+  {/* prettier-ignore */}
+  <span     ugly  format=''   />
+</div>
