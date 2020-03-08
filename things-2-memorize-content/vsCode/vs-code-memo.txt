@@ -4,4 +4,39 @@
 
 [ctr][`]  Toggle btw code editor and terminal
 
+[cmd][.]  That short cut on error token, a drop
+          down will appear to show you available option
+          to fix thing.
+
+
+
+------
+
+extensions
+==========
+
+  prettier - Code formatter by Esben Petersen
+  -------------------------------------------
+
+    to run format in vscode:
+      [cmd][shf][p]  >format
+
+    // Prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
+
+
+  ESLint by Dirk Baeumer
+  ----------------------
+
+    // Enabling ESLint on TS files in VSCode
+    // https://javascriptplayground.com/typescript-eslint/
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ]
+
 
