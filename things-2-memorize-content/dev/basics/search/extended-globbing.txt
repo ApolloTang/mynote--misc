@@ -1,0 +1,5 @@
+
+
+https://www.linuxjournal.com/content/bash-extended-globbing
+
+
