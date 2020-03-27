@@ -56,6 +56,8 @@ Useful flag:
   -C              [Context] show the line surrounding a match
   -p              same as --color always  use this to pipe to less
 
+  --max-columns=0        # Don't supress long line
+  --max-columns-preview  # Preview long line
 
 
 Useful example
