@@ -1,0 +1,39 @@
+
+
+
+Creating and Applying patch
+===========================
+
+  reference [1][2]
+  Creating a patch is same as generating diff
+  ...........................................
+
+    $ gdf 3572303..e5445d5 > changed-3572303-to-e5445d5.patch
+
+      where alias gdf='git diff --no-ext-diff'
+
+
+  Applying patch
+  ..............
+
+    Make sure that the branch you have checked out is the one that
+    you want to apply the patch to. Use the command 'apply'
+    to apply the patch:
+
+    $ git apply changed-3572303-to-e5445d5.patch
+
+
+  If the patch is not 'apply-able' you can force it with --3way [3]
+
+  Note that if the files involve in patching is binary, you have
+  to create the patch with --binary [2][4]
+
+
+
+---
+ref:
+
+[1] https://www.thegeekstuff.com/2014/03/git-patch-create-and-apply/
+[2] https://stackoverflow.com/a/15438863/3136861
+[3] https://stackoverflow.com/a/12320940/3136861
+[4] https://stackoverflow.com/a/42459071/3136861

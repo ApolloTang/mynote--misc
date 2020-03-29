@@ -1,0 +1,19 @@
+
+How to use git format-patch, git am
+===================================
+
+see:
+  https://www.devroom.io/2009/10/26/how-to-create-and-apply-a-patch-with-git/
+  https://stackoverflow.com/questions/2249852/how-to-apply-a-patch-generated-with-git-format-patch
+  https://stackoverflow.com/questions/5159185/create-a-git-patch-from-the-changes-in-the-current-working-directory/52314638#52314638
+  https://devconnected.com/how-to-create-and-apply-git-patch-files/
+
+The different between
+"git diff"-"git apply" combination
+vs
+"git format-patch"-"git am" combination
+
+see:
+  https://stackoverflow.com/questions/12240154/what-is-the-difference-between-git-am-and-git-apply
+  https://stackoverflow.com/questions/23594843/applying-email-patch-with-git
+
