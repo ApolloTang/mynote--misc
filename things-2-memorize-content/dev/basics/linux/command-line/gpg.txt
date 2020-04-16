@@ -1,0 +1,88 @@
+
+======================
+  Instruction for
+  setting up gpg
+=======================
+
+
+[1] Installation
+
+  $ brew install gpg2
+
+
+[2] Generate key
+
+  $ gpg --gen-key
+
+    Real name: yourname
+    Email address: your@emailaddress.com
+
+
+[3] If you get error
+
+    If you see:
+      gpg: can't connect to the agent: IPC connect call failed
+      gpg: agent_genkey failed: No agent running
+      Key generation failed: No agent running
+
+    $ pkill -9 gpg-agent
+    $ source <(gpg-agent --daemon)
+
+    repeat [2]
+
+
+[4] Export your public key:
+
+  $ cd ~/Desktop
+  $ gpg --armor --export your@emailaddress.com > my-pubkey.asc
+
+
+[5] Upload your public key
+
+  $ chrome https://keys.openpgp.org/upload
+
+
+[6] Add trusted Id
+
+  $ gpg --keyserver keys.openpgp.org --search apollo.tang@rewardops.com
+
+
+[6] Change trusted Id trust level
+
+  $ gpg --edit-key apollo.tang@rewardops.com
+
+    gpg (GnuPG) 2.2.19; Copyright (C) 2019 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    pub  ******/************
+         created: 2020-02-25  expires: 2022-02-24  usage: SC
+         trust: unknown       validity: unknown
+    sub  ******/**************
+         created: 2020-02-25  expires: 2022-02-24  usage: E
+    [ unknown] (1). tangapollo <apollo.tang@rewardops.com>
+
+    gpg>   trust
+
+    Please decide how far you trust this user to correctly verify other users' keys
+    (by looking at passports, checking fingerprints from different sources, etc.)
+
+      1 = I don't know or won't say
+      2 = I do NOT trust
+      3 = I trust marginally
+      4 = I trust fully
+      5 = I trust ultimately
+      m = back to the main menu
+
+
+    Your decision? 4
+    Do you really want to set this key to ultimate trust? (y/N) y
+
+
+  gpg> quit
+
+
+[7] Download tool to help you encrypt/decrypt file:
+
+  https://gpgtools.org/
+
