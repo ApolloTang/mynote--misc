@@ -1,0 +1,54 @@
+
+
+.
+├── copy
+│   ├── child1
+│   │   └── grandchild1
+│   │       └── file1b.txt
+│   └── child2
+│       └── file3.txt
+└── parent
+    ├── child1
+    │   └── grandchild1
+    │       ├── file1a.txt
+    │       └── file1b.txt
+    └── child2
+        ├── file3.txt
+        └── grandchild2
+            └── file2.txt
+
+rsync -havpn ./parent/ ./copy             \
+  --exclude child1/grandchild1/file1a.txt \
+  --exclude child2/grandchild2/           \
+  2> ~/Desktop/rsyncError.txt
+
+
+  h  – Human Readable. This tells it to display all the values
+       in human readable form (instead of "112543662.08 bytes",
+       it will show "107.33MB")
+
+  a  – (required) This tells it to archive, it will preserve permissions,
+       modified/created dates and any other extra data with the file.
+
+  v  – verbose, list all file copied
+
+  p  – Progress/Partial – This is actually 2 commands in one. Progress
+       will show you the progress of each file as it transfers (so you
+       can see that it's actually copying data). Partial will resume
+       files that have been inturrupted part way through copying.
+
+  n  - dry run
+
+  Important Note:
+    The excluded folder  is relative to the sourcefolder
+    if souce is a folder it must end with slash: 'sourceFolder/'
+
+  Useful example:
+    copy a project  without copying .git/ and node_modules/ (dry-run):
+
+    rsync -havpn ./proj/ ./projCopy --exclude node_modules --exclude .git
+
+---
+reference:
+  https://stackoverflow.com/questions/4585929/how-to-use-cp-command-to-exclude-a-specific-directory
+
