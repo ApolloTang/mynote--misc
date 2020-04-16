@@ -1,4 +1,5 @@
 
+[cmd][L] focus on address bar
 
 Next tab:
   [opt][cmd][arrow]
