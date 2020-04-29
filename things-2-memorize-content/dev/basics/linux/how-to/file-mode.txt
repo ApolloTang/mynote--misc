@@ -38,6 +38,11 @@ To Remember:
     group (read, exe)
     world (read, exe)
 
+0744
+    owner( read, write, exe )
+    group (read)
+    world (read)
+
 0644
     owner(read, write)
     group(read)

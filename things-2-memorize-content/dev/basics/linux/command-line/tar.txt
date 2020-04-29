@@ -1,0 +1,90 @@
+::::::::
+ Useful
+::::::::
+
+
+    Bzip
+    ~~~~~~
+    tar -cjf myfile.tar.bz2 {dirname}   Pack.
+    tar -tjf myfile.tar.bz2             List contents.
+    tar -xjf myfile.tar.bz2             Unpack.
+
+    GNU zip  ( .gz, tgz )
+    ~~~~~~~~
+    tar -czf myfile.tar.gz {dirname}    Pack.
+    tar -tzf myfile.tar.gz              List contents.
+    tar -xzf myfile.tar.gz              Unpack.
+
+    Window
+    ~~~~~~~
+    zip myfile.zip file1 file2 ...  Pack.
+    zip -r myfile.zip {dirname}     Pack recursively.
+    unzip -l myfile.zip             List contents.
+    unzip myfile.zip                Unpack.
+
+
+    Note:
+    ~~~~~
+
+    - Unless you are operating as the superuser, files and directories
+      extracted from archives take on the ownership of the user performing
+      the restoration, rather than the original owner.
+
+    - tar remove any leading slash from the pathname when creating
+      the archive.
+
+
+    options
+    ~~~~~~~
+
+    -c
+       Create an archive. You’ll have to list the input files and
+       directories on the command line.
+
+    -r
+       Append files to an existing archive.
+
+    -u
+       Append new/changed files to an existing archive.
+
+    -t
+       List the archive.
+
+    -x
+       Extract files from the archive.
+
+    -f file
+       Read the archive from, or write the archive to, the given file.
+       This is usually a TAR file on disk (such as myarchive.tar) but can also be a tape drive (such as /dev/st0).
+
+    -z
+       Use gzip compression.
+
+    -j
+       Use bzip2 compression.
+
+    -Z
+       Use Unix compression.
+
+    -b N
+       Use a block size of N * 512 bytes.
+
+    -v
+       Verbose mode: print extra information.
+
+    -h
+       Follow symbolic links rather than merely copying them.
+
+    -p
+       When extracting files, restore their original permissions and ownership.
+
+
+
+
+
+
+
+
+
+
+

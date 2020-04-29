@@ -1,4 +1,14 @@
 
+:::::::
+ rysnc
+:::::::
+
+
+Note: You should upgrade your rsync to rsync@3
+    see: https://bayton.org/2018/07/how-to-update-rsync-on-mac-os-high-sierra/
+
+
+-------------------------------------
 
 .
 ├── copy

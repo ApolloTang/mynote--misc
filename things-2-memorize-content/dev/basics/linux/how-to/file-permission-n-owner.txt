@@ -4,7 +4,14 @@ sudo chown -R $(whoami) /usr/local/Cellar
 
 
 
-touch myscript.sh && chmod 744 $_ && vim $_
-#!/usr/bin/env bash
+======
+Here is the one liner to create an execute able script file
 
-744 === u+x
+  touch myscript.sh && chmod 744 $_ && vim $_
+  #!/usr/bin/env bash
+
+  744
+    owner( read, write, exe )
+    group (read)
+    world (read)
+
