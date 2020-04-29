@@ -1,8 +1,38 @@
 
+How to prepare file for trasfer:
+-------------------------------
+
+Prepared:
+~~~~~~~~~
+
+  Tape archive a directory using bzip, add date stamp to archived file name:
+
+    % tar -cjf "0__$(date +%FT%H%M).tar.bz2" ~/0
+
+  Split archive into 100M part:
+
+    % split -b 100m 0__2020-04-29T0116.tar.bz2 "0__2020-04-29T0116.tar.bz2.part"
+
+After transfer (received):
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Join parts:
+
+    % cat 0--2020-04-29T0116.tar.bz2.parta* >0.tar.bz2
+
+  unarchived:
+
+    % tar -xjf 0.tar.bz2
 
 
-https://www.tecmint.com/split-large-tar-into-multiple-files-of-certain-size/
+---
+Ref:
 
-https://unix.stackexchange.com/questions/167590/append-same-timestamp-to-multiple-filenames
+  split file
+    https://www.tecmint.com/split-large-tar-into-multiple-files-of-certain-size/
+
+  date-stamp
+    https://unix.stackexchange.com/questions/278939/how-do-you-put-date-and-time-in-a-file-name
+    https://unix.stackexchange.com/questions/167590/append-same-timestamp-to-multiple-filenames
 
 
