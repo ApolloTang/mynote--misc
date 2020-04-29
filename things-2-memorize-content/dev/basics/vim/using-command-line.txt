@@ -18,3 +18,13 @@ Command line Completion
   <C-l><C-P>        auto complete full keyword forward/back
   <C-d>             list all matched completable
 
+
+===========
+More Tricks
+===========
+
+  <C-R><C-W>   : Pull <cword> onto search(/) or command(:) line
+
+
+
+

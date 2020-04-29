@@ -1,4 +1,4 @@
 
-:bufdo! bd   - deletes all buffers except those with unwritten changes
-:bufdo! bw   - completely deletes all buffers except those with unwritten changes
+:bufdo! bd   - deletes all buffers except those with unwritten changes.
+:bufdo! bw   - like bd, but "really" delete the buffer (help :bw).
 

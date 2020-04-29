@@ -1,6 +1,6 @@
 ===============================
 copy command output to register
-multi line command
+(multi line command)
 ===============================
 :redir @*
 :version
@@ -9,7 +9,7 @@ multi line command
 
 ===============================
 copy command output to register
-one line
+(single line command)
 ===============================
 :redir @* | version | redir END
 
