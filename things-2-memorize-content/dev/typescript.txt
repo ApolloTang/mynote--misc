@@ -1,2 +1,25 @@
 // @ts-nocheck   <-- deprecated
 // @ts-ignore
+
+
+Work around to ignore TSX error in jsx property
+===============================================
+
+  -  <CardMedia
+  -    component="img"
+  -    src={imageUrl}
+       ^^^----------- tsc error in 'src' property
+  -    className={classes.media}
+  -    title="foo"
+  -  />
+
+  +  {React.createElement(CardMedia, {
+  +    // @ts-ignore
+  +    src: imageUrl,
+  +    component: 'img',
+  +    className: classes.media,
+  +  })}
+
+  ref: https://stackoverflow.com/a/40245490/3136861
+
+
