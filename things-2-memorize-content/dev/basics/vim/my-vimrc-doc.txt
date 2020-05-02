@@ -1,0 +1,114 @@
+===========================
+  Essential Customization
+===========================
+  noremap <c-q> :q<CR>
+
+  "/ Select next previous item in quickfix window
+  "/ https://stackoverflow.com/a/29287066/3136861
+  map <C-n> :cn<CR>
+  map <C-p> :cp<CR>
+
+  CitermHere    "/ open iterm2 in current path
+
+
+
+============
+  NERDTree
+============
+
+ :CnerdPreview               "/ launch NERDTree and set preview mode
+
+
+
+=======
+  Coc
+=======
+
+  [c, ]c    "/ navigate diagnostics
+
+  gd                        "/ goto definition
+  gy                        "/ goto type-definition
+  gi                        "/ goto implementation
+  gr                        "/ goto reference
+
+  :GGCrenameCurrentWord    "/ Remap for rename current word
+  <space>crn
+
+  :GGCrefactor             "/ Open refoctor window for refactor of curren symbol
+  <space>crf
+
+
+================
+  Coc-prettier
+================
+  :GGFF                        "/ Format with coc-prettier
+  :GGFs                        "/ Format with coc-prettier and save
+  <leader>f                    "/ format selected range visual/normal mode
+
+
+
+============
+  LearderF
+============
+
+    <C-P>        : preview the result"
+    <C-V>        : paste from clipboard"
+    <C-J>, <C-K> : navigate the result list"
+    <C-X>        : open in horizontal split window"
+    <C-]>        : open in vertical split window"
+    <F5>         : refresh the cache"
+    <C-S>        : select multiple files"
+    <C-L>        : clear all selections"
+    <Tab>        : switch to normal mode"
+
+
+
+============
+  Terminal
+============
+
+  hitting ESC twice exit exit terminal mode back to normal-mode
+
+
+===================
+  inserting stuff
+===================
+
+  insertmode <c-l>l        "/ insert hash rocket =>
+
+  digraph
+  "/ for a list of digraph-key type ":help digraph-table-mbyte"
+  insertmode <leader>k <c-k>
+
+  iabbrev -_- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+============
+  Markdown
+============
+
+  :MarkdownPreview
+  :MarkdownPreviewStop
+
+
+
+=================================
+emacs like begin and end of line
+=================================
+  inoremap <c-a> <esc>^i
+  inoremap <c-e> <esc>A
+  noremap <space>a ^
+  noremap <space>e $
+  
+  
+  
+===========
+  helper
+===========
+
+  :GGcddt    : cd to desktop  (todo, save previous dir some where)
+
+
+
+
+
