@@ -1,0 +1,17 @@
+=========================
+  starting and stopping
+  using brew services
+  [1]
+=========================
+
+  brew services run redis
+  brew services stop redis
+  brew services restart redis
+
+  brew services start redis  // will start the redis service and add it at login and boot.
+
+
+-----
+
+[1] https://stackoverflow.com/questions/6910378/how-can-i-stop-redis-server
+

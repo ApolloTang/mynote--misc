@@ -1,0 +1,16 @@
+=========================
+  installing
+  starting and stopping
+  using brew services
+  [1][2]
+=========================
+
+  brew tap mongodb/brew
+
+  brew install mongodb-community@4.2
+  brew services start mongodb-community@4.2
+
+[1] https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+[2] https://stackoverflow.com/questions/7948789/mongod-complains-that-there-is-no-data-db-folder/48560341#48560341
+
+
