@@ -20,6 +20,10 @@ fetch all branches
 
 tag
 =======
+
+  git tag [-l <pattern>]
+    # list tag with pattern
+
   git tag <tagName>
     # create a tag on current branch
 
@@ -37,8 +41,6 @@ tag
   git tag --delete origin <tagname>
     # delete a remote tag
 
-  git tag [-l <pattern>]
-    # list tag with pattern
 
 
 basic old cli command
