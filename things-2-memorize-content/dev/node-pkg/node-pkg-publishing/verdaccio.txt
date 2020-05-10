@@ -1,4 +1,19 @@
 
+===========
+ Important
+===========
+
+  Installing global package while Verdaccio is runing will
+  add http://localhost:4873 to your global yarn.lock:
+
+    ~/.config/yarn/global
+
+  To fix this you have to remove yarn.lock in global and reinstall
+  your global packages
+
+
+
+
 
 starting verdaccio
 ==================
