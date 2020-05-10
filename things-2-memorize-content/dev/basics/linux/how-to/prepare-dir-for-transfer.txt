@@ -1,29 +1,36 @@
 
 How to prepare file for trasfer:
--------------------------------
+================================
 
-Prepared:
-~~~~~~~~~
+  Prepared:
+  ---------
 
-  Tape archive a directory using bzip, add date stamp to archived file name:
+    Tape archive a directory using bzip, add date stamp to archived file name:
 
-    % tar -cjf "0__$(date +%FT%H%M).tar.bz2" ~/0
+      % tar -cjf "foldername__$(date +%FT%H%M).tar.bz2" ./foldername
 
-  Split archive into 100M part:
+    Split archive into 100M part:
 
-    % split -b 100m 0__2020-04-29T0116.tar.bz2 "0__2020-04-29T0116.tar.bz2.part"
+      % split -b 100m foldername__2020-04-29T0116.tar.bz2 "foldername__2020-04-29T0116.tar.bz2.part"
 
-After transfer (received):
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+  After transfer (received):
+  --------------------------
 
-  Join parts:
+    Join parts:
 
-    % cat 0--2020-04-29T0116.tar.bz2.parta* >0.tar.bz2
+      % cat foldername__2020-04-29T0116.tar.bz2.parta* >foldername.tar.bz2
 
-  unarchived:
+    unarchived:
 
-    % tar -xjf 0.tar.bz2
+      % tar -xjf foldername.tar.bz2
 
+
+  Extra
+  -----
+
+   To exclude a folder pattern [1]
+
+      % tar -cjf "foldername__$(date +%FT%H%M).tar.bz2" --exclude=node_modules ./foldername
 
 ---
 Ref:
@@ -35,4 +42,5 @@ Ref:
     https://unix.stackexchange.com/questions/278939/how-do-you-put-date-and-time-in-a-file-name
     https://unix.stackexchange.com/questions/167590/append-same-timestamp-to-multiple-filenames
 
+  [1] https://stackoverflow.com/a/2193806/3136861
 
