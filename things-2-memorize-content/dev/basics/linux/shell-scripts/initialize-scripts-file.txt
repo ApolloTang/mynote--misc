@@ -1,6 +1,9 @@
 
 touch myscript.sh && chmod 744 $_ && vim $_
+
 #!/usr/bin/env bash
+#!/usr/bin/env sh
+#!/bin/sh
 
 744 === u+x
 
