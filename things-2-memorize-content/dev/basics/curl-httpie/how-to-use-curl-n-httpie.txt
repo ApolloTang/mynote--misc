@@ -1,0 +1,27 @@
+
+Add header
+-----------
+
+  curl -i -H "Foo: Foo" -H "Authorization: sdfafadfafdaf" localhost:5000
+    Ref: [1]
+
+  http localhost:5000 Foo:foo authorization:fafssafdasdfad
+
+
+Post data with body
+-------------------
+
+  curl \
+    -H "Content-Type: application/json" \
+    -X POST \
+    -d '{"foo":"foo"}' \
+    http://localhost:5000
+
+    Ref: [2]
+
+  echo '{"foo":"foo"}' | http POST localhost:5000
+
+---
+[1] https://stackoverflow.com/questions/356705/how-to-send-a-header-using-a-http-request-through-a-curl-call
+[2] https://stackoverflow.com/questions/7172784/how-do-i-post-json-data-with-curl
+
