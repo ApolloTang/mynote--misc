@@ -42,23 +42,64 @@ rsync -havpn ./parent/ ./copy             \
 
   v  – verbose, list all file copied
 
-  p  – Progress/Partial – This is actually 2 commands in one. Progress
-       will show you the progress of each file as it transfers (so you
-       can see that it's actually copying data). Partial will resume
-       files that have been inturrupted part way through copying.
+  p  – Progress/Partial – This is actually 2 commands in one:
+
+       • Progress will show you the progress of each file
+         as it transfers (so you can see that it's actually
+         copying data).
+       • Partial will resume files that have been inturrupted
+         part way through copying.
 
   n  - dry run
 
+
   Important Note:
-    The excluded folder  is relative to the sourcefolder
-    if souce is a folder it must end with slash: 'sourceFolder/'
+  ---------------
+
+    (1) If source is a folder ends **without a slash** (./parent)
+        the distination folder is an enclosed folder:
+
+          % rsync -havp ./parent ./dist-is-an-enclosed-folder
+
+            .
+            ├── dist-is-an-enclosed-folder
+            │   └── parent
+            │       └── child
+            │           └── file.text
+            └── parent
+                └── child
+                    └── file.text
+
+        If source is a folder ends **with a slash** (./parent/)
+        the distination folder is the copied folder:
+
+          % rsync -havp ./parent/ ./dist-is-the-copied-folder
+
+            .
+            ├── dist-is-the-copied-folder
+            │   └── child
+            │       └── file.text
+            └── parent
+                └── child
+                    └── file.text
+
+    (2) The excluded folder is relative to the sourcefolder.
+
+
 
   Useful example:
-    copy a project  without copying .git/ and node_modules/ (dry-run):
+  ---------------
+    (1) Copy a project without copying .git/ and node_modules/ (dry-run)
+        Note that all directory (**/node_modules/ and **/.git/) will be
+        excluded.
 
-    rsync -havpn ./proj/ ./projCopy --exclude node_modules --exclude .git
+      % rsync -havpn ./proj/ ./projCopy --exclude node_modules --exclude .git
+
+
 
 ---
 reference:
   https://stackoverflow.com/questions/4585929/how-to-use-cp-command-to-exclude-a-specific-directory
+  https://sites.google.com/site/rsync2u/home/rsync-tutorial
+  https://unix.stackexchange.com/questions/2161/rsync-filter-copying-one-pattern-only
 
