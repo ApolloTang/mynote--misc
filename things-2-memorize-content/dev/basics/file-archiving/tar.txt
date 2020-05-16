@@ -26,6 +26,9 @@
     Note:
     ~~~~~
 
+    - Extracting an archive overwrites any files with the same
+      names in the current directory without warning
+
     - Unless you are operating as the superuser, files and directories
       extracted from archives take on the ownership of the user performing
       the restoration, rather than the original owner.
