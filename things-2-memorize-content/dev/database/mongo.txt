@@ -1,16 +1,35 @@
-=========================
-  installing
-  starting and stopping
-  using brew services
-  [1][2]
-=========================
 
-  brew tap mongodb/brew
+  To run mongo at foreground:
 
-  brew install mongodb-community@4.2
-  brew services start mongodb-community@4.2
+    mongod --config /usr/local/etc/mongod.conf
 
-[1] https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
-[2] https://stackoverflow.com/questions/7948789/mongod-complains-that-there-is-no-data-db-folder/48560341#48560341
+  To run mongo with brew service (start and stop):
+
+    brew services run mongodb/brew/mongodb-community
+    brew services stop mongodb/brew/mongodb-community
+
+  The following will start background service and add to your login:
+
+    brew services start mongodb/brew/mongodb-community
+
+
+
+
+
+This is previous instruction
+============================
+  installation with brew:
+
+    brew tap mongodb/brew
+    brew install mongodb-community@4.2
+
+  Start background service and add to your login
+
+    brew services start mongodb-community@4.2
+
+  -----
+  ref:
+    https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+    https://stackoverflow.com/questions/7948789/mongod-complains-that-there-is-no-data-db-folder/48560341#48560341
 
 
