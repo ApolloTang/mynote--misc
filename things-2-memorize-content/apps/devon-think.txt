@@ -1,0 +1,2 @@
+
+[cmd][opt][o]   Open selected file in tab
