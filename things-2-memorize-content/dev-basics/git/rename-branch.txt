@@ -2,6 +2,16 @@
 Renaming a branch on local and remote
 =====================================
 
+  tl;dr;
+  ------
+  % git branch -m old_branch_name new_branch_name   ## Rename branch locally
+  % git push --set-upstream origin new_branch_name  ## Push the new branch and track it on remote
+  % git push origin :old_branch_name                ## Delete the old branch on remote
+
+
+  longer version bellow:
+  ----------------------
+
   ## Rename branch locally
 
     % git branch -m old_branch_name new_branch_name
