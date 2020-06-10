@@ -38,7 +38,7 @@ tag
   git tag -d <tagName>
     # delete a local tag
 
-  git tag --delete origin <tagname>
+  git push --delete origin <tagname>
     # delete a remote tag
 
 
