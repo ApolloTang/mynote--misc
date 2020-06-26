@@ -12,27 +12,32 @@ Renaming a branch on local and remote
   longer version bellow:
   ----------------------
 
-  ## Rename branch locally
+  Rename branch locally
 
     % git branch -m old_branch_name new_branch_name
 
-  ## But the remote branch track by the branch with new name is still the old_branch_name
+  But the remote branch track by the branch with new name is still the old_branch_name
 
     % git branch -vv | grep new_branch_name
       * new_branch_name      1b265ab4 [origin/old_branch_name] <most recent commit message>
 
-  ## Create a new branch on remote, and set it as the remote tracking branch
+  Create a new branch on remote, and set it as the remote tracking branch
 
     % git push --set-upstream origin new_branch_name
 
-  ## Verify that the branch track by the local branch is now the one with new name
+  Verify that the branch track by the local branch is now the one with new name
 
     % git branch -vv | grep new_branch_name
       * new_branch_name      1b265ab4 [origin/new_branch_name] <most recent commit message>
 
-  ## delete the old branch on remote
+  Delete the old branch on remote
 
     % git push origin :old_branch_name
+
+
+  Note: you can also untract the remote branch with:
+
+    % git branch --unset-upstream
 
   ---
   reference:
