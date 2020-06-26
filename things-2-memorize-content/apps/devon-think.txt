@@ -1,2 +1,15 @@
 
-[cmd][opt][o]   Open selected file in tab
+Open selected items in tabs (keyboard):
+
+    [opt][cmd][o]
+
+Open selected items in tabs (mouse, via context menu):
+
+   ( right click selected ) > ( hold down [opt] ) > ( left click "open in tabs" )
+
+Open selected items in tabs (mouse, via menu):
+
+   ( data ) > ( hold down [opt] ) > ( click "open in tabs" )
+
+
+
