@@ -11,6 +11,13 @@
   brew services start redis  // will start the redis service and add it at login and boot.
 
 
+==============================
+  check if redis is working
+==============================
+
+  $ redis-cli ping
+  PONG
+
 -----
 
 [1] https://stackoverflow.com/questions/6910378/how-can-i-stop-redis-server
