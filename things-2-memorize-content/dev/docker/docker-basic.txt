@@ -1,19 +1,51 @@
 
-docker pull \<images-name>:\<version> : pulls image from Docker registry
-docker ps                             : shows all running containers
-docker ps -a                          : shows all available containers
-docker exec                           : executes a command in a running container
-docker run \<images-name>:\<version>  : create container from mentioned image
-docker start \<images-name>:\<version>: restart a container
+house keeping
+=============
+  docker pull <images-name>:<version>  : pulls image from Docker registry
+  docker images                        : lists the Docker images on your system
 
-  $docker run -it <container name> <command to execute in the container>
-  $docker run -it <container id> <command to execute in the container>
+  docker ps                            : shows all running containers
+  docker ps -a                         : shows all available containers (including the runnings)
 
-    options:
-      i  interactive mode
-      t  pseudo tty terminal
+  docker rm CONTAINER1 [CONTAINER2]... : remove container
+  docker rmi IMAGE                     : remove image
 
-    eg:
-        $ docker run -it python:3.5 bash
+  tips:
+  ----
+    docker ps -a -q -f status=exited
 
-$docker commit -m "<commit message>" <container_id/name> <new_image_name>:<version>
+      The above displays only the numeric IDs of exited containers
+      -q is short for --quiet,
+      -f is short for --filter, filter condition is status=exited
+
+    docker rm $(docker ps -a -q -f status=exited)
+
+      The above remove all exited containers
+
+
+
+create, start, run, exec
+========================
+  docker create = create a new container from image
+  docker start  = get a container to run
+
+  docker run = docker create + docker start + docker attach.
+    Without attach, the started container runs in the background
+
+  docker exec = executes a command in an already running container
+    you must provide a command you want to run in the container
+
+    $docker run -it <container name/id> <command to execute in the container>
+
+      options:
+        i  interactive mode
+        t  pseudo tty terminal
+
+      eg:
+          $ docker run -it python:3.5 bash
+
+commiting
+=========
+  $docker commit -m "<commit message>" <container_id/name> <new_image_name>:<version>
+
+
