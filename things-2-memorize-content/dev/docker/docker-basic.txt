@@ -1,0 +1,19 @@
+
+docker pull \<images-name>:\<version> : pulls image from Docker registry
+docker ps                             : shows all running containers
+docker ps -a                          : shows all available containers
+docker exec                           : executes a command in a running container
+docker run \<images-name>:\<version>  : create container from mentioned image
+docker start \<images-name>:\<version>: restart a container
+
+  $docker run -it <container name> <command to execute in the container>
+  $docker run -it <container id> <command to execute in the container>
+
+    options:
+      i  interactive mode
+      t  pseudo tty terminal
+
+    eg:
+        $ docker run -it python:3.5 bash
+
+$docker commit -m "<commit message>" <container_id/name> <new_image_name>:<version>

@@ -1,0 +1,21 @@
+
+How to findout docker user info?
+================================
+
+% brew install jq  #[1]
+
+% docker-credential-desktop list | \
+    jq -r 'to_entries[].key'   | \
+    while read; do
+        docker-credential-desktop get <<<"$REPLY";
+    done
+
+the above command will show:
+{"ServerURL":"https://index.docker.io/v1/","Username":"USERNAME","Secret":"PASSWORD"}
+
+
+ref:
+[1] https://stackoverflow.com/questions/37668134/how-to-install-jq-on-mac-by-command-line
+[2] https://stackoverflow.com/questions/29326721/is-there-a-way-to-get-the-docker-hub-username-of-the-current-user
+
+
