@@ -6,12 +6,14 @@ house keeping
 
   docker ps                            : shows all running containers
   docker ps -a                         : shows all available containers (including the runnings)
+                                       : note, docker ps -a = docker container ls -a
 
+  docker stop CONTAINER                : stop a running container
   docker rm CONTAINER1 [CONTAINER2]... : remove container
   docker rmi IMAGE                     : remove image
 
   tips:
-  ----
+  -----
     docker ps -a -q -f status=exited
 
       The above displays only the numeric IDs of exited containers
@@ -21,6 +23,10 @@ house keeping
     docker rm $(docker ps -a -q -f status=exited)
 
       The above remove all exited containers
+
+    docker rm $(docker stop $(docker ps -q))
+
+      The above stops and removes all running containers
 
 
 

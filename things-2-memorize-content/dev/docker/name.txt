@@ -1,4 +1,19 @@
 
-  --publish host:container
+  -p host:container
 
+    The above is short for --publish host:container
+
+      host     : port publish outside container
+      container: port inside container
+
+  Eg:
+
+    docker run -p 9090:8080 --rm --name kitura -d ibmcom/kitura-ubuntu
+
+      The above run the container called ibmcom/kitura-ubuntu
+
+        -d            : run the container in background, short for --detash.
+        --name kitura : specifies the container name as kitura.
+        -p 9090:8080  : map the internal 8080 to outside 9090.
+        --rm          : will remove the container when it is stoped.
 
