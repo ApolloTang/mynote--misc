@@ -1,30 +1,33 @@
 
 house keeping
 =============
-  docker pull <images-name>:<version>  : pulls image from Docker registry
-  docker images                        : lists the Docker images on your system
 
-  docker ps                            : shows all running containers
-  docker ps -a                         : shows all available containers (including the runnings)
-                                       : note, docker ps -a = docker container ls -a
+  $ docker pull IMAGE:TAG  # pulls image from Docker registry
 
-  docker stop CONTAINER                : stop a running container
-  docker rm CONTAINER1 [CONTAINER2]... : remove container
-  docker rmi IMAGE                     : remove image
+  $ docker images          # lists the Docker images on your system
+
+  $ docker ps              # shows all running containers
+  $ docker ps -a           # shows all available containers (including the runnings)
+                         # NOTE "docker ps" is short "docker container ls"
+
+  $ docker stop CONTAINER                # stop a running container
+  $ docker rm CONTAINER1 [CONTAINER2]... # remove container
+  $ docker rmi IMAGE                     # remove image
 
   tips:
   -----
-    docker ps -a -q -f status=exited
+
+    $ docker ps -a -q -f status=exited
 
       The above displays only the numeric IDs of exited containers
       -q is short for --quiet,
       -f is short for --filter, filter condition is status=exited
 
-    docker rm $(docker ps -a -q -f status=exited)
+    $ docker rm $(docker ps -a -q -f status=exited)
 
       The above remove all exited containers
 
-    docker rm $(docker stop $(docker ps -q))
+    $ docker rm $(docker stop $(docker ps -q))
 
       The above stops and removes all running containers
 
@@ -32,26 +35,95 @@ house keeping
 
 create, start, run, exec
 ========================
-  docker create = create a new container from image
-  docker start  = get a container to run
 
-  docker run = docker create + docker start + docker attach.
-    Without attach, the started container runs in the background
+  $ docker create    # create a new container from image
+  $ docker start     # get a container to run
 
-  docker exec = executes a command in an already running container
-    you must provide a command you want to run in the container
+  $ docker run       # = docker create + docker start + docker attach.
+                   # Without attach, the started container runs in
+                   # the background
 
-    $docker run -it <container name/id> <command to execute in the container>
+  $ docker exec      # executes a command in an already running container
+                   # you must provide a command you want to run
+                   # in the container
+
+    $ docker run -it CONTAINER <command to execute in the container>
 
       options:
-        i  interactive mode
-        t  pseudo tty terminal
+        -i  interactive mode
+        -t  pseudo tty terminal
 
-      eg:
-          $ docker run -it python:3.5 bash
+      Example:
 
-commiting
-=========
-  $docker commit -m "<commit message>" <container_id/name> <new_image_name>:<version>
+        $ docker run -it python:3.5 bash
+          > root@12df4d6fab05:/# apt update
+          > root@12df4d6fab05:/# apt install nano
+          > root@12df4d6fab05:/# cat > today_date.py
+            from datetime import datetime
+            print("Today's date is "+ datetime.utcnow().strftime("%Y-%m-%d"))
+            ^D
+          > root@12df4d6fab05:/# python today_date.py
+            Today's date is 2020-09-13
+
+          > root@12df4d6fab05:/# exit
+
+        $ docker ps -a
+        CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS    .....
+        12df4d6fab05        python:3.5              "bash"                   8 minutes ago       Exited (0).....
+
+
+commit, tag, push
+==================
+
+  $ docker commit -m "MESSAGE" CONTAINER  NEW_IMAGE_NAME:TAG
+  $ docker login
+  $ docker tag IMAGE:TAG DOCKER_USERID/IMAGE:TAG
+  $ docker push
+
+
+  Example (continue from above):
+
+    $ docker ps -a
+    CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS    .....
+    12df4d6fab05        python:3.5              "bash"                   8 minutes ago       Exited (0).....
+    ....
+
+    $ docker commit -m "Added today's date file" 12d date_project:1.0
+    sha256:53909f9d7a5f9ece9b19b4f6e7fc1c5c221bbb82e4ea060b5794a4448317252c
+
+    $ docker images
+    REPOSITORY             TAG                 IMAGE ID            CREATED              SIZE
+    date_project           1.0                 53909f9d7a5f        About a minute ago   893MB
+    python                 3.5                 3687eb5ea744        3 days ago           871MB
+    .....
+
+    $ docker login
+    Authenticating with existing credentials...
+    Login Succeeded
+
+    $ docker tag date_project:1.0 apollotang/date_project:1.0
+
+    % docker images
+    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+    apollotang/date_project   1.0                 53909f9d7a5f        4 minutes ago       893MB
+    date_project              1.0                 53909f9d7a5f        4 minutes ago       893MB
+    python                    3.5                 3687eb5ea744        3 days ago          871MB
+    ....
+
+    $ docker push apollotang/date_project:1.0
+    The push refers to repository [docker.io/apollotang/date_project]
+    a412e4d527ec: Pushed
+    95d78f868723: Mounted from library/python
+    .....
+    1.0: digest: sha256:b4a10351aa3f7a39c1c8d639b8134aedb93450edf03f1aa65c1f86e8780fca1d size: 2429
+
+  Now you can pull the above image on another computer:
+
+    $ docker pull apollotang/date_project:1.0
+
+
+
+
+
 
 
