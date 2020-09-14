@@ -1,0 +1,52 @@
+Bind mount
+===========
+
+  In bind mount, we use a host filesysm and mount it on the container
+  with run command's -v flag:
+
+    $ docker run -it -v /Users/apollotang/Desktop/:/desktop apollotang/date_project:1.0
+
+      The above will run the image "apollotang/date_project:1.0" and
+      mount host's file system with path "/Users/apollotang/Desktop/"
+      to internal folder "/desktop".
+      Note there is no need to use the command 'bash'.
+
+
+    $ docker run -it -v /Users/apollotang/Desktop/:/desktop:ro apollotang/date_project:1.0
+                                                            ^^
+      The "ro" flag mount the volume as readonly
+
+Volume
+=======
+
+  Docker volumes are mostly created to share data within different
+  containers, rather than sharing data with host and container.
+
+    $ docker volume create project_directory
+
+  To inspect property of a created volume:
+
+    $ docker volume inspect project_directory
+      [
+          {
+              "CreatedAt": "2020-09-14T05:10:22Z",
+              "Driver": "local",
+              "Labels": {},
+              "Mountpoint": "/var/lib/docker/volumes/project_directory/_data",
+              "Name": "project_directory",
+              "Options": {},
+              "Scope": "local"
+          }
+      ]
+
+  You can see the mount point, however you cannot access it directly:
+
+    $ cd /var/lib/docker/volumes/project_directory
+    -bash: cd: /var/lib/docker/volumes/project_directory: No such file or directory
+
+  To run a container using this volume:
+
+    $ docker run -it -v project_directory:/project apollotang/date_project:1.0
+
+
+
