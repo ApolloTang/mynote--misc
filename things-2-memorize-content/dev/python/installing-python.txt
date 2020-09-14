@@ -1,0 +1,10 @@
+installing pyhton
+==================
+  read this:
+  https://opensource.com/article/19/5/python-3-default-mac
+
+installing pip
+===============
+
+  pip is now pip3
+  https://stackoverflow.com/questions/17271319/how-do-i-install-pip-on-macos-or-os-x
