@@ -8,7 +8,7 @@ house keeping
 
   $ docker ps              # shows all running containers
   $ docker ps -a           # shows all available containers (including the runnings)
-                         # NOTE "docker ps" is short "docker container ls"
+                           # NOTE "docker ps" is short "docker container ls"
 
   $ docker stop CONTAINER                # stop a running container
   $ docker rm CONTAINER1 [CONTAINER2]... # remove container
@@ -32,6 +32,15 @@ house keeping
       The above stops and removes all running containers
 
 
+more house keeping
+===================
+
+    $ docker system  # Gets the Docker system information such
+                     # as memory usage and housekeeping stuff
+
+    $ docker system prune   # free up memory
+
+
 
 create, start, run, exec
 ========================
@@ -40,12 +49,12 @@ create, start, run, exec
   $ docker start     # get a container to run
 
   $ docker run       # = docker create + docker start + docker attach.
-                   # Without attach, the started container runs in
-                   # the background
+                     # Without attach, the started container runs in
+                     # the background
 
   $ docker exec      # executes a command in an already running container
-                   # you must provide a command you want to run
-                   # in the container
+                     # you must provide a command you want to run
+                     # in the container
 
     $ docker run -it CONTAINER <command to execute in the container>
 
