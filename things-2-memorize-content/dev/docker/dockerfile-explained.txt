@@ -1,4 +1,7 @@
 
+Explaining DockerFile with an example:
+======================================
+
 First we check out a project:
 
   $ git clone https://github.com/venky8283/Docker.git
@@ -42,7 +45,7 @@ The content of the DockerFile is:
 
 Note the different between RUN command and CMD command:
 
-  The "RUN" instruction will execute any commands in a new layer
+  The "RUN" instruction execute a commands in a new layer
   on top of the current image and commit the results.
   The resulting committed image will be used for the next step
   in the Dockerfile.
@@ -58,8 +61,8 @@ To run the app in the containers:
 
 In the above the project folder and docker is isolated
 so if you update the source code you have to rebuild the image.
-But you can use Bind Mount to sync code in host to code in
-conatainer:
+But you can use Bind Mount (-v) to sync code in host to code
+in conatainer:
 
   $ docker run -v /abs/path/to/repo/proj/folder:/code -p 5001:5000 flask_app:1.0
 
