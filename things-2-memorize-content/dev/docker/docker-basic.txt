@@ -131,40 +131,6 @@ commit, tag, push
     $ docker pull apollotang/date_project:1.0
 
 
-docker attach
-==============
-
-  In term1, the following will create a container based on an image
-  called busybox.
-
-    $ docker run -it --name mybusybox busybox sh
-
-  The above create an interactive tty terminal is created in term1, and
-  if you type "exist" you will stop container mybusybox.
-
-  You can detach mybusybox in the interactive tty with the key sequence:
-
-    CTRL-p CTRL-q.
-
-  This give you back the term1's promp. To reattach mybusybox and
-  get back to the interactive tty, type:
-
-    $ docker attach mybusybox
-
-  Note that the above is different from "docker exec". To illustrate
-  this, in another terminal (term2) do:
-
-    $ docker exec -it mybusybox sh
-
-  This will create a new "sh" process in mybusybox. If you exit this
-  "sh" process, mybusybox will not stop; you simply stop the new "sh"
-  process.
-
-  Ref:
-  https://stackoverflow.com/questions/30960686/difference-between-docker-attach-and-docker-exec
-
-
-
 
 
 

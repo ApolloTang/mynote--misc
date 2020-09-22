@@ -1,0 +1,51 @@
+
+docker attach
+==============
+
+  In term1 create a container based on the busybox image:
+
+    $ docker run -it busybox sh
+
+  with the above, your terminal prompt is replaced by the container
+  shell's prompt.
+
+  If you type "exist" you will stop container and get
+  your original terminal prompt back.
+
+  Now create another instant of busybox instant again. This time
+  instead of typeing "exist", use the container's key sequence:
+
+    CTRL-p CTRL-q.
+
+  You can get your original terminal prompt back, but the container
+  is not stop, it is running in the background.
+
+  To reattach your container use "docker ps" to get your running
+  container id, and type:
+
+    $ docker attach <container id>
+
+  Note that the above is different from "docker exec". To illustrate
+  this, in another terminal (term2) do:
+
+    $ docker exec -it <container id> sh
+
+  This will create a new sh process in your running container.
+  If you "exit" this sh process, your container will not stop;
+  you simply stop the new sh process.
+
+  Ref:
+  https://stackoverflow.com/questions/30960686/difference-between-docker-attach-and-docker-exec
+
+
+
+
+
+
+
+
+
+
+
+
+
