@@ -54,3 +54,19 @@ upgrade with url
 
   brew update && brew upgrade
   brew uninstall openssl; brew install https://github.com/tebelorg/Tump/releases/download/v1.0.0/openssl.rb
+
+
+=========================
+where formula is linked
+=========================
+
+    brew unlink <formulae> --dry-run
+
+  To get more info about the links:
+
+    brew unlink <formulae> --dry-run | xargs ls -l
+
+   [Ref] https://superuser.com/questions/874617/how-do-i-find-out-where-brew-links-end-up
+
+
+
