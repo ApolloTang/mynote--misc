@@ -1,21 +1,77 @@
+============
+Brew Basic
+============
 
-  • Never run brew as sudo:
-      Not "sudo brew install" nor "sudo brew link".
+--------
+Formula
+--------
 
-  • Change /usr/local/* to be owned by $USER, not root:
-      $ sudo chown -R $USER /usr/local/*
-    That way you can have write permissions and not need sudo.
+A "formula" is a package definition written in Ruby [1].
 
-  • Homebrew installs packages (Keg) to Cellar
-      /usr/local/Cellar/
-    and then symlinks the packages into
-     /usr/local/
+-------
+Cellar
+-------
 
-  • The $PATH entry for
-      /usr/local/bin
-    should occur before
-      /usr/bin
+Formulae are installed in the "Cellar" [2].
 
-  Ref:
-    http://rkulla.blogspot.com/2014/03/the-path-to-homebrew.html
-    https://apple.stackexchange.com/questions/1393/are-my-permissions-for-usr-local-correct
+  /usr/local/Cellar/
+
+Example:
+
+  /usr/local/Cellar/elasticsearch/5.2.2
+  /usr/local/Cellar/elasticsearch@1.7/1.7.6_1
+
+-------------
+non-keg-only
+-------------
+
+A "non-keg-only" formulae are linked into place such as "/usr/local/bin"
+or "/usr/local/lib" with "brew link" [3]. For example
+
+  /usr/local/bin/elasticsearch -> ../Cellar/elasticsearch/5.2.2/bin/elasticsearch
+
+You can also see this by running [4][5]:
+
+  $ brew link node --dry-run
+  Would link:
+  /usr/local/etc/bash_completion.d/npm
+  /usr/local/bin/node
+  /usr/local/include/node
+  /usr/local/share/doc/node
+  /usr/local/share/man/man1/node.1
+  /usr/local/share/systemtap/tapset/node
+
+By default "/usr/local/bin" is in your PATH and you should set it up
+so that it is search before before "/usr/bin" [6].
+
+---------
+keg-only
+---------
+
+A "keg-only" fomulae does not linked into "Homebrew prefix" [8]
+That means other software that depends on it has to specify a
+full path to "/usr/local/Cellar" [3].
+
+-----------------
+/usr/local/opt
+-----------------
+
+Alternative, rather then pointing a dependency path to "/usr/local/Cellar"
+you can point to the dependency in "/usr/local/opt/" [9] because all
+formulae install in Cellar are opt-linked [2]. Examples:
+
+  /usr/local/opt/elasticsearch -> ../Cellar/elasticsearch/5.2.2
+  /usr/local/opt/elasticsearch@1.7 -> ../Cellar/elasticsearch@1.7/1.7.6_1
+
+
+-------
+Ref:
+  [1] https://docs.brew.sh/Formula-Cookbook#homebrew-terminology
+  [2] https://github.com/Homebrew/homebrew-core/issues/11091#issuecomment-286641024
+  [3] https://stackoverflow.com/questions/17015285/understand-homebrew-and-keg-only-dependencies
+  [4] https://superuser.com/questions/874617/how-do-i-find-out-where-brew-links-end-up
+  [5] https://github.com/Homebrew/brew/blob/master/docs/FAQ.md#can-i-install-my-own-stuff-to-usrlocal
+  [6] http://rkulla.blogspot.com/2014/03/the-path-to-homebrew.html
+  [8] https://github.com/Homebrew/brew/blob/master/docs/FAQ.md#what-does-keg-only-mean
+  [9] https://stackoverflow.com/questions/35337601/why-is-there-a-usr-local-opt-directory-created-by-homebrew-and-should-i-use-it
+

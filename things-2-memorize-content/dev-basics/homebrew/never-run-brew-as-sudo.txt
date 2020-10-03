@@ -1,0 +1,14 @@
+
+  • Never run brew as sudo:
+      Not "sudo brew install" nor "sudo brew link". [1][2]
+
+  • Change /usr/local/* to be owned by $USER, not root [2]:
+      $ sudo chown -R $USER /usr/local/*
+    That way you can have write permissions and not need sudo.
+
+  Ref:
+    [1] http://rkulla.blogspot.com/2014/03/the-path-to-homebrew.html
+    [2] https://docs.brew.sh/FAQ#why-does-homebrew-say-sudo-is-bad
+  Additional Ref:
+    [3] https://apple.stackexchange.com/questions/1393/are-my-permissions-for-usr-local-correct
+
