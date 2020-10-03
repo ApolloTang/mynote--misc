@@ -75,3 +75,5 @@ Ref:
   [8] https://github.com/Homebrew/brew/blob/master/docs/FAQ.md#what-does-keg-only-mean
   [9] https://stackoverflow.com/questions/35337601/why-is-there-a-usr-local-opt-directory-created-by-homebrew-and-should-i-use-it
 
+Additional Ref:
+  https://discourse.brew.sh/t/why-linking-keg-only-formulae-requires-force-option-in-homebrew/2435
