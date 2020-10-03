@@ -1,0 +1,21 @@
+
+  • Never run brew as sudo:
+      Not "sudo brew install" nor "sudo brew link".
+
+  • Change /usr/local/* to be owned by $USER, not root:
+      $ sudo chown -R $USER /usr/local/*
+    That way you can have write permissions and not need sudo.
+
+  • Homebrew installs packages (Keg) to Cellar
+      /usr/local/Cellar/
+    and then symlinks the packages into
+     /usr/local/
+
+  • The $PATH entry for
+      /usr/local/bin
+    should occur before
+      /usr/bin
+
+  Ref:
+    http://rkulla.blogspot.com/2014/03/the-path-to-homebrew.html
+    https://apple.stackexchange.com/questions/1393/are-my-permissions-for-usr-local-correct
