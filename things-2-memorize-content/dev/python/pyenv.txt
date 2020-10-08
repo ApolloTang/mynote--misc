@@ -1,0 +1,11 @@
+to read on pyenv
+
+https://medium.com/faun/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
+https://medium.com/faun/pyenv-multi-version-python-development-on-mac-578736fb91aa
+
+https://opensource.com/article/19/6/python-virtual-environments-mac
+https://github.com/pyenv/pyenv#installation
+
+https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe
+
+

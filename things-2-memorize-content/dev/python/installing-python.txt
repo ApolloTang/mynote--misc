@@ -2,9 +2,15 @@ installing pyhton
 ==================
   read this:
   https://opensource.com/article/19/5/python-3-default-mac
+  https://medium.com/faun/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
+  https://docs.brew.sh/Homebrew-and-Python
+
 
 installing pip
 ===============
 
   pip is now pip3
+
+  https://medium.com/faun/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
   https://stackoverflow.com/questions/17271319/how-do-i-install-pip-on-macos-or-os-x
+  https://stackoverflow.com/questions/48014769/pip3-command-not-found

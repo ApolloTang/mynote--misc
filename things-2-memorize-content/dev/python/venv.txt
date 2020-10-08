@@ -1,0 +1,7 @@
+
+
+  mkdir my-python-project
+  cd my-python-project
+
+
+creates a subdirectory called .venv that contains the virtual environment.
