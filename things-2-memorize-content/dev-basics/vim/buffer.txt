@@ -2,3 +2,6 @@
 :bufdo! bd   - deletes all buffers except those with unwritten changes.
 :bufdo! bw   - like bd, but "really" delete the buffer (help :bw).
 
+:sba        - open all buffer in horizonal split
+:vert sba   - open all buffer in vertical split
+
