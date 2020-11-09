@@ -1,4 +1,5 @@
 
+https://learnbyexample.github.io/learn_gnugrep_ripgrep/ripgrep.html
 
 Basic syntax:
 =============
