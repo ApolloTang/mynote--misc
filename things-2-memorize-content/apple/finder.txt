@@ -1,0 +1,11 @@
+
+Mac Alias:
+----------
+
+  To create alias:
+    [cmd][opt]-(drag file or folder to destination)
+
+  If you move the original file to a new location, the alias follows
+  it and is still linked to it. (This is unlike symbolic link, if
+  you move the original file it is no longer linked.)
+
