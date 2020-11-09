@@ -2,6 +2,16 @@
 :bufdo! bd   - deletes all buffers except those with unwritten changes.
 :bufdo! bw   - like bd, but "really" delete the buffer (help :bw).
 
-:sba        - open all buffer in horizonal split
-:vert sba   - open all buffer in vertical split
+
+:sba        - open all buffer in horizontal split [1]
+:vert sba   - open all buffer in vertical split [1]
+
+:new      - new empthy buffer in horizontal split [2]
+:vnew     - new empthy buffer in vertical split [2]
+
+ref:
+[1] https://superuser.com/questions/323781/how-do-i-open-separate-tabs-windows-for-all-buffers-in-vim
+[2] https://superuser.com/questions/212257/how-do-i-open-a-blank-new-file-in-a-split-in-vim
+----
+
 
