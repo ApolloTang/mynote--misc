@@ -18,30 +18,6 @@ fetch all branches
 
 
 
-tag
-=======
-
-  git tag [-l <pattern>]
-    # list tag with pattern
-
-  git tag <tagName>
-    # create a tag on current branch
-
-  git push origin <tagName>
-
-  git push origin --tags
-    # push all tags to origin
-
-  git co tags/<tagName>
-    # check out a tag
-
-  git tag -d <tagName>
-    # delete a local tag
-
-  git push --delete origin <tagname>
-    # delete a remote tag
-
-
 
 basic old cli command
 =====================
