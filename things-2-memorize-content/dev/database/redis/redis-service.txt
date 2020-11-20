@@ -11,12 +11,8 @@
   brew services start redis  // will start the redis service and add it at login and boot.
 
 
-==============================
-  check if redis is working
-==============================
 
-  $ redis-cli ping
-  PONG
+
 
 -----
 

@@ -1,0 +1,29 @@
+Link to reference:
+
+  https://redis.io/commands
+
+Start CLI:
+
+  $ redis-cli
+
+Check if redis is working:
+
+  $ redis-cli ping
+  PONG
+
+List all key:
+
+  > keys <pattern>
+
+    eg: keys * #/ list all key
+
+Query the content type of a key:
+
+  > type "<key>"
+
+Query the content of a key (type string):
+
+  > get "<key>"
+
+
+
