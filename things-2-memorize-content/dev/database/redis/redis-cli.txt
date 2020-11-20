@@ -13,7 +13,9 @@ Check if redis is working:
 
 List all key:
 
-  > keys
+  > keys <pattern>
+
+    eg: keys * #/ list all key
 
 Query the content type of a key:
 
