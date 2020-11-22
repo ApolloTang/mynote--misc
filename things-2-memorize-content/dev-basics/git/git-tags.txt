@@ -26,7 +26,7 @@ tag
 Missing tag
 ===========
 
-  tags on untrack brand are not fetched automatically,
+  Tags on untrack brand are not fetched automatically,
   to fetch these track use:
 
     git fetch --tags [--verbose]
@@ -36,6 +36,9 @@ Missing tag
     git fetch --tags --all
 
   "--all" means "all remotes" (i.e. origin and upstream)
+
+  ref: https://stackoverflow.com/questions/15794378/git-missing-tags-after-pull
+
 
 
 
