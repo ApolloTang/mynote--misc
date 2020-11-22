@@ -1,0 +1,16 @@
+
+preview
+=======
+
+  com-d      book mark
+  opt-com-5  show book mark list
+
+  ctr-com-h  high light
+
+  opt-com-1  hide sidebar
+  opt-com-3  show toc
+
+
+
+
+
