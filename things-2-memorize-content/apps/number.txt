@@ -1,3 +1,4 @@
 
+[shf][cmd][v]  paste formular result
 [opt][ret]     edit a cell
 [ctl][ret]     add newline in a cell
