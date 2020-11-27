@@ -1,6 +1,12 @@
 // @ts-nocheck   <-- deprecated
 // @ts-ignore
 
+------
+ignore a block
+
+  At the point (2020.11.27) you cannot
+  ref: https://github.com/Microsoft/TypeScript/issues/19573
+
 
 Work around to ignore TSX error in jsx property
 ===============================================
