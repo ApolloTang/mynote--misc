@@ -1,0 +1,8 @@
+
+
+Hit qa to record keystrokes to register a,
+hit q when you’re finished,
+hit @a to play the macro in register a
+and @@ to repeat the last macro.
+
+
