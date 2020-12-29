@@ -1,0 +1,12 @@
+
+  T | never   => T
+  T & unknown => T
+
+  T | any     => any
+  T | unknown => unknown
+
+Ref:
+https://blog.logrocket.com/when-to-use-never-and-unknown-in-typescript-5e4d6c5799ad/
+
+--- eof ---
+
