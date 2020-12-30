@@ -1,3 +1,7 @@
+Ref link to keyboard shortcut
+https://support.omnigroup.com/documentation/omnioutliner/ios/3.0/en/keyboard-shortcuts/#keyboard-shortcuts
 
-
-[ctrl][return]   Splitting row contents to make 2 rows
+[ctr][ret]       Splitting row contents to make 2 rows
+[shf][ret]       add a blank line above
+[ctr][cmd][->]   Indent
+[ctr][cmd][<-]   outdant
