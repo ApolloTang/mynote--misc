@@ -35,6 +35,12 @@ Installation global
   $ yarn global add prettier
   $ npm install --global prettier
 
+  ::NOTE::
+  I am not sure which node version is yarn global package dependended
+  on, but it is safe to say npm global is dependended on the nvm's node
+  version. This is b/c npm global is install under the '.nvm' directory.
+  Base on this I would install global package with npm.
+
 
 Get info of a package
 =====================
