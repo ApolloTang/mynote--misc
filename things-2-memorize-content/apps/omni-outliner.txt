@@ -1,7 +1,35 @@
 Ref link to keyboard shortcut
-https://support.omnigroup.com/documentation/omnioutliner/ios/3.0/en/keyboard-shortcuts/#keyboard-shortcuts
 
-[ctr][ret]       Splitting row contents to make 2 rows
-[shf][ret]       add a blank line above
+Selection
+=========
+
+  Select current row
+    [cmd][ret]
+
+  Leave selection mode (enter edit mode)
+    [e]
+
+  Add above/below row to selection
+    [shf] + [up-arrow][down-arrow]
+
+  Move selected
+    [ctr][cmd][arrow keys]
+
+-----------------
+
+Collaps/expand current
+  [cmd]+ [0]/[9]
+
+Split/join row:
+  [ctr] + [ret]/[back]
+
+[shf][ret]        blank line above
+     [ret]        blank line bellow
+
 [ctr][cmd][->]   Indent
 [ctr][cmd][<-]   outdant
+
+[opt][ret]    insert line break
+
+
+
