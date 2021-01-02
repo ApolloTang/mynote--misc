@@ -1,0 +1,37 @@
+
+Actual and Formal
+=================
+
+  function foo(  'formal-parameters' ) { };
+
+  foo( 'actual-arguements' );
+
+
+  ----
+  Ref:
+    https://stackoverflow.com/a/51231722/3136861
+    https://en.wikipedia.org/wiki/Parameter_(computer_programming)
+
+
+Lexicographical order
+=====================
+
+  First the two list heads are compared, and if they’re equal, the
+  second elements are compared. If the second elements are also
+  equal, the third elements are compared, and so on, until differing
+  elements are found. The order of the two lists is determined by
+  the order of the ﬁrst pair of differing elements.
+
+  Eg in Haskell:
+
+    When evaluate [3,4,2] < [3,4,3], Haskell sees that 3 and 3 are
+    equal, so it compares 4 and 4. Those two are also equal, so
+    it compares 2 and 3. 2 is smaller than 3, so it comes to the
+    conclusion that the ﬁrst list is smaller than the second one.
+
+  ---
+  Ref: learn you a haskell for great good.
+
+
+
+

@@ -1,0 +1,109 @@
+Different between login shell and interactive shell:
+
+  Login shells:
+
+    Shells that prompt the user for user credentials.
+    eg: when you connect to a remote computer with ssh, the remote
+        system will ask for user credentials.
+
+  Interactive shells:
+
+    Eg: When you open an interactive virtual terminal application,
+        it does not prompt for credentials.
+
+  The need for separation between login and interactive:
+
+    Users would usually log in once, and then might create multiple
+    interactive shells from that login session.
+    You could have one-time 'expensive' configurations in the login
+    session, and repeated less resource intensive configurations
+    for the interactive sessions.
+
+Meaning of Login and Interactive shell in OSX
+
+  When user opens Terminal.app, there is no login session, it
+  does not prompt user for user credentials. However, OSX treats
+  every launching of a new terminal or terminal tab a login shell.
+
+  Once you are in the terminal subshells (like running bash) OSX treats
+  shells as interactive.
+
+So for Bash the reading sequences are:
+
+  +----------------+-----------+-----------+------+
+  |                |Interactive|Interactive|Script|
+  |                |login      |non-login  |      |
+  +----------------+-----------+-----------+------+
+  |/etc/profile    |   A       |           |      |
+  +----------------+-----------+-----------+------+
+  |/etc/bash.bashrc|           |    A      |      |
+  +----------------+-----------+-----------+------+
+  |~/.bashrc       |           |    B      |      |
+  +----------------+-----------+-----------+------+
+  |~/.bash_profile |   B1      |           |      |
+  +----------------+-----------+-----------+------+
+  |~/.bash_login   |   B2      |           |      |
+  +----------------+-----------+-----------+------+
+  |~/.profile      |   B3      |           |      |
+  +----------------+-----------+-----------+------+
+  |BASH_ENV        |           |           |  A   |
+  +----------------+-----------+-----------+------+
+  |                |           |           |      |
+  +----------------+-----------+-----------+------+
+  |                |           |           |      |
+  +----------------+-----------+-----------+------+
+  |~/.bash_logout  |    C      |           |      |
+  +----------------+-----------+-----------+------+
+
+For Zsh the reading sequences are:
+
+  +----------------+-----------+-----------+------+
+  |                |Interactive|Interactive|Script|
+  |                |login      |non-login  |      |
+  +----------------+-----------+-----------+------+
+  |/etc/zshenv     |    A      |    A      |  A   |
+  +----------------+-----------+-----------+------+
+  |~/.zshenv       |    B      |    B      |  B   |
+  +----------------+-----------+-----------+------+
+  |/etc/zprofile   |    C      |           |      |
+  +----------------+-----------+-----------+------+
+  |~/.zprofile     |    D      |           |      |
+  +----------------+-----------+-----------+------+
+  |/etc/zshrc      |    E      |    C      |      |
+  +----------------+-----------+-----------+------+
+  |~/.zshrc        |    F      |    D      |      |
+  +----------------+-----------+-----------+------+
+  |/etc/zlogin     |    G      |           |      |
+  +----------------+-----------+-----------+------+
+  |~/.zlogin       |    H      |           |      |
+  +----------------+-----------+-----------+------+
+  |                |           |           |      |
+  +----------------+-----------+-----------+------+
+  |                |           |           |      |
+  +----------------+-----------+-----------+------+
+  |~/.zlogout      |    I      |           |      |
+  +----------------+-----------+-----------+------+
+  |/etc/zlogout    |    J      |           |      |
+  +----------------+-----------+-----------+------+
+
+To keep things simple, these are the setup you need:
+
+  For bash, put customizations in ~/.bashrc, and make ~/.bash_profile
+  source it.
+
+  For zsh, put customization in ~/.zshrc, which is always executed
+  (there is no need for ~/.zprofile).
+
+---
+Ref:
+
+  https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
+  https://www.erikstockmeier.com/blog/12-5-2019-shell-startup-scripts
+  https://wilsonmar.github.io/zsh/
+  Moving to zsh by Armin Briegel
+
+
+
+
+
+
