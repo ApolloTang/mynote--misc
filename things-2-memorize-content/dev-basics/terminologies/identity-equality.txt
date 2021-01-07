@@ -1,0 +1,14 @@
+
+Identical
+==========
+  It is 'identical' if memory location is the same.
+
+Equality
+========
+  The values store in two different location has same value.
+
+---
+Ref:
+https://stackoverflow.com/a/1692880/3136861
+
+--- EOF ---
