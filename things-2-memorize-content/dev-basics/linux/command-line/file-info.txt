@@ -1,0 +1,12 @@
+
+Count lines in large files
+--------------------------
+  sed -n '$=' filename
+  wc -l filename
+  Ref [1]
+
+
+---
+[1] https://stackoverflow.com/questions/12716570/count-lines-in-large-files
+
+
