@@ -51,9 +51,15 @@ Get info of a package
   $ yarn info package time
   $ yarn info package readme
 
+  $ npm view @material-ui/core versions --json   [1]
+
 Search
 ======
   $ yarn global add npms-cli
   $ npms search <desired package>
 
+
+Ref
+===
+[1] https://stackoverflow.com/a/41416032/3136861
 
