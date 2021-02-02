@@ -1,10 +1,6 @@
 
-house keeping
-=============
-
-  $ docker pull IMAGE:TAG  # pulls image from Docker registry
-
-  $ docker images          # lists the Docker images on your system
+containers house keeping
+========================
 
   $ docker ps              # shows all running containers
   $ docker ps -a           # shows all available containers (including the runnings)
@@ -12,16 +8,14 @@ house keeping
 
   $ docker stop CONTAINER                # stop a running container
   $ docker rm CONTAINER1 [CONTAINER2]... # remove container
-  $ docker rmi IMAGE                     # remove image
 
   tips:
-  -----
-
+  `````
     $ docker ps -a -q -f status=exited
 
       The above displays only the numeric IDs of exited containers
-      -q is short for --quiet,
-      -f is short for --filter, filter condition is status=exited
+      -q is short for --quiet, only show numeric IDs of the container
+      -f is short for --filter, filter condition is status=exited (exited container)
 
     $ docker rm $(docker ps -a -q -f status=exited)
 
@@ -32,14 +26,23 @@ house keeping
       The above stops and removes all running containers
 
 
-more house keeping
+image house keeping
 ===================
+
+  $ docker pull IMAGE:TAG  # pulls image from Docker registry
+  $ docker images          # lists the Docker images on your system
+  $ docker rmi IMAGE       # remove image.
+                             [!] make sure no container is using the image you want to removed
+                                 you must stop and delete thier respective container before remove an image
+
+
+docker house keeping
+====================
 
     $ docker system  # Gets the Docker system information such
                      # as memory usage and housekeeping stuff
 
     $ docker system prune   # free up memory
-
 
 
 create, start, run, exec
@@ -49,36 +52,60 @@ create, start, run, exec
   $ docker start     # get a container to run
 
   $ docker run       # = docker create + docker start + docker attach.
-                     # Without attach, the started container runs in
-                     # the background
+                     # attach = run in foreground
+                     # To run in detach mode (background) use the "-d" option
+                     # To reattach a detached use: "$ docker attach <container>"
 
   $ docker exec      # executes a command in an already running container
                      # you must provide a command you want to run
                      # in the container
 
-    $ docker run -it CONTAINER <command to execute in the container>
+  Docker is not a virture machine, "$ docker run ubuntu" will exit imediately.
+  To keep the conainer running there must be live process running inside, and once
+  the process completed the container stop. To run a process inside:
 
-      options:
-        -i  interactive mode
-        -t  pseudo tty terminal
+    $ docker run <container> <command to execute in the container>
 
-      Example:
+    Eg: $ docker run ubuntu for 5 sec in sleep mode: $ docker run ubuntu sleep 5
 
-        $ docker run -it python:3.5 bash
-          > root@12df4d6fab05:/# apt update
-          > root@12df4d6fab05:/# apt install nano
-          > root@12df4d6fab05:/# cat > today_date.py
-            from datetime import datetime
-            print("Today's date is "+ datetime.utcnow().strftime("%Y-%m-%d"))
-            ^D
-          > root@12df4d6fab05:/# python today_date.py
-            Today's date is 2020-09-13
+  If the container is running you can use "exec" to execute command inside
 
-          > root@12df4d6fab05:/# exit
+    $ docker exec <running container> <command to execute in the container>
 
-        $ docker ps -a
-        CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS    .....
-        12df4d6fab05        python:3.5              "bash"                   8 minutes ago       Exited (0).....
+    Eg: $ docker run -d busybox sleep 100                 # run boxbox in sleep mode for 100s
+        $ docker ps -q                                    # check it is running
+        58073f8e8037
+        $ docker exec festive_chatterjee cat etc/hosts    # execute a command inside
+        127.0.0.1	localhost
+        ::1	localhost ip6-localhost ip6-loopback
+
+
+runing a container interactively
+================================
+
+  $ docker run -it CONTAINER <command to execute in the container>
+
+      -i  interactive mode
+      -t  pseudo tty terminal
+
+    The follow eg run the bash shell of a container interactively
+    In the interactive shell it install nano, create a python script and run it.
+
+    $ docker run -it python:3.5 bash
+      > root@12df4d6fab05:/# apt update
+      > root@12df4d6fab05:/# apt install nano
+      > root@12df4d6fab05:/# cat > today_date.py
+        from datetime import datetime
+        print("Today's date is "+ datetime.utcnow().strftime("%Y-%m-%d"))
+        ^D
+      > root@12df4d6fab05:/# python today_date.py
+        Today's date is 2020-09-13
+
+      > root@12df4d6fab05:/# exit
+
+     $ docker ps -a
+     CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS    .....
+     12df4d6fab05        python:3.5              "bash"                   8 minutes ago       Exited (0).....
 
 
 commit, tag, push
