@@ -5,11 +5,11 @@ Rebase on a parent branch
   before:
   -------
 
-              HEAD
-              |
-        x--y--z  feature-B
-       /
-      a--b--c   feature-A   (the parent branch)
+                    HEAD
+                    |
+              x--y--z  feature-B
+             /
+      a--b--c--d--e   feature-A   (the parent branch)
      /
   --1--2--3 master
 
@@ -19,11 +19,11 @@ Rebase on a parent branch
 
   After:
   ------
-                   HEAD
-                   |
-             x--y--z  feature-B
-            /
-      a--b--c   feature-A   (the parent branch)
+                          HEAD
+                          |
+                    x--y--z  feature-B
+                   /
+      a--b--c--d--e   feature-A   (the parent branch)
      /
   --1--2--3 master
 
@@ -35,12 +35,11 @@ Rebase on a non parent branch
 
   before:
   -------
-
-              HEAD
-              |
-        x--y--z  feature-B
-       /
-      a--b--c   feature-A   (the parent branch)
+                    HEAD
+                    |
+              x--y--z  feature-B
+             /
+      a--b--c--d--e   feature-A   (the parent branch)
      /
   --1--2--3 master
 
@@ -51,7 +50,7 @@ Rebase on a non parent branch
   After:
   ------
 
-      a--b--c   feature-A   (the parent branch)
+      a--b--c--d--e   feature-A   (the parent branch)
      /
   --1--2--3 master
            \
