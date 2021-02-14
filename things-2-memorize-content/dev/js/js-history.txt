@@ -1,0 +1,12 @@
+
+Timeline of Js version
+  ES5
+  ES6/ES2015 [1][2]
+
+ES6/ES2015 feature [3]
+
+Ref:
+[1] https://johnpapa.net/es5-es2015-typescript/
+[2] https://exploringjs.com/impatient-js/ch_history.html#timeline-of-ecmascript-versions
+[3] https://github.com/lukehoban/es6features
+
