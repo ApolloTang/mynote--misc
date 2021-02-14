@@ -1,0 +1,70 @@
+
+Rebase on a parent branch
+=========================
+
+  before:
+  -------
+
+                    HEAD
+                    |
+              x--y--z  feature-B
+             /
+      a--b--c--d--e   feature-A   (the parent branch)
+     /
+  --1--2--3 master
+
+  $ git co feature-B
+  $ git rebase feature-A
+
+
+  After:
+  ------
+                          HEAD
+                          |
+                    x--y--z  feature-B
+                   /
+      a--b--c--d--e   feature-A   (the parent branch)
+     /
+  --1--2--3 master
+
+
+Rebase on a non parent branch
+=============================
+
+  As seen on ref [1]
+
+  before:
+  -------
+                    HEAD
+                    |
+              x--y--z  feature-B
+             /
+      a--b--c--d--e   feature-A   (the parent branch)
+     /
+  --1--2--3 master
+
+
+  $ git co feature-B
+  $ git rebase master
+
+  After:
+  ------
+
+      a--b--c--d--e   feature-A   (the parent branch)
+     /
+  --1--2--3 master
+           \
+            x--y--z  feature-B
+                  |
+                  HEAD
+
+  In the above instead of rebase on the immediate parent
+  branch (feature-A), it is rebase on some other branch
+  Note that commit a, b, and c were not included!
+
+
+----
+[1] https://www.freecodecamp.org/news/the-ultimate-guide-to-git-merge-and-git-rebase/
+
+
+
