@@ -61,6 +61,8 @@ Search
 
 Multiple version (npm liasing)
 ==============================
+  $ npm install react-v16@npm:react@16.13.1
+  ---
   $ yarn add react-v16@npm:react@16.13.1
   $ cat main.js
   var react16= require('react-v16')
