@@ -9,12 +9,6 @@ Initializer
   $ yarn create react-app my-app
 
 
-Get version list
-================
-  $ npm info react time
-  $ yarn info react time
-
-
 Get a list package installed
 ============================
   $ yarn list --depth 0
@@ -53,13 +47,32 @@ Get info of a package
 
   $ npm view @material-ui/core versions --json   [1]
 
+Get version list
+================
+  $ npm info react time
+  $ yarn info react time
+
+
 Search
 ======
   $ yarn global add npms-cli
   $ npms search <desired package>
 
 
+Multiple version (npm liasing)
+==============================
+  $ yarn add react-v16@npm:react@16.13.1
+  $ cat main.js
+  var react16= require('react-v16')
+  console.log(react16.version)
+  ---
+  ref [2][3]
+
+
+
 Ref
 ===
 [1] https://stackoverflow.com/a/41416032/3136861
+[2] https://stackoverflow.com/a/56495651/3136861
+[3] https://classic.yarnpkg.com/en/docs/cli/add/#toc-yarn-add-alias
 
