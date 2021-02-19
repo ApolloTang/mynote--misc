@@ -2,38 +2,41 @@
 containers house keeping
 ========================
 
-  $ docker ps              # shows all running containers
-  $ docker ps -a           # shows all available containers (including the runnings)
-                           # NOTE "docker ps" is short "docker container ls"
+  $ docker ps                   # shows all running containers
+  $ docker ps -a                # shows all runnings and exited container
+  $ docker ps -f status=exited  # shows all exited containers
+                                # -f is short for --filter,
+                                #    filter condition is status=exited
+
+  $ docker ps -q                # show all running containers, but displays only the IDs
+                                #  -q is short for --quiet
 
   $ docker stop CONTAINER                # stop a running container
   $ docker rm CONTAINER1 [CONTAINER2]... # remove container
 
   tips:
   `````
-    $ docker ps -a -q -f status=exited
+    Remove all exited containers:
+      $ docker rm $(docker ps -a -q -f status=exited)
 
-      The above displays only the numeric IDs of exited containers
-      -q is short for --quiet, only show numeric IDs of the container
-      -f is short for --filter, filter condition is status=exited (exited container)
+    Removes all running containers:
+      $ docker rm $(docker stop $(docker ps -q))
 
-    $ docker rm $(docker ps -a -q -f status=exited)
-
-      The above remove all exited containers
-
-    $ docker rm $(docker stop $(docker ps -q))
-
-      The above stops and removes all running containers
+    If all container has already stopped, you can remove all containers with:
+      $ docker rm $(docker ps -a -q)
 
 
 image house keeping
 ===================
 
-  $ docker pull IMAGE:TAG  # pulls image from Docker registry
+  $ docker pull IMAGE:TAG  # download the specified image from Docker registry
   $ docker images          # lists the Docker images on your system
   $ docker rmi IMAGE       # remove image.
                              [!] make sure no container is using the image you want to removed
                                  you must stop and delete thier respective container before remove an image
+
+  To browse for more images goto: hub.docker.com/explore
+
 
 
 docker house keeping
@@ -76,8 +79,8 @@ create, start, run, exec
         $ docker ps -q                                    # check it is running
         58073f8e8037
         $ docker exec festive_chatterjee cat etc/hosts    # execute a command inside
-        127.0.0.1	localhost
-        ::1	localhost ip6-localhost ip6-loopback
+        127.0.0.1 localhost
+        ::1 localhost ip6-localhost ip6-loopback
 
 
 runing a container interactively
