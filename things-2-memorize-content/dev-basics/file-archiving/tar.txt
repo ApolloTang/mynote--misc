@@ -36,6 +36,8 @@
     - tar remove any leading slash from the pathname when creating
       the archive.
 
+    - performance comparison see: [1]
+
 
     options
     ~~~~~~~
@@ -86,6 +88,9 @@
        tern.  Note that exclusions take precedence over patterns or
        filenames specified on the command line.
 
+---
+Ref:
+[1] https://www.rootusers.com/gzip-vs-bzip2-vs-xz-performance-comparison/
 
 
 
