@@ -1,10 +1,12 @@
 Bind mount
-===========
+==========
 
   In bind mount, we use a host filesysm and mount it on the container
   with run command's -v flag:
 
-    $ docker run -it -v /Users/apollotang/Desktop/:/desktop apollotang/date_project:1.0
+    $ docker run -it \
+      -v /Users/apollotang/Desktop/:/desktop \
+      apollotang/date_project:1.0
 
       The above will run the image "apollotang/date_project:1.0" and
       mount host's file system with path "/Users/apollotang/Desktop/"
@@ -12,9 +14,12 @@ Bind mount
       Note there is no need to use the command 'bash'.
 
 
-    $ docker run -it -v /Users/apollotang/Desktop/:/desktop:ro apollotang/date_project:1.0
-                                                            ^^
+    $ docker run -it \
+      -v /Users/apollotang/Desktop/:/desktop:ro \
+      apollotang/date_project:1.0
+
       The "ro" flag mount the volume as readonly
+
 
 Volume
 =======

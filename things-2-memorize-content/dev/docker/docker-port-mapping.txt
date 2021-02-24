@@ -1,4 +1,24 @@
 
+
+  Docker host can access a container via: 172.17.0.2:5000
+  A Docker Host can be accessed via:      192.168.1.5:5000
+
+                        ┌─────────────────────────────────┐
+ 192.168.1.5:5000 ─────▶│host                             │
+                        │                     ┌─────────┐ │
+                        │    172.17.0.2:5000  │         │ │
+                        │        ────────────▶│container│ │
+                        │                     │         │ │
+                        │                     └─────────┘ │
+                        └─────────────────────────────────┘
+
+  172.17.0.2:5000  (host) and
+  192.168.1.5:5000 (container) are the default ip and port
+
+
+port mapping
+============
+
   -p host:container
 
     The above is short for --publish host:container
