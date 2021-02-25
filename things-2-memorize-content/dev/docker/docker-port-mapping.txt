@@ -14,29 +14,27 @@ port mapping
                         |                     +---------+ |
                         +---------------------------------+
 
-  -p host:container
-
-    "-p" is short for for --publish
+  options
+  -------
+    -p host:container    # -p is short for for --publish
 
     host     : port publish outside container
     container: port inside container
 
-
-    Unbuntu Default
-    ---------------
+  Unbuntu Default
+  ---------------
     172.17.0.2:5000  (host)
     192.168.1.5:5000 (container)
 
-
-    OSx Default
-    -----------
-    0.0.0.0:5000  (host)
+  OSx Default
+  -----------
+    0.0.0.0:5000     (host)
     192.168.1.5:5000 (container)
 
 
-  Eg 1:
-  ----
 
+  Eg 1:
+  -----
   $ docker run -p 9090:8080 jenkins:2.60.3
   $ docker ps
   CONTAINER ID  IMAGE            COMMAND                  CREATED        STATUS         PORTS                               NAMES
@@ -54,6 +52,7 @@ port mapping
 
   Eg 2:
   -----
+  ref [2]
 
   $ docker run -p 9090:8080 --rm --name kitura -d ibmcom/kitura-ubuntu
 
@@ -65,8 +64,10 @@ port mapping
       --rm          : will remove the container when it is stoped.
 
 
-
+----
+Ref:
 [1] https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/
 [2] https://www.raywenderlich.com/9159-docker-on-macos-getting-started#toc-anchor-007
+----
 
 
