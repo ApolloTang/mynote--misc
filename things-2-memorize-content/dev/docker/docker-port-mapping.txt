@@ -1,39 +1,72 @@
 
+port mapping
+============
 
-  Docker host can access a container via: 172.17.0.2:5000
-  A Docker Host can be accessed via:      192.168.1.5:5000
+  Your OS can access Docker Host via:     host-ip:port
+  Docker host can access a container via: container-ip:port
 
                         +---------------------------------+
- 192.168.1.5:5000 ----->|host                             |
+     host-ip:5000 ----->|host                             |
                         |                     +---------+ |
-                        |    172.17.0.2:5000  |         | |
+                        |  container-ip:5000  |         | |
                         |        ------------>|container| |
                         |                     |         | |
                         |                     +---------+ |
                         +---------------------------------+
 
-  172.17.0.2:5000  (host) and
-  192.168.1.5:5000 (container) are the default ip and port
-
-
-port mapping
-============
-
   -p host:container
 
-    The above is short for --publish host:container
+    "-p" is short for for --publish
 
-      host     : port publish outside container
-      container: port inside container
+    host     : port publish outside container
+    container: port inside container
 
-  Eg:
 
-    docker run -p 9090:8080 --rm --name kitura -d ibmcom/kitura-ubuntu
+    Unbuntu Default
+    ---------------
+    172.17.0.2:5000  (host)
+    192.168.1.5:5000 (container)
 
-      The above run the container called ibmcom/kitura-ubuntu
 
-        -d            : run the container in background, short for --detash.
-        --name kitura : specifies the container name as kitura.
-        -p 9090:8080  : map the internal 8080 to outside 9090.
-        --rm          : will remove the container when it is stoped.
+    OSx Default
+    -----------
+    0.0.0.0:5000  (host)
+    192.168.1.5:5000 (container)
+
+
+  Eg 1:
+  ----
+
+  $ docker run -p 9090:8080 jenkins:2.60.3
+  $ docker ps
+  CONTAINER ID  IMAGE            COMMAND                  CREATED        STATUS         PORTS                               NAMES
+  c6d4dab1e8ee  jenkins:2.60.3   "/bin/tini -- /usr/l…"   2 minutes ago  Up 2 minutes   50000/tcp, 0.0.0.0:9090->8080/tcp   cool_merkle
+                                                                                                   ^^^^^^^
+                                                                                                   This is host ip
+  $ chrome 0.0.0.0:9090   # lauch jenkins web app in chrome
+
+  $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' c6d4dab1   # get internal ip [1]
+  172.17.0.2  <---- this is the container ip
+
+  $ docker exec -it c6d4dab1 /bin/sh
+  [inside docker]$ curl -i 172.17.0.2:8080
+
+
+  Eg 2:
+  -----
+
+  $ docker run -p 9090:8080 --rm --name kitura -d ibmcom/kitura-ubuntu
+
+    The above run the container called ibmcom/kitura-ubuntu
+
+      -d            : run the container in background, short for --detash.
+      --name kitura : specifies the container name as kitura.
+      -p 9090:8080  : map the internal 8080 to outside 9090.
+      --rm          : will remove the container when it is stoped.
+
+
+
+[1] https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/
+[2] https://www.raywenderlich.com/9159-docker-on-macos-getting-started#toc-anchor-007
+
 
