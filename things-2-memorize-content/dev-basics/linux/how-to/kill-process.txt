@@ -5,6 +5,8 @@ Find the process id of a
 node process and kill it
 =========================
 
+  First method
+  ------------
   % ps -ef | rg '\snode\s' --max-columns=0
     502 42082 42077   0 10:10pm ??         0:02.85 node --no-warnings /Users/apollo.tang/.vim/plugged/coc.nvim/build/index.js
     502 42108 42103   0 10:10pm ??         0:00.27 node --no-warnings /Users/apollo.tang/.vim/plugged/coc.nvim/build/index.js
@@ -14,7 +16,20 @@ node process and kill it
         ^^^^^
         process id
 
+
+  Second method
+  -------------
+  % sudo lsof -i tcp:8080
+  COMMAND   PID        USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+  node    30507 apollo.tang   23u  IPv6 0x1217c8e00d9a473f      0t0  TCP *:http-alt (LISTEN)
+          ^^^^^
+          process id
+
+
+  To kill process by id
+  ---------------------
   % kill 30507   # kill process with process id 30507
+
 
   see:
   [1] on killing process
