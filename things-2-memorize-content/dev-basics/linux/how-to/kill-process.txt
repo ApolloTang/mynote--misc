@@ -1,0 +1,29 @@
+
+
+=========================
+Find the process id of a
+node process and kill it
+=========================
+
+  % ps -ef | rg '\snode\s' --max-columns=0
+    502 42082 42077   0 10:10pm ??         0:02.85 node --no-warnings /Users/apollo.tang/.vim/plugged/coc.nvim/build/index.js
+    502 42108 42103   0 10:10pm ??         0:00.27 node --no-warnings /Users/apollo.tang/.vim/plugged/coc.nvim/build/index.js
+    502 42320 42317   0 10:18pm ??         0:01.79 node --no-warnings /Users/apollo.tang/.vim/plugged/coc.nvim/build/index.js
+    502 28056 19616   0 Fri04pm ttys005    0:06.27 node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js dev
+    502 30507 22443   0 Fri06pm ttys009    0:02.18 node server.js
+        ^^^^^
+        process id
+
+  % kill 30507   # kill process with process id 30507
+
+  see:
+  [1] on killing process
+  [2] BRE?ERE Regex
+
+
+---
+Ref:
+[1] https://www.linux.com/training-tutorials/how-kill-process-command-line/
+[2] https://learnbyexample.github.io/learn_gnugrep_ripgrep/breere-regular-expressions.html
+---
+
