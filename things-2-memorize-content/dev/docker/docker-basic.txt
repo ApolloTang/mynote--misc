@@ -1,5 +1,5 @@
 
-containers house keeping
+containers housekeeping
 ========================
 
   $ docker ps                   # shows all running containers
@@ -8,11 +8,11 @@ containers house keeping
                                 # -f is short for --filter,
                                 #    filter condition is status=exited
 
-  $ docker ps -q                # show all running containers, but displays only the IDs
+  $ docker ps -q                # show all running containers but displays only the IDs
                                 #  -q is short for --quiet
 
   $ docker stop CONTAINER                # stop a running container
-  $ docker rm CONTAINER1 [CONTAINER2]... # remove container
+  $ docker rm CONTAINER1 [CONTAINER2]... # remove container(s)
 
   tips:
   `````
@@ -26,20 +26,20 @@ containers house keeping
       $ docker rm $(docker ps -a -q)
 
 
-image house keeping
+image housekeeping
 ===================
 
   $ docker pull IMAGE:TAG  # download the specified image from Docker registry
-  $ docker images          # lists the Docker images on your system
-  $ docker rmi IMAGE       # remove image.
-                             [!] make sure no container is using the image you want to removed
-                                 you must stop and delete thier respective container before remove an image
+  $ docker images          # lists the Docker images on your system.
+  $ docker rmi IMAGE       # remove the specified image.
+                             [!] make sure no container is using the image you want to remove
+                                 you must stop and delete their respective container before removing an image
 
-  To browse for more images goto: hub.docker.com/explore
+  To browse for more images, go to hub.docker.com/explore
 
 
 
-docker house keeping
+docker housekeeping
 ====================
 
     $ docker system  # Gets the Docker system information such
@@ -51,27 +51,29 @@ docker house keeping
 create, start, run, exec
 ========================
 
-  $ docker create    # create a new container from image
-  $ docker start     # get a container to run
+  $ docker create    # create a new container from an image
+  $ docker start     # run a specified container
 
   $ docker run       # = docker create + docker start + docker attach.
                      # attach = run in foreground
-                     # To run in detach mode (background) use the "-d" option
+                     # To run in detached mode (background), use the "-d" option
                      # To reattach a detached use: "$ docker attach <container>"
 
   $ docker exec      # executes a command in an already running container
                      # you must provide a command you want to run
                      # in the container
 
-  Docker is not a virture machine, "$ docker run ubuntu" will exit imediately.
-  To keep the conainer running there must be live process running inside, and once
-  the process completed the container stop. To run a process inside:
+  Docker is not a virtual machine, "$ docker run ubuntu" will exit immediately.
+  For a container to run, a live process must be running inside.
+  Once the running process is completed, the container stop. To run a process inside:
 
-    $ docker run <container> <command to execute in the container>
+    $ docker run <container>[:<tag>] <command to execute in the container>
 
-    Eg: $ docker run ubuntu for 5 sec in sleep mode: $ docker run ubuntu sleep 5
+    Egs:
+      $ docker run ubuntu sleep 5                      # Run ubuntu for 5 sec in sleep mode.
+      $ docker run 'ubuntu:17.10' cat /etc/os-release  # Run ubuntu and cat os-information
 
-  If the container is running you can use "exec" to execute command inside
+  If the container is already running, you can use "exec" to run a command inside.
 
     $ docker exec <running container> <command to execute in the container>
 
@@ -83,7 +85,7 @@ create, start, run, exec
         ::1 localhost ip6-localhost ip6-loopback
 
 
-runing a container interactively
+running a container interactively
 ================================
 
   $ docker run -it CONTAINER <command to execute in the container>
@@ -91,8 +93,8 @@ runing a container interactively
       -i  interactive mode
       -t  pseudo tty terminal
 
-    The follow eg run the bash shell of a container interactively
-    In the interactive shell it install nano, create a python script and run it.
+    The following example runs the bash shell in a container interactively.
+    In the interactive shell, it installs nano, creates a python script and runs it.
 
     $ docker run -it python:3.5 bash
       > root@12df4d6fab05:/# apt update

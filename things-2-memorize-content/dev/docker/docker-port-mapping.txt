@@ -5,43 +5,44 @@ port mapping
   Your OS can access Docker Host via:     host-ip:port
   Docker host can access a container via: container-ip:port
 
-                        +---------------------------------+
-     host-ip:5000 ----->|host                             |
-                        |                     +---------+ |
-                        |  container-ip:5000  |         | |
-                        |        ------------>|container| |
-                        |                     |         | |
-                        |                     +---------+ |
-                        +---------------------------------+
+       ip:port         +----------------------------------+
+   (host/external)---->| host                             |
+                       |                                  |
+                       |      ip:port                     |
+                       |(container/internal)  +---------+ |
+                       |              ------->|Container| |
+                       |                      +---------+ |
+                       +----------------------------------+
 
   options
   -------
     -p host:container    # -p is short for for --publish
+                         # -p external:internal
 
     host     : port publish outside container
     container: port inside container
 
   Unbuntu Default
   ---------------
-    172.17.0.2:5000  (host)
-    192.168.1.5:5000 (container)
+    192.168.1.5:5000  (host/external)  <---- not sure if the ip for this is  correct
+    172.17.0.2:5000   (container/internal)
 
   OSx Default
   -----------
     0.0.0.0:5000     (host)
-    192.168.1.5:5000 (container)
+    172.17.0.2:5000  (container/internal)
 
 
 
   Eg 1:
   -----
-  $ docker run -p 9090:8080 jenkins:2.60.3
+  $ docker run -d -p 9090:8080 jenkins:2.60.3
   $ docker ps
   CONTAINER ID  IMAGE            COMMAND                  CREATED        STATUS         PORTS                               NAMES
   c6d4dab1e8ee  jenkins:2.60.3   "/bin/tini -- /usr/l…"   2 minutes ago  Up 2 minutes   50000/tcp, 0.0.0.0:9090->8080/tcp   cool_merkle
                                                                                                    ^^^^^^^
                                                                                                    This is host ip
-  $ chrome 0.0.0.0:9090   # lauch jenkins web app in chrome
+  $ chrome http://0.0.0.0:9090   # lauch jenkins web app in chrome
 
   $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' c6d4dab1   # get internal ip [1]
   172.17.0.2  <---- this is the container ip
@@ -67,7 +68,7 @@ port mapping
 ----
 Ref:
 [1] https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/
-[2] https://www.raywenderlich.com/9159-docker-on-macos-getting-started#toc-anchor-007
+[2] https://www.raywenderlich.com/9159-docker-on-macos-getting-started
 ----
 
 
