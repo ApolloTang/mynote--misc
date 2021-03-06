@@ -1,0 +1,38 @@
+
+query size of a directory
+--------------------------
+
+  $  du -sh node_modules/
+  1.2G  node_modules/
+
+    -s  # (equivalent to -d 0)
+    -h  # human-readable output
+
+
+query items of a directory
+--------------------------
+
+  $  du -d 1 h node_modules/
+   24K    node_modules//indexes-of
+  836K    node_modules//pako
+   12K    node_modules//babel-plugin-transform-simplify-comparison-operators
+  ...
+  ...
+
+    -d 1 # depth is level 1
+    -h   # human-readable output
+
+
+query items of a directory by largest M
+----------------------------------------
+
+  $ du -sh ./node_modules/* | sort -nr | grep '\dM.*' | less
+  212M    ./node_modules/@formatjs
+   87M    ./node_modules/@material-ui
+   74M    ./node_modules/@storybook
+  ...
+  ...
+
+
+
+
