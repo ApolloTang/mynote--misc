@@ -1,0 +1,19 @@
+
+Open selected items in tabs
+---------------------------
+
+  keyboard:
+
+    [opt][cmd][o]
+
+  mouse, via context menu:
+
+    ( right click selected ) > ( hold down [opt] ) > ( left click "open in tabs" )
+
+  mouse, via menu):
+
+    ( data ) > ( hold down [opt] ) > ( click "open in tabs" )
+
+Ref: https://discourse.devontechnologies.com/t/how-to-open-an-existing-dt-document-in-a-new-tab/50671/9
+
+
