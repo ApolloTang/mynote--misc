@@ -1,9 +1,0 @@
-
-
-List installed modules
-```````````````````````
-  npm ls --depth 0
-
-List globally installed modules
-```````````````````````````````
-  npm ls -g --depth 0
