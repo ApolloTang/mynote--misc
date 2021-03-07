@@ -1,0 +1,29 @@
+
+
+
+  grep '<pattern>' <filename>
+  grep -F '<string>' <filename>
+
+
+
+Gotcha:
+-------
+
+  Because of the delimitor '\n', this printf prints 3 lines:
+
+    $ printf 'avocado\nmango\nguava' | grep 'v'
+                     ^^     ^^
+  ---
+
+  If your input ﬁle has some other format like \r\n (carriage
+  return and newline characters) as line ending, convert the input
+  ﬁle to Unix style before processing.
+
+  ---
+
+  How to check if a file is DOS formated ending:
+
+    $ printf '42\r\n' > dos-ending.txt
+    $ file dos-ending.txt
+    dos-ending.txt: ASCII text, with CRLF line terminators
+
