@@ -1,0 +1,10 @@
+
+out of disk space
+-----------------
+
+  df -h
+  docker system prune
+
+
+  ref https://stackoverflow.com/questions/51238891/how-to-fix-the-running-out-of-disk-space-error-in-docker
+
