@@ -14,8 +14,9 @@ port mapping
                        |                      +---------+ |
                        +----------------------------------+
 
+  =======
   options
-  -------
+  =======
     -p host:container    # -p is short for for --publish
                          # -p external:internal
 

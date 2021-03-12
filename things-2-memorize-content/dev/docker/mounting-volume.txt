@@ -52,6 +52,7 @@ Volume
   To run a container using this volume:
 
     $ docker run -it -v project_directory:/project apollotang/date_project:1.0
-
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     host:container
 
 
