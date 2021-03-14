@@ -9,21 +9,38 @@
 Gotcha:
 -------
 
+  ---
+
+  • <pattern> is BRE by default, so don't for get to use '-F'
+    (fix string) flag if you are matching string literal
+  • Always quote the <pattern> with single quote to avoid shell
+    expansion.
+
+  ---
+
   Because of the delimitor '\n', this printf prints 3 lines:
 
     $ printf 'avocado\nmango\nguava' | grep 'v'
                      ^^     ^^
   ---
 
-  If your input ﬁle has some other format like \r\n (carriage
-  return and newline characters) as line ending, convert the input
-  ﬁle to Unix style before processing.
-
-  ---
-
-  How to check if a file is DOS formated ending:
+  Make sure the file to grep is not in DOS format (\r\n).
+  Check DOS format with the "file" command:
 
     $ printf '42\r\n' > dos-ending.txt
     $ file dos-ending.txt
     dos-ending.txt: ASCII text, with CRLF line terminators
+
+  ---
+
+  The following are opposite pairs (Capital case are negation):
+    -l -L (print file name only)
+    -h -H (include file name in result)
+
+  ---
+
+  With multiple input, count is displayed for each ﬁle separately.
+  Use "cat" if you want to combined count. For eg:
+
+    cat <(seq 15) <(seq 15) myfile.txt | grep -c -F '1' -
 
