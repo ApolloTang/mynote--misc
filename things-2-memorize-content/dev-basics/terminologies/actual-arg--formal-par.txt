@@ -2,10 +2,9 @@
 Actual and Formal
 =================
 
-  function foo(  'formal-parameters' ) { };
-
   foo( 'actual-arguements' );
 
+  function foo(  'formal-parameters' ) { };
 
   ----
   Ref:
