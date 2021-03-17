@@ -10,18 +10,42 @@
   │ enumerable:   │                              │            │
   ┼───────────────┼──────────────────────────────┼────────────┼
 
-var B = function (){
-  Object.defineProperties(this, {
-    instE: {enumerable: true,  value: 'instE'},
-    instNE: {enumerable: false, value: 'instNE'},
-  });
-}
-Object.defineProperties(B.prototype, {
-  inhE: {enumerable: true,  value: 'inhEnu'},
-  inhNE: {enumerable: false, value: 'inhNonEnu'},
-});
 
-const b = new B()
+// ======================================
+// This is a constructor
+// lets define property for its instance
+// ======================================
+
+  var B = function (){
+    Object.defineProperties(
+      this,
+      {
+        instE: {enumerable: true,  value: 'instE'},
+        instNE: {enumerable: false, value: 'instNE'},
+      }
+  )}
+
+
+// ==================================================
+// Lets define inherited property on the constructor.
+// Intance will have to "walk-up" the
+// prototype chain to access these property
+// ==================================================
+
+  Object.defineProperties(
+    B.prototype,
+    {
+      inhE: {enumerable: true,  value: 'inhEnu'},
+      inhNE: {enumerable: false, value: 'inhNonEnu'},
+    }
+  )
+
+// ======================
+// b is an instance of B
+// ======================
+
+  const b = new B()
+
 
 // ====================================
 // for-in loop over
