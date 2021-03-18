@@ -1,0 +1,31 @@
+console.log(typeof null) ?
+
+  "object"
+
+How to determine if the value of "foo" is null?
+
+  console.log(foo === null)
+
+
+How do you trigger gabadge collection on a variable?
+
+  var obj = new Object()
+
+  obj = null // <--- dereference
+
+What is the arity of a function?
+
+  The number of parameters it exprected.
+
+What is the diff between arguments.length and arity ?
+
+  arguments.length === count of actual-arguments pass in
+  arity            === count of formal-parameter defined on the function
+
+"for-in" and "for-of" which one to avoid
+
+  avoid "for-in"
+
+
+
+
