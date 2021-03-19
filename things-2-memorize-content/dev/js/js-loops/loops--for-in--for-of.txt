@@ -1,0 +1,43 @@
+
+
+-----------------------------------------------------------------------
+   for-in                                  | for-of
+-----------------------------------------------------------------------
+                                           |
+   • Exist since ES1.                      | • Newly added on ES6(es2015).
+                                           |
+   • Property name is stored in variable   | • Value is stored in variable.
+   • Walk up the prototype chain.          | • Own properties only.
+   • Skip symbols.                         | • ??
+   • Skip non-enumerable (build-in method) | • ??
+   • Include enumerable                    | • ??
+   • Include interable and non-iterable    | • Iterable only, Skip non-interable
+                                           |
+   • Should be avoided.                    |
+   • Avoided using with Array.             | • Work well with Array.
+                                           | • Return "undefined" on element of sparce array
+                                           |
+
+
+
+Example:
+========
+
+const interable = ['a','b']
+const foo = interable
+foo.noniterable = 'noniterable'
+
+for (const i in foo ) {
+  console.log(i)  // 0, 1, 'noniterable'
+}
+
+for (const i of foo ) {
+  console.log(i)  // 'a', 'b'
+}
+
+
+---
+Ref:
+https://stackoverflow.com/questions/29285897/what-is-the-difference-between-for-in-and-for-of-statements
+
+

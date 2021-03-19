@@ -1,0 +1,60 @@
+
+============================
+  Counting with for-loop.
+============================
+
+  let i = 0
+  for (i; i<3; i++) {
+    console.log(i)       // 0, 1, 2
+  }
+
+
+=============================
+  Instead of using for-loop
+  to count we can use while
+  loop.
+
+  But the order is reverse.
+=============================
+
+  let j = 3
+  while (j--) {
+    console.log(j)     // 2, 1, 0
+  }
+
+
+=========================================
+  You can use while to count up, but
+  initial value never enter the loop.
+
+  Note:
+  "++" is applied BEFORE condition check
+=========================================
+
+  let i = 0
+  while( ++i < 3) {
+    console.log(i)     // 1, 2
+  };
+
+
+=========================================
+  But you can include the initial value
+  with do-while loop.
+
+  Note:
+  "++" is applied BEFORE condition check
+
+  Note2:
+  With do-while, the loop always
+  execute once.
+=========================================
+
+  let i = 0
+  do {
+    console.log(i)     // 0, 1, 2
+  } while( ++i < 3)
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
