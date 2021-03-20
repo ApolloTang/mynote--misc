@@ -1,4 +1,10 @@
-<img align='right' height=100 src='../../../public/vscode.png'>
+NOTE: This article is from:
+[Link To Original](https://github.com/mike-works/vscode-fundamentals/blob/master/docs/1_using/markdown.md),
+[Link to Clone](https://github.com/ApolloTang/vscode-fundamentals/blob/master/docs/1_using/markdown.md)
+
+---
+
+<img align='right' height=100 src='./vscode.png'>
 
 # Using Visual Studio Code
 
@@ -27,7 +33,7 @@ The HTML [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
 > <img src="./vscode.png" height=50 align=right vspace=20/>
 > <img src="./vscode.png" height=100/>
 
-👉 Keep in mind that, in this case, GitHub wraps each image in 
+👉 Keep in mind that, in this case, GitHub wraps each image in
 ```html
 <p>
   <a href="./myimage.jpg">
