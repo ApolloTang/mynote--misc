@@ -1,11 +1,4 @@
 
-
-
-  grep '<pattern>' <filename>
-  grep -F '<string>' <filename>
-
-
-
 Gotcha:
 -------
 
