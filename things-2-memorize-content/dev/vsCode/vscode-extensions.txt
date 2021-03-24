@@ -1,19 +1,4 @@
 
-
-<cmd-D>        Add next highlighted to selection.
-               Selection is case insensitive.
-
-<ctr-`>        Toggle btw code editor and terminal
-
-<cmd-.>        drop down will appear to show you available option
-               to fix thing.
-
-<ctr-k><ctr-c> comment selected
-<ctr-k><ctr-u> uncomment selected
-
-
-------
-
 extensions
 ==========
 
