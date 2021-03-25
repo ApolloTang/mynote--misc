@@ -1,17 +1,4 @@
 
-[cmd][D]  Add next highlighted to selection.
-          Selection is case insensitive.
-
-[ctr][`]  Toggle btw code editor and terminal
-
-[cmd][.]  That short cut on error token, a drop
-          down will appear to show you available option
-          to fix thing.
-
-
-
-------
-
 extensions
 ==========
 

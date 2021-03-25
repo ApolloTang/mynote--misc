@@ -3,3 +3,22 @@
   grep -F '<string>' <filename>
 
 
+Output Control
+==============
+
+ -H   • Show filename prefix with each match.
+      • When there are multiple files this flag is on by default.
+      • Useful when using with en editor to open the files with matches.
+      • Negation of -h
+
+ -h   • Supress file name with each match.
+      • Negation of -H
+
+
+
+------
+
+ --color=always   Use this with less to persist color in output
+
+
+
