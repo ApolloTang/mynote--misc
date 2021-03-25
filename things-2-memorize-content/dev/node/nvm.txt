@@ -1,7 +1,28 @@
 
+List installed
+``````````````
+  nvm list
+
+
 list all available
 ``````````````````
   nvm ls-remote
+
+
+Install a specified version
+```````````````````````````
+  nvm install 14.4.1
+
+
+Apply a specified version
+`````````````````````````
+  nvm use 14.4.1
+
+
+Specified a default version
+````````````````````````````
+  nvm alias default 14.4.1
+
 
 update to latest lts node
 `````````````````````````

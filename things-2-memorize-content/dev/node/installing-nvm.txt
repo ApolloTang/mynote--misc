@@ -1,4 +1,12 @@
-See:
+
+To install nvm see the official github repo for installation instruction.
+
+  https://github.com/nvm-sh/nvm
+
+
+Important: do not install nvm with brew.
+
+Also see:
 https://yoember.com/nodejs/the-best-way-to-install-node-js-with-yarn/
 
 
