@@ -6,22 +6,32 @@
 Output Control
 ==============
 
- -H   • Show filename prefix on each match.
-      • When there are multiple files this flag is on by default.
-      • Useful when using with en editor to open the files with matches.
-      • Negation of -h.
+ -H        • Show filename prefix on each match.
+           • When there are multiple files this flag is on by default.
+           • Useful when using with en editor to open the files with matches.
+           • Negation of -h.
 
- -h   • Supress file name prefix on each match.
-      • Negation of -H.
+ -h        • Supress file name prefix on each match.
+           • Negation of -H.
 
- -mX  • Limit output to X match.
+ -mX       • Limit output to X match.
 
- -n   • Print the line number on each match.
+ -n        • Print the line number on each match.
 
- -l   • Print names of file contain matches.
-      • Negation of -L.
+ -l        • Print names of file contain matches.
+           • Negation of -L.
 
- -L   • Print names of files contain no matches.
+ -L        • Print names of files contain no matches.
+
+ --color   • --color=always
+               Highlight result with color.
+           • --color=never
+               Never highlight result with color.
+           • --color=auto
+               When output is direct to another command, color is lost.
+
+
+
 
 
 
