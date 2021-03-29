@@ -3,14 +3,16 @@
 What is deoxxa/npmrc:
 =====================
 
+  According to:
   https://docs.npmjs.com/configuring-your-registry-settings-as-an-npm-enterprise-user
 
-  If you need to publish and install packages to and from different
-  registries -- for example, an npm Enterprise registry for work-related
-  code, and the npmjs.com public registry for open source projects
-  -- you can create and manage a separate npm user profile for
-  each registry using the npmrc tool.
+    If you need to publish and install packages to and from different
+    registries -- for example, an npm Enterprise registry for work-related
+    code, and the npmjs.com public registry for open source projects
+    -- you can create and manage a separate npm user profile for
+    each registry using the npmrc tool.
 
+  Official repo:
   https://github.com/deoxxa/npmrc
 
 
@@ -19,12 +21,14 @@ Installation:
 
   Officialy it is install with:
 
-    npm i npmrc -g
+    $ npm i npmrc -g
 
-  [not sure] > But since I am using nvm, I think it better to install with
-             > yarn so I don't have to install again when when I switch nvm version:
-             >   yarn global add npmrc
-             >
+  Since I am using nvm, I think it is better to install with
+  yarn so I don't have to install again when when I switch node
+  version with nvm:
+
+    $ yarn global add npmrc
+
 
 
 # Create a npmrc profile call "local":
