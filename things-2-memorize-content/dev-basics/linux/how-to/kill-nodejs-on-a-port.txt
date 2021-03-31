@@ -18,6 +18,11 @@ $ ifconfig | grep inet
 
 
 
+
 kill node
 ---------
 killall node
+
+
+
+

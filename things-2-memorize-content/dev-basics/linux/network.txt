@@ -1,0 +1,39 @@
+
+
+Show process tying up a port 3000 (OSx)
+-------------------------------------
+sudo lsof -i tcp:3000
+netstat -vanp tcp | grep 3000
+
+
+
+
+
+2 ways to show wired/ethernet address
+-------------------------------------
+$ ipconfig getifaddr en0
+192.168.0.89
+
+$ ifconfig | grep inet
+
+
+
+
+
+
+ip command in Mac OSX
+=====================
+
+  ip command does not exist on Mac, but you can install brew's
+  iproute2mac, which is a python wrapper that provide similar API. [1][2]
+
+    $ brew install iproute2mac
+
+
+
+---
+Ref:
+  [1] https://superuser.com/questions/687310/ip-command-in-mac-os-x-terminal
+  [2] https://github.com/brona/iproute2mac
+
+
