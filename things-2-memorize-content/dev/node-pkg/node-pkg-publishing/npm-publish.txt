@@ -5,15 +5,15 @@ authentication
 
   note: 'npm login' is alias to 'npm adduser'
 
-  $ npm adduser
-    Username: apollotang
-    Password: password
-    Email: (this IS public) tang.apollo@gmail.com
-    Logged in as apollotang on https://registry.npmjs.org/.
+  $ npm adduser            # <---- default registry
+  Username: apollotang
+  Password: password
+  Email: (this IS public) tang.apollo@gmail.com
+  Logged in as apollotang on https://registry.npmjs.org/.
 
-    The above will add an entry of
-      //registry.npmjs.org/:_authToken=xxxxx
-    to .npmrc
+    # The above will add an entry of
+    #   //registry.npmjs.org/:_authToken=xxxxx
+    # to .npmrc
 
   $ tail -5 ~/.npmrc   # check item was added
 

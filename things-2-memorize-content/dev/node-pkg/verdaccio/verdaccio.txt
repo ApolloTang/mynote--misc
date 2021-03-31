@@ -26,17 +26,44 @@ authentication
 
   note: 'npm login' is alias to 'npm adduser'
 
-  $ npm adduser --registry http://localhost:4873
+  login into verdaccio
+  ---------------------
+    $ npm adduser --registry http://localhost:4873
     Username: apollotang
     Password: password
     Email: (this IS public) tang.apollo@gmail.com
     Logged in as apollotang on http://localhost:4873/
 
-    The above will add an entry of
-      //localhost:4873/:_authToken=xxxx
-    to .npmrc
+      # The above will add an entry of
+      #   //localhost:4873/:_authToken=xxxx
+      # to .npmrc
 
-  $ tail -5 ~/.npmrc   # check item was added
+
+  check login into verdaccio successful
+  -------------------------------------
+    $ tail -5 ~/.npmrc   # check item was added
+    ...
+    //localhost:4873/:_authToken=eyJhbGciOi
+
+    $ npm whoami --registry http://localhost:4873
+    apollotang
+
+
+  login out of verdaccio
+  ------------------------
+    $ npm logout --registry http://localhost:4873
+
+
+  check login out verdaccio successful
+  -------------------------------------
+    $ grep '4873' -v ~/.npmrc
+    ...
+    # output should not contain 4873
+
+    $ npm whoami --registry http://localhost:4873
+    npm ERR! code ENEEDAUTH
+    npm ERR! need auth This command requires you to be logged in.
+
 
 
 
