@@ -57,6 +57,7 @@ Get info of a package
 
   $ npm view @material-ui/core versions --json   [1]
 
+
 Get version list
 ================
   $ npm info react time
@@ -65,8 +66,14 @@ Get version list
 
 Search
 ======
-  $ yarn global add npms-cli
-  $ npms search <desired package>
+  $ npm search <desired package>
+
+  Tips: Install "npms-cli", a very useful cli for searching
+        npm package. See: https://www.npmjs.com/package/npms-cli
+
+    $ yarn global add npms-cli
+    $ npms search <desired package>
+
 
 
 Multiple version (npm liasing)

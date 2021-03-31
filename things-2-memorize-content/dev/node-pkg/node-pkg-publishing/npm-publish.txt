@@ -28,8 +28,8 @@ Scope and publishing public repo
   To publish to a scope, you can either:
 
     1. Manually add a scope to the 'name' field in package.json:
-        @myscope/package-name
-    2. Run 'npm init --scope=myscope' instead of npm init
+        @apollotang/<package-name>
+    2. Run 'npm init --scope=apollotang' instead of npm init
 
   If your repository has a scope, you need to adjust the publish command:
 
@@ -43,7 +43,7 @@ update version
   git commit -m 'bump vesrion to 1.0.2'
   git push
   git tag 1.0.2
-  git push --tags
+  git push origin 1.0.1
   npm login
   npm publish
   npm info <package>
@@ -57,7 +57,7 @@ publish a beta version
   git tag 1.4.0-beta.0
   git tag -l
   git push
-  git push --tags
+  git push origin 1.0.1
   npm publish --tag beta   # this add -->   dist-tags.beta: '1.4.0-beta.0'
   npm info
 
