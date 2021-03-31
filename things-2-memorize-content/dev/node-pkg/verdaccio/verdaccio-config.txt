@@ -1,0 +1,19 @@
+
+verdaccio local password is saved at:
+
+  ~/.config/verdaccio/htpasswd
+
+  Ref [1]
+
+
+Verdaccio configuration file is located at:
+
+   ~/.config/verdaccio/config.yaml
+
+  Ref [2]
+
+----
+
+  [1] https://github.com/verdaccio/verdaccio/issues/559
+  [2] https://verdaccio.org/docs/en/cli.html#default-config-file-location
+
