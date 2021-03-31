@@ -1,4 +1,10 @@
 
+DevonThink Misc Short Cut
+=========================
+
+[ctr][cmd][+]  zoom in
+[ctr][cmd][-]  zoom out
+
 
 [opt][cmd][arrow-up]  go to enclose folder.
 

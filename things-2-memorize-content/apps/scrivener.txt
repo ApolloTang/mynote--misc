@@ -1,4 +1,7 @@
 
-zoom in/out
-  [cmd]+ [>]/[<]
+Scrivener Misc Short Cut
+==========================
+
+  [cmd][>]  zomm in
+  [cmd][<]  zomm out
 
