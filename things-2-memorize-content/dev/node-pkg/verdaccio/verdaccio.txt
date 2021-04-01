@@ -37,13 +37,14 @@ authentication
       # The above will add an entry of
       #   //localhost:4873/:_authToken=xxxx
       # to .npmrc
+      # _authToken is a login token [1]
 
 
   check login into verdaccio successful
   -------------------------------------
     $ tail -5 ~/.npmrc   # check item was added
     ...
-    //localhost:4873/:_authToken=eyJhbGciOi
+    //localhost:4873/:_authToken=xxxx
 
     $ npm whoami --registry http://localhost:4873
     apollotang
@@ -56,9 +57,9 @@ authentication
 
   check login out verdaccio successful
   -------------------------------------
-    $ grep '4873' -v ~/.npmrc
-    ...
-    # output should not contain 4873
+    $ cat ~/.npmrc
+    # output should not contain:
+    //localhost:4873/:_authToken=xxxx
 
     $ npm whoami --registry http://localhost:4873
     npm ERR! code ENEEDAUTH
@@ -87,4 +88,6 @@ unpublish from verdaccio
   npm unpublish <package-name> --registry http://localhost:4873 --force
 
 
-
+---
+  Ref:
+    [1] https://github.com/npm/npm/issues/10310

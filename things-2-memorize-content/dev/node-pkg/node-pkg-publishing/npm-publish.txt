@@ -5,20 +5,48 @@ authentication
 
   note: 'npm login' is alias to 'npm adduser'
 
-  $ npm adduser            # <---- default registry
-  Username: apollotang
-  Password: password
-  Email: (this IS public) tang.apollo@gmail.com
-  Logged in as apollotang on https://registry.npmjs.org/.
 
-    # The above will add an entry of
-    #   //registry.npmjs.org/:_authToken=xxxxx
-    # to .npmrc
+  login into npmjs
+  -----------------
 
-  $ tail -5 ~/.npmrc   # check item was added
-
+    % npm login    # <---- default registry https://registry.npmjs.com/
+    Username: apollotang
+    Password: XXXXXXX
+    Email: (this IS public) tang.apollo@gmail.com
+    Enter one-time password from your authenticator app: XXXXXX
+    Logged in as apollotang on https://registry.npmjs.com/.
 
 
+      # The above will add an entry of
+      #   //registry.npmjs.org/:_authToken=xxxxx
+      # to .npmrc
+      # _authToken is a login token [1]
+
+
+  check login into npmjs successful
+  ----------------------------------
+
+    %  tail -1 ~/.npmrc    # check item was added
+    //registry.npmjs.com/:_authToken=xxxx
+
+    % npm whoami
+    apollotang
+
+
+  login out of npmjs
+  ------------------
+    $ npm logout
+
+
+  check login out of npmjs
+  -------------------------
+    $ cat ~/.npmrc
+    # output should not contain:
+    //registry.npmjs.com/:_authToken=xxxx
+
+    % npm whoami
+    npm ERR! code ENEEDAUTH
+    npm ERR! need auth This command requires you to be logged in.
 
 
 
@@ -35,7 +63,8 @@ Scope and publishing public repo
 
     npm publish --access public
 
-   ref: [1]
+   Ref: [2]
+
 
 
 update version
@@ -74,4 +103,4 @@ publish a beta version
     https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
     https://docs.npmjs.com/misc/scope
 
-
+    [2] https://github.com/npm/npm/issues/10310
