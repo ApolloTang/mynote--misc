@@ -100,7 +100,8 @@ publish a beta version
 ---
   Ref:
     [1] https://zellwk.com/blog/publish-to-npm/
-    https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
-    https://docs.npmjs.com/misc/scope
+        https://docs.npmjs.com/creating-and-publishing-scoped-public-packages
+        https://docs.npmjs.com/misc/scope
 
     [2] https://github.com/npm/npm/issues/10310
+
