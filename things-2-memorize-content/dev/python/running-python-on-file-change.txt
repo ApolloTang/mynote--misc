@@ -1,0 +1,19 @@
+
+Run python on file change with nodemon:
+
+  nodemon -w 'src/**' -e py,html --exec python src/app.py
+
+    Watch for change in 'src/'
+      -w 'src/**'
+
+    Specify the file type to watch
+      -e   py,html
+
+    On change run python compile on file 'src/app.python
+      --exec python src/app.py
+
+Ref:
+https://stackoverflow.com/a/64124075/3136861
+
+
+
