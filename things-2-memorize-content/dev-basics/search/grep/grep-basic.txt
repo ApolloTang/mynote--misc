@@ -22,9 +22,12 @@ Output Control
            • Negation of -L.
 
  -L        • Print names of files contain no matches.
+           • Negation of -l.
 
  --color   • --color=always
                Highlight result with color.
+               Use this with pipe or redirect to preserve color.
+               Use this with less to persist color in output.
            • --color=never
                Never highlight result with color.
            • --color=auto
@@ -39,7 +42,6 @@ Output Control
 
 ------
 
- --color=always   Use this with less to persist color in output
 
 
 
