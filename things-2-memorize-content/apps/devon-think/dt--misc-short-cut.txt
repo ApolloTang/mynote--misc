@@ -2,7 +2,7 @@
 DevonThink Misc Short Cut
 =========================
 
-[ctr][cmd][+]  zoom in
+[ctr][cmd][+]  zoom in   <--- note: to get [+] you need to press [shf]
 [ctr][cmd][-]  zoom out
 
 

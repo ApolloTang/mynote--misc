@@ -1,0 +1,4 @@
+official document:
+  https://docs.npmjs.com/files/package.json
+
+

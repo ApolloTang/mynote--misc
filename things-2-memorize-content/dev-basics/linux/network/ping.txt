@@ -1,0 +1,28 @@
+
+Useful
+======
+
+  -----
+    ping -w 2 8.8.8.8    # run a ping test for two seconds and report
+                         # on the network statistics gathered.
+
+    Note:
+      8.8.8.8 is a public DNS service that is provided by Google [1]
+      Option -w is not available on OSX
+
+  -----
+
+    ping on OSX and linus behave differently. [2]
+
+  -----
+
+    [To Read] Using ping on OSX:
+    https://www.macworld.co.uk/how-to/ping-test-mac-3524076/
+
+
+---
+Ref:
+[1] https://www.whatsmydns.net/articles/8-8-8-8.html
+[2] https://unix.stackexchange.com/questions/308234/make-ping-on-linux-behave-like-ping-on-mac-osx
+
+
