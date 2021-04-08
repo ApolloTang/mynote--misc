@@ -9,6 +9,7 @@ Output Control
  -H        • Show filename prefix on each match.
            • When there are multiple files this flag is on by default.
            • Useful when using with en editor to open the files with matches.
+             $ vim -q <(grep -Hn '<pattern>' *)
            • Negation of -h.
 
  -h        • Supress file name prefix on each match.
@@ -18,10 +19,10 @@ Output Control
 
  -n        • Print the line number on each match.
 
- -l        • Print names of file contain matches.
+ -l        • Print only names of file contain matches (match line will not print).
            • Negation of -L.
 
- -L        • Print names of files contain no matches.
+ -L        • Print only names of files contain no matches (matched line will not print).
            • Negation of -l.
 
  --color   • --color=always
@@ -34,9 +35,18 @@ Output Control
                When output is direct to another command, color is lost.
 
 
+Regex Control
+=============
 
+ -w        • Force PATTERN to match only whole words.
+             - `grep -w 'word'` will only match "word" not "words"
 
-
+ -i        • Force PATTERN to match only whole lines.
+             - This is similar to -w but apples to whole lines instead
+               of words.
+             - `grep -i 'only these'` will only match the line contain
+               "only these",  will not match the line contain "only
+               these and that".
 
 
 
