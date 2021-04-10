@@ -1,0 +1,15 @@
+
+
+
+cd
+=====
+
+  Navigate between current and previous directory
+
+    cd -
+
+  Navigate between user directory
+
+    cd ~username
+
+

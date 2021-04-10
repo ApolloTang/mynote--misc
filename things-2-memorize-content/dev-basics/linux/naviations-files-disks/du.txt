@@ -34,5 +34,8 @@ query items of a directory by largest M
   ...
 
 
+Ref:
+[1] How to Get the Size of a Directory in Linux
+    https://linuxize.com/post/how-get-size-of-file-directory-linux/
 
 

@@ -1,0 +1,51 @@
+
+##########
+ls
+##########
+
+-d
+
+  Use this option in conjunction with the "-l" option to see
+  details about the directory itself rather then its content.
+
+  Normally, the command "ls -l dir" will list the content of "dir/".
+  If you want to list the "dir/" itself use the "-d" flag. Eg:
+
+    % tree -F
+      .
+      └── dir/
+          ├── content--type-dir/
+          │   └── content-in-dir--type-file.txt
+          └── content--type-file.txt
+
+    % ls -l dir
+    total 0
+    drwxr-xr-x  3 apollo.tang  staff  96 10 Apr 13:53 content--type-dir
+    -rw-r--r--@ 1 apollo.tang  staff   0  1 Feb  2020 content--type-file.txt
+
+    % ls -ld dir
+    drwxr-xr-x  5 apollo.tang  staff  160 10 Apr 13:53 dir
+
+
+========
+Sorting
+========
+
+-t
+
+    Sort result by modification timestamp
+
+-S
+
+    Sort result by file size.
+    Note: This does not show the size of directory including its
+          content. If that is what you want you have to use "du"
+          [1]
+
+
+----
+Ref
+[1] https://linuxize.com/post/how-get-size-of-file-directory-linux/
+
+
+
