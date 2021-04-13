@@ -1,0 +1,50 @@
+Dependent
+=========
+
+  A --> B
+
+  A uses B.
+  A depends on B.
+  There is a relation of dependency from A to B.
+  A is the dependent.
+
+
+  Ref:
+  https://stackoverflow.com/questions/47001196/what-does-dependency-dependant-mean
+
+
+
+Dependence and dependency
+=========================
+
+  "dependency" is usually the thing that you depend on, whereas
+  "dependence" is the state of depending on it.
+
+  "his drug dependency"
+  "his dependence on drugs"
+
+  "This software releases has dependencies on Unix and Java"
+
+  Ref:
+  https://ell.stackexchange.com/questions/41528/differences-between-dependence-and-dependency
+
+
+Depender --> Dependee
+======================
+
+  Depender:
+    An agent that depends on another agent, the dependee;
+    the subject of a dependency, a dependent
+
+    Ref:
+      https://en.wiktionary.org/wiki/depender
+
+  Dependee:
+    An agent that is depended on by a depender, the target of a
+    dependency
+
+    Ref:
+      https://en.wiktionary.org/wiki/dependee
+
+
+
