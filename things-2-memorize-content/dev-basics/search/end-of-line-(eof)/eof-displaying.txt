@@ -1,0 +1,9 @@
+
+
+    If you want to see \r and \n as it is, use the octal dump command
+    in terminal:
+
+        od -c <file-name>
+
+
+

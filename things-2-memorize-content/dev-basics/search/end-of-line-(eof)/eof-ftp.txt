@@ -1,0 +1,30 @@
+::: FTP and line ending
+
+    All FTP software can transfer files in "ascii" or "binary" mode.
+
+    In "ascii" mode, the FTP software will convert line breaks, in "binary"
+    mode it will not.  In "ascii" mode, transferring a Windows file from a
+    Windows PC to a Linux server results in a UNIX file on the server.
+
+    Downloading the file again converts it back to Windows.  Many FTP clients
+    also have an "automatic" mode that switches between ascii and binary
+    depending on the extension of the file you're transferring.
+
+    Watch out when upload file as binary mode:
+
+        When a webmaster uploads a Windows file to a Linux server in "binary"
+        mode, the file has CR LF line breaks on the server. If you then
+        download that file with your web browser on your Windows PC (which does
+        the UNIX->Windows conversion), the browser will interpret the
+        downloaded file as a UNIX file, even though it is in Windows format. It
+        will convert each LF into CR LF, resulting in a file that uses CR CR LF
+        as line breaks.
+
+        So, before uploading a file, use the Convert menu to make sure the file
+        has the line break style that the server expects (if the server cares
+        at all).
+
+        http://www.editpadpro.com/tricklinebreak.html
+
+
+

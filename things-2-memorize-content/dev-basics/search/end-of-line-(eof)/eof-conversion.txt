@@ -1,0 +1,12 @@
+
+
+    In Cygwin or unix, you can convert a file INFILE-DOS in DOS format
+    to a file OUTFILE-unix in Unix format by calling:
+
+        $ tr -d '\15' < INFILE-DOS > OUTFILE-Unix
+
+    where \15 is \r in Oct
+
+
+
+

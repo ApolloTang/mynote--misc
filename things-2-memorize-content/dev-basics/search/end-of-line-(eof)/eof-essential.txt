@@ -1,0 +1,25 @@
+
+line ending of different OS
+----------------------------
+
+  CRLF  \r\n  Windows
+  LF    \n    Linux
+  LF    \n    Macintosh (Mac OSX)
+  CR    \r    Macintosh (old)
+
+  Ref:
+  https://confluence.qps.nl/fledermaus7/questions-answers/other/differences-in-end-of-line-characters-mac-windows-and-linux
+
+
+
+Representation of EOL
+---------------------
+
+                     | char | c  |  Hex | uni-code | Oct | Dec |
+    Charriage return | [CR] | \r | \x0D | U+000D   |  15 |  13 |
+  Line feed/New Line | [LF] | \n | \x0A | U+000A   |  12 |  10 |
+
+
+
+
+---eof---
