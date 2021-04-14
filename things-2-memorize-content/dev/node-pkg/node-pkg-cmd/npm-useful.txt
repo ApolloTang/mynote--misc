@@ -1,0 +1,6 @@
+list scripts in package.json
+
+  jq '{scripts}' package.json
+
+
+
