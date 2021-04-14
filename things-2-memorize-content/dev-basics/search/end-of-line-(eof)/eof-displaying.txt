@@ -1,9 +1,24 @@
 
+Using od
+--------
 
     If you want to see \r and \n as it is, use the octal dump command
     in terminal:
 
         od -c <file-name>
+
+
+Using cat
+---------
+
+  By using cat and -A you can see new lines as $ and tabs as ^I:
+
+    cat -A myfile
+
+  However, 'cat -A' is not as portable as 'cat -e'. -A is supported by GNU coreutils version of cat(1), but not other implementations (e.g., bsd, macos, etc.).
+
+  Ref:
+    https://stackoverflow.com/a/58190922/3136861
 
 
 
