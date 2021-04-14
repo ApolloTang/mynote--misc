@@ -1,0 +1,51 @@
+
+ff = fileformat
+
+One thing you should keep in mind to understand ff:
+
+    \r and \n is never display as it is in vim.  The display of \r
+    and \n is always interpreted depends on the value of ff, combind
+    with the value of eol specified in lcs.
+
+    If you want to see \r and \n as it is, use the octal dump command
+    in terminal:
+
+        od -c <file-name>
+
+• Value of ff is set on per buffer bases.
+• Vim write and display the eol charecters according to value of ff.
+• With default mode and with binary off, writing, displaying
+  \n, \r, and \r\n as well as wraping behaviour are as follow:
+
+    writing:
+    --------
+    ff=unix   eol is written as \n
+    ff=dos    eol is written as \r\n
+    ff=mac    eol is written as \r
+
+    vim always check
+
+    displaying:
+    -----------
+    ff=unix: \n   is used as eol, and shown as the value of eol specified in lcs.
+    ff=dos : \r\n is used as eol, and shown as the value of eol specified in lcs.
+    ff=mac : \r   is used as eol, and shown as the value of eol specified in lcs.
+
+    ff=unix: \r   shown as ^M.
+    ff=mac : \n   shown as ^J.
+
+    ff=dos : \r   shown as ^M.
+    ff=dos : \n   shown as the value of eol specified in lcs.
+    ff=dos : \r\n shown as the value of eol specified in lcs.
+    ff=dos : \n\r {eol}^M
+
+    line wraping at:
+    ----------------
+    ff=unix: \n
+    ff=mac : \r
+    ff=dos : \r\n and \n
+
+
+------- eof ---------
+
+
