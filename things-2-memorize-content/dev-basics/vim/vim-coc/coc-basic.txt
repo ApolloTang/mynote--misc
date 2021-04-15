@@ -2,3 +2,26 @@
 
 <c-space>  show autocomplete
 
+
+coc-codeaction
+==============
+  This feature give you a drop down to fix your problem.
+
+    nmap <space>ac  <Plug>(coc-codeaction)
+
+  illustration:
+
+      for (const i = 0; i < storage.length(); i++) {
+    1                                        // ┌Choose action ────────────────────────────┐
+    2     currentStorage += storage.items[i].wei│1. Add import                             │
+    3     return currentStorage;                │2. Convert to snippet                     │
+    4   }                                       │3. Move to a new file                     │
+    5 }                                         │4. Ignore this error message              │
+    6                                           │5. Disable checking for this file         │
+i   7 function add(item) {                      │6. Convert 'const' to 'let'               │
+>   8   if (storage.max - item.weight >= storage│7. Declare method 'add'                   │
+>   9     storage.items.add(item);              │8. Declare property 'add'                 │
+>  10     currentStorage += iten.weight;        └──────────────────────────────────────────┘
+
+
+
