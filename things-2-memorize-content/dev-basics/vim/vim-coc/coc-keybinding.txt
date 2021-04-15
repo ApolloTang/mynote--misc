@@ -1,6 +1,26 @@
 
 
-<c-space>  show autocomplete
+Code navigation
+===============
+  " GoTo code navigation.
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+
+
+
+autocomplete
+============
+  Use <c-space> to trigger completion.
+
+
+
+cocDiagnostics
+==============
+  Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+  Use `[g` and `]g` to navigate diagnostics
+
 
 
 coc-codeaction
