@@ -75,3 +75,8 @@ Binary basic
 111 = 7
 
 
+
+To Read:
+
+https://unix.stackexchange.com/questions/76521/how-can-i-display-octal-notation-of-permissions-with-ls-and-can-octal-represen
+

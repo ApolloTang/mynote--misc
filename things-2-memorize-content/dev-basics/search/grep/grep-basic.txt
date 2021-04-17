@@ -39,7 +39,14 @@ Regex Control
 =============
 
  -w        • Force PATTERN to match only whole words.
-             - `grep -w 'word'` will only match "word" not "words"
+             - "grep -w 'word'" will only match "word" not "words"
+
+ -x        • Force PATTERN to match only whole line.
+             - "grep -x 'word'" will only match line that contains only "word",
+               it will not match the line "  word   " b/c this line contains
+               other charectors in addition to "word".
+               This is similar to "grep '^word$'.
+             - "grep -x ''", this suppose to match empty line but it does not work.
 
  -i        • Force PATTERN to match only whole lines.
              - This is similar to -w but apples to whole lines instead
@@ -48,7 +55,7 @@ Regex Control
                "only these",  will not match the line contain "only
                these and that".
 
-
+ -F        • Turn off Regex, PATTERN is a set of newline-separated strings.
 
 ------
 
