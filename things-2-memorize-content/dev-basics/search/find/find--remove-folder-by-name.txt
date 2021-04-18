@@ -1,0 +1,12 @@
+
+
+#!/usr/bin/env bash
+find . -type d -name node_modules -exec [ -d {} ] \; -exec rm -rf {} \;
+
+Ref:
+https://stackoverflow.com/questions/13032701/how-to-remove-folders-with-a-certain-name/37727435
+https://www.cyberciti.biz/faq/howto-check-if-a-directory-exists-in-a-bash-shellscript/
+https://stackoverflow.com/questions/5119946/find-exec-with-multiple-commands
+
+eof---
+
