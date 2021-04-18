@@ -1,2 +1,8 @@
 
 https://stackoverflow.com/questions/5119946/find-exec-with-multiple-commands
+
+https://unix.stackexchange.com/questions/46244/get-a-list-of-directory-names-with-find
+
+“No such file or directory” errors
+https://stackoverflow.com/questions/45575021/find-suppress-no-such-file-or-directory-errors
+https://superuser.com/questions/393812/supresss-the-no-such-file-or-directory-message-from-find
