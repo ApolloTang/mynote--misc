@@ -1,0 +1,5 @@
+Display free disk space
+========================
+
+  $ df -h   # display free disk space in human readable.
+

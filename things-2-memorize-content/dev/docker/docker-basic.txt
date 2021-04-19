@@ -53,6 +53,8 @@ create, start, run, exec
 
   $ docker create    # create a new container from an image
   $ docker start     # run a specified container
+  $ docker stop      # shutting down internal processes and stop the container
+  $ docker kill      # abrutply halt the container
 
   $ docker run       # = docker create + docker start + docker attach.
                      # attach = run in foreground

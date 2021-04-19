@@ -1,0 +1,21 @@
+
+out of disk space
+-----------------
+
+  df -h
+  docker system prune
+
+"df -h" show available free space in humman readable formate
+
+"docker system prune" will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+
+Ref
+https://stackoverflow.com/questions/51238891/how-to-fix-the-running-out-of-disk-space-error-in-docker
+
+-----
+

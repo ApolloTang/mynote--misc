@@ -20,12 +20,14 @@ The above check out a project that contain a "Dockerfile":
 The "DockerFile" has the instruction to build a docker image from
 the code in the checked out repo. To build images we do the folowing:
 
-  $ docker build -t flask_app:1.0 .  # this buid the images using instruction in "DockerFile"
-                                     # and name the image "flask_app" with tag "1.0"
-                                     #
-                                     # IMPORTANT there is a '.' at the end of this command
-                                     #   which denotes that the current directory is the location
-                                     #   of the DockerFile
+  $ docker build -t flask_app:1.0 .
+                                  ^---- # IMPORTANT
+                                        # There is a '.' at the end of this command
+                                        # which denotes that the current directory is the location
+                                        # of the DockerFile
+
+The above build the images using instruction in "DockerFile" and
+name the image "flask_app" with tag "1.0"
 
   $ docker images
   REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
