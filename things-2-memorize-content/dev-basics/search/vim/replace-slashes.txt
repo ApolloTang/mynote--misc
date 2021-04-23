@@ -1,0 +1,14 @@
+
+Replace '/' with '\'
+
+  %s:\/:\\:g
+
+Replace '\' with '/'
+
+  %s:\\:\/:g
+
+Ref:
+https://stackoverflow.com/questions/19584922/replace-backward-slash-with-forward-slash-in-vim
+
+eof---
+
