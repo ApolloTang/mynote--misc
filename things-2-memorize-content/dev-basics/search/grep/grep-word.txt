@@ -1,0 +1,65 @@
+
+Type of token to match:
+-----------------------
+
+ '-w' will match non word charactors:
+
+   $ echo 'abc @# xyx' | grep -ow '@#'
+   @#
+
+ '\b' will not match non word charactors:
+
+   $ echo 'abc @# xyx' | grep -o '\b@#\b'
+   <no match>
+
+
+How does '\b' work?
+--------------------
+
+  Consider the string:
+
+    "I have 12, he has 2!"
+
+  '\b' sees the above string like this:
+
+    |I| |have| |12|, |he| |has| |2|!
+       ^      ^     ^    ^     ^      spaces
+
+  Where the '|' is the anchor position '\b'.
+  Note that '!' does not have end of word boundary as it is not
+  a word character.
+
+  "\b..\b" will match:
+
+    |I| |have| |12|, |he| |has| |2|!
+    ^^^^^
+    b. .b
+
+    |I| |have| |12|, |he| |has| |2|!
+               ^^^^
+               b..b
+
+    |I| |have| |12|, |he| |has| |2|!
+                  ^^^^
+                  b..b
+
+    |I| |have| |12|, |he| |has| |2|!
+                     ^^^^
+                     b..b
+
+
+    |I| |have| |12|, |he| |has| |2|!
+                              ^^^^^
+                              b. .b
+
+
+    ----
+    $ echo 'I have 12, he has 2!' | grep -o '\b..\b'
+    I
+    12
+    ,
+    he
+     2
+    # 1st and 3rd line have space as second character
+
+eof---
