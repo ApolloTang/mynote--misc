@@ -52,8 +52,6 @@ How does '\b' work?
                               ^^^^^
                               b. .b
 
-
-    ----
     $ echo 'I have 12, he has 2!' | grep -o '\b..\b'
     I
     12
@@ -61,5 +59,48 @@ How does '\b' work?
     he
      2
     # 1st and 3rd line have space as second character
+
+
+
+  Note 1:
+  -------
+  You can have a single \b because it can denote both start of
+  word and end of word.
+
+    Start of word means either the character prior to the word is
+    a non-word character or there is no character (start of line):
+
+      Start of word: #|w OR ^|w
+      (legend: # = non word char; w = word char; | = \b )
+
+    End of word means the character after the word is a non-word
+    character or no character (end of line):
+
+      End of word: w|#  OR #|$
+
+  This implies for a word boundary to exist you need at lease one
+  word character.
+
+  The use case of single \b is to match words starting with or
+  end with a pattern:
+
+    $ grep '\bpar'   # match words starting with 'par'
+    $ grep 'par\b'   # match words ending with 'par'
+
+
+
+  Note 2:
+  -------
+  The negation of /b is /B
+
+    $ grep '\Bpar\B'   # match 'par' if it is surrounded by word
+                       # characters.
+
+    $ grep '\Bpar'     # match 'par' but not as start of word.
+    $ grep 'par\B'     # match 'par' but not as end of word.
+
+
+
+
 
 eof---
