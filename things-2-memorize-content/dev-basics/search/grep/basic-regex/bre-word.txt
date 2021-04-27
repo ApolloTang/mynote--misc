@@ -64,8 +64,9 @@ How does '\b' work?
 
   Note 1:
   -------
-  You can have a single \b because it can denote both start of
-  word and end of word.
+  Word boundary has a start and end; but with \b you don't have
+  to mark both in your pattern. \b can denote either only the
+  start or the end of word without its corresponding boundary.
 
     Start of word means either the character prior to the word is
     a non-word character or there is no character (start of line):
