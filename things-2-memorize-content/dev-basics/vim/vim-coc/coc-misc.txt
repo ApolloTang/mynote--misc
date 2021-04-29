@@ -1,5 +1,0 @@
-
-
-:CocCommand tsserver.restart
-:CocInstall coc-tsserver@1.4.9
-

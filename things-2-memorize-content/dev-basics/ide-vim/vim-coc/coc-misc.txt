@@ -1,0 +1,12 @@
+
+
+:CocCommand tsserver.restart
+:CocInstall coc-tsserver@1.4.9
+
+
+Qiming's coc-settings.json:
+https://gitter.im/neoclide/coc.nvim?at=5c870f231c597e5db6c1717d
+
+
+eof---
+

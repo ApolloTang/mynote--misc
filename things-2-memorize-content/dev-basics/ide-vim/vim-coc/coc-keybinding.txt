@@ -12,7 +12,8 @@ Code navigation
 
 autocomplete
 ============
-  Use <c-space> to trigger completion.
+  To trigger completion interlisense
+    <c-space> (insert mode)
 
 
 
@@ -21,6 +22,14 @@ cocDiagnostics
   Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
   Use `[g` and `]g` to navigate diagnostics
 
+
+
+function parameter hint
+=======================
+  "/ This suppose to trigger function signature help like
+  "/ vscode's Ctrl+Shift+Space, but I can't get it to work.
+  "/ https://github.com/neoclide/coc.nvim/issues/2202
+  nnoremap <silent> <S-D-Space> :call CocActionAsync('showSignatureHelp')<CR>
 
 
 coc-codeaction
