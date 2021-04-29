@@ -4,8 +4,8 @@ Gotcha:
 
   ---
 
-  • <pattern> is BRE by default, so don't for get to use '-F'
-    (fix string) flag if you are matching string literal
+  • <pattern> is BRE by default, so make sure you use '-F'
+    (fix string) flag if you are matching string literal.
   • Always quote the <pattern> with single quote to avoid shell
     expansion.
 

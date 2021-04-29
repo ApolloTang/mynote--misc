@@ -38,6 +38,14 @@ Output Control
 Regex Control
 =============
 
+ -e        • Specify a Basic Regular Expression (BRE).
+           • With multiple "-e" the effect is same as alternation, eg:
+               $ printf 'I like cats\nI like dogs' | grep 'cat\|dog'
+             is same as:
+               $ printf 'I like cats\nI like dogs' | grep -e 'cat' -e 'dog'
+
+ -E        • Specify an Extended Regular Expression (ERE).
+
  -w        • Force PATTERN to match only whole words.
              - "grep -w 'word'" will only match "word" not "words"
 
