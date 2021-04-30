@@ -1,0 +1,55 @@
+Detecting type of os
+====================
+
+
+  if has('win32')
+      echo "Someone please open the Window(s)!"
+  endif
+
+  See OS specific features from :help feature-list:
+
+    macunix    Macintosh version of Vim, using Unix files (OS-X).
+    unix       Unix version of Vim.
+    win32      Win32 version of Vim (MS-Windows 95 and later, 32 or
+               64 bits)
+    win32unix  Win32 version of Vim, using Unix files (Cygwin)
+
+
+  Ref: https://vi.stackexchange.com/questions/2572/detect-os-in-vimscript
+
+
+Detecting type of graphic enviroment
+====================================
+
+  if has("gui_running")
+
+    if has("gui_gtk2")  /" Non-terminal
+
+      "/ I think this is GIMP ToolKit (for linux?)
+      "/ https://en.wikipedia.org/wiki/GTK
+
+    elseif has("gui_macvim")
+
+      "/ macvim
+
+    elseif has("gui_win32")
+
+      "/ gvim
+
+    endif
+
+
+  elseif has('nvim')
+
+    /" terminal neovim ?
+
+  else
+
+    /" terminal vim ?
+
+  endif
+
+Ref: https://stackoverflow.com/questions/15705022/vim-gtk-ui-font
+
+---eof---
+
