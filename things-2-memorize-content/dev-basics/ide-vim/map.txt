@@ -8,13 +8,30 @@
  list map to a file
 ====================
 
-:redir! > vim_keys.txt | silent verbose map | redir END
-:redir! > vim_keys.txt | silent map | redir END
+The following will output mapping to a file called vim_keys.txt
+in the present working directory
+
+  :redir! > vim_keys.txt | silent map | redir END
+
+The following will also out where the map was defined:
+
+  :redir! > vim_keys.txt | silent verbose map | redir END
+
+Note:
+  For some reason the above output did not show mapping for <c-space>
 
 Ref: https://stackoverflow.com/a/15756785/3136861
 
 
-======
- Link
-======
+
+===========
+ To Read
+===========
 https://medium.com/vim-drops/understand-vim-mappings-and-create-your-own-shortcuts-f52ee4a6b8ed
+https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
+https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+
+
+---eof---
+
+
