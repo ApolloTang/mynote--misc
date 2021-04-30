@@ -12,8 +12,10 @@ Code navigation
 
 autocomplete
 ============
-  To trigger completion interlisense
+  To trigger completion interlisense (same as vscode <c-space>)
     <c-space> (insert mode)
+  My alternate binding
+    inoremap <silent><expr> <C-o><space> coc#refresh()
 
 
 
