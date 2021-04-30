@@ -23,13 +23,22 @@ Note:
 Ref: https://stackoverflow.com/a/15756785/3136861
 
 
+=============
+  map space
+=============
+
+  https://stackoverflow.com/questions/7722177/how-do-i-map-ctrl-x-ctrl-o-to-ctrl-space-in-terminal-vim
+
+
 
 ===========
  To Read
 ===========
+
 https://medium.com/vim-drops/understand-vim-mappings-and-create-your-own-shortcuts-f52ee4a6b8ed
 https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)
 https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+http://vimdoc.sourceforge.net/htmldoc/map.html
 
 
 ---eof---
