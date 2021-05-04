@@ -1,0 +1,20 @@
+
+Replicate a file:
+
+  • One ‘master’ document in the database and each replicant is
+    a pointer to that document.
+  • Change is reflected in every occurrence of the replicant.
+
+
+Duplicate a file:
+
+  • Edit one copy and every other copy remains unchanged.
+  • Take up additional space in the database.
+
+
+---
+Ref:
+  https://discourse.devontechnologies.com/t/duplicate-vs-replicate-for-sync/10706/5
+  https://discourse.devontechnologies.com/t/replicate-v-duplicate/2737/2
+
+---eof---
