@@ -1,0 +1,138 @@
+http://www.theunixschool.com/p/awk-sed.html
+http://www.theunixschool.com/2011/05/awk-read-file-and-split-contents.html
+
+printing column
+---------------
+
+    $ awk '{print $1}' file1        #print first colulmn
+    $ awk '{print $2}' file1        #print second colulmn
+    $ awk '{print $1, $3}' file1    #print first and third colulmn
+
+
+printing entire file
+--------------------
+
+    $ awk '{print $0}' file1  # specify the action
+
+    $ awk '1' file1           # specify the pattern condition = 1 (true for every line)
+                              # if no action specified the the default action is print
+
+
+Omiting Header
+--------------
+
+    $ awk 'NR!=1{print $1}' file1
+
+delimiter in output
+-------------------
+
+    $ awk '{print $1, $3}'  OFS=":" file1    #print first and third colulmn separated by ":"
+
+
+delimiter in input
+-------------------
+
+    awk, by default, uses the white space as the delimiter which
+    could be a single space, tab space or a series of spaces.
+
+    to specify delimeter:
+
+        $ awk -F ","  '{print $1,$3}' file1
+        $ awk '{print $1,$3}' FS="," file1
+
+
+Passing shell variable
+----------------------
+    $ x=1
+    $ awk -v val=$x '{print $0+val}' file1
+    $ awk  '{print $0+val}' val=$x file1
+
+
+Passing inline value
+--------------------
+
+    $ awk -v val=1 '{print $0+val}' file1
+    $ awk '{print $0+val}' val=1 file1
+
+Passing enviroment variable
+---------------------------
+
+    $ x=1
+    $ export x
+    $ awk  '{print $0,ENVIRON["x"]}' file1
+    # ENVIRON["x"] specify enviroment variable
+
+
+Pattern matching
+================
+
+    $ awk '$0 ~ /PATTERN/{print}' file1
+
+    meaning:
+
+        If the line ($0) contains (~) the partern PATTERN, print the line
+
+    actually "$0 ~" is implicitly specified, so:
+
+        $ awk '/PATTERN/{print}' file1
+
+    Since {print} action is assumed if without specifing an action
+    above can be simplified further
+
+        $ awk '/PATTERN/' file1
+
+Example:
+-------
+    Note from reading:
+        http://www.theunixschool.com/2012/05/awk-match-pattern-in-file-in-linux.html
+
+    If first column of csv file contains PATTERN print the line
+
+        $ awk -F, '$1 ~ /PATTERN/' file1
+
+    If first column of csv file contains *exactly* the word "ABCD" print the line:
+
+        $ awk -F, '$1=="ABCD"' file1
+
+    If first column of csv file contains *exactly* the word "ABCD" print the second column:
+
+        $ awk -F, '$1=="ABCD"{print $2}' file1
+
+    If the line contains PATTERN_1 or PATTERN_2 print the line
+
+        $ awk '/PATTERN_1|PATTERN_2/' file1
+
+    If first column of csv file contains PATTERN_1 or PATTERN_2 print the line
+
+        $ awk -F, '$1 ~ /PATTERN_1|PATTERN_2/' file1
+
+    If first column of csv file is exactly "ABC" or "XYZ" print the line
+
+        $ awk -F, '$1 ~ /^ABC$|^XYZ$/' file
+
+    print the line if the line *does not* contain PATTERN
+
+        $ awk '!/PATTERN/' file1
+
+    negate the PATTERN only on the first column of a csv file
+
+        $ awk -F, '$1 !~ /PATTERN/' file1
+
+    Print all records whose amount in column 2 is greater than 500
+
+        $ awk -F, '$2>500' file1
+
+    Print the line if frist line contains PATTERN
+
+        $ awk 'NR==1 && /PATTERN/' file1
+
+    Print the line if the line contains PATTERN and column 2 is greater then 500
+
+        $ awk -F, '/PATTERN/ && $2>500' file1
+
+    Print the line if the line contains PATTERN or column 2 is greater then 500
+
+        $ awk -F, '/PATTERN/ || $2>500' file1
+
+
+
