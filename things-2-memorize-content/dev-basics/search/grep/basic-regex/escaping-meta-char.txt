@@ -1,0 +1,27 @@
+In BRE the following the meta-characters lose their meaning.
+
+  '?'  '+'    ## note that '*' is not in the list
+  '{'         ## note that '}' is not in the list
+  '(' ')'
+  '|'
+
+To use them as regex expression you need to escape them.
+
+Also note the absense of other meta-char such as:
+
+  '.' '[' ']'
+
+Eg:
+
+  % printf 'ab\na?' | grep -o 'a?.*'   ## this match '?' literally
+  a?
+
+  % printf 'ab\na?' | grep -o 'a\?.*'  ## the literal 'a' is optional
+  ab
+  a?
+
+To Read:
+https://pubs.opengroup.org/onlinepubs/009696699/basedefs/xbd_chap09.html#tag_09_03_03
+
+
+---eof---
