@@ -22,6 +22,6 @@ Eg:
 
 To Read:
 https://pubs.opengroup.org/onlinepubs/009696699/basedefs/xbd_chap09.html#tag_09_03_03
-
+https://unix.stackexchange.com/questions/498925/grep-not-working-as-expected
 
 ---eof---
