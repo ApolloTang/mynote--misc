@@ -1,4 +1,4 @@
-In BRE the following the meta-characters lose their meaning.
+In BRE the following meta-characters lose their special meaning:
 
   '?'  '+'    ## note that '*' is not in the list
   '{'         ## note that '}' is not in the list
@@ -7,9 +7,15 @@ In BRE the following the meta-characters lose their meaning.
 
 To use them as regex expression you need to escape them.
 
-Also note the absense of other meta-char such as:
+Note meta-char such the following preserve special meaning
+(no need to escape):
 
-  '.' '[' ']'
+  '.'
+  '[' ']'
+  '*'
+  '}'
+  (there could be more not listed here)
+
 
 Eg:
 
