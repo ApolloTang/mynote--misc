@@ -1,0 +1,12 @@
+To Read:
+https://vi.stackexchange.com/a/23226/15493
+https://www.ele.uri.edu/faculty/vetter/Other-stuff/vi/vimtips.html
+https://vim.fandom.com/wiki/Best_Vim_Tips
+https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118
+
+
+
+
+
+---eof---
+

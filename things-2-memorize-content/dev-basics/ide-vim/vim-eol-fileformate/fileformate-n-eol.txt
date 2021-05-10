@@ -46,6 +46,12 @@ One thing you should keep in mind to understand ff:
     ff=dos : \r\n and \n
 
 
+
+
+To Read:
+https://stackoverflow.com/a/18961239/3136861
+
+
 ------- eof ---------
 
 

@@ -24,5 +24,7 @@ To read:
 https://vi.stackexchange.com/questions/2136/how-do-i-navigate-to-topics-in-vims-documentation
 https://vi.stackexchange.com/questions/tagged/help-system?tab=Frequent
 https://vi.stackexchange.com/questions/438/shadowed-terms-in-help
+https://vi.stackexchange.com/questions/63/how-can-a-complete-beginner-learn-vim-using-just-vim-itself
+
 
 ---eof---
