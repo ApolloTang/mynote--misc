@@ -1,0 +1,7 @@
+to replace all ',' with new-line character:
+
+  :%s/,/<crtl+v><enter>/g
+
+https://stackoverflow.com/a/71388/3136861
+
+---eof---

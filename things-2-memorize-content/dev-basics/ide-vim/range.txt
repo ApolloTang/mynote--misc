@@ -1,0 +1,9 @@
+
+To read:
+https://vim.fandom.com/wiki/Ranges
+https://vimhelp.org/usr_10.txt.html#10.3
+https://vimhelp.org/cmdline.txt.html#cmdline-ranges
+https://stackoverflow.com/questions/22327705/vim-search-replace-meaning-of-s
+
+---eof---
+

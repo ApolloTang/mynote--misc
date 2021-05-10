@@ -1,0 +1,28 @@
+Links:
+======
+
+  Vim help file:
+  https://vimhelp.org/
+
+  quick reference:
+  https://vimhelp.org/quickref.txt.html
+
+  Vim User Manual:
+  https://vimhelp.org/usr_toc.txt.html
+
+  Vim Quick Reference:
+  https://vimhelp.org/quickref.txt.html
+
+  Vim FAQ:
+  https://vimhelp.org/vim_faq.txt.html
+
+
+----
+
+
+To read:
+https://vi.stackexchange.com/questions/2136/how-do-i-navigate-to-topics-in-vims-documentation
+https://vi.stackexchange.com/questions/tagged/help-system?tab=Frequent
+https://vi.stackexchange.com/questions/438/shadowed-terms-in-help
+
+---eof---
