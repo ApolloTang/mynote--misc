@@ -1,0 +1,29 @@
+
+-c <command>
+------------
+
+  Execute <command> after loading the first file. <command> is
+  the normal mode commands. For eg:
+
+      mvim -c ':set nornu' myfile.txt
+
+  Can use to execute a custom command after loading file:
+
+      mvim -c 'GGnerdPreview' main.txt
+
+  Where 'GGnerdPreview' is a custom command:
+
+     function! LaunchNERDTreeSetPreview()
+       let path = expand("%:p:h")
+       exec ':NERDTree'
+       exec ':GGpreviewToggle'
+     endfunction
+     command! GGnerdPreview call LaunchNERDTreeSetPreview()
+
+  Can also use to execute a map, see: https://vi.stackexchange.com/a/847/15493
+
+
+---eof---
+
+
+
