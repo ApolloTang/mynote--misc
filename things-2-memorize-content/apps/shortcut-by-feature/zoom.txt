@@ -1,0 +1,10 @@
+
+DevonThink
+
+   [ctr][cmd] + [+]   Note: [+] = [sft][=]
+   [ctr][cmd] + [-]
+
+Scrivener
+
+   [cmd + [>]   Note: [>] = [sft][.]
+   [cmd + [<]   Note: [<] = [sft][,]

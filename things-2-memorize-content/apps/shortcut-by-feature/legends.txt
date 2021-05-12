@@ -1,0 +1,12 @@
+[ctr] control
+[opt] option
+[cmd] command
+[sft] shift
+[tab] tab
+[ret] return
+[esc] escape
+[^] up
+[v] down
+[>] left
+[<] right
+
