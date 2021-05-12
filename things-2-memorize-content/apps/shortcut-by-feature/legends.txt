@@ -1,12 +1,18 @@
-[ctr] control
-[opt] option
-[cmd] command
-[sft] shift
-[tab] tab
-[ret] return
-[esc] escape
-[^] up
-[v] down
-[>] left
-[<] right
+legends for keys in notes:
+--------------------------
+
+  [ctr] control
+  [opt] option
+  [cmd] command
+  [sft] shift
+  [tab] tab
+  [ret] return
+  [esc] escape
+  [del] delete
+  [bsp] backspace == [fnc][del]
+
+  [-^-] up
+  [-v-] down
+  [->-] left
+  [-<-] right
 
