@@ -1,10 +1,11 @@
 
 DevonThink
 
-   [ctr][cmd] + [+]   Note: [+] = [sft][=]
+   [ctr][cmd] + [+]  = [ctr][cmd][sft][=]
    [ctr][cmd] + [-]
 
 Scrivener
+Omni-outliner
 
-   [cmd + [>]   Note: [>] = [sft][.]
-   [cmd + [<]   Note: [<] = [sft][,]
+   [cmd][>] = [cmd][sft][.]
+   [cmd][<] = [cmd][sft][,]
