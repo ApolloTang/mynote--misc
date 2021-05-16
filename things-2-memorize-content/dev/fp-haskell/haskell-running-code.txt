@@ -1,0 +1,30 @@
+Compile haskell source file
+===========================
+
+$ cat hello.hs
+--hello.hs my first Haskell file!
+main = do
+  print "hello world!"
+
+$ ghc hello.hs -o hello_excutable
+
+
+Help
+----
+
+$ ghc --help
+
+
+
+REPL:
+======
+
+$ ghci
+GHCi>
+
+GHCi> :q            -- quit
+GHCi> :l hello.hs   -- load a source file
+GHCi> :r            -- reload the already loaded source file
+
+---eof---
+

@@ -1,0 +1,23 @@
+All functions must return a value
+==================================
+
+Because all functions must return a value, it follows that
+'if' statements must have an 'else' statement:
+
+  > doubleSmallNumber x = if x > 100
+                          then x
+                          else x * 2
+
+
+
+"'" is a valid character for function names
+===========================================
+
+  > conanO'Brien = "It's a-me, Conan O'Brien!"
+
+
+• Once a function is declare, it name cannot be changed.
+• The order of which a function is declare does not matter.
+
+
+

@@ -1,0 +1,56 @@
+Infix and Prefix functions
+===========================
+
+Operators such as '+' are actually functions that called "Infix-function".
+Infix function's syntax is such that function name is written
+ between the arguments:
+
+  "<arguments-one> <infix-function-name> <arguments-one>"
+
+Eg:
+
+  ghci> "1 + 2"
+
+  <arguments-one> = a number (1)
+  <arguments-one> = another number (2)
+  <infix-function-name> = addition (+)
+
+There is another kind of syntax called "Prefix function", which
+is a syntax we are familiar:
+
+  <prefix-function-name> <arguments-one> <arguments-one>
+
+  ghci> "div 92 10"
+
+you can write the above as Infix function with the backtick (`)
+
+  ghci> 92 `div` 10
+
+
+Gotcha:
+=======
+
+These two statements are equivalent.
+
+  ghci> succ 9 + max 5 4 + 1
+  16
+  ghci> (succ 9) + (max 5 4) + 1
+  16
+
+These two statements are NOT equivalent.
+
+  ghci> succ 9 * 10
+  100
+
+  ghci> succ (9 * 10)
+  91
+
+In Haskell parentheses does not denote function application:
+
+  ghci> bar (bar 3)
+
+The above means we’re ﬁrst calling the bar function with 3 as
+the parameter, then passing that result to the bar function again
+
+---eof---
+
