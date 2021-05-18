@@ -17,4 +17,9 @@ Ref:
   https://discourse.devontechnologies.com/t/duplicate-vs-replicate-for-sync/10706/5
   https://discourse.devontechnologies.com/t/replicate-v-duplicate/2737/2
 
+---
+ToRead:
+  https://www.devontechnologies.com/de/blog/tuesdaytipdealingwithduplicatesindevonthink
+
+
 ---eof---
