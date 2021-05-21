@@ -1,4 +1,14 @@
+tomtom/Tcomment
+================
+
+   Use linewise visual mode to highlight the line of code you
+   want to comment or uncomment then hit:
+   <crt-_>b
+
+
+
 tpop/vim-commentary
+===================
 
   gcc: comment out a line (takes a count)
 
