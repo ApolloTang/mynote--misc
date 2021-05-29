@@ -1,0 +1,20 @@
+Get a ubuntu container running as a playground:
+
+  docker run -dit ubuntu
+
+After it, checked for the processes running using:
+
+  docker ps -a
+
+For attaching again the container
+
+  docker attach CONTAINER_NAME
+
+TIP: For exiting without stopping the container type: ^P^Q
+
+https://stackoverflow.com/a/31143261/3136861
+
+---eof---
+
+
+
