@@ -1,0 +1,3 @@
+https://www.cyberciti.biz/faq/bash-get-exit-code-of-command/
+
+
