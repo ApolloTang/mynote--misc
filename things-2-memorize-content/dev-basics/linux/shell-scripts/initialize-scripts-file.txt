@@ -5,6 +5,17 @@ touch myscript.sh && chmod 744 $_ && vim $_
 #!/usr/bin/env sh
 #!/bin/sh
 
-744 === u+x
+
+
+% cat > myscript.sh
+#!/usr/bin/env sh
+exit 0
+^D
+
+
+
+% chmod 744
+change "-rw-r--r--" (_110,100,100) 644
+    to "-rwxr--r--" (_111,100,100) 744
 
 

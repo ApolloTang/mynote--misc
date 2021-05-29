@@ -1,7 +1,7 @@
 ::: Unix file permission  :::
 
 
-mod  own,grp,wrd  own,grp,wrd
+mod  usr,grp,wrd  usr,grp,wrd
 .............................
 644  110,100,100  rw-,r--,r--
 755  111,101,101  rwx,r-x,r-x
@@ -9,21 +9,44 @@ mod  own,grp,wrd  own,grp,wrd
 555  101,101,101  r-x,r-x,r-x
 775  111,111,101  rwx,rwx,r-x
 
+
+Mnemonic
+========
+
+  >=4         read able,      b/c 3rd bit (read bit) must be 1, >100
+  even-number non-executable, b/c 1st bit (exec bit) must be 0,  __0
+  odd-number  executable,     b/c 1st bit (exec bit) must be 2,  --1
+
+  example of using mnemonic
+  -------------------------
+  744 === u+x
+
+  usr,grp,wrd
+    7,  4,  4
+
+  observations:
+    every type are >=4
+    only the usr type odd
+
+  every type are >=4, (>=100) 3rd bit is set (readable)
+  v   v   v
+  111,100,100
+  rwx,r--,r--
+    ^
+    only usr type 1st bit odd number
+    thus only user is executable
+
+
 To Remember:
 ============
+  Group order is:
+    user, group, world
+    closer ---> futher
 
-    write-able >= 6
-    read-only  <= 5
-    even number executable
-    odd number not executable
-
-
-                     closer ------> farder
-    Group order is:  owner, group, world
-
-    1st bit = read  = 4
-    2nd bit = write = 2
-    3rd bit = exec  = 1
+  Meaning of bit are:
+    3st bit = read   4 = 100 is the minimum value to set this bit
+    2nd bit = write  2 = 010 is the minimum value to set this bit
+    1rd bit = exec   1 = 001 is the minimum value to set this bit
 
         rwx
     --------------------------------------
@@ -34,32 +57,32 @@ To Remember:
 
 
 0755
-    owner( read, write, exe )
+    user  (read, write, exe)
     group (read, exe)
     world (read, exe)
 
 0744
-    owner( read, write, exe )
+    user  (read, write, exe)
     group (read)
     world (read)
 
 0644
-    owner(read, write)
-    group(read)
-    word (read)
+    user  (read, write)
+    group (read)
+    word  (read)
 
 0444
-    owner (read)
+    user  (read)
     group (read)
     world (read)
 
 0555
-    owner ( read, exe )
-    group ( read, exe)
-    world ( read, exe)
+    user  (read, exe)
+    group (read, exe)
+    world (read, exe)
 
 if it is 4 digit the first digit "0" indicate the
-number is written in octal format (need to varify this)
+number is written in octal format (Not sure about this)
 
 
 Binary basic
