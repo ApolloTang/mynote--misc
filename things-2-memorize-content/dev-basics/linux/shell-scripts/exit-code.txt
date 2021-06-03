@@ -1,3 +1,13 @@
 https://www.cyberciti.biz/faq/bash-get-exit-code-of-command/
+https://www.cyberciti.biz/faq/unix-linux-bash-find-out-the-exit-codes-of-all-piped-commands/
+
+this will not work:
+  $ foo.sh && echo $?
+fix:
+  $ foo.sh
+  $ echo $?
+
+
+
 
 
