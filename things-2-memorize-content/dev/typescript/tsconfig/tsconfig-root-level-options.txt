@@ -1,0 +1,61 @@
+::: Root level options
+::::::::::::::::::::::::
+
+
+About path syntax
+-----------------
+If path are specified without "./" or "../" prefix, then it is
+interpreted as local to "tsconfig.json" (meaning: it imply "./").
+
+You can drop the .ts extension from the glob pattern and let the
+TypeScript compiler search for the input files.
+
+When a glob pattern doesn’t have a file extension, TypeScript
+looks for the files ending with .ts or .d.ts extension in the
+directory pointed by the glob pattern.
+
+[!] Watch out
+if you use relative path you may end up place the output outside
+your desire dist/ folder.
+
+
+
+
+options
+=======
+
+files
+------
+
+Value is an array contains the location of the TypeScript files
+to consider for the compilation.
+
+"files" option required you to hand-pick individual files and
+you can not use glob pattern.
+
+
+
+include & exclude
+-----------------
+
+unlike "file" option, "include"/"exclude" option let you use glob
+so you don't have to hand-pick individual files.
+
+Using include and exclude together:
+1st pass:
+  you use include.
+2nd pass:
+  you remove the file you don't want to transpile with exclude.
+
+
+The TypeScript compiler automatically excludes files from the
+the following directories:
+
+  "node_modules"
+  "bower_components"
+  "jspm_packages"
+  "<outDir>"
+
+
+
+

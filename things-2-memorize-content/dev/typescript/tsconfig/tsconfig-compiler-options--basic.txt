@@ -1,0 +1,64 @@
+tscconfig compilerOptions
+Basic Options
+==========================
+
+module
+------
+
+This tell the compiler to generate code for the target environment.
+For eg., if we want the code to run in nodejs (only support commonjs),
+then we must specify "commonjs". If we specify ES2020 then it
+won't be able to run on the targeted environment.
+
+if value of "module" is not specified, it will be generated automatically
+depend on value specified on "target".
+
+  target=ES3,ES5  module->commonjs
+  target=ES6      module->ES6
+
+see:
+  https://www.typescriptlang.org/tsconfig#module
+  https://www.typescriptlang.org/docs/handbook/modules.html
+
+
+allowJs
+-------
+Tells compiler to search for *.js files.
+But what would happen if you set allowJs=false but import a *.js
+file from a *.ts file?
+Answer:
+  the *.js file will not be imported.
+
+The default value of allowJs is false.
+
+
+
+outFile
+-------
+When set, compiler bundle output into one single js file.
+The value is the file path to where you want the bundle to save.
+
+[!]
+This option cannot be used unless the "module" is set to:
+  None, System, or AMD.
+It can not be used when value of "module" is set to:
+  CommonJS, ES6 or UMD
+
+
+
+outDir
+------
+
+If "outDir" is not specified, "outDir" will take the value of "rootDir".
+
+
+rootDir
+-------
+
+If "rootDir" is not specified, the compiler auto calculated as
+longest common path that include all files to compile.
+
+
+
+
+
