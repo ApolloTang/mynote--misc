@@ -1,3 +1,9 @@
+Summary:
+  docker run --name playground -dit ubuntu
+  docker attach playground
+  to exit without stopping the container: ^P^Q
+
+----
 Get a ubuntu container running as a playground:
 
   docker run -dit ubuntu
@@ -10,7 +16,12 @@ For attaching again the container
 
   docker attach CONTAINER_NAME
 
-TIP: For exiting without stopping the container type: ^P^Q
+NOTE:
+  Interesting to note that there is no need to run "sh" command.
+  before would have to "docker exec -it sh" to get a shell.
+
+TIP:
+  For exiting without stopping the container type: ^P^Q
 
 https://stackoverflow.com/a/31143261/3136861
 
