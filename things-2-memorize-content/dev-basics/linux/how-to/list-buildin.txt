@@ -1,0 +1,11 @@
+compgen -b
+
+or
+
+enable -a | awk '{ print $2 }'
+
+see:
+
+https://apple.stackexchange.com/questions/244398/is-there-a-way-to-list-all-available-commands-in-terminal
+
+
