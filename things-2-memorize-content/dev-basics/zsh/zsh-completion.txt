@@ -1,0 +1,5 @@
+Setup zsh completion see:
+
+// https://apple.stackexchange.com/a/244481/282542
+
+

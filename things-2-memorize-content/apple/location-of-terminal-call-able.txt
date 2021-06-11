@@ -1,0 +1,23 @@
+
+
+In OSX many program names that you'll find in the follwoing folder
+can be called via a CLI from the shell.
+
+/Applications
+/Applications/Utilities,
+/System/Library/CoreServices/Applications (as well as other things under the
+/System
+
+Some custom programs under the classic Unix locations is also callable:
+
+/usr/bin
+/usr/local/bin
+/opt
+/sys/bin
+
+Ref:
+https://apple.stackexchange.com/a/244402/282542
+
+
+---eof---
+

@@ -1,0 +1,8 @@
+
+
+help
+info [command]
+man [command]
+Apropos
+
+---eof---

@@ -1,4 +1,22 @@
 
+"compgen -c" executes the command in a subshell environment, and
+its output is used as the possible completions
+
+in zsh you have to enable this command see:
+
 https://apple.stackexchange.com/questions/244398/is-there-a-way-to-list-all-available-commands-in-terminal
 
+---
+
+What do options [-abcdefgjksuv] stands for?
+
+See:
+https://unix.stackexchange.com/questions/151118/understand-compgen-builtin-command
+
+---
+
+Misc Ref:
+https://www.cyberciti.biz/open-source/command-line-hacks/compgen-linux-command/
+
+---eof---
 
