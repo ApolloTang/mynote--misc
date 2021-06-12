@@ -1,0 +1,17 @@
+If you get:
+
+  root@vps1:~# man
+  bash: /usr/bin/man: No such file or directory
+  root@vps1:~#
+
+Then you have to install man page.
+
+  apt-get install man
+
+Ref:
+https://www.webhostingneeds.com/bash_usr_bin_man_no_such_file_or_directory
+
+---eof---
+
+
+
