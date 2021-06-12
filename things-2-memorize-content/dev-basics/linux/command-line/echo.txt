@@ -1,0 +1,56 @@
+"-e" enable interpretation of backslash escapes.
+
+Note on my observation for the behaviour of backslashed in
+"echo -e"
+
+
+'\b' and '\r'
+-------------
+'\b'  backspace is like pressing the backspace key, it repositions
+the location of cursor before continue printing.
+
+  % echo -e 'hello world goodbye123\b world'
+  hello world goodbye12 world
+
+'\r' is like '\b', while '\b' move back one space, '\r'
+move all the way back to the begininng of line.
+
+  % echo -e 'hello world goodbye123\rworld'
+  world world goodbye123
+
+
+'\v' and '\n'
+-------------
+'\v' will move the printing cursor to next line without repositioning
+column, but '\n' repositioning cursor at the begining of line:
+
+  % echo -e 'hello\vworld'
+  hello
+       world
+
+
+  % echo -e 'hello\nworld'
+  hello
+  world
+
+So '\n' is similar to '\v\r':
+
+  % echo -e 'hello\v\rworld'
+
+
+'\c'
+-----
+'\c' simply stop printing (without even generate a new line for
+next prompt):
+
+  % echo -e 'hello\cworld'
+  hello%
+
+
+Ref:
+https://www.tecmint.com/echo-command-in-linux/
+
+---eof---
+
+
+
