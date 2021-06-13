@@ -1,0 +1,15 @@
+VsCode navigation
+==---=============
+  [F12] go to definition
+
+
+  How to back to where you come from
+  ----------------------------------
+       [ctr][-]  go back
+  [sft][ctr][-]  go forward
+
+  Ref:
+    https://stackoverflow.com/a/47785801/3136861
+
+---eof---
+
