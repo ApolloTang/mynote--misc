@@ -6,7 +6,14 @@ Code navigation
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
 
+
+  How to back to where you come from
+  ----------------------------------
   Use <C-o> to back to where you come from. [1]
+
+    to read on "go to previous"
+      https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations
+
 
 Ref
 [1] https://github.com/neoclide/coc.nvim/issues/3044
