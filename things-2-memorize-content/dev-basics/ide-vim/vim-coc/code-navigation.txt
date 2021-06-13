@@ -1,0 +1,15 @@
+Code navigation
+===============
+  " GoTo code navigation.
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+
+  Use <C-o> to back to where you come from. [1]
+
+Ref
+[1] https://github.com/neoclide/coc.nvim/issues/3044
+
+
+---eof---

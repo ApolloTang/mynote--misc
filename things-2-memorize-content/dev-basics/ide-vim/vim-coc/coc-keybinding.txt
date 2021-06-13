@@ -1,15 +1,3 @@
-
-
-Code navigation
-===============
-  " GoTo code navigation.
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-
-
-
 autocomplete
 ============
   To trigger completion interlisense (same as vscode <c-space>)
@@ -54,5 +42,4 @@ i   7 function add(item) {                      │6. Convert 'const' to 'let'  
 >   9     storage.items.add(item);              │8. Declare property 'add'                 │
 >  10     currentStorage += iten.weight;        └──────────────────────────────────────────┘
 
-
-
+---eof---
