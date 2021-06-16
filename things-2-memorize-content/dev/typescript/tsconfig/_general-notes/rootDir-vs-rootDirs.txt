@@ -1,0 +1,8 @@
+"rootDirs" is the virtual directory use during module resolution,
+ while "rootDir" is the longer common path of input files.
+
+Ref:
+https://www.typescriptlang.org/docs/handbook/module-resolution.html#virtual-directories-with-rootdirs
+
+---eof---
+
