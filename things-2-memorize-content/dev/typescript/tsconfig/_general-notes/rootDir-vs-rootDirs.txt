@@ -3,6 +3,7 @@
 
 Ref:
 https://www.typescriptlang.org/docs/handbook/module-resolution.html#virtual-directories-with-rootdirs
+https://stackoverflow.com/questions/60896829/monorepo-with-rootdirs-produces-unwanted-sudirectories-such-as-src-in-outdi
 
 ---eof---
 

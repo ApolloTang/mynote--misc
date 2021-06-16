@@ -58,6 +58,14 @@ rootDir
 If "rootDir" is not specified, the compiler auto calculated as
 longest common path that include all files to compile.
 
+Be careful this is not 'rootDirs'. 'rootDirs' is used in module
+resolution.
+
+
+---eof---
+
+
+
 
 
 

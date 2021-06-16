@@ -1,0 +1,4 @@
+monorepo
+--------
+https://stackoverflow.com/questions/63515076/difference-between-rootdir-and-baseurl-in-tsconfig
+
