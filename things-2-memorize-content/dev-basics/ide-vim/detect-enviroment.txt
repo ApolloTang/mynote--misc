@@ -51,5 +51,35 @@ Detecting type of graphic enviroment
 
 Ref: https://stackoverflow.com/questions/15705022/vim-gtk-ui-font
 
+
+Another version to enviroment
+==============================
+
+  "/ OS Platform Detection
+  "/ https://unix.stackexchange.com/questions/40047/vim-script-check-running-platform
+  let g:platform = 0
+  let g:distro = 0
+  let g:uname = substitute(system("uname"), '\n\+$', '', '')
+  if filereadable("/etc/debian_version")
+    let g:platform="Linux"
+    let g:distro="Debian"
+  elseif has('mac')
+    let g:platform="Darwin"
+    let g:distro="OSX"
+  elseif g:uname == "FreeBSD"
+    let g:platform="FreeBSD"
+  elseif has('unix')
+    let g:platform="UNIX"
+  elseif has('win32') || has('win64') "win32 also matches on win64 so redundant
+    let g:platform="Windows"
+  elseif has('win32unix')
+    let g:platform="Cygwin"
+  else
+    let g:platform="Unknown"
+  endif
+  echom g:platform
+  echom g:distro
+
+
 ---eof---
 
