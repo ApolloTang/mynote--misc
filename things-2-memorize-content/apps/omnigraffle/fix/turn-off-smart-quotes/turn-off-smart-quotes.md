@@ -15,4 +15,4 @@
 
 While editing text, you can control-click to access the contextual menu for substitutions where you can turn smart quotes on and off. OmniGraffle remembers your preference for that setting (across all documents) until you change it again using that contextual menu item.
 
-<img src="./turn-off-smart-quotes-w-context-menu.jpg" />
+<img src="./tur:-off-smart-quokes-w-context-menu.jpg" />
