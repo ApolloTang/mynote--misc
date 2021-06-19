@@ -38,32 +38,35 @@ Output Control
 Regex Control
 =============
 
- -e        • Specify a Basic Regular Expression (BRE).
+ -e        • Specify a PATTERN.
            • With multiple "-e" the effect is same as alternation, eg:
                $ printf 'I like cats\nI like dogs' | grep 'cat\|dog'
              is same as:
                $ printf 'I like cats\nI like dogs' | grep -e 'cat' -e 'dog'
 
- -E        • Specify an Extended Regular Expression (ERE).
+ -G        • Use Basic Regular Expression (BRE). This is the default
+             when neither -G nor -E is specified.
+
+ -E        • Use Extended Regular Expression (ERE).
+
+ -P        • Use Perl Regular Expression (ERE).
+
+ -F        • Turn off Regex, PATTERN is a set of newline-separated strings.
+
+ -i        • Ignore case.
 
  -w        • Force PATTERN to match only whole words.
              - "grep -w 'word'" will only match "word" not "words"
+             - Be careful, -w is not the same as \b (see bre-word-anchor.txt )
 
  -x        • Force PATTERN to match only whole line.
              - "grep -x 'word'" will only match line that contains only "word",
-               it will not match the line "  word   " b/c this line contains
-               other charectors in addition to "word".
-               This is similar to "grep '^word$'.
-             - "grep -x ''", this suppose to match empty line but it does not work.
+               it will not match the line "  word   " b/c in addition to 'word',
+               this line contains other charectors (the spaces before and after 'word').
+             - This is similar to "grep '^word$'.
+             - Cannot use "grep -x ''" to match empty line, it does not work.
 
- -i        • Force PATTERN to match only whole lines.
-             - This is similar to -w but apples to whole lines instead
-               of words.
-             - `grep -i 'only these'` will only match the line contain
-               "only these",  will not match the line contain "only
-               these and that".
 
- -F        • Turn off Regex, PATTERN is a set of newline-separated strings.
 
 ------
 

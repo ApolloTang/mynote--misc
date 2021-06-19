@@ -12,6 +12,8 @@ Type of token to match:
    $ echo 'abc @# xyx' | grep -o '\b@#\b'
    <no match>
 
+ Non word charactors = [a-z][A-Z][0-9][_]
+
 
 How does '\b' work?
 --------------------
