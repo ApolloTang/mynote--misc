@@ -29,7 +29,7 @@ How does '\b' work?
 
   Where the '|' is the anchor position '\b'.
   Note that '!' does not have end of word boundary as it is not
-  a word character.
+  a word character (remember, '\b' does not match non-word charactors).
 
   "\b..\b" will match:
 
@@ -85,7 +85,7 @@ How does '\b' work?
   word character.
 
   The use case of single \b is to match words starting with or
-  end with a pattern:
+  ending with a pattern:
 
     $ grep '\bpar'   # match words starting with 'par'
     $ grep 'par\b'   # match words ending with 'par'
