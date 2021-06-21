@@ -1,0 +1,6 @@
+create a custom export preset, adjust the "Datarate"
+see this video:
+https://www.youtube.com/watch?v=KlFSWvekWHA
+
+---eof---
+
