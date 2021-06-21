@@ -1,6 +1,12 @@
 
-Type of token to match:
------------------------
+What is word charactors?
+------------------------
+
+ Word charactors = [a-z][A-Z][0-9][_]
+
+
+Word boundary \b is different from '-w' option
+-----------------------------------------------
 
  '-w' will match non word charactors:
 
@@ -12,11 +18,13 @@ Type of token to match:
    $ echo 'abc @# xyx' | grep -o '\b@#\b'
    <no match>
 
- Non word charactors = [a-z][A-Z][0-9][_]
-
 
 How does '\b' work?
 --------------------
+
+
+  case study 1:
+  -------------
 
   Consider the string:
 
@@ -63,12 +71,26 @@ How does '\b' work?
     # 1st and 3rd line have space as second character
 
 
+  case study 2:
+  -------------
+  $ echo 'abc #@a abc#@abc ' | grep  '\b#@\b'
+  abc #@a abc#@abc
+             mm
+
+  '|abc| #@|a| |abc|#@|abc| '
+  ^|www|###|w|#|www|##|www|#$
+   s   e   s e s   emms   e
+
+    legend:
+    m=match, s=start of word, e=end of word,
+    ^=start of line, $=end of line,
+    #=non word char; w=word char; |=\b
 
   Note 1:
   -------
   Word boundary has a start and end; but with \b you don't have
   to mark both in your pattern. \b can denote either only the
-  start or the end of word without its corresponding boundary.
+  start or the end of word.
 
     Start of word means either the character prior to the word is
     a non-word character or there is no character (start of line):
