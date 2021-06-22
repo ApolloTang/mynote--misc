@@ -1,0 +1,5 @@
+note that "paths" are resolved relative to "baseUrl"
+
+to read:
+https://stackoverflow.com/questions/43281741/how-to-use-paths-in-tsconfig-json
+
