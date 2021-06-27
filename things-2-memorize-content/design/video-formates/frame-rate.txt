@@ -1,0 +1,12 @@
+The NTSC video standard frame rate is 30 FPS. This is the standard
+for videos produced in North America.  However, this standard
+is based on creating a smooth representation of video motion captured
+in the real world and may not be necessary for your project.
+
+For example, if you specify 30 frames per second, the output will
+be smooth, but the file will be about twice as large as a 15
+fps video file. You may find that a 10 fps or 15 fps encoding
+is very acceptable for your audience. Reducing the frame rate
+can drastically reduce the size of the video file.
+
+
