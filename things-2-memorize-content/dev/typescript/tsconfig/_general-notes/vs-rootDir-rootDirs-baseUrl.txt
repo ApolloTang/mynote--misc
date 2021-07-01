@@ -1,0 +1,27 @@
+"baseUrl" and "rootDirs" are related to module resolution.
+
+"baseUrl" is used by the compile to resolve non-relative import (import that does not start with /, ./ or ../). All non-relative are resolved based on 'baseUrl' [1]
+
+"rootDirs" is also used for module resolution [2a]. This is an advanced use case used in bundling the applications. Its value is an array of two or more directories. The compiler sees these directories as a single structure and uses it to resolve where modules are imported from (see example in documentation [2b]).
+
+"rootDir" (no 's') is the common path where the compiler uses to place output files specified in the 'outDir'.
+
+It is important to note that "rootDir" does not affect which files become part of the compilation. To control which files to be compile you use "include", "exclude", or "files" in the top-level options of tsconfig.
+
+When it is not specified it will be calculated. See reference [3][4].
+
+
+Ref:
+[1] https://www.typescriptlang.org/docs/handbook/module-resolution.html#base-url
+[2a] https://www.typescriptlang.org/tsconfig#rootDirs
+[2b] https://www.typescriptlang.org/docs/handbook/module-resolution.html#virtual-directories-with-rootdirs
+[3] https://www.typescriptlang.org/tsconfig#rootDir
+[4] https://medium.com/jspoint/typescript-compilation-the-typescript-compiler-4cb15f7244bc
+
+Also, something to contemplate
+https://stackoverflow.com/questions/60896829/monorepo-with-rootdirs-produces-unwanted-sudirectories-such-as-src-in-outdi
+https://stackoverflow.com/questions/63515076/difference-between-rootdir-and-baseurl-in-tsconfig
+
+
+---eof---
+

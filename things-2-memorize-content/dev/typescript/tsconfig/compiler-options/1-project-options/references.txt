@@ -1,0 +1,5 @@
+to read:
+https://stackoverflow.com/questions/60896829/monorepo-with-rootdirs-produces-unwanted-sudirectories-such-as-src-in-outdi
+https://www.typescriptlang.org/docs/handbook/project-references.html
+
+

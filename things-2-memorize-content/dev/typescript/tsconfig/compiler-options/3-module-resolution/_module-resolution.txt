@@ -1,1 +1,0 @@
-note that "paths" are reswolved relative to "baseUrl"
