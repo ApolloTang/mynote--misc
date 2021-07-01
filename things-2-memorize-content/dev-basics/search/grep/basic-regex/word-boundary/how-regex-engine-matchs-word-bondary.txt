@@ -1,0 +1,121 @@
+How regex engine matchs word boundary
+=====================================
+
+Regex engine sees a boudary between every character. As an
+example, consider a string "1 cat, 2 cats!" the boudary is marked with
+single quote:
+
+  '1' 'c'a't',' '2' 'c'a't's'!'
+
+There are two kinds of boudaries: the word-boundary and the non-word-bondary.
+
+  Boundary type      regex
+  ---------------------------
+  word-boundary      \b
+  non-word-boundary  \B
+
+word-boundary exists between:
+
+  1. word-character and non-word-character
+  2. word-character and begining of string
+  3. word-character and end of string
+
+non-word-boundary exists between:
+
+  a. word-characters
+  b. non-word-characters
+  c. non-word-character and begining of string
+  d. non-word-character and end of string
+
+The following the type of boundary and the explanation and we
+will use "|" to mark \b, and "`" to mark \B.
+
+  2 1 1 a a 1 b 1 1 1 a a a 1 d
+  |1| |c`a`t|,` |2| |c`a`t`s|!`
+     s         s   s              (s marks the space characters)
+
+
+To illustarate how this work, lets use example:
+
+$ echo '1 cat, 2 cats!' | ggrep --color '.\b.'
+1 cat, 2 cats!
+mm  mm  mm  mm
+      mm
+
+  match target : "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+  match pattern: ".|."
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+   ".|."                               non-match "^1", b/c "." cannot match "^"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+     ".|."                             match "1 "
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+         ".|."                         non-match "ca"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+             ".|."                     match "t,",
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                 ".|."                 match " 2"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                     ".|."             match " 2"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                         ".|."         non-match "at"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                             ".|."     match "s!"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                                 ".|." non-match "$"
+
+
+Another example:
+
+% echo '1 cat, 2 cats!' | ggrep --color '.\B.'
+1 cat, 2 cats!
+  mm mm  mm
+           mm
+
+  match target : "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+  match pattern: ".`."
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+   ".`."                               non-match "^1"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+     ".`."                             non-match "1 "
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+       ".`."                           non-match " c"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+         ".`."                         match "ca"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+             ".`."                     non-match "t,"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+               ".`."                   match ", "
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                   ".`."               non-match "2 "
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                     ".`."             non-match " c"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                       ".`."           match "ca"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                           ".`."       match "ts"
+
+   "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
+                               ".`."   non-match "!$", b/c "." cannot match "$"
+
+
+
+
