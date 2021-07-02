@@ -2,20 +2,27 @@
 How regex engine matchs word boundary
 =====================================
 
-Regex engine sees a boudary between every character. Consider a 
-string "1 cat, 2 cats!" the boudaries are marked with single quote
+This article explain how word boundary works in Gnu grep's basic regular expression
+(More precisely, word boundary should be called character boundary):
+
+Regex engine sees a boudary: 
+  1. between a pair of character, 
+  2. a character and ^,
+  3. a character and $
+
+Consider a string "1 cat, 2 cats!" the boudaries are marked with single quote
 as follow:
 
   '1' 'c'a't',' '2' 'c'a't's'!'
 
-There are two kinds of boudaries: the word-boundary and the non-word-bondary.
+There are two kinds of boudaries: the word-charecter-boundary and the non-word-charecter-bondary.
 
-  Boundary type      regex
-  ---------------------------
-  word-boundary      \b
-  non-word-boundary  \B
+  Boundary type                regex
+  ------------------------------------
+  word-charecter-boundary      \b
+  non-word-charecter-boundary  \B
 
-word-boundary exists between:
+word-character-boundary exists between:
 
   1. word-character and non-word-character:
        w|#, #|w  (legend: w=word-character, #=non-word-character, |=word boundary)
@@ -25,8 +32,10 @@ word-boundary exists between:
        
   3. word-character and end of string:
        w|$
+  
+  Note: word-character are [0-9][a-z][A-Z][_] 
        
-non-word-boundary exists between:
+non-word-character-boundary exists between:
 
   a. word-characters:
        w`w    (legend: `=non-word-boundary)
@@ -40,18 +49,18 @@ non-word-boundary exists between:
   d. non-word-character and end of string
        #`$
        
-The following we marks the string "1 cat, 2 cats!" with the reason:
+The following we marks the type of boundary in the string "1 cat, 2 cats!" 
+with reason:
 
-  2 1 1 a a 1 b 1 1 1 a a a 1 d   <---resaon label 
+  2 1 1 a a 1 b 1 1 1 a a a 1 d   <--- resaons
   |1| |c`a`t|,` |2| |c`a`t`s|!`
      s         s   s              (s marks the space characters)
 
-
-To illustarate how the match work, lets the following example:
+To illustarate how the match works, let's see the following example:
 
 $ echo '1 cat, 2 cats!' | ggrep --color '.\b.'
 1 cat, 2 cats!
-mm  mm  mm  mm
+mm  mm  mm  mm     (legend: m marks the character that matched)
       mm
 
   match target : "^|1| |c`a`t|,` |2| |c`a`t`s|!`$"
