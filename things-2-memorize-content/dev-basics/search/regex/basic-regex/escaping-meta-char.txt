@@ -1,3 +1,19 @@
+To get BRE funtionality the following does not require escaping:
+
+  line anchore:   ^ $
+
+
+To get BRE funtionality the following require escaping:
+
+  word boundary:  \b \B \< \>
+  Alternator:     \|
+            :     \? \+ \( \)
+                  \{              ## note that '}' does not require escaping
+
+
+
+
+
 In BRE the following meta-characters lose their special meaning:
 
   '?'  '+'    ## note that '*' is not in the list
