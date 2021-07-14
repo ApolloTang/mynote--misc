@@ -1,0 +1,8 @@
+to read:
+https://www.cyberciti.biz/faq/linux-ip-command-examples-usage-syntax/
+
+The "ip" command replaces the old "ifconfig" command on modern Linux distributions.
+
+---eof---
+
+
