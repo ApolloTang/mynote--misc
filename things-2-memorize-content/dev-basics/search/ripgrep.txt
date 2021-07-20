@@ -60,10 +60,18 @@ Useful flag:
   --max-columns=0        # Don't supress long line
   --max-columns-preview  # Preview long line
 
+  --hidden               # include hidden file [1]
+
 
 Useful example
 ``````````````
 
   yarn info core-js time | rg \'2\..?\..?\.\' -p | less -r     // <--- does not work at work computer?
   yarn info core-js time | rg \'2\...\?\...\?\' -p | less -r
+
+
+
+ref:
+---
+[1] https://github.com/BurntSushi/ripgrep/issues/919
 
