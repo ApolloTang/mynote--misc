@@ -1,0 +1,9 @@
+
+search recusively for 'needle' but ignore node_modules directory:
+
+  ggrep -R --exclude-dir=node_modules 'needle'
+
+
+---eof---
+
+
