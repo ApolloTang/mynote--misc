@@ -1,0 +1,6 @@
+
+docker build -t image_name:1.0 .
+
+docker kill $(docker ps -q)
+
+
