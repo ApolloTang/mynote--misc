@@ -11,10 +11,8 @@ legends for keys in notes:
   [del] delete
   [bsp] backspace == [fnc][del]
 
-  [ar^] up
-  [arV] down
-  [ar<] left
-  [ar>] right
-
-
+  [_^] up
+  [_v] down
+  [_<] left
+  [_>] right
 

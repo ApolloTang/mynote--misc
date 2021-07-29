@@ -1,0 +1,6 @@
+https://manual.audacityteam.org/man/navigation_tips.html
+
+[cmd][b]          add label at cursor/selection
+[cmd][.]          add label at current position while playing
+
+[alt]+[_<]/[_>]   move cursor to next label
