@@ -19,4 +19,8 @@ Ref
 [1] https://github.com/neoclide/coc.nvim/issues/3044
 
 
+Related Reference:
+https://github.com/neoclide/coc.nvim/issues/1026
+https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations
+
 ---eof---

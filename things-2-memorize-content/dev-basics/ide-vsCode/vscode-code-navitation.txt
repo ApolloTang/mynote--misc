@@ -1,6 +1,8 @@
 VsCode navigation
-==---=============
-  [F12] go to definition
+==================
+  [F12]         go to definition
+  [cmd]+click   go to definition (same as F12)
+  [ctr][tab]    go back to previous file
 
 
   How to back to where you come from
