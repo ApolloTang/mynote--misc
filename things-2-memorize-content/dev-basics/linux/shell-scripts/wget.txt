@@ -1,0 +1,6 @@
+wget -O - http://web:80/
+
+the "-" in the flag "-O -" will output to standard output.
+
+---eof---
+
