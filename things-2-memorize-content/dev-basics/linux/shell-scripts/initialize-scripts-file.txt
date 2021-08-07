@@ -1,21 +1,66 @@
 
-touch myscript.sh && chmod 744 $_ && vim $_
-
-#!/usr/bin/env bash
-#!/usr/bin/env sh
-#!/bin/sh
-
-
-
 % cat > myscript.sh
 #!/usr/bin/env sh
 exit 0
 ^D
 
+touch myscript.sh && chmod 744 $_ && vim $_
+
+---------------------------------------------------------------
+
+:: Make it executable
 
 
-% chmod 744
-change "-rw-r--r--" (_110,100,100) 644
-    to "-rwxr--r--" (_111,100,100) 744
+% chmod 744 myscript.sh
+The above change:
+
+  mod  usr,grp,wrd  usr,grp,wrd
+  644  110,100,100  rw-,r--,r--
+
+   to
+
+  mod  usr,grp,wrd  usr,grp,wrd
+  744  111,100,100  rwx,r--,r--
+
+
+---------------------------------------------------------------
+
+Two options of Shebang available:
+
+  #!/bin/bash
+  #!/usr/bin/env bash
+
+Which one to use?
+
+  Not all system install bash at the same location.
+  For prtability, using:
+
+    '#!/usr/bin/env bash'
+
+  because it will force the system to search
+  the bash preferred in your PATH variable.
+
+--------------------------------------------------------------
+
+To show all the available bash install on Mac:
+
+  $ type -a bash
+  bash is /usr/local/bin/bash  # intalled by brew
+  bash is /bin/bash            # default OS installed
+  bash is /opt/local/bin/bash  # custom install
+
+
+--------------------------------------------------------------
+
+To show bash version:
+
+  $ /opt/local/bin/bash --version
+  GNU bash, version 4.3.42(1)-release (x86_64-apple-darwin15.3.0)
+  Copyright (C) 2013 Free Software Foundation, Inc.
+  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+  This is free software; you are free to change and redistribute it.
+  There is NO WARRANTY, to the extent permitted by law.
+
 
 
