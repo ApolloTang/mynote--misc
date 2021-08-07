@@ -1,6 +1,9 @@
 debuging bash with bashdb
 
 https://krypted.com/bash/debugging-bash-scripts-with-bashdb/
+http://bashdb.sourceforge.net/
+
+
 
 
 
