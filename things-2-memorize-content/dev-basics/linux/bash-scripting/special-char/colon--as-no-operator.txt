@@ -1,0 +1,46 @@
+Colon ":" is a do nothing operator.
+A do nohting operator is also called 'no-op' (no operation).
+With a no-op, The overall return code will be true (zero) even
+if it did not succeed.
+
+
+To illustrate:
+
+cat > bad-command
+#!/usr/bin/env bash
+bad-command () {
+  rm does_not_exist;
+}
+bad-command
+^D
+
+
+chmod 744 bad-command && ./$_; echo $?
+rm: does_not_exist: No such file or directory
+1
+^--- exit code is one
+
+Now, lets add a colon operator
+
+
+cat > bad-command-no-op
+#!/usr/bin/env bash
+bad-command-no-op () {
+  rm does_not_exist;:
+  #                 ^---- no-op here
+}
+bad-command-no-op
+^D
+
+chmod 744 bad-command-no-op && ./$_; echo $?
+0
+^---- exit code is zero
+
+
+----
+ref
+https://www.ibm.com/support/pages/meaning-semi-colon-colon-unix-script-sterling-gentranserver-unix
+https://tldp.org/LDP/abs/html/special-chars.html
+
+
+---eof---
