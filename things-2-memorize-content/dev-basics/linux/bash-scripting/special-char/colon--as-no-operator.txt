@@ -36,8 +36,15 @@ chmod 744 bad-command-no-op && ./$_; echo $?
 0
 ^---- exit code is zero
 
+----------------------------------------------------------------
+To Read: What is the purpose of the : (colon) GNU Bash builtin?
+https://stackoverflow.com/questions/3224878/what-is-the-purpose-of-the-colon-gnu-bash-builtin
 
-----
+
+
+
+
+====
 ref
 https://www.ibm.com/support/pages/meaning-semi-colon-colon-unix-script-sterling-gentranserver-unix
 https://tldp.org/LDP/abs/html/special-chars.html
