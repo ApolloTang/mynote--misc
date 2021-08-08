@@ -1,4 +1,4 @@
-what is the shell I am curring in?
+what is the shell I am currently in?
 
 https://askubuntu.com/questions/590899/how-do-i-check-which-shell-i-am-using
 https://stackoverflow.com/questions/38237907/how-can-i-find-my-shell-version-using-a-linux-command

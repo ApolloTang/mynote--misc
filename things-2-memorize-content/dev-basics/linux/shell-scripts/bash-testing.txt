@@ -1,0 +1,6 @@
+link to bash testing framework:
+https://github.com/rylnd/shpec
+
+---eof---
+
+
