@@ -1,0 +1,27 @@
+readlink -f does two things [1]:
+
+  1. It iterates along a sequence of symlinks until it finds an actual file.
+  2. It returns that file's canonicalized name—i.e., its absolute pathname.
+
+What is the usage?
+
+  It is often use to get shell-script's absolute path [2]
+
+    echo "$(greadlink -f $0)"               # [2][5]
+    echo "$(greadlink -f "$BASH_SOURCE")"   # [4][5]
+
+Problem:
+
+  it is not portable [1][2][4]
+  it only work with one file [3].
+
+----
+Ref:
+
+[1] https://stackoverflow.com/a/1116890/3136861
+[2] https://unix.stackexchange.com/questions/76505/portable-way-to-get-scripts-absolute-path
+[3] https://unix.stackexchange.com/questions/178700/readlink-f-not-working-on-multiple-files
+[4] http://www.binaryphile.com/bash/2018/07/29/approach-bash-like-a-developer-part-5-success.html
+[5] https://stackoverflow.com/questions/35006457/choosing-between-0-and-bash-source
+
+---eof---
