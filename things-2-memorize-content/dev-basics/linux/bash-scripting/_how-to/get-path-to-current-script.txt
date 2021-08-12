@@ -1,0 +1,27 @@
+-----snippet start ----
+#!/bin/bash
+
+# This snippet get the path to current script
+DIRECTORY=$(cd `dirname $0` && pwd)
+echo $DIRECTORY
+-----snippet end ----
+
+The above snippet is from:
+
+  https://electrictoolbox.com/bash-script-directory/
+
+Note that it will not work if you source this file.
+Only work if execute it directy (don't forget to chmod 744 <filename>).
+
+Question:
+  What the difference between this this command and "readlink"?
+My guess answer:
+  "readlink" will follow symbolic link but this will not.
+
+------
+More reading:
+http://www.binaryphile.com/bash/2020/01/12/determining-the-location-of-your-script-in-bash.html
+
+---eof---
+
+
