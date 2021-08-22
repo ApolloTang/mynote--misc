@@ -1,0 +1,116 @@
+There are two different kinds of links: (1) hard links; (2) soft links
+
+  1. Hard links (no flag)
+       - create another filename point to the same data block on disk (inode).
+       - if you delete one the other one still work.
+  2. Soft links (-s flag)
+       - create another filename point to the original source-file.
+       - if you delete the original source-file, the create file will no longer work.
+
+  Limitation of hard link:
+    - created link must be on the same file system.
+    - can not link directory.
+  Advantages of hard link:
+    - the created copy are absoluely and always identical.
+    - extra link takes no data space (except an occasional extra disk block in directory file).
+
+  Advantages of soft link:
+    - Work across filesystems or even computer systems (if you are using NFS or RFS).
+    - works on directory.
+
+
+
+Creating link:
+--------------
+
+Synopsis:
+  BSD: ln [option] SOURCE_FILE [LINK_NAME]
+  GNU: ln [option] TARGET LINK_NAME
+
+Terminology:
+  'SOURCE_FILE' or 'TARGET' mean the samething, it is the original
+  file that the created link point to.
+
+
+# See in action: hard link
+---------------------------
+
+  $ touch foo
+  $ ls -l
+  total 0
+  -rw-r--r--  1 apollotang  staff     0B 21 Aug 11:25 foo
+              ^
+              |
+              | Notice that 2nd column this is the "link count"
+
+  $ ln foo foo-ln     # creating a hard link called foo-ln
+
+  $ ls -l
+  total 0
+  -rw-r--r--  2 apollotang  staff     0B 21 Aug 11:25 foo    <--- this is the TARGET (original file with source content)
+  -rw-r--r--  2 apollotang  staff     0B 21 Aug 11:25 foo-ln <--- created link
+              ^
+              |
+              | Notice that 2nd column (link count) change from 1 to 2.
+
+  $ rm foo
+  $ ls -l
+  total 0
+  -rw-r--r--  1 apollotang  staff  0 21 Aug 23:28 foo-ln
+              ^
+              |
+              | Deleting the either file will reduce the link count.
+
+
+# See in action: soft link
+--------------------------
+
+  $ touch foo
+  $ ln -s foo foo-sln  # create a symbolic link
+  $ ls -l
+  total 0
+  -rw-r--r--  1 apollotang  staff  0 21 Aug 23:31 foo
+  lrwxr-xr-x  1 apollotang  staff  3 21 Aug 23:31 foo-sln -> foo
+  ^           ^
+  |           | Note the link count is 1 for each file; ln -s does not change the count.
+  |
+  | the flag 'l' mark
+
+
+
+Special Note:
+-------------
+
+listing with the '-L' flag:
+
+  $ touch foo
+  $ ln -s foo foo-sln  # create a symbolic link
+
+  $ ls -l
+  total 0
+  -rw-r--r--  1 apollotang  staff  0 21 Aug 23:31 foo
+  lrwxr-xr-x  1 apollotang  staff  3 21 Aug 23:31 foo-sln -> foo
+
+  $ ls -l -L
+  total 0
+  -rw-r--r--  1 apollotang  staff  0 21 Aug 23:31 foo
+  -rw-r--r--  1 apollotang  staff  0 21 Aug 23:31 foo-sln
+
+  Comparing with and without the '-L' flag, you notice that the
+  leading 'l' and the '-> foo' are missing. What happened is
+  the -L flag show the list by following the link to the source-file.
+
+  If you delete the source file, ls -lL will show nothing:
+
+    $ rm foo
+
+    $ ls -l
+    total 0
+    lrwxr-xr-x  1 apollotang  staff  3 21 Aug 23:31 foo-sln -> foo
+
+    $ ls -lL
+    total 0
+    ~/Desktop/playing-w-ln
+
+
+
