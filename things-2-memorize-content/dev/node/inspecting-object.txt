@@ -1,0 +1,9 @@
+How to inspect object in node-cli
+----------------------------------
+
+https://nodejs.org/en/knowledge/getting-started/how-to-use-util-inspect/
+
+https://stackoverflow.com/questions/10729276/how-can-i-get-the-full-object-in-node-jss-console-log-rather-than-object/32866532#32866532
+
+
+
