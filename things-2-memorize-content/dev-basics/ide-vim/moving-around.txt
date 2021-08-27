@@ -11,4 +11,11 @@ Move cursor to:
   (n)L   " to botton of page
 
 
+Move to match braces:
+
+  %
+  see:
+  :help %
+  https://vim.fandom.com/wiki/Moving_to_matching_braces
+
 
