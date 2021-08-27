@@ -1,3 +1,6 @@
+
+"-n" do not output the trailing newline.
+
 "-e" enable interpretation of backslash escapes.
 
 Note on my observation for the behaviour of backslashed in
