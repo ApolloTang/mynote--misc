@@ -1,0 +1,10 @@
+Very important to know  the instructions following the exec call
+will never be executed (unless exec is itself in a subshell). [1]
+
+exec is used mainly in wrapper scripts. [2]
+
+[1] https://askubuntu.com/questions/525767/what-does-an-exec-command-do
+[2] https://askubuntu.com/questions/819910/what-are-possible-use-of-exec-command
+
+---eof---
+
