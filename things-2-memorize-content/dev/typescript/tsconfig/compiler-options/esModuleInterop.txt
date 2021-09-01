@@ -1,0 +1,16 @@
+
+The esModuleInterop is only necessary for the default import of
+the, for exeample, colorsJson:
+
+  import colorsJson from '../colors.json';
+
+If you leave it set to false then
+you have to import it with
+
+  import * as colorsJson from '../colors.json'
+
+Ref:
+https://stackoverflow.com/a/50674344/3136861
+
+---eof---
+
