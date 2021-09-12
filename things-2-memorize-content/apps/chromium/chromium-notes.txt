@@ -1,0 +1,23 @@
+Chromium binary locations on mac:
+
+  ~/Applications/Chromium.app/Contents/MacOS/Chromium
+
+
+Chromium store profile locations on Mac:
+  ~/Library/Application\ Support/Chromium
+
+
+How to launch Chromium with specific profile from command line:
+  ~/Applications/Chromium.app/Contents/MacOS/Chromium --new-window --args --profile-directory="Profile 1" $* 2>&1 &
+
+
+----
+Chromium is missing proprietary video codecs, but you can build your own. See:
+https://stackoverflow.com/questions/56213098/which-chromium-version-has-h-264-support/56213187
+
+
+Different between chromium and chrome:
+https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/
+https://www.browserstack.com/guide/difference-between-chrome-and-chromium
+
+--eof---

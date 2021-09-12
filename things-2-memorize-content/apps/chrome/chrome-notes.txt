@@ -1,0 +1,16 @@
+Chrome binary locations on mac:
+
+  /Applications/Google\ Chrome.app/Contents/MacOS
+
+
+Chrome store profile locations on Mac:
+  ~/Library/Application\ Support/Google/Chrome
+
+
+How to launch chrome with specific profile from command line:
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --new-window --args --profile-directory="Profile 1" $* 2>&1 &
+
+---eof---
+
+
+

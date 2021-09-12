@@ -1,0 +1,13 @@
+
+About:
+
+https://www.online-tech-tips.com/google-softwaretips/what-is-chrome-canary-and-is-it-safe/
+
+
+profile location:
+
+~/Library/Application Support/Google/Chrome Canary
+
+
+---eof---
+
