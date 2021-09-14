@@ -1,0 +1,20 @@
+This post
+
+  https://apple.stackexchange.com/a/360666/282542
+
+link to Alfred help page:
+
+  https://www.alfredapp.com/help/features/terminal/
+
+Which point to applescript posted here:
+
+  https://github.com/vitorgalvao/custom-alfred-iterm-scripts
+
+I have fork it here:
+
+  https://github.com/ApolloTang/custom-alfred-iterm-scripts
+
+---eof---
+
+
+
