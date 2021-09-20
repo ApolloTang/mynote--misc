@@ -1,0 +1,15 @@
+My setting repos:
+https://github.com/ApolloTang/vscode-setting
+
+mvim   ~/Library/Application\ Support/Code/User/settings.json
+
+-----
+
+Depending on your platform, the user settings file is located here:
+
+  Windows %APPDATA%\Code\User\settings.json
+  macOS   $HOME/Library/Application Support/Code/User/settings.json
+  Linux   $HOME/.config/Code/User/settings.json
+
+--eof---
+
