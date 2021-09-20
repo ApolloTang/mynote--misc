@@ -17,7 +17,7 @@ legends for keys in notes:
   [->-] right
 
 
-  Simbol
+  Symbol
   ------
 
   [⇧]
