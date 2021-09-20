@@ -8,8 +8,12 @@
 <cmd-.>        drop down will appear to show you available option
                to fix thing.
 
-<ctr-k><ctr-c> comment selected
-<ctr-k><ctr-u> uncomment selected
+
+<ctr-k><ctr-c> comment selected    window
+<ctr-k><ctr-u> uncomment selected  window
+
+<cmd-k><cmd-c> comment selected    osx
+<cmd-k><cmd-u> uncomment selected  osx
 
 <ctr-shft-space>  trigger parmeter hints (place cursor in function parenthesis) [1]
 
