@@ -109,9 +109,15 @@ emacs like begin and end of line
   :GGcddt    : cd to desktop  (todo, save previous dir some where)
 
 
-========================
-  Window and naviation
-========================
+===========
+  Window
+===========
 
-  <leader>{1,2,3,4,5}
+  Selecting window:
+    <leader>{1,2,3,4,5}
+
+  Resize window:
+    nnoremap w-    : Decrease:
+    nnoremap w=    : Increase:
+    nnoremap w0    : Set width to 1000:
 

@@ -10,3 +10,7 @@ Selection current window and make it full at left
 
 Selection current window and make it full at right
   <c-w>t <c-w>L
+
+
+---eof--
+

@@ -6,11 +6,12 @@ To increase a window to its maximum width:
 
   <c-w> |
 
+To resize all windows to equal dimensions:
+
+  <c-w> =
 
 ---
-Ref:
-
-More on Window:
+More on Window Resize:
   https://vim.fandom.com/wiki/Resize_splits_more_quickly
 
 ---eof---
