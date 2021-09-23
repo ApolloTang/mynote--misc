@@ -4,28 +4,13 @@ Open result in vim
 
 $ vim -q <(grep -Hn '<pattern>' *)
 
+-q [errorfile]
+           Start in quickFix mode.  The file [errorfile] is  read  and
+           the  first  error is displayed.
 
-Useful commands for quickfix [1]:
+More info quickfix list, see:
+  dev-basics/ide-vim/quickfix-list.txt
 
-  :copen " Open the quickfix window
-  :ccl   " Close it
-  :cw    " Open it if there are "errors", close it otherwise (some people prefer this)
-  :cn    " Go to the next error in the window
-  :cp    " Go to the previous error in the window
-  :cnf   " Go to the first error in the next file
-  :.cc   " Go to error under cursor (if cursor is in quickfix window)
-
-
-
-Use unimpare [2]
-
-  [q and ]q  " go forward and back in the quickfix list.
-  [Q and ]Q  " go to the beginning and end (which is especially
-               handy if you only have one item in the list; this makes vim complain about [q and ]q.
-
----
-Ref:
-[1] https://stackoverflow.com/questions/1747091/how-do-you-use-vims-quickfix-feature
-[2] https://stackoverflow.com/a/15417309/3136861
+---eof---
 
 
