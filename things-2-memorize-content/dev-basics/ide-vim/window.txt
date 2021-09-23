@@ -1,0 +1,16 @@
+To increase a window to its maximum height:
+
+  <c-w> _
+
+To increase a window to its maximum width:
+
+  <c-w> |
+
+
+---
+Ref:
+
+More on Window:
+  https://vim.fandom.com/wiki/Resize_splits_more_quickly
+
+---eof---

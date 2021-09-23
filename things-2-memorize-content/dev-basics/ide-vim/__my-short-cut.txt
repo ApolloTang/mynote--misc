@@ -99,9 +99,9 @@ emacs like begin and end of line
   inoremap <c-e> <esc>A
   noremap <space>a ^
   noremap <space>e $
-  
-  
-  
+
+
+
 ===========
   helper
 ===========
@@ -109,6 +109,9 @@ emacs like begin and end of line
   :GGcddt    : cd to desktop  (todo, save previous dir some where)
 
 
+========================
+  Window and naviation
+========================
 
-
+  <leader>{1,2,3,4,5}
 
