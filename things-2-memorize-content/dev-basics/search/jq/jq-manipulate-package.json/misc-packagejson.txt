@@ -1,0 +1,20 @@
+
+extracted items object:
+=======================
+
+jq '.dependencies' package.json
+
+::: INPUT
+  {
+    "name": "jq-lab",
+    "dependencies": {
+      "eslint": "^7.32.0"
+    }
+  }
+
+::: OUTPUT
+{
+  "eslint": "^7.32.0"
+}
+
+

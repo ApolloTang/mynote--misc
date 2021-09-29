@@ -1,0 +1,105 @@
+jq basic pattern:
+=================
+
+  jq 'filter'
+
+  Example:
+
+    filter = .
+    Return as it is
+
+      echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.'
+      {
+        "a": "a",
+        "x": {
+          "y": "y"
+        }
+      }
+
+    filter = .x
+    Get value of field "x"
+
+      echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.x'
+      {
+        "y": "y"
+      }
+
+    filter = .x.y
+    Get value of nested field "y"
+
+      echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.x.y'
+      "y"
+
+
+Pipe:
+=====
+
+  jq 'filter | filter | ...'
+
+    filter = .x | .y
+    Pipe one filter into another
+
+      echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.x | .y'
+      "y"
+
+
+Handling element
+================
+
+  filter = .[]
+  Extract all array's element
+
+    echo '[1,2]' | jq '.[]'
+    1
+    2
+
+  filter = .[1]
+  Extract array element by index
+
+    echo '["a", {"y":"y"}]' | jq '.[1]'
+    {
+      "y": "y"
+    }
+
+  When element is object type, .[] returns the values
+
+    echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.[]'
+    "a"
+    {
+      "y": "y"
+    }
+
+  filter = .["x"]
+  Extract value of object by key
+
+    echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.["x"]'
+    {
+      "y": "y"
+    }
+
+  filter = .["x", "a"]
+  Extract multiple keys (note that it obeys the order specified)
+
+    echo '{ "a":"a", "x":{ "y":"y" } }' | jq '.["x", "a"]'
+    {
+      "y": "y"
+    }
+    "a"
+
+Complex Example
+===============
+
+  For each element, extract the nested field
+    echo '
+      [
+        {"x":{ "y":"y1" } },
+        {"x":{ "y":"y2" } }
+      ]'  | jq '
+       .[] |
+       .x.y'
+
+     result:
+     "y1"
+     "y2"
+
+

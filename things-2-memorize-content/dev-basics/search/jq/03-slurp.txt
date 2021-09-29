@@ -1,0 +1,58 @@
+file: 1.json
+[
+  { "a": "a1" },
+  { "a": "a2" }
+]
+
+file: 2.json
+[
+  { "a": "a3" },
+  { "a": "a4" }
+]
+
+
+Without --slurp jq process each input file and simply concat the
+output. The result output is not a valid json.
+
+jq '.' 1.json 2.json
+[
+  {
+    "a": "a1"
+  },
+  {
+    "a": "a2"
+  }
+]
+[
+  {
+    "a": "a3"
+  },
+  {
+    "a": "a4"
+  }
+]
+
+
+
+With --slurp jq mearges all inputs as one input stream of valid json
+and process apply the filter once.
+
+$ jq '.' --slurp 1.json 2.json
+[
+  [
+    {
+      "a": "a1"
+    },
+    {
+      "a": "a2"
+    }
+  ],
+  [
+    {
+      "a": "a3"
+    },
+    {
+      "a": "a4"
+    }
+  ]
+]

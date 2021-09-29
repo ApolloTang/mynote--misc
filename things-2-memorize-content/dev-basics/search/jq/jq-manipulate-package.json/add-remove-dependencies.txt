@@ -1,0 +1,198 @@
+Important
+=========
+Make sure you back up before you mordify your package.json like so:
+
+  mv package.json package-backup.json && jq '
+    <JQ-filter>
+  ' package-backup.json >  package.json
+
+
+
+Add nested item:
+================
+This is same as adding nested item:
+
+
+::: <JQ-filter>
+  .devDependencies += {"yyy":"2.0.0"} |
+  .dependencies += {"zzz": "3.0.0"}
+
+::: INPUT
+  {
+    "name": "jq-lab",
+    "devDependencies": {
+      "eslint": "1.0.0"
+    }
+  }
+
+::: OUTPUT
+  {
+    "name": "jq-lab",
+    "devDependencies": {
+      "eslint": "1.0.0",
+      "yyy": "2.0.0"
+    },
+    "dependencies": {
+      "zzz": "3.0.0"
+    }
+  }
+
+
+::: CODE
+  mv package.json package-backup.json && jq '
+  .devDependencies += {"yyy":"2.0.0"} |
+  .dependencies += {"zzz": "3.0.0"}
+  ' package-backup.json >  package.json
+
+
+
+Remove dependencies
+===================
+This is same as remove nested item:
+
+::: <JQ-filter>
+  with_entries(select(.key=="dependencies").value |= del(.zzz))
+
+
+::: INPUT
+  {
+    "name": "jq-lab",
+    "dependencies": {
+      "yyy": "1.3.0",
+      "zzz": "1.3.0"
+    },
+    "devDependencies": {
+      "yyy": "1.3.0",
+      "zzz": "1.3.0"
+    }
+  }
+
+::: OUTPUT
+  {
+    "name": "jq-lab",
+    "dependencies": {
+      "yyy": "1.3.0"
+    },
+    "devDependencies": {
+      "yyy": "1.3.0",
+      "zzz": "1.3.0"
+    }
+  }
+
+
+::: CODE
+  mv package.json package-backup.json && jq '
+    with_entries(select(.key=="dependencies").value |= del(.zzz))
+  ' package-backup.json >  package.json
+
+  Ref:
+  https://www.debugcn.com/en/article/40393655.html
+
+
+
+==============================================================
+How does it work?
+
+  with_entries( select(.key == "dependencies").value |= del(.zzz) )
+
+is the same as:
+
+  to_entries | map( select(.key == "dependencies").value |= del(.zzz) ) | from_entries
+
+Lets break it down:
+
+Starting with:
+
+  {
+    "dependencies": {
+      "yyy": "^1.3.0",
+      "zzz": "^1.3.0"
+    },
+    "devDependencies": {
+      "yyy": "^1.3.0",
+      "zzz": "^1.3.0"
+    }
+  }
+
+to_entries
+
+  This entrify the object to key-value element:
+
+  [
+    {
+      "key": "dependencies",
+      "value": {
+        "yyy": "^1.3.0",
+        "zzz": "^1.3.0"
+      }
+    },
+    {
+      "key": "devDependencies",
+      "value": {
+        "yyy": "^1.3.0",
+        "zzz": "^1.3.0"
+      }
+    }
+  ]
+
+to_entries | map(.value |= del(.zzz))
+
+  This will update the all the "value" field with
+  a new object where zzz item being removed.
+
+    [
+      {
+        "key": "dependencies",
+        "value": {
+          "yyy": "^1.3.0"
+        }
+      },
+      {
+        "key": "devDependencies",
+        "value": {
+          "yyy": "^1.3.0"
+        }
+      }
+    ]
+
+  But we don't want to update all from all element, we only want to update
+  from element with {"key": "dependencies"}; so we select() the element where
+  the key has value of "dependencies"
+
+to_entries | map(select(.key=="dependencies").value |= del(.zzz))
+
+  [
+    {
+      "key": "dependencies",
+      "value": {
+        "yyy": "^1.3.0"
+      }
+    },
+    {
+      "key": "devDependencies",
+      "value": {
+        "yyy": "^1.3.0",
+        "zzz": "^1.3.0"
+      }
+    }
+  ]
+
+  Now we can un-entrify it:
+
+to_entries | map(select(.key=="dependencies").value |= del(.zzz)) | from_entries
+
+  And since
+
+    with_entries(<filter>)
+
+  is simply a short hand of
+
+    to_entries | map(<filter>) | from_entries
+
+  We can write:
+
+with_entries( select(.key=="dependencies").value |= del(.zzz) )
+
+---eof---
+
+

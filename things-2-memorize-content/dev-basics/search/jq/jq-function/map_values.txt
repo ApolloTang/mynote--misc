@@ -1,0 +1,25 @@
+Similar to map but it opearate on object, and preserve the keys
+
+>>> Syntax:
+    map_values(<filter)
+
+
+::: Example:
+
+Input:
+  {
+    "x": {"a":1, "b":2},
+    "y": {"a":3, "b":4}
+  }
+
+jq:
+  map(.b)
+    for each value of element, get the nested value of key "b"
+
+Output
+  {
+    "x": 2,
+    "y": 4
+  }
+
+

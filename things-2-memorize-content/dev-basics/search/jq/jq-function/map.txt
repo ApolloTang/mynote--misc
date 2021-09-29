@@ -1,0 +1,64 @@
+Map usually operate on array, it map each item
+of the array with <filter>
+
+>>> Syntax:
+    map(<filter)
+
+
+::: Example:
+
+Input:
+  [
+    {"a":1, "b":2},
+    {"a":3, "b":4}
+  ]
+
+jq:
+  map(.b)
+    for each element, get the value of key "b"
+
+Output
+  [
+    2,
+    4
+  ]
+
+---
+Map can also operate on object; in this case it ignore the keys
+and treats the object like array of the original value:
+
+::: Example:
+
+Input:
+  {
+    "x": {"a":1, "b":2},
+    "y": {"a":3, "b":4}
+  }
+
+jq:
+  map(.b)
+
+Output:
+  [
+    2,
+    4
+  ]
+
+:::Explaination
+
+  The object:
+
+    {
+      "x": {"a":1, "b":2},
+      "y": {"a":3, "b":4}
+    }
+
+  Is treated like:
+
+    [
+      {"a":1, "b":2},
+      {"a":3, "b":4}
+    ]
+
+
+

@@ -1,0 +1,26 @@
+Document
+=========
+https://stedolan.github.io/jq/manual/
+
+
+Playground:
+===========
+https://jqterm.com/
+https://jqplay.org/
+
+Tutorial
+=========
+
+https://thoughtbot.com/blog/jq-is-sed-for-json
+
+
+jq Recipes:
+===========
+https://remysharp.com/drafts/jq-recipes
+
+
+jq Tricks
+=========
+
+https://medium.com/circuitpeople/aws-cli-with-jq-and-bash-9d54e2eabaf1
+https://ilya-sher.org/2016/05/11/most-jq-you-will-ever-need/
