@@ -193,6 +193,10 @@ to_entries | map(select(.key=="dependencies").value |= del(.zzz)) | from_entries
 
 with_entries( select(.key=="dependencies").value |= del(.zzz) )
 
+
+another possible solution:
+https://stackoverflow.com/questions/40361457/how-to-delete-all-nested-keys-with-jq
+
 ---eof---
 
 
