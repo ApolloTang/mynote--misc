@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/60609883/jq-how-operator-works
+
+---eof---
+

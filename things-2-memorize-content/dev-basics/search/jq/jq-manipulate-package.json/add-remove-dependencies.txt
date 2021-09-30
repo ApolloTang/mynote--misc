@@ -197,6 +197,9 @@ with_entries( select(.key=="dependencies").value |= del(.zzz) )
 another possible solution:
 https://stackoverflow.com/questions/40361457/how-to-delete-all-nested-keys-with-jq
 
+this solution won't work for nested but interesting to know:
+https://gist.github.com/joar/776b7d176196592ed5d8
+
 ---eof---
 
 
