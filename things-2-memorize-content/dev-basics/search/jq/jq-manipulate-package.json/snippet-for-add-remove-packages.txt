@@ -1,0 +1,64 @@
+----------
+#!/bin/bash
+
+##
+## edit this:
+## --------------------
+packageName='xxx'
+packageVersion='0.1.1'
+
+dependency_type='prod'
+# dependency_type='dev'
+
+action='add'
+# action='remove'
+
+
+
+##--------------------------------------------------------
+##
+## This script uses: gsed and jq
+##
+KEY_DEV_DEP='devDependencies'
+KEY_PRD_DEP='dependencies'
+
+if [ "$dependency_type" == 'prod' ]; then
+ echo ">>> devDependencies"
+ dep_type="$KEY_PRD_DEP"
+fi
+
+if [ "$dependency_type" == 'dev' ]; then
+ echo ">>> dependencies"
+ dep_type="$KEY_DEV_DEP"
+fi
+
+JQ_FILTER_ADD=".$dep_type += {\"$packageName\": \"$packageVersion\"}"
+JQ_FILTER_REMOVE="with_entries(select(.key==\"$dep_type\").value |= del(.$packageName))"
+
+if [ "$action" == 'add' ]; then
+ echo ">>> add"
+ filter="$JQ_FILTER_ADD"
+ echo ">>> $packageName"
+ echo ">>> $packageVersion"
+fi
+
+if [ "$action" == 'remove' ]; then
+ echo ">>> $remove"
+ echo ">>> $packageName"
+ filter="$JQ_FILTER_REMOVE"
+fi
+
+for fn in ./utils/**/package.json; do
+  fn_backup=$(echo $fn | gsed -E 's/(.*)\.json/\1-backup.json/')
+
+  echo 'backup >>>' $fn $fn_backup
+  cp $fn $fn_backup
+
+  echo 'filter >>>' $filter
+  jq "$filter" $fn_backup > $fn
+done
+
+
+
+---------
+---eof---
