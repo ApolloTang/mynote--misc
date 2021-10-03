@@ -1,0 +1,5 @@
+docker logs <container-name>
+
+  --folow  # print real time logs
+
+
