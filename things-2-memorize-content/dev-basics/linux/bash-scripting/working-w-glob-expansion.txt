@@ -1,5 +1,5 @@
 
-Assign result of glob expandsion to array variable.
+Assign result of glob expansion to array variable.
 
 the_files=(./*/*/package.json)
 
@@ -20,4 +20,6 @@ To get all elements:
 
 Ref:
   https://unix.stackexchange.com/questions/332861/assign-file-name-to-a-variable-using-pathname-expansion
+
+
 
