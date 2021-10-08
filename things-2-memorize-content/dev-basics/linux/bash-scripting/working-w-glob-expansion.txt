@@ -1,0 +1,23 @@
+
+Assign result of glob expandsion to array variable.
+
+the_files=(./*/*/package.json)
+
+To get the first element:
+  zsh:
+    "${the_files[1]}" or $the_files[1]
+
+  bash
+    "${the_files[0]}"
+
+To get all elements:
+
+  zsh:
+    $the_files
+
+  Bash:
+    "${the_files[@]}"
+
+Ref:
+  https://unix.stackexchange.com/questions/332861/assign-file-name-to-a-variable-using-pathname-expansion
+
