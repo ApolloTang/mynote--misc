@@ -1,0 +1,12 @@
+Edit multiple file:
+-------------------
+  ./myscript.sh | tr '\n' ' ' | xargs mvim
+
+    myscript.sh  # script that output lines of path-to-files
+    tr '\n' ' '  # join them into one lines
+    xargs        # feed the files to mvim
+
+
+
+
+
