@@ -7,12 +7,13 @@ docker stop    <container-name>   # Stop and exist all container SAFELY (issues 
 docker kill    <container-name>   # Stop and exist all container UNSAFE (issues a SIGKILL signal to the process).
 docker restart <container-name>   # Restart a stopped container.
 
+
 docker rm $(docker ps -aq -f status=exited)  # rm all exited containers.
 docker rm $(docker stop $(docker ps -q))     # rm all running containers.
 docker rm $(docker ps -aq)                   # rm all containers (if all container has already stopped).
 
-docker pull <IMAGE:TAG>  # download the specified image from Docker registry
-docker images            # lists the Docker images on your system.
-docker rmi <IMAGE>       # remove the specified image.
 
-
+docker pull <IMAGE:TAG>             # download the specified image from Docker registry
+docker images                       # lists the Docker images on your system.
+docker rmi <IMAGE>                  # remove the specified image.
+docker tag OldName:tag NewName:tag  # renaming images
