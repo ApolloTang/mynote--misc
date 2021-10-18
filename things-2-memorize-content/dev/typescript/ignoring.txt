@@ -8,6 +8,19 @@ ignore a block
   ref: https://github.com/Microsoft/TypeScript/issues/19573
 
 
+This is how you ts-ignore a jsx property
+========================================
+
+  <Foo
+    /*
+    // @ts-ignore */
+    id="foo does not have IdType"
+    baz="foo Have bazType"
+  />
+
+  ref: https://stackoverflow.com/a/61308263/3136861
+
+
 Work around to ignore TSX error in jsx property
 ===============================================
 
