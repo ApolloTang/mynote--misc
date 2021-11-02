@@ -1,20 +1,22 @@
 legends for keys in notes:
 --------------------------
 
-  [ctr] control
-  [opt] option
-  [cmd] command
-  [sft] shift
-  [tab] tab
-  [ret] return
-  [esc] escape
-  [del] delete
-  [bsp] backspace == [fnc][del]
+  [ctr] (c) control
+  [opt] (o) option
+  [cmd] (m) command
+  [sft] (f) shift
+  [fnc] (n) function
+  [tab] (t) tab
+  [ret] (r) return
+  [esc] (e) escape
+  [del] (d) delete
+  [bsp] (b) backspace == [fnc][del]
+  [spb] (p) spacebar
 
-  [-^-] up
-  [-v-] down
-  [-<-] left
-  [->-] right
+  [(^)] up
+  [(v)] down
+  [(<)] left
+  [(>)] right
 
 
   Symbol
@@ -27,3 +29,4 @@ legends for keys in notes:
   [⌘]
   [⌥]
 
+---eof---
