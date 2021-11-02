@@ -1,0 +1,20 @@
+Be careful
+
+  If you configured `compilerOptions.typeRoots` in `tsconfig` it
+  will overwrite the default ['node_modules/@types']
+
+  If you configured `compilerOptions.types`, then only packages
+  specify will be included from node_modules/@types/ folder.
+
+  compilerOptions.files overwrites compilerOptions.includes
+
+
+Very useful:
+  To verify where TypeScript is trying to resolve things you can
+  run the compiler with the 'traceresolution' flag.
+
+    tsc --traceresolution
+
+  Ref: https://www.mourtada.se/typescript-ambient-module-declarations/
+
+---eof---
