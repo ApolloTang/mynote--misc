@@ -1,5 +1,7 @@
-// @ts-nocheck   <-- deprecated
 // @ts-ignore
+
+// @ts-nocheck   <-- deprecated? (ignore the entire file?)
+// @ts-check     <-- (force tsc to check *.js file )
 
 ------
 ignore a block
