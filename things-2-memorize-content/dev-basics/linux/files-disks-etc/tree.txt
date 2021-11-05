@@ -1,0 +1,7 @@
+very useful:
+
+tree -L 1 --dirsfirst
+
+
+---eof---
+

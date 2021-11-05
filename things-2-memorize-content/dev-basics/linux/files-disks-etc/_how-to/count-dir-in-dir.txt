@@ -1,0 +1,3 @@
+ls -l <folder> | rg d | wc -l
+
+---eof---
