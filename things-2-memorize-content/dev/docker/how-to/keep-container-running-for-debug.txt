@@ -1,0 +1,9 @@
+Here is a basic Dockerfile with an ENTRYPOINT that will keep on running without getting terminated.
+
+  FROM ubuntu:latest
+  ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+Ref: https://devopscube.com/keep-docker-container-running/
+
+---eof---
+
