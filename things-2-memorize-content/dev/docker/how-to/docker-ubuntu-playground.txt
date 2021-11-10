@@ -16,14 +16,26 @@ For attaching again the container
 
   docker attach CONTAINER_NAME
 
-NOTE:
-  Interesting to note that there is no need to run "sh" command.
-  before would have to "docker exec -it sh" to get a shell.
 
 TIP:
   For exiting without stopping the container type: ^P^Q
 
-https://stackoverflow.com/a/31143261/3136861
+
+NOTE:
+  Interesting to note that there is no need to run "sh" command.
+  that is because the image's final layer is 'CMD ["/bin/sh"]'.
+  Although you still have to specified `-it` to put it
+  into interactive mode. [1] Ubuntu is not the only destro
+  config as such, you can do the same with:
+
+    docker run -it ubuntu:latest   (188mb)
+    docker run -it busybox:latest  (2mb)
+    docker run -it debian:latest   (85mb)
+
+---
+Ref
+[0] https://stackoverflow.com/a/31143261/3136861
+[1] https://www.ctl.io/developers/blog/post/dockerfile-entrypoint-vs-cmd/
 
 ---eof---
 
