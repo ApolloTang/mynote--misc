@@ -1,0 +1,64 @@
+ENTRYPOINT vs. CMD
+==================
+
+The ENTRYPOINT or CMD that you specify in your Dockerfile
+identify the default executable for your image. There two
+way to write them: Shell form or Exec form:
+
+  Shell Form:
+
+    CMD <command> <param1> <param2>
+    ENTRYPOINT <command> <param1> <param2>
+
+  Exec Form (takes JSON array syntax):
+
+    CMD ["<command>", "<param1>", "<param2>"]
+    ENTRYPOINT ["<command>", "<param1>", "<param2>"]
+
+A docker image is not run-able unless ENTRYPOINT or CMD is
+specified. The command:
+
+  docker run <image>
+
+So the command above will fail if ENTRYPOINT or CMD are missing
+in the Dockerfile used to build this image.
+
+Both ENTRYPOINT or CMD that you specify can be overrided at
+run time. The way to override this two commands differs.
+The CMD value can be easily overridden by supplying one or more
+arguments to `docker run` after the name of the image, for eg
+in the following:
+
+  docker run <image> <command> <param1>
+
+will override the command specified by 'CMD'.
+
+To overide ENTRYPOINT you need the flag --entrypoint:
+
+  docker run --entrypoint <command> <arg-for-command> <image>
+
+Despite the similarity of both the commands are similar, but the
+use of ENTRYPOINT sends a strong message that this container
+is only intended to run this one command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.ctl.io/developers/blog/post/dockerfile-entrypoint-vs-cmd/
+https://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile
+https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
+
+---eof---
