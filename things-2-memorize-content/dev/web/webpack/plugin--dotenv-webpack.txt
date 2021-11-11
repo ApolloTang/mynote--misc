@@ -1,0 +1,37 @@
+dotenv-webpack plugin
+========================================
+https://github.com/mrsteele/dotenv-webpack
+
+
+How does it work?
+-----------------
+  Say you have a variable in your enviroment:
+
+    MY_ENV_VARIABLE=foo
+
+  In your code you want to read the content of
+  MY_ENV_VARIABLE and assign to myEnvVariable or
+  print it out with console.log:
+
+    const myEnvVariable = process.env.MY_ENV_VARIABLE
+    console.log(process.env.MY_ENV_VARIABLE)
+
+  But the object 'process' does not exist in web-browser
+  (because that object only exist in node). So to get around this
+  'dotenv-webpack' plugin replace the token 'process.env.MY_ENV_VARIABLE'
+  with its value during webpack bundling. If you look in to the
+  bundle output, you will see the above code as:
+
+    var myEnvVariable = 'foo'; console.log('foo')
+
+  During production, uglyfied code will obfuscate your
+  variable name:
+
+    const mySecretKey = process.env.SECRET_KEY
+    doSomethingWithSecret(process.env.SECRET)
+
+  is bundle as:
+
+    var a='xxxxxx'; f('xxxxxx');
+
+---eof---
