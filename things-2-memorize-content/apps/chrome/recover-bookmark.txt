@@ -1,0 +1,38 @@
+
+Chrome saves a single backup of your bookmarks file as:
+
+  "~/Library/Application Support/Google/Chrome/Profile 3/Bookmarks.bak"
+
+and it overwrites that backup each time you launch Chrome.
+
+
+If you’ve accidentally deleted a bookmark.
+
+  - Turn off internet.
+  - Make duplicate of your profile
+    "~/Library/Application Support/Google/Chrome/Profile\ 3"
+  - close all open Chrome windows,
+    but do not reopen Chrome. <--- ** VERY IMPORTANT **
+    If you’ve already closed Chrome, leave it closed.
+  - Replace the current "Bookmarks" with "Bookmarks.bak" from
+    the duplicate
+  - Launch Chrome, and you will see bookmark as the last time
+    you close Chrome.
+  - Drag the recovered bookmark or bookmark folder to another
+    chrome profile.
+  - Turn on internet, you will see the bookmarks sync return
+    you bookmark to recent deleted state.
+  - Drag and recovered bookmark or bookmark folder from the other
+    chrome profile.
+
+Ref:
+https://support.google.com/chrome/thread/6714715/any-way-to-restore-a-bookmark-folder-deleted?hl=en
+
+---eof---
+
+
+
+
+
+
+/Users/apollotang/Library/Application Support/Google/Chrome/Profile\ 3/Bookmarks
