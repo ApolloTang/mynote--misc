@@ -16,4 +16,15 @@ docker rm $(docker ps -aq)                   # rm all containers (if all contain
 docker pull <IMAGE:TAG>             # download the specified image from Docker registry
 docker images                       # lists the Docker images on your system.
 docker rmi <IMAGE>                  # remove the specified image.
+docker rmi -f $(docker images -q)   # remove all images.
 docker tag OldName:tag NewName:tag  # renaming images
+
+
+docker-compose -f my-docker-compose.yml down
+docker volume rm $(docker volume ls -q)
+docker-compose -f my-docker-compose.yml down -v
+
+docker-compose -p my-app -f my-docker-compose.yml up
+docker-compose -p my-app -f my-docker-compose.yml down
+
+

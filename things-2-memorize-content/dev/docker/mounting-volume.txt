@@ -1,7 +1,7 @@
 Bind mount
 ==========
 
-  In bind mount, we use a host filesysm and mount it on the container
+  In bind mount, we use a host file system and mount it on the container
   with run command's -v flag:
 
     $ docker run -it \
@@ -24,7 +24,7 @@ Bind mount
 Volume
 =======
 
-  Docker volumes are mostly created to share data within different
+  Docker volumes are created to share data within different
   containers, rather than sharing data with host and container.
 
     $ docker volume create project_directory
@@ -44,10 +44,10 @@ Volume
           }
       ]
 
-  You can see the mount point, however you cannot access it directly:
+  [Tip] You can get the "Mount" field of the inspect object with [1]:
 
-    $ cd /var/lib/docker/volumes/project_directory
-    -bash: cd: /var/lib/docker/volumes/project_directory: No such file or directory
+    $ docker inspect -f '{{ .Mounts }}' <container>
+
 
   To run a container using this volume:
 
@@ -55,4 +55,29 @@ Volume
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
                                      host:container
 
+  ---
 
+  [Note] You can see the mount point, however you cannot access it directly:
+
+    $ cd /var/lib/docker/volumes/project_directory
+    -bash: cd: /var/lib/docker/volumes/project_directory: No such file or directory
+
+  That is because it is located inside the vm that docker instantiates
+  to provide the necessary Linux environment. These vm are located at the
+  following location [2]:
+
+    ~/Library/Containers/com.docker.docker/Data/vms/0
+
+  ---
+
+  To remove volume you use:
+
+    docker volume rm $(docker volume ls -q)
+
+
+----
+Ref:
+[1] https://stackoverflow.com/questions/30133664/how-do-you-list-volumes-in-docker-containers/41975069
+[2] https://stackoverflow.com/questions/38532483/where-is-var-lib-docker-on-mac-os-x
+
+---eof---
