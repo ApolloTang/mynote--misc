@@ -1,0 +1,4 @@
+https://www.cyberciti.biz/faq/redirecting-stderr-to-stdout/
+
+
+
