@@ -1,0 +1,47 @@
+Alphine Linux is often used in Docker container.
+To make debug easy we often want to install curl and
+here is how:
+
+1. ssh into remote server:
+
+  ssh user@alpine-ec2-server
+
+2. Update apk database:
+
+  apk update
+
+3. Apply all security updates
+
+  apk upgrade
+
+4. Install curl
+
+  apk add curl
+
+5 install man page:
+
+  apk add curl-doc
+
+---
+Other command:
+
+  Search for curl
+    apk search curl
+
+  See information known about the listed packages called curl
+    apk -a info curl
+    apk -v info curl
+
+---
+If you are building a Docker image use this
+to add curl to your images:
+
+
+  RUN apk --no-cache add curl
+
+
+---
+Ref:
+https://www.cyberciti.biz/faq/how-to-install-curl-on-alpine-linux/
+
+---eof---
