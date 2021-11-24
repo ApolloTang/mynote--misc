@@ -44,7 +44,7 @@
 
 [6] Add trusted Id
 
-  $ gpg --keyserver keys.openpgp.org --search apollo.tang@rewardops.com
+  $ gpg --keyserver hkps://keys.openpgp.org --search apollo.tang@rewardops.com
 
 
 [6] Change trusted Id trust level
