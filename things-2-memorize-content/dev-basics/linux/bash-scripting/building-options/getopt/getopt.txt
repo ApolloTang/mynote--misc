@@ -1,0 +1,18 @@
+different between getopt and getopts
+------------------------------------
+
+
+https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options/7948533
+
+https://www.google.com/search?q=GNU-style+long+options&oq=GNU-style+long+options&aqs=chrome..69i57&sourceid=chrome&ie=UTF-8
+https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Options.html
+
+https://stackoverflow.com/questions/10818443/short-long-options-with-option-argument-is-this-some-sort-of-convention
+
+https://www.google.com/search?q=bash+script+with+long+options&oq=bash+script+with+long+options&aqs=chrome..69i57j0i22i30.7562j0j4&sourceid=chrome&ie=UTF-8
+
+https://bl.ocks.org/magnetikonline/22c1eb412daa350eeceee76c97519da8
+https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options/7948533
+
+
+---eof---

@@ -1,0 +1,5 @@
+https://wiki.bash-hackers.org/commands/classictest#file_tests
+
+https://wiki.bash-hackers.org/syntax/ccmd/conditional_expression
+
+---eof---

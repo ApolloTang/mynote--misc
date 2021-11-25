@@ -1,0 +1,8 @@
+https://www.geeksforgeeks.org/shift-command-in-linux-with-examples/
+https://www.computerhope.com/unix/bash/shift.htm
+https://wiki.bash-hackers.org/commands/builtin/shift
+
+
+
+---eof---
+

@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/2013547/assigning-default-values-to-shell-variables-with-a-single-command-in-bash
+
+---eof---

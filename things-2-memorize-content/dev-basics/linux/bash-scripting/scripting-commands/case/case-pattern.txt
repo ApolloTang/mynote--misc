@@ -1,0 +1,25 @@
+pattern in case:
+----------------
+
+Brace expansion doesn't work, but *, ? and [] do.
+
+see:
+https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html#Pattern-Matching
+
+
+If you set shopt
+ -s extglob then you can also use extended pattern matching:
+
+?() - zero or one occurrences of pattern
+*() - zero or more occurrences of pattern
++() - one or more occurrences of pattern
+@() - one occurrence of pattern
+!() - anything except the pattern
+
+
+---
+Ref:
+https://stackoverflow.com/questions/4554718/how-to-use-patterns-in-a-case-statement
+
+---eof---
+

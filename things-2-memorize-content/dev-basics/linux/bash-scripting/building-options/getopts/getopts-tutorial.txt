@@ -1,0 +1,6 @@
+https://wiki.bash-hackers.org/howto/getopts_tutorial
+
+https://stackoverflow.com/questions/16483119/an-example-of-how-to-use-getopts-in-bash
+
+---eof---
+

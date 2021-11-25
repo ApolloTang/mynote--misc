@@ -1,0 +1,6 @@
+https://www.thegeekstuff.com/2010/07/bash-case-statement/
+
+https://linuxhint.com/bash_case_statement/
+
+---eof---
+
