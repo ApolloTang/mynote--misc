@@ -2,7 +2,7 @@ https://www.geeksforgeeks.org/shift-command-in-linux-with-examples/
 https://www.computerhope.com/unix/bash/shift.htm
 https://wiki.bash-hackers.org/commands/builtin/shift
 
-
+https://unix.stackexchange.com/questions/214141/explain-the-shell-command-shift-optind-1/214151
 
 ---eof---
 
