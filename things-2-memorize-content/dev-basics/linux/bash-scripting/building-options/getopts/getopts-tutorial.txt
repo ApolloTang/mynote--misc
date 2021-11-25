@@ -2,5 +2,9 @@ https://wiki.bash-hackers.org/howto/getopts_tutorial
 
 https://stackoverflow.com/questions/16483119/an-example-of-how-to-use-getopts-in-bash
 
+https://wiki.bash-hackers.org/howto/getopts_tutorial
+
+https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash/21128172
+
 ---eof---
 
