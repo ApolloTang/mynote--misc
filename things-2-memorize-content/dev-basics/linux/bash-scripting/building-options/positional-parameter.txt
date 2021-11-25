@@ -3,6 +3,9 @@ https://www.computerhope.com/jargon/p/positional-parameter.htm
 To Read: choosing between $0 and BASH_SOURCE
 https://stackoverflow.com/questions/35006457/choosing-between-0-and-bash-source
 
+https://wiki.bash-hackers.org/scripting/posparams
+
+
 ---eof---
 
 
