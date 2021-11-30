@@ -1,8 +1,112 @@
 How to inspect object in node-cli
 ----------------------------------
 
-https://nodejs.org/en/knowledge/getting-started/how-to-use-util-inspect/
+TL:DR
 
+To examine object container circular reference in nodeJs use:
+
+  console.dir(myObject, { depth: null });
+
+
+
+Details
+--------------------
+
+Node's "Console.log" only show 3 levels:
+
+  var myObject = {
+    a: {
+      b: {
+        c: { d: { e: 'e' } } }
+    }
+  }
+
+  console.log(myObject)
+
+Result:
+
+    { a: { b: { c: [Object] } } }
+
+To see beyond 3 levels you can use "console.dir":
+
+  console.dir(myObject, {depth:null})
+
+Result:
+
+  {
+    a: {
+      b: { c: { d: { e: 'e' } } }
+    }
+  }
+
+To see a formated nested object use "JSON.stringify":
+
+  console.dir(JSON.stringify(myObject,null, 2))
+
+Result:
+
+  {
+    "a": {
+      "b": {
+        "c": {
+          "d": {
+            "e": "e"
+          }
+        }
+      }
+    }
+  }
+
+However "JSON.stringify" can not work with object with circular reference:
+
+  var d = {}; d.d = d // <--- this is a circular referencing object [1]
+  var circular = {
+    a: {
+      b: {
+        c: { d: d }
+      }
+    }
+  }
+  console.log(JSON.stringify(circular, null, 2))
+
+Result:
+
+  TypeError: Converting circular structure to JSON
+
+But this works:
+
+  console.dir(circular, {depth:null}) // `depth: null` ensures unlimited recursion [2]
+
+Result:
+
+  {
+    a: {
+      b: { c: { d: <ref *1> { d: [Circular *1] } } }
+    }
+  }
+
+You can use "util" do get around this:
+
+  var a = {}; a.a = a; var b = {b:'b', c:a}
+  const util = require('util')
+  console.log(util.inspect(b))
+
+Result:
+
+  { b: 'b', c: <ref *1> { a: [Circular *1] } }
+
+
+
+---
+Ref:
+
+[1] https://stackoverflow.com/a/26813465
+[2] https://stackoverflow.com/a/27534731
+
+
+
+
+https://nodejs.org/en/knowledge/getting-started/how-to-use-util-inspect/
 https://stackoverflow.com/questions/10729276/how-can-i-get-the-full-object-in-node-jss-console-log-rather-than-object/32866532#32866532
 
 
