@@ -12,6 +12,8 @@ tag
   git tag -d <tagName>                # delete a local tag
   git push --delete origin <tagname>  # delete a remote tag
 
+  git tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=creatordate   # [2]
+
 
 Missing tag
 ===========
@@ -27,7 +29,17 @@ Missing tag
 
   "--all" means "all remotes" (i.e. origin and upstream)
 
-  ref: https://stackoverflow.com/questions/15794378/git-missing-tags-after-pull
+  ref: [1]
+
+
+Ref:
+[1] https://stackoverflow.com/questions/15794378/git-missing-tags-after-pull
+[2] https://stackoverflow.com/a/44562371/3136861
+    related to above
+    https://stackoverflow.com/a/13208822/3136861
+
+---eof---
+
 
 
 
