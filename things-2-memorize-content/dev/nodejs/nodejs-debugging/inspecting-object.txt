@@ -4,29 +4,37 @@ How to inspect object in node-cli
 TL:DR
 =====
 
-  Problem with console.log():
+Problem with console.log():
 
-    if object is nested deeper than 3 level it is hidden.
+  if object is nested deeper than 3 level it is hidden.
 
-  Solution:
+Solution:
 
-    Use JSON.stringify
-    console.log(JSON.stringify(myObj, null, 2))
+  Use JSON.stringify
+  console.log(JSON.stringify(myObj, null, 2))
 
-  Problem with JSON.stringify
+Problem with JSON.stringify
 
-    If object container circular reference it will fail.
+  If object container circular reference it will fail.
 
-  Solution:
+Solution:
 
-    console.dir(myObject, { depth: null });
+  console.dir(myObject, { depth: null });
 
-    console.dir take options object in second argument.
-    this is the same object used to configure util.inspect()
+  console.dir take options object in second argument.
+  this is the same object used to configure util.inspect()
 
 
-There is no need to use util.inspect() because it’s already at
-included in console.dir() and node.js REPL.
+Should you use util.inspect() ?
+
+  There is no need to use util.inspect() b/c for most of our usecase
+  it’s already included in console.dir():
+
+    console.log(util.inspect(obj, opt))
+
+  in most case is equivalent to:
+
+    console.dir(obj, opt)
 
 
 
@@ -83,7 +91,7 @@ Result:
 
 To suppress the error you can use "console.dir":
 
-  console.dir(myObject, {depth:null})
+  console.dir(circular, {depth:null})
 
 Result:
 
