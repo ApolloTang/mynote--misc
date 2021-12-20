@@ -1,0 +1,22 @@
+                  Windows      Equivalent
+                  name         keypress
+------------------------------------------------------
+⌫ Delete          Backspace
+⌦ Forward Delete  Delete
+⏎ Return          Enter
+⎋ Escape
+⇥ Tab right
+⇤ Tab left
+⇪ Caps lock
+⏏ Eject
+
+
+⇞ Page Up                      [fnc][(^)]
+⇟ Page Down                    [fnc][(v)]
+↖︎ Top             Home         [fnc][(>)]
+↘︎ End                          [fnc][(<)]
+
+https://apple.stackexchange.com/questions/26930/how-can-i-achieve-page-up-and-page-down-in-os-x
+https://www.howtogeek.com/290434/what-do-the-mac-keyboard-symbols-actually-mean/
+
+---eof---

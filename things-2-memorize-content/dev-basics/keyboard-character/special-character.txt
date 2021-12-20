@@ -1,5 +1,8 @@
 unicode symbol (turn on unicode input)
 
-"⌘" hold [opt] while typing 2318
+⌘ hold [opt] while typing 2318
+
+“
+”
 
 ---eof---
