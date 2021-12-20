@@ -2,7 +2,7 @@ The Disk Utility's Mac OS Extended (Journaled, Encrypted) is no longer available
 
 <img src="imgs/exteded-journaled-encrypted.png" />
 
-To encrypt and external harddrive you can do it in Finder by right-clicking on the partition and choosing Encrypt.
+To encrypt and external harddrive you can do it in Finder by right-clicking on the partition and choosing Encrypt [1].
 
 Here are the steps:
 
@@ -18,8 +18,14 @@ Here are the steps:
 10. Enter passwords
 11. Finish
 
-Ref:
-https://apple.stackexchange.com/a/221367/282542
+## Why don't just use APFS (Encrypted) ?
+
+According to this article [2] APFS performance on the slower 5400RPM HDDs to be unacceptably poor
+
+---
+Ref: <br>
+[1] https://apple.stackexchange.com/a/221367/282542 <br>
+[2] https://bombich.com/blog/2019/09/12/analysis-apfs-enumeration-performance-on-rotational-hard-drives <br>
 
 ---eof---
 
