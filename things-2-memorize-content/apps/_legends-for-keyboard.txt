@@ -29,4 +29,12 @@ legends for keys in notes:
   [⌘]
   [⌥]
 
+  Black Arrow
+  -----------
+  [⬇]
+  [⬆︎]
+  [⬅︎]
+  [⮕]
+
+
 ---eof---
