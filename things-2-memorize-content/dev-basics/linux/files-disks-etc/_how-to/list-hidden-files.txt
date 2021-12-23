@@ -1,12 +1,30 @@
 
 Listing hidden file
 ```````````````````
-  ls -d .*        #[1]
 
-  ls -ld .!(|.)   #[2]
+  The command bellow will include ".."
 
-  find . -name ".*" -type l -maxdepth 1 -exec ls -al {} +
+    ls -d .*
+
+  because the expansion of whildcard "*" will include "."
+  to result in "..". We use "-d" so it will not list
+  everything in the parent directory. #[1]
+
+  If you want to exclude ".." use [2]:
+
+    ls -d .[!.]*
+
+  The above will not list filename and directory name start with
+  multiple dot.
+
+  If you want to include filename and directory name start with
+  multiple dot (while still exclude ".."), use this [3]:
+
+    ls -d .!(|.)
 
 ----
 [1] https://unix.stackexchange.com/a/411327/62821
-[2] https://askubuntu.com/questions/468901/how-to-show-only-hidden-files-in-terminal
+[2] The-Linux-Cmd-Line-2ed-NoStarch2019.pdf
+[3] https://askubuntu.com/questions/468901/how-to-show-only-hidden-files-in-terminal
+
+---eof---
