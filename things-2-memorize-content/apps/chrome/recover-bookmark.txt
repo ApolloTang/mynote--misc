@@ -14,14 +14,17 @@ If you’ve accidentally deleted a bookmark.
   - close all open Chrome windows,
     but do not reopen Chrome. <--- ** VERY IMPORTANT **
     If you’ve already closed Chrome, leave it closed.
+  - Your previous state of bookmark before your last lanch chrome
+    is save in "Bookmarks.bak", make a copy of that before you
+    reopen chrome.
   - Replace the current "Bookmarks" with "Bookmarks.bak" from
     the duplicate
-  - Launch Chrome, and you will see bookmark as the last time
+  - Launch Chrome, and **YOU WILL SEE BOOKMARK** as the last time
     you close Chrome.
   - Drag the recovered bookmark or bookmark folder to another
     chrome profile.
-  - Turn on internet, you will see the bookmarks sync return
-    you bookmark to recent deleted state.
+  - Turn on internet, you will see the bookmarks sync to return
+    you bookmark to the deleted state.
   - Drag and recovered bookmark or bookmark folder from the other
     chrome profile.
 
