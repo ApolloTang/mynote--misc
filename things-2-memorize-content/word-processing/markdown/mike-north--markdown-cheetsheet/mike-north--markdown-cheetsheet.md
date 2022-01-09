@@ -1,79 +1,111 @@
-NOTE: This article is from:
+## Markdown cheetsheet
+
+NOTE: This article is modified after:
 [Link To Original](https://github.com/mike-works/vscode-fundamentals/blob/master/docs/1_using/markdown.md),
 [Link to Clone](https://github.com/ApolloTang/vscode-fundamentals/blob/master/docs/1_using/markdown.md)
 
----
 
-<img align='right' height=100 src='./vscode.png'>
+### Images
 
-# Using Visual Studio Code
+#### Markdown images
 
-* 📄 **Awesome Documents**
-* ⏩ [Emmet](./emmet.md)
-* 🎛 [Refactoring](./refactoring.md)
-* ✅ [Type-Checking](./type-checking.md)
-* 🐞 [Debugging](./debugging.md)
-
----
-
-## Images
-
-Normal markdown images
 ```md
-![VS Code](./vscode.png)
+![VS Code](./imgs/vscode.png)
 ```
-> ![VS Code](./vscode.png)
 
-The HTML [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tag can be used as well. Many attributes will be respected in most markdown renderers (including GitHub)
+*Result*
+
+![VS Code](./imgs/vscode.png)
+
+#### HTML markdown image [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
 
 ```html
-<img src="./vscode.png" height=50 align=right vspace=20/>
-<img src="./vscode.png" height=100/>
+<img src="./imgs/vscode.png" height=50 align=right vspace=20/>
+<img src="./imgs/vscode.png" height=100/>
 ```
-> <img src="./vscode.png" height=50 align=right vspace=20/>
-> <img src="./vscode.png" height=100/>
 
-👉 Keep in mind that, in this case, GitHub wraps each image in
+*Result*
+<img src="./imgs/vscode.png" height=50 align=right vspace=20/>
+<img src="./imgs/vscode.png" height=100/>
+
+Note that GitHub actually does not render the html as you specified, instead it creates html as follow:
+
 ```html
 <p>
-  <a href="./myimage.jpg">
+  <a href="./imgs/myimage.jpg">
     <!--image-->
   </a>
 </p>
 ```
 
-## Alignment
+
+
+### Alignment
 
 The `align` attribute can be used on a variety of HTML tags
+
 ```html
-<p align=right>right ➡</p>
-<p align=center>⬅ center ➡</p>
+<p align=right>right ⮕</p>
+<p align=center>⬅ center ⮕</p>
 <p align=left>⬅ left</p>
 ```
-> <p align=right>right ➡</p>
-> <p align=center>⬅ center ➡</p>
-> <p align=left>⬅ left</p>
 
-If you wrap multiple inline elements in a `<p>` tag, it's possible to do some interesting things with vertical `align` attribute values
+*Result:*
+<p align=right>right ⮕</p>
+<p align=center>⬅ center ⮕</p>
+<p align=left>⬅ left</p>
+
+**Trick:** If you wrap multiple inline elements in a `<p>` tag, it's possible to do some interesting things with vertical `align` attribute values
 
 ```html
 <p>
-  <img src="./vscode.png" height=49 align=top />
-  <img src="./vscode.png" height=50 align=bottom />
-  <img src="./vscode.png" height=100/>
+  <img src="./imgs/vscode.png" height=50 align=top />
+  <img src="./imgs/vscode.png" height=50 align=bottom />
+  <img src="./imgs/vscode.png" height=100/>
 </p>
 ```
-> <p>
->   <img src="./vscode.png" height=50 align=top />
->   <img src="./vscode.png" height=50 align=bottom />
->   <img src="./vscode.png" height=100/>
-> </p>
 
-## Lists
+*Result:*
+<p>
+  <img src="./imgs/vscode.png" height=50 align=top />
+  <img src="./imgs/vscode.png" height=50 align=bottom />
+  <img src="./imgs/vscode.png" height=100/>
+</p>
 
-### Unordered Lists
 
-These can be nested to create a multi-level outline
+### Lists
+
+#### Unordered Lists
+
+```md
+* ⏩ [Emmet](./emmet.md)
+* 🎛 [Refactoring](./refactoring.md)
+* ✅ [Type-Checking](./type-checking.md)
+* 🐞 [Debugging](./debugging.md)
+```
+
+*Results*
+* ⏩ [Emmet](./emmet.md)
+* 🎛 [Refactoring](./refactoring.md)
+* ✅ [Type-Checking](./type-checking.md)
+* 🐞 [Debugging](./debugging.md)
+
+
+#### Ordered Lists (does not alway renderer consistently):
+
+```md
+1. first
+1. second
+1. third
+```
+*Result:*
+1. first
+1. second
+1. third
+
+
+#### Nested Lists (does not alway renderer consistently):
+
 
 ```md
 * one
@@ -81,25 +113,36 @@ These can be nested to create a multi-level outline
   * three
     * four
 ```
-> * one
-> * two
->   * three
->     * four
+*Result:*
+ * one
+ * two
+   * three
+     * four
 
-### Ordered Lists
-
-These cannot be nested in most markdown rendering engines
 
 ```md
 1. first
+a. AAA
+a. BBB
+b. nnn
+b. nnn
 1. second
+  2. XXX
+  2. YYY
 1. third
 ```
-> 1. first
-> 1. second
-> 1. third
+*Result:*
+1. first
+a. AAA
+a. BBB
+b. nnn
+b. nnn
+1. second
+  2. XXX
+  2. YYY
+1. third
 
-but, if you use HTML, you can fix this, and customize the list "type"
+but, you can use HTML:
 
 ```html
 <ol type='A' >
@@ -114,19 +157,23 @@ but, if you use HTML, you can fix this, and customize the list "type"
   </ol>
 </ol>
 ```
-> <ol type='A' >
->   <li> first </li>
->   <li> second </li>
->   <li> third</li>
->   <ol type='a' >
->     <li> fourth </li>
->     <ol type='i' >
->       <li> fifth </li>
->     </ol>
->   </ol>
-> </ol>
+*Result:*
 
-### [Description Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) (`<dl>`)
+<ol type='A' >
+  <li> first </li>
+  <li> second </li>
+  <li> third</li>
+  <ol type='a' >
+    <li> fourth </li>
+    <ol type='i' >
+      <li> fifth </li>
+    </ol>
+  </ol>
+</ol>
+
+
+#### Description Lists (`<dl>`)
+[MDN document](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
 
 ```html
 <dl>
@@ -141,38 +188,58 @@ but, if you use HTML, you can fix this, and customize the list "type"
 </dl>
 ```
 
-> <dl>
->   <dt>Images</dt>
->   <dd>.jpg, .gif, .png</dd>
->   <dt>Styles</dt>
->   <dd>.css</dd>
->   <dt>Scripts</dt>
->   <dd>.js</dd>
->   <dt>Documents</dt>
->   <dd>.html</dd>
-> </dl>
+*Result:*
+<dl>
+  <dt>Images</dt>
+  <dd>.jpg, .gif, .png</dd>
+  <dt>Styles</dt>
+  <dd>.css</dd>
+  <dt>Scripts</dt>
+  <dd>.js</dd>
+  <dt>Documents</dt>
+  <dd>.html</dd>
+</dl>
 
-## [Details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)/Summary
+
+### Collapsibale with details/summary
+
+[MDN document](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
 ````html
 <details>
-  <summary>Click me for something absolutely amazing</summary>
+  <summary>Click me To uncollapse</summary>
 
-```ts
-  let Hello : string = 'World';
-```
+  ```ts
+    let Hello : string = 'World';
+  ```
 </details>
 ````
 
+Result:
 
-> <details>
->  <summary>Click me for something absolutely amazing</summary>
->
->```ts
->  let Hello : string = 'World';
->```
-> </details>
+<details>
+  <summary>Click me To uncollapse</summary>
 
+  ```ts
+    let Hello : string = 'World';
+  ```
+</details>
+
+
+
+
+
+### Table
+
+```md
+| Item      | Price | Qty |
+|-----------|-------|-----|
+| 🍇 Grapes | $2.99 | 3   |
+| 🍐 Pears  | $4.15 | 1   |
+| 🍋 Lemons | $0.99 | 2   |
+```
+
+*Result:*
 
 | Item      | Price | Quantity |
 |-----------|-------|----------|
@@ -180,17 +247,4 @@ but, if you use HTML, you can fix this, and customize the list "type"
 | 🍐 Pears  | $4.15 | 1        |
 | 🍋 Lemons | $0.99 | 2        |
 
-> ```md
-> | Item      | Price | Qty |
-> |-----------|-------|-----|
-> | 🍇 Grapes | $2.99 | 3   |
-> | 🍐 Pears  | $4.15 | 1   |
-> | 🍋 Lemons | $0.99 | 2   |
-> ```
 
----
-#### Thanks to folks who posted tips I didn't know about!
-* [@mxstbr](https://github.com/mxstbr)  for [hanging indentation](https://github.com/mxstbr/github-markdown-tricks#hanging-indendation)
-
----
-NEXT: ⏩ [Emmet](./emmet.md)
