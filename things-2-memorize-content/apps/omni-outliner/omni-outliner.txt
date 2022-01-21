@@ -20,8 +20,10 @@ Selection
 Collaps/expand current
   [cmd]+ [0]/[9]
 
-Split/join row:
-  [ctr] + [ret]/[back]
+Split/Join:
+  [ctr] + [ret]     // split line
+  [ctr] + [back]    // join above
+  [ctr] + [del]     // join below
 
 [shf][ret]        blank line above
      [ret]        blank line bellow
