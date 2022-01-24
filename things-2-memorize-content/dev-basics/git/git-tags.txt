@@ -14,6 +14,7 @@ tag
 
   git tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=creatordate   # [2]
 
+  git fetch --prune-tag               # clean up tag locally
 
 Missing tag
 ===========
