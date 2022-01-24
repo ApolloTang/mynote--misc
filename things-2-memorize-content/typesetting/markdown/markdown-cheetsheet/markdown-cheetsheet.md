@@ -90,8 +90,9 @@ The `align` attribute can be used on a variety of HTML tags
 * ✅ [Type-Checking](./type-checking.md)
 * 🐞 [Debugging](./debugging.md)
 
+#### Ordered Lists
 
-#### Ordered Lists (does not alway renderer consistently):
+Note that order list does not alway renderer consistently
 
 ```md
 1. first
@@ -103,8 +104,9 @@ The `align` attribute can be used on a variety of HTML tags
 1. second
 1. third
 
+#### Nested Lists:
 
-#### Nested Lists (does not alway renderer consistently):
+ Note that nested list does not alway renderer consistently
 
 
 ```md
@@ -246,5 +248,4 @@ Result:
 | 🍇 Grapes | $2.99 | 3        |
 | 🍐 Pears  | $4.15 | 1        |
 | 🍋 Lemons | $0.99 | 2        |
-
 
