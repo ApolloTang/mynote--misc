@@ -1,4 +1,10 @@
 This is how you specify key with special charecter:
 
-key='"test:watch"'
+  key='"test:watch"'
+
+  Ref:
+  https://stackoverflow.com/questions/64093421/jq-extract-error-for-key-containing-pipe-character
+
+
+
 
