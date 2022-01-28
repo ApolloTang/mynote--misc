@@ -1,0 +1,4 @@
+This is how you specify key with special charecter:
+
+key='"test:watch"'
+
