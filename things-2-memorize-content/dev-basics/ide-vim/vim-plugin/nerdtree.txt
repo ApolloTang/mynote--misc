@@ -1,0 +1,11 @@
+
+
+:NERDTreeFind                                                  :NERDTreeFind
+    Find the current file in the tree. If no tree exists for the current tab,
+    or the file is not under the current root, then initialize a new tree where
+    the root is the directory of the current file.
+
+from
+  https://stackoverflow.com/a/7692315/3136861
+
+---eof---
