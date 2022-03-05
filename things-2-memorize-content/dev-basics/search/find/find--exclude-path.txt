@@ -1,0 +1,13 @@
+
+Find name contain 'cookie' but not in node_module folder
+
+  find . \( -name *cookie* \) -not \( -path */node_modules/* \)
+
+
+More reading:
+
+https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-command/36790648
+
+
+--eof--
+
