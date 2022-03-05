@@ -56,6 +56,7 @@ Useful flag:
   -file           print the file to search but don't search
   -C              [Context] show the line surrounding a match
   -p              same as --color always  use this to pipe to less
+  -v              Invert matching. Show lines that do not match the given patterns.
 
   -M=0 --max-columns=0   # Don't supress long line
   --max-columns-preview  # Preview long line
