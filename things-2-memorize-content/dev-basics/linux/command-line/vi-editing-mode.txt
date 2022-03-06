@@ -1,0 +1,29 @@
+Vi mode in Bash
+================
+
+To use vi mode in Bash and any other tool that uses GNU Readline,
+such as the MySQL command line, you need only put this into your
+.inputrc file, then log out and in again:
+
+  set editing-mode vi
+
+If you only want to use this mode in Bash, an alternative is to
+ use the following in your .bashrc, again with a login/logout
+ or resourcing of the file:
+
+  set -o vi
+
+You can check this has applied correctly with the following, which
+ will spit out a list of the currently available bindings for
+ a set of fixed possible actions for text:
+
+  bind -P
+
+
+---
+Reference:
+
+https://stackoverflow.com/questions/22655587/how-to-use-vi-to-edit-a-command-in-terminal-on-linux
+https://blog.sanctum.geek.nz/vi-mode-in-bash/
+
+--eof--

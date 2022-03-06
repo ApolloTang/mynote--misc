@@ -1,6 +1,7 @@
+Vi mode in Bash
+Cheat Sheet
+================
 
-
-set -o vi
 
 .---------------------------------------------------------------------------.
 |                                                                           |
@@ -189,8 +190,6 @@ set -o vi
 ---
 Reference:
 
-https://stackoverflow.com/questions/22655587/how-to-use-vi-to-edit-a-command-in-terminal-on-linux
 https://github.com/pkrumins/bash-vi-editing-mode-cheat-sheet/blob/master/bash-vi-editing-mode-cheat-sheet.txt
-https://blog.sanctum.geek.nz/vi-mode-in-bash/
 
 --eof--
