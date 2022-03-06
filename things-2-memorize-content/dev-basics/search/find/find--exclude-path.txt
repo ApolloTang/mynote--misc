@@ -1,16 +1,43 @@
 
-Find name contain 'cookie' but not in node_module folder
 
-  find . \( -name *cookie* \) -not \( -path */node_modules/* \)
+Starting from directory './1-a'
+find a file name contain 'cookie' (case insensitive)
+skip 'node_module' and '.git' folder
+skip any folder contains the string 'styling'
+use rg to filter line with 'cookie' in result
 
-The following is fast:
+  gfind ./1-a \
+    -not \( -path '*/node_modules/*' -prune \) \
+    -not \( -path '*/.git/*' -prune \)  \
+    -not \( -path '*styling*' -prune \)  \
+    -and \( -iname '*cookie*' \) \
+    | rg -M=0 cookie
 
-  find .  -not \( -path *node_modules* -prune \) -not \( -path *styling* -prune \) -and \( -name *cookie* \)
 
+--------------------
+
+Starting from directory './1-a'
+find pdf or epub contain 'typescript' or 'ts-' (case insensitive)
+skip 'node_module' and '.git' folder
+include path contain 'typescript' or 'ts-' (case insensitive)
+use rg to filter line with 'cookie' in result
+
+  gfind ./1-a \
+   -not \( -ipath '*/node_modules/*' -prune \)                     \
+   -not \( -ipath '*/.git/*' -prune \)                             \
+   -and \( \( -ipath '*typescript*' \) -or \( -ipath '*ts-*' \) \) \
+   -and \( \( -iname '*typescript*.pdf' \) -or \( -iname '*ts-*.pdf' \) -or \( -iname '*typescript*.epub' \) -or \( -iname '*ts-*.epub' \)  \) \
+   | rg -M=0 'ts|typescript'
+
+
+----------------------
 
 Further reading:
 
 https://stackoverflow.com/questions/4210042/how-to-exclude-a-directory-in-find-command/36790648
+man gfind
+man find
+
 
 
 --eof--
