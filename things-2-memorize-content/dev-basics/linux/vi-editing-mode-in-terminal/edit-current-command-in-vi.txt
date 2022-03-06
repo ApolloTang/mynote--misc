@@ -1,0 +1,9 @@
+Press ESC to go into vi-command mode, then press v. Bash will
+start your your chosen $EDITOR. If you haven't chosen one, Bash
+will start vi (the visual editor).
+
+---
+Ref:
+https://superuser.com/questions/736368/im-using-bash-in-vi-mode-whats-the-hotkey-sequence-to-edit-the-current-comm
+
+--eof--
