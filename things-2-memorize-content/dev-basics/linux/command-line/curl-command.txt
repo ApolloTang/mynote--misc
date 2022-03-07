@@ -1,0 +1,30 @@
+Curl commands
+=============
+
+curl -X POST <URL> \
+  -v \
+  -b cookie-file.txt \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"test@test.com", "password":"password"}'
+
+
+-----------------------
+
+-X let you specify GET or POST:
+  curl -X GET http://localhost:3000
+
+-X GET is actually the default, so no need to specified:
+  curl http://localhost:3000
+
+-v is verbose:
+  curl http://localhost:3000 -v
+
+------------------------
+
+-c Save the received cookie in a file
+  curl http://localhost:3000 -v -c cookie-file.txt
+
+-b Send cookie in a file
+  curl http://localhost:3000 -v -b cookie-file.txt
+
+
