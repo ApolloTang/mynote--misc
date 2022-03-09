@@ -1,0 +1,10 @@
+Using find and sed (search and replace)
+
+  Free BSD (osx)
+    find . -name "*.java" -exec sed -i '' "s/foo/bar/g" {} +
+
+---
+Ref:
+https://unix.stackexchange.com/questions/36795/find-sed-search-and-replace
+
+---eof---

@@ -1,0 +1,8 @@
+running find exec
+
+Ref:
+https://unix.stackexchange.com/questions/12902/how-to-run-find-exec
+
+---eof---
+
+
