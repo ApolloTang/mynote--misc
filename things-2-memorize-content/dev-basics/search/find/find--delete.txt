@@ -1,3 +1,14 @@
+find delete
+===========
+
+
+find . \
+  -not \( -path '*/node_modules/*' -prune \) \
+  -not \( -path '*/.git/*' -prune \)  \
+  -and \( -name .DS_Store \) \
+  -delete
+
+
 https://www.cyberciti.biz/faq/linux-unix-how-to-find-and-remove-files/
 
 ---eof--
