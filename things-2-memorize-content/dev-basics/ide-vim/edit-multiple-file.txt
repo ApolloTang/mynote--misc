@@ -1,0 +1,25 @@
+Edit multiple file:
+===================
+
+  1. Open multiple files into buffer:
+
+    $ ./myscript.sh | tr '\n' ' ' | xargs mvim
+
+      myscript.sh  # script that output lines of path-to-files
+      tr '\n' ' '  # join them into one lines
+      xargs        # feed the files to mvim
+
+  2. Open buffers in split:
+
+    :sba        - open all buffer in horizontal split [1]
+    :vert sba   - open all buffer in vertical split [1]
+
+
+  More example of invoking vim on multiple file:
+
+    1. rg type -l | xargs mvim
+    2. :sba (then ":vert sba" to convert all h-split to v-split)
+
+
+---eof---
+

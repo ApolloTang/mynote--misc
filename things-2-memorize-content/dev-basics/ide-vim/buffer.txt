@@ -12,6 +12,8 @@
 ref:
 [1] https://superuser.com/questions/323781/how-do-i-open-separate-tabs-windows-for-all-buffers-in-vim
 [2] https://superuser.com/questions/212257/how-do-i-open-a-blank-new-file-in-a-split-in-vim
-----
 
+to read:
+https://superuser.com/questions/323781/how-do-i-open-separate-tabs-windows-for-all-buffers-in-vim
 
+---eof---
