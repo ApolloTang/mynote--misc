@@ -1,0 +1,12 @@
+Generic command would be:
+
+find /path/to/files -name '<search>*' -exec bash -c 'mv $0 ${0/<search>/<replace>}' {} \;
+
+where <search> and <replace> should be replaced with your source and target respectively.
+
+
+From:
+https://stackoverflow.com/questions/1086502/rename-multiple-files-based-on-pattern-in-unix
+
+---eof---
+
