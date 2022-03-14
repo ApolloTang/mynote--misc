@@ -2,7 +2,7 @@
 
 Starting from directory './1-a'
 find a file name contain 'cookie' (case insensitive)
-skip 'node_module' and '.git' folder
+skip 'node_modules' and '.git' folder
 skip any folder contains the string 'styling'
 use rg to filter line with 'cookie' in result
 
@@ -16,9 +16,24 @@ use rg to filter line with 'cookie' in result
 
 --------------------
 
+Starting from current folder './'
+find name with extension '.js' (case sensitive)
+skip 'node_modules', '.git', 'dist' folder
+use rg to filter line with 'js' in results and highlight it.
+
+gfind . \
+  -not \( -path '*/node_modules/*' -prune \) \
+  -not \( -path '*/.git/*' -prune \) \
+  -not \( -path '*/dist/*' -prune \) \
+  -and \( -name '*.js' \) \
+  | rg -M=0 js
+
+
+--------------------
+
 Starting from directory './1-a'
 find pdf or epub contain 'typescript' or 'ts-' (case insensitive)
-skip 'node_module' and '.git' folder
+skip 'node_modules' and '.git' folder
 include path contain 'typescript' or 'ts-' (case insensitive)
 use rg to filter line with 'cookie' in result
 
