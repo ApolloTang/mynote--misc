@@ -1,0 +1,11 @@
+
+::: Uninstall a package
+
+    $npm uninstall <package>
+
+::: Uninstall a global package
+
+    $npm -g rm <package>
+
+ref:
+http://blog.hugeaim.com/2013/02/10/remove-a-global-package-in-nodejs-npm/

@@ -1,0 +1,22 @@
+
+::: Example of the content for package.json
+
+    {
+      "name": "html",
+      "version": "0.0.0",
+      "description": "testing npm",
+      "main": "script.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "dependencies" : {
+        "node-markdown" : "0.1.0"       // for the latest version use: "node-markdown" : "*"
+                                        // after listing the dependencies, type $ npm install
+                                        // npm will install your dependency to the current directory
+      },
+      "author": "apollo",
+      "license": "BSD"
+    }
+
+
+

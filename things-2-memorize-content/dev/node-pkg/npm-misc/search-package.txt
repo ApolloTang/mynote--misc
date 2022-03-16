@@ -1,0 +1,35 @@
+
+
+::: Finding modules
+
+    $ npm search
+    $ mpm search | grep markdown
+    $ npm search markdown
+
+::: Useful
+
+    npm docs <module_name>
+    npm bugs <module_name>
+    npm edit <module_name>  // view source code
+
+    the above must be run in the node.js project root
+    and the module must already have present in the node_modules
+    folder
+
+
+::: site to find modules
+
+    Official:
+
+        https://search.npmjs.org/
+
+    The following site provides information on
+    number of watchers, forks, and issues:
+
+        http://blago.dachev.com/modules
+        http://eirikb.github.io/nipster/
+
+
+    Use the number of downloads a module has and the number of
+    issues on a project as a rough guide of how reliable and
+    mature a module is.

@@ -1,0 +1,13 @@
+
+
+
+::: Updating Module
+
+    $ npm update
+    $ sudo npm update -g //
+
+
+::: Update module to reflect new specification in package.js
+
+    $ vim package.js // edit to remove under dependencies an item say "tweeter"
+    $ npm prune      // this will remove tweeter module from your node_modules directory
