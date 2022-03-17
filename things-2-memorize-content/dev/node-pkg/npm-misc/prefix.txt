@@ -1,0 +1,9 @@
+
+How to get the value of $PREFIX:
+
+$ npm config get prefix
+/Users/<username>/.nvm/versions/node/v14.17.3
+
+---
+Ref: https://stackoverflow.com/questions/18383476/how-to-get-the-npm-global-path-prefix
+
