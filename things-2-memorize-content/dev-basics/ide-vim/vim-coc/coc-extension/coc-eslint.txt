@@ -1,0 +1,16 @@
+https://github.com/neoclide/coc-eslint
+
+
+Provide eslint commands:
+
+  :CocCommand eslint.executeAutofix
+  :CocCommand eslint.restart
+  :CocCommand eslint.showOutputChannel
+
+coc-eslint's configuration is in "coc-settings.json"
+which can be opened with
+
+  :CocConfig
+
+---eof---
+

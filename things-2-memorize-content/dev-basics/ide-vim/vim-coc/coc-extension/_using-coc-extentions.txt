@@ -1,0 +1,30 @@
+https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+
+
+Update extensions:
+
+  :CocUpdate
+
+
+Manage extenstions:
+
+  :cocList extensions
+
+  ? means invalid extension
+  * means extension is activated
+  + means extension is loaded
+  - means extension is disabled
+
+  hit <Tab> to activate action menu
+
+  toggle:    activate/deactivate selected extension(s).
+  enable:    enable selected extension(s).
+  disable:   disable selected extension(s).
+  reload:    reload selected extension(s).
+  uninstall: remove selected extension(s).
+  lock:      toggle lock of extension, locked extension won't be updated by :CocUpdate
+
+
+
+
+
