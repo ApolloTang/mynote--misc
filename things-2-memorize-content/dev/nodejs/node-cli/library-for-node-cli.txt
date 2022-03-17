@@ -1,0 +1,37 @@
+What library should I use for creating a CLI?
+
+https://www.npmjs.com/package/yargs
+https://www.npmjs.com/package/commander
+
+https://www.npmjs.com/package/chalk
+https://www.npmjs.com/package/winston
+
+https://github.com/oclif/oclif
+https://github.com/SBoudrias/Inquirer.js/
+
+https://github.com/dthree/vorpal
+https://github.com/mattallty/Caporal.js
+
+
+------
+"When you are done with your CLI app and you want to distribute
+it, you can use the "pkg" node module:
+
+  https://github.com/vercel/pkg
+
+to package your code, its dependencies, and node itself into individual
+binary executables for linux/mac/windows!"
+
+(not sure how is pkg different from ncc)
+
+
+
+
+
+
+
+Ref:
+https://www.reddit.com/r/node/comments/a1tl3i/what_library_should_i_use_for_creating_a_cli/
+
+---eof---
+
