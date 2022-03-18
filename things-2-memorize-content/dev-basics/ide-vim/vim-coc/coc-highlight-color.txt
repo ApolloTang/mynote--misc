@@ -1,0 +1,5 @@
+https://github.com/neoclide/coc.nvim/issues/1045
+
+https://github.com/neoclide/coc.nvim/blob/master/plugin/coc.vim#L351
+
+---eof---
