@@ -6,4 +6,10 @@ Coloring file listing
 
 https://www.cyberciti.biz/faq/apple-mac-osx-terminal-color-ls-output-option/
 https://www.cyberciti.biz/faq/how-to-turn-on-or-off-colors-in-bash/
+
+To Read:
+--------
+• Build your own Command Line with ANSI escape codes:
+  https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
+
 ---eof---
