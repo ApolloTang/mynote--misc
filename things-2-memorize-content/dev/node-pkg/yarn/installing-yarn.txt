@@ -1,0 +1,53 @@
+There are three ways to install yarn on OSX:
+
+  1. npm
+  2. curl
+  3. brew
+  4. other
+
+  currently I am using method 3 (brew) for my installation
+
+---
+1. Using npm:
+
+  Using npm to install yarn as global npm package [1]:
+
+    $ npm install -g yarn
+
+    If you use this method, yarn will be attached your
+    the version of node managed by nvm. Meaning:
+    when you swich node version, you may have to install yarn again.
+
+
+2. Using curl [2]:
+
+  curl -o- -L https://yarnpkg.com/install.sh | bash
+
+     I have not investigate where this script install the yarn binary.
+
+
+3. Using Homebrew:
+
+    $ brew install yarn
+
+    This install yarn at location:
+
+      /usr/local/Cellar/yarn/<version>/bin/yarn
+
+    and is symlink to (available to PATH):
+
+      /usr/local/bin/yarn
+
+4. This article mention some weird way for installing
+   yarn, and I am not sure if it is a good advice.
+
+
+---
+Ref:
+[1] https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-yarn-package-manager-for-node-js
+[2] https://tecadmin.net/install-yarn-macos/
+
+---
+tag:
+#yarn-installation
+

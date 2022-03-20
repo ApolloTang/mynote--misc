@@ -1,0 +1,11 @@
+  I had a quick look in the script fetching from:
+
+    curl -o- -L https://yarnpkg.com/install.sh | bash
+
+  It appears that yarn's global package are installed at:
+
+    /Users/<USER>/.config/yarn/global
+
+  The individaul executable (.bin/*) are then symb link to:
+
+    /Users/<USER>/.yarn/bin
