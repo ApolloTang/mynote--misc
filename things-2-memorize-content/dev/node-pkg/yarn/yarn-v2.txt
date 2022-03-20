@@ -1,0 +1,14 @@
+to read:
+
+State of Yarn 2 (Berry) in 2021
+  https://blog.hao.dev/state-of-yarn-2-berry-in-2021
+
+What's the problem with Yarn 2?
+  https://njbmartin.medium.com/whats-the-problem-with-yarn-2-ca59e3fabc9f
+
+Installing:
+  https://www.digitalocean.com/community/tutorials/how-to-install-and-use-the-yarn-package-manager-for-node-js
+
+#yarn2
+
+
