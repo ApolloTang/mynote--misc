@@ -9,3 +9,9 @@
   The individaul executable (.bin/*) are then symb link to:
 
     /Users/<USER>/.yarn/bin
+
+
+Also see: https://github.com/yarnpkg/yarn/issues/2049
+
+---eof--
+
