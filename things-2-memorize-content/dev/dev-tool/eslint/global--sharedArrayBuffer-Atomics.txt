@@ -1,0 +1,13 @@
+
+"globals": {
+  "Atomics": "readonly",
+  "SharedArrayBuffer": "readonly"
+}
+
+According to this:
+https://stackoverflow.com/questions/68338890/why-do-developers-occasionally-add-sharedarraybuffer-atomics-to-the-esl
+
+globals.{Atomics, SharedArrayBuffer} are unnecessary.
+
+---eof---
+

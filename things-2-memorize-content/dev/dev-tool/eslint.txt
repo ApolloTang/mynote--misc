@@ -4,3 +4,12 @@
 // eslint-disable-next-line no-alert
 // eslint-disable-line no-alert
 
+---
+
+The following can be place on the top of a file to use for perfile
+configuration setting:
+
+  /* eslint-env node */
+  /* eslint no-console: ["error", { allow: ["error", "log", "warn"] }] */
+
+---eof---

@@ -1,0 +1,12 @@
+What's the difference between plugins and extends in eslint?
+============================================================
+
+
+https://stackoverflow.com/questions/61528185/eslint-extends-vs-plugins-v2020
+https://stackoverflow.com/questions/53189200/whats-the-difference-between-plugins-and-extends-in-eslint
+https://prateeksurana.me/blog/difference-between-eslint-extends-and-plugins/
+
+---eof---
+
+
+
