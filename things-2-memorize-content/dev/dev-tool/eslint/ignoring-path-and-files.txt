@@ -1,0 +1,6 @@
+ignoring paths and files
+========================
+
+https://stackoverflow.com/questions/42250257/disable-eslint-rules-for-folder
+https://stackoverflow.com/questions/43194302/disable-eslint-for-all-files-in-directory-and-subdirectories?noredirect=1&lq=1
+
