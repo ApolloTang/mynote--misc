@@ -8,15 +8,4 @@ sleep
 
 - - - - - - - - - - - - -
 
-Array
-  .apply(null, {length: 3})
-  // [undefined, undefined, undefined]
-
-Array
-  .apply(null, {length: 3})
-  .map(Number.call, Number);
-  // [0, 1, 2]
-
-- - - - - - - - - - - - -
-
 

@@ -1,0 +1,34 @@
+
+
+Array
+  .apply(null, {length: 3})
+  // [undefined, undefined, undefined]
+
+Array
+  .apply(null, {length: 3})
+  .map(Number.call, Number);
+  // [0, 1, 2]
+
+- - - - - - - - - - - - -
+
+Array
+  .from(
+    { length:3 },
+    (_,index)=>index
+   );
+  // [0,1,2]
+
+
+https://dmitripavlutin.com/javascript-array-from-applications/
+
+- - - - - - - - - - - - -
+
+Array(3)
+  .fill('a');
+  // ['a','a','a']
+
+https://bobbyhadz.com/blog/javascript-create-array-n-elements-same-value
+
+
+
+
