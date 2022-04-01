@@ -12,4 +12,14 @@ configuration setting:
   /* eslint-env node */
   /* eslint no-console: ["error", { allow: ["error", "log", "warn"] }] */
 
+
+Perfile config with line commants does not work, must use block command:
+
+  does not work:
+    // eslint @typescript-eslint/explicit-function-return-type: warn
+  works:
+    /* eslint @typescript-eslint/explicit-function-return-type: warn */
+
+
+
 ---eof---
