@@ -1,0 +1,19 @@
+Emmet Cheat Sheet
+=================
+  https://docs.emmet.io/cheatsheet-a5.pdf
+
+  html boilder plate
+  ------------------
+
+    html:5
+          ^--put cursor here, then type <c-y>, (ctl-y then comma)
+
+    Instead of "html:5", you can simply use "!"
+
+
+  Custom attributes
+  -----------------
+    p[title="Hello world"]
+
+---eof---
+
