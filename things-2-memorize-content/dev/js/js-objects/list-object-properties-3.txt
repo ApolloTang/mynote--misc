@@ -1,0 +1,5 @@
+
+https://dmitripavlutin.com/check-if-object-has-property-javascript/
+
+---eof---
+
