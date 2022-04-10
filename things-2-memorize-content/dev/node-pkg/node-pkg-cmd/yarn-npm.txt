@@ -35,6 +35,11 @@ Global package
     version. This is b/c npm global is install under the '.nvm' directory.
     Base on this I would install global package with npm.
 
+  Removing
+  --------
+    $npm -g rm <package>
+
+
   Listing
   -------
   $ yarn global list

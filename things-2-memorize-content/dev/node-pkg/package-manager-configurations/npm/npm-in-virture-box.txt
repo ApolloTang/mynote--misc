@@ -1,0 +1,14 @@
+ ----------------------------------------------------------
+
+::: [!] About share folder in virture box
+
+        need --no-bin-links for plugin installation whenever you
+        install something inside of a vbox shared folder because
+        it's not possible to store symlinks in those places.
+
+        eg:  sudo npm install --no-bin-links grunt grunt-contrib-uglify
+
+ ----------------------------------------------------------
+
+
+---eof---
