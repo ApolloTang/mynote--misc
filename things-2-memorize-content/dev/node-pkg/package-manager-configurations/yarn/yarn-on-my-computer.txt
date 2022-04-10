@@ -1,0 +1,26 @@
+my yarn is installed via brew:
+
+yarn's executable is located in
+
+  $ ll `which yarn`
+  ....   31B 13 Feb  2021 /usr/local/bin/yarn -> ../Cellar/yarn/1.22.10/bin/yarn
+
+or
+
+  $ ll /usr/local/Cellar/yarn/1.22.10/bin/yarn
+  -r-xr-xr-x  1 <user>  admin   132B 13 Feb  2021 /usr/local/Cellar/yarn/1.22.10/bin/yarn
+
+The content of this exec is:
+
+  $ cat yarn
+  #!/bin/bash
+  PREFIX="/usr/local" NPM_CONFIG_PYTHON="/usr/bin/python" exec "/usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js"  "$@"
+
+Which node version is yarn dedended on?
+
+  $ cat /usr/local/Cellar/yarn/1.22.10/libexec/package.json  | rg node
+      "node": ">=4.0.0"
+
+---eof---
+
+
