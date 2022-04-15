@@ -1,4 +1,10 @@
 
+list all path that contain node_modules (starting from pwd)
+donot descend into node_modules/:
+
+  gfind . -type d -name node_modules -not \( -path '*/node_modules/*' -prune \)
+
+-------------------
 
 Starting from directory './1-a'
 find a file name contain 'cookie' (case insensitive)
