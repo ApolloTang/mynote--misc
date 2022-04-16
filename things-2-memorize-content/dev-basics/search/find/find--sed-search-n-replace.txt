@@ -1,10 +1,15 @@
 Using find and sed (search and replace)
 
   Free BSD (osx)
+  --------------
+  The The BSD sed command takes the -i option but requires a
+  suffix for the backup (but an empty suffix is permitted) [see 2]
+
     find . -name "*.java" -exec sed -i '' "s/foo/bar/g" {} +
 
 ---
 Ref:
-https://unix.stackexchange.com/questions/36795/find-sed-search-and-replace
+[1] https://unix.stackexchange.com/questions/36795/find-sed-search-and-replace
+[2] https://stackoverflow.com/a/29083181/3136861
 
 ---eof---
