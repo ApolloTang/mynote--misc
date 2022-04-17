@@ -10,11 +10,11 @@ authentication
   -----------------
 
     % npm login    # <---- default registry https://registry.npmjs.com/
-    Username: apollotang
+    Username: your_user_id
     Password: XXXXXXX
     Email: (this IS public) tang.apollo@gmail.com
     Enter one-time password from your authenticator app: XXXXXX
-    Logged in as apollotang on https://registry.npmjs.com/.
+    Logged in as your_user_id on https://registry.npmjs.com/.
 
 
       # The above will add an entry of
@@ -30,7 +30,7 @@ authentication
     //registry.npmjs.com/:_authToken=xxxx
 
     % npm whoami
-    apollotang
+    your_user_id
 
 
   login out of npmjs
@@ -56,8 +56,8 @@ Scope and publishing public repo
   To publish to a scope, you can either:
 
     1. Manually add a scope to the 'name' field in package.json:
-        @apollotang/<package-name>
-    2. Run 'npm init --scope=apollotang' instead of npm init
+        @scopename/<package-name>
+    2. Run 'npm init --scope=scopename' instead of npm init
 
   If your repository has a scope, you need to adjust the publish command:
 

@@ -29,10 +29,10 @@ authentication
   login into verdaccio
   ---------------------
     $ npm adduser --registry http://localhost:4873
-    Username: apollotang
+    Username: username
     Password: password
     Email: (this IS public) tang.apollo@gmail.com
-    Logged in as apollotang on http://localhost:4873/
+    Logged in as username on http://localhost:4873/
 
       # The above will add an entry of
       #   //localhost:4873/:_authToken=xxxx
@@ -47,7 +47,7 @@ authentication
     //localhost:4873/:_authToken=xxxx
 
     $ npm whoami --registry http://localhost:4873
-    apollotang
+    username
 
 
   login out of verdaccio
