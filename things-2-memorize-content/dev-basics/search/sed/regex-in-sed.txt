@@ -1,4 +1,8 @@
 To read:
 https://stackoverflow.com/questions/28401480/is-there-another-regular-expression-flavor-in-gnu-sed
 
+https://unix.stackexchange.com/questions/32907/what-characters-do-i-need-to-escape-when-using-sed-in-a-sh-script
+https://stackoverflow.com/questions/15783701/which-characters-need-to-be-escaped-when-using-bash
+
+
 ---eof---

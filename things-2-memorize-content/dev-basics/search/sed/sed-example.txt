@@ -1,0 +1,11 @@
+------------------------------
+Replace simver in package.json
+
+  sed -i '' -e 's#"@apollotang\/my-3rd-party-package": "1\.0\.0"#"@apollotang\/my-3rd-party-package": "3.0.0"#g'
+
+  The above replace:
+   "@apollotang/my-3rd-party-package": "1.0.0"
+  with
+   "@apollotang/my-3rd-party-package": "3.0.0"
+
+---eof---
