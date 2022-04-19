@@ -1,6 +1,5 @@
-
 tag
-=======
+===========
 
   git tag [-l <pattern>]              # list tag with pattern
   git tag <tagName>                   # create a tag on current branch
@@ -12,9 +11,22 @@ tag
   git tag -d <tagName>                # delete a local tag
   git push --delete origin <tagname>  # delete a remote tag
 
-  git tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=creatordate   # [2]
 
-  git fetch --prune-tag               # clean up tag locally
+Clean up tag locally:
+===========
+
+    git fetch --prune-tag
+
+
+
+Sorting
+===========
+
+  list all tags in my Git repository by the date they were created [2]:
+
+    git tag --format='%(creatordate:short)%09%(refname:strip=2)' --sort=creatordate
+
+
 
 Missing tag
 ===========
@@ -33,11 +45,29 @@ Missing tag
   ref: [1]
 
 
+
+Error handling
+===========
+
+  If you received message:
+
+    "would clobber existing tag"
+
+  Than could mean tag of the same name exist on remote at a
+  different commit. You can use:
+
+    git fetch --tags -f
+
+  To force local tag to attch to the same commit as that in remote [3].
+
+
+---
 Ref:
 [1] https://stackoverflow.com/questions/15794378/git-missing-tags-after-pull
 [2] https://stackoverflow.com/a/44562371/3136861
     related to above
     https://stackoverflow.com/a/13208822/3136861
+[3] https://stackoverflow.com/questions/58031165/how-to-get-rid-of-would-clobber-existing-tag
 
 ---eof---
 
