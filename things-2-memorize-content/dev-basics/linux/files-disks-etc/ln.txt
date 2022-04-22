@@ -114,3 +114,32 @@ listing with the '-L' flag:
 
 
 
+Showing inode with -i flag:
+--------------------------
+
+  printf cat > foo
+  ln foo foo-hard
+
+  printf dog > bar
+  ln -s bar bar-soft
+
+  ls -lai
+    ...
+    285693892 -rw-r--r--   1 apollotang  staff     3 22 Apr 01:30 bar
+    285693898 lrwxr-xr-x   1 apollotang  staff     3 22 Apr 01:30 bar-soft -> bar
+    285693047 -rw-r--r--   2 apollotang  staff     3 22 Apr 01:14 foo
+    285693047 -rw-r--r--   2 apollotang  staff     3 22 Apr 01:14 foo-hard
+    ^^^^^^^^^
+    inode
+
+  Notice that foo and foo-hard have the same inode
+  but bar and bar-soft have different inode
+
+
+---
+Ref:
+
+https://stackoverflow.com/questions/185899/what-is-the-difference-between-a-symbolic-link-and-a-hard-link
+https://askubuntu.com/questions/108771/what-is-the-difference-between-a-hard-link-and-a-symbolic-link
+
+---eof---
