@@ -1,4 +1,5 @@
-Using find and sed (search and replace)
+Using find and sed
+==================
 
   Free BSD (osx)
   --------------
@@ -7,9 +8,18 @@ Using find and sed (search and replace)
 
     find . -name "*.java" -exec sed -i '' "s/foo/bar/g" {} +
 
+Using ripgrep and sed
+======================
+
+    sed -i '' 's#XYZ#ABC#g' `rg  -F 'XYZ' -l`
+
+    source: [3]
+
+
 ---
 Ref:
 [1] https://unix.stackexchange.com/questions/36795/find-sed-search-and-replace
 [2] https://stackoverflow.com/a/29083181/3136861
+[3] https://stackoverflow.com/a/46920555/3136861
 
 ---eof---
