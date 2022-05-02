@@ -11,7 +11,7 @@ Using find and sed
 Using ripgrep and sed
 ======================
 
-    sed -i '' 's#XYZ#ABC#g' `rg  -F 'XYZ' -l`
+    sed -i '' 's#foo#bar#g' `rg  -F 'XYZ' -l`
 
     source: [3]
 
