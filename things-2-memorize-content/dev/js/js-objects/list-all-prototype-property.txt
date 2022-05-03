@@ -1,0 +1,15 @@
+Walk up prototype chain and list all properties (include non enumerable) [1]:
+
+function logAllProperties(obj) {
+  if (obj == null) return; // recursive approach
+  console.log(Object.getOwnPropertyNames(obj));
+  logAllProperties(Object.getPrototypeOf(obj));
+}
+
+logAllProperties(my_object);
+
+Ref:
+[1] https://stackoverflow.com/a/30158566/3136861
+
+---eof---
+
