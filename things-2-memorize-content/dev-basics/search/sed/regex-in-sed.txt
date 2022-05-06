@@ -1,3 +1,17 @@
+sed uses BRE. In BRE the following charcters has special meaning:
+
+  $ . * [ \ ^
+
+So to use them literally you need to escape them unless there are used
+inside
+
+
+
+
+
+
+
+
 To read:
 https://stackoverflow.com/questions/28401480/is-there-another-regular-expression-flavor-in-gnu-sed
 
