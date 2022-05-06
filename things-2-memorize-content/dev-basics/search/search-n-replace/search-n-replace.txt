@@ -11,10 +11,11 @@ Using find and sed
 Using ripgrep and sed
 ======================
 
-    sed -i '' 's#foo#bar#g' `rg  -F 'XYZ' -l`
-
+  sed -i '' 's#foo#bar#g' `rg  -F 'XYZ' -l`
     source: [3]
 
+  grep -l \'texttofind\' * | xargs sed -i '' 's/toreplace/replacewith/g'
+    source: [2]
 
 ---
 Ref:
