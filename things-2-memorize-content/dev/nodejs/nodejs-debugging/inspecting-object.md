@@ -16,7 +16,7 @@ TL:DR
 
 #### Problem with JSON.stringify
 
-  If object container circular reference it will fail.
+  If object contains circular reference it will fail.
 
 ##### Solution:
 
