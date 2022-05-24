@@ -27,4 +27,7 @@ docker-compose -f my-docker-compose.yml down -v
 docker-compose -p my-app -f my-docker-compose.yml up
 docker-compose -p my-app -f my-docker-compose.yml down
 
+docker ps -a
+
+docker system prune
 
