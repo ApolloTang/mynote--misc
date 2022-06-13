@@ -1,0 +1,5 @@
+https://osxdaily.com/2010/09/10/access-mac-special-characters-with-the-character-viewer/
+
+When the editor is focus, clicking on a character in the character view will type the character into the editor.
+
+---eof---
