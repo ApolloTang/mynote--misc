@@ -1,0 +1,7 @@
+https://www.laptopmag.com/articles/reset-mac
+
+1. Hold down the Command and R keys on the keyboard and turn on the Mac. Let go when the Apple logo pops up
+2. Choose Disk Utility and click Continue.
+3. Choose your startup disk (named Macintosh HD by default) from the sidebar and click the Erase button.
+
+---eof---
