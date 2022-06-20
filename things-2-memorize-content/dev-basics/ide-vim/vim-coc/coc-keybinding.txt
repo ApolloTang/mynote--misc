@@ -21,6 +21,11 @@ function parameter hint
   "/ https://github.com/neoclide/coc.nvim/issues/2202
   nnoremap <silent> <S-D-Space> :call CocActionAsync('showSignatureHelp')<CR>
 
+  Note:
+  • vscode's Ctrl+Shift+Space is for windows, for mac use Cmd+Shift+Space [1]
+  • I am not sure what S-D mean in <S-D-Space>, but I can get it to work by typing
+    a comma ',' in the function parenthesis.
+
 
 coc-codeaction
 ==============
@@ -41,5 +46,9 @@ i   7 function add(item) {                      │6. Convert 'const' to 'let'  
 >   8   if (storage.max - item.weight >= storage│7. Declare method 'add'                   │
 >   9     storage.items.add(item);              │8. Declare property 'add'                 │
 >  10     currentStorage += iten.weight;        └──────────────────────────────────────────┘
+
+
+Ref
+[1] https://stackoverflow.com/questions/53731271/how-to-trigger-parameter-hints-in-visual-studio-code
 
 ---eof---
