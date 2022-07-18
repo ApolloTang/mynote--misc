@@ -1,0 +1,20 @@
+GNU diff has a color flag [1]:
+
+  diff --color
+
+To install GNU diff on mac [2]:
+
+  brew install diffutils
+
+This will replace the diff that comes with OSX with GNU flavour
+
+
+
+---
+Ref:
+
+[1] https://stackoverflow.com/questions/8800578/how-to-colorize-diff-on-the-command-line
+
+[2] https://medium.com/pragmatic-programmers/installing-diffutils-and-findutils-eccce5c89168
+
+---eof---

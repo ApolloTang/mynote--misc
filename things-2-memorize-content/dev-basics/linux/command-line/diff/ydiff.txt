@@ -1,0 +1,23 @@
+ydiff give you side by side diff in terminal:
+
+To install:
+
+  brew install ydiff
+
+To use:
+
+  diff -ur dir1 dir2 | ydiff -w 0 -s
+
+Note the -u flag in diff, that is show linenumber
+The -s flag for ydiff mean side-by-side
+
+---
+Ref:
+
+https://github.com/ymattw/ydiff
+https://stackoverflow.com/questions/8800578/how-to-colorize-diff-on-the-command-line
+
+---eof---
+
+
+
