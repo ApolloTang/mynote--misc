@@ -6,7 +6,7 @@ Open selected items in tabs
 
     [opt][cmd][o]
 
-  mouse, via context menu:
+  mouse, via the context menu:
 
     ( right click selected ) > ( hold down [opt] ) > ( left click "open in tabs" )
 
