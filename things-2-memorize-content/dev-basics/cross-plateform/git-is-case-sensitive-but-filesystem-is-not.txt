@@ -1,0 +1,17 @@
+ - Linux is case-sensitive
+
+ - Windows has a case-insensitive file system.
+ - By default, Mac uses a case-insensitive file system.
+
+However, if you do the following on linux:
+
+ git config --global core.ignorecase true
+
+Git will make git case-sensitive to filename and see them as two separate entries.
+When you check out the repo on window or Mac, the separate file will merged silently.
+
+
+Ref:
+https://www.hanselman.com/blog/git-is-casesensitive-and-your-filesystem-may-not-be-weird-folder-merging-on-windows
+
+---eof---
