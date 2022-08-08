@@ -1,6 +1,6 @@
 # tsconfig.json difference between "include" and "rootDir"
 
-"include" option is an array of filenames or patterns to include by tsc during transpilation.
+"include" option is an array of filenames or patterns to be included by tsc during transpilation.
 
 "rootDir" option defines the root of the tree at "outDir"
 

@@ -3,7 +3,7 @@ Using find and sed
 
   Free BSD (osx)
   --------------
-  The The BSD sed command takes the -i option but requires a
+  The BSD sed command takes the -i option but requires a
   suffix for the backup (but an empty suffix is permitted) [see 2]
 
     find . -name "*.java" -exec sed -i '' "s/foo/bar/g" {} +
