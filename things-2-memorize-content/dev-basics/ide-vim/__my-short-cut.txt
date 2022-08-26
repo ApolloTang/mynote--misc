@@ -3,7 +3,7 @@
 ===========================
   noremap <c-q> :q<CR>
 
-  "/ Select next previous item in quickfix window
+  "/ Select the next/previous item in the quickfix window.
   "/ https://stackoverflow.com/a/29287066/3136861
   map <C-n> :cn<CR>
   map <C-p> :cp<CR>
@@ -34,7 +34,7 @@
   :GGCrenameCurrentWord    "/ Remap for rename current word
   <space>crn
 
-  :GGCrefactor             "/ Open refoctor window for refactor of curren symbol
+  :GGCrefactor             "/ Open refactor window for current symbol.
   <space>crf
 
 
@@ -67,7 +67,7 @@
   Terminal
 ============
 
-  hitting ESC twice exit exit terminal mode back to normal-mode
+  Hitting ESC twice to exit terminal mode back to normal-mode
 
 
 ===================

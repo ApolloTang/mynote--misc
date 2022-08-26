@@ -1,4 +1,5 @@
-Repeat on hold a key is not working, see:
+Repeat on holding a key not working 
+===================================
 
 In Terminal type:
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false

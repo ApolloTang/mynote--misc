@@ -5,8 +5,8 @@ VsCode navigation
   [ctr][tab]    go back to previous file
 
 
-  How to back to where you come from
-  ----------------------------------
+  Navigate back to where you come from
+  -------------------------------------
        [ctr][-]  go back
   [sft][ctr][-]  go forward
 
