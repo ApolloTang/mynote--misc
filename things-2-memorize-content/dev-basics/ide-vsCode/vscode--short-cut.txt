@@ -1,30 +1,13 @@
 
 
-<cmd-D>        Add next highlighted to selection.
+[cmd-D]        Add next highlighted to selection. 
                Selection is case insensitive.
 
-<ctr-`>        Toggle btw code editor and terminal
-
-<cmd-.>        drop down will appear to show you available option
-               to fix thing.
-
-
-<ctr-k><ctr-c> comment selected    window
-<ctr-k><ctr-u> uncomment selected  window
-
-<cmd-k><cmd-c> comment selected    osx
-<cmd-k><cmd-u> uncomment selected  osx
-
-<ctr-shft-space>  trigger parmeter hints (place cursor in function parenthesis) [1]
-
-<ctr-space>       trigger completion interlisense
-
+[ctr-`]        Toggle btw code editor and terminal
 
 ---
 to read:
 https://vslive.com/Blogs/News-and-Tips/2015/04/5-VS-Keyboard-Shortcuts.aspx
-
-[1] https://stackoverflow.com/questions/53731271/how-to-trigger-parameter-hints-in-visual-studio-code
 
 eof---
 

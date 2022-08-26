@@ -1,0 +1,14 @@
+
+[cmd-.]        show available options to fix thing.
+
+[ctr-shf-spb]  trigger parameter hints (place cursor in function parenthesis) [1]
+
+[ctr-spb]      trigger completion interlisense
+
+---
+to read:
+https://vslive.com/Blogs/News-and-Tips/2015/04/5-VS-Keyboard-Shortcuts.aspx
+
+[1] https://stackoverflow.com/questions/53731271/how-to-trigger-parameter-hints-in-visual-studio-code
+
+eof---
