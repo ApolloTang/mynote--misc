@@ -1,8 +1,4 @@
-# Coc.nvim IntelliSense
-
-
-
-## Quick Fixes
+# Coc IntelliSense: Quick Fixes
 
 Given the following typescript code:
 
@@ -41,9 +37,7 @@ My Keybinding mapping for `CocAction` is:
   nmap <space>ac  <Plug>(coc-codeaction)
 ```
 
-
-
-
+Also see:
 https://github.com/fannheyward/coc-rust-analyzer/issues/492
 
 
