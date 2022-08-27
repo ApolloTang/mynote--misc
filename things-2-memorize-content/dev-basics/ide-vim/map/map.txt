@@ -30,6 +30,17 @@ Ref: https://stackoverflow.com/a/15756785/3136861
   https://stackoverflow.com/questions/7722177/how-do-i-map-ctrl-x-ctrl-o-to-ctrl-space-in-terminal-vim
 
 
+======================
+  map
+  [Sft]+[Space]
+======================
+
+ You cannot do this in vim terminal b/c terminals cannot distinguish between <Space> and <S-Space>
+ Ref: https://stackoverflow.com/a/281484/3136861
+
+
+
+
 
 ===========
  To Read

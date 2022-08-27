@@ -1,0 +1,5 @@
+http://vimdoc.sourceforge.net/htmldoc/autocmd.html#:doautocmd
+https://vi.stackexchange.com/questions/9455/why-should-i-use-augroup
+https://vi.stackexchange.com/questions/6854/what-does-an-autocmd-user-do
+
+---eof---

@@ -1,0 +1,19 @@
+
+[Ctr-Spc]      trigger completion intelliSense
+
+[Cmd-.]        show available options to fix thing.
+
+[Cmd-Sft-Spc]  Trigger function's actual-arguments hints. Ref:[1][2]
+               Place cursor in the fuction parenthesis and press [Cmd-Sft-Spc] (window:[Ctr-Sft-Spc]).
+               This is same as [Cmd-Sft-p]Trigg.
+               This is called "@command:editor.action.triggerParameterHints" in Keyboard Shortcuts.
+
+
+---
+to read:
+https://vslive.com/Blogs/News-and-Tips/2015/04/5-VS-Keyboard-Shortcuts.aspx
+
+[1] https://stackoverflow.com/questions/53731271/how-to-trigger-parameter-hints-in-visual-studio-code
+[2] https://www.youtube.com/watch?v=vi2PLcLqVxI
+
+---eof---

@@ -1,6 +1,6 @@
 autocomplete
 ============
-  To trigger completion interlisense (same as vscode <c-space>)
+  To trigger completion intellisense (same as vscode <c-space>)
     <c-space> (insert mode)
   My alternate binding
     inoremap <silent><expr> <C-o><space> coc#refresh()
@@ -16,15 +16,15 @@ cocDiagnostics
 
 function parameter hint
 =======================
-  "/ This suppose to trigger function signature help like
-  "/ vscode's Ctrl+Shift+Space, but I can't get it to work.
-  "/ https://github.com/neoclide/coc.nvim/issues/2202
-  nnoremap <silent> <S-D-Space> :call CocActionAsync('showSignatureHelp')<CR>
+
+  "/ This trigger function signature help like vscode's Cmd+Shift+Space
+  "/ To do this this, place cursor in the function parenthesis, switch to insert
+  "/ mode and press <c-p>
+  "/ https://github.com/neoclide/coc.nvim/issues/2202#issuecomment-662969193
+  inoremap <C-P> <C-\><C-O>:call CocActionAsync('showSignatureHelp')<cr>
 
   Note:
   • vscode's Ctrl+Shift+Space is for windows, for mac use Cmd+Shift+Space [1]
-  • I am not sure what S-D mean in <S-D-Space>, but I can get it to work by typing
-    a comma ',' in the function parenthesis.
 
 
 coc-codeaction

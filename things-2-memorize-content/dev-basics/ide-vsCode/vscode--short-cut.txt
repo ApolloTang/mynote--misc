@@ -1,13 +1,25 @@
+Switch Tabs [Ref 1]
+===================
+
+  [Sft][Cmd] + ]/[
+  [Cmd][Alt] + [⬅︎]/[⮕]
 
 
-[cmd-D]        Add next highlighted to selection. 
+
+
+[Cmd-D]        Add next highlighted to selection.
                Selection is case insensitive.
 
-[ctr-`]        Toggle btw code editor and terminal
+[Ctr-`]        Toggle btw code editor and terminal
 
 ---
-to read:
+[Ref 1] https://stackoverflow.com/a/49136579/3136861
+
+---
+to-read:
+
 https://vslive.com/Blogs/News-and-Tips/2015/04/5-VS-Keyboard-Shortcuts.aspx
+
 
 eof---
 
