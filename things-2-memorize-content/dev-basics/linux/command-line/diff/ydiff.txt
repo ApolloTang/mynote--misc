@@ -1,4 +1,4 @@
-ydiff give you side by side diff in terminal:
+"ydiff" gives you side-by-side diff in a terminal:
 
 To install:
 
@@ -8,9 +8,20 @@ To use:
 
   diff -ur dir1 dir2 | ydiff -w 0 -s
 
-Note the -u flag in diff, that is show linenumber
-The -s flag for ydiff mean side-by-side
+Note: 
 
+  The -u flag tells the "diff" command line numbers.
+  The -s flag tells the "ydiff" command to display side-by-side
+
+Can also use together with git:
+
+  git diff --no-ext-diff | ydiff -w 0 -s
+
+or
+
+  gdf | ydiff -w 0 -s 
+
+since I have alias "gdf" to "git diff --no-ext-diff"
 ---
 Ref:
 
