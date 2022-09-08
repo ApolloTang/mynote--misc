@@ -1,3 +1,11 @@
+
+To see the official example of completion's binding:
+====================================================
+
+  :h coc-completion
+  :h coc-completion-example
+
+
 autocomplete
 ============
   To trigger completion intellisense (same as vscode <c-space>)
