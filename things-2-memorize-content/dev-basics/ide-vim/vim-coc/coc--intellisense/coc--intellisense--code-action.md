@@ -1,4 +1,4 @@
-# Coc IntelliSense: Quick Fixes
+# Coc IntelliSense: Code Action 
 
 Given the following typescript code:
 
@@ -8,34 +8,29 @@ if (false) {
 }
 ```
 
-coc.nvim will warn you potential problem:
+coc.nvim will warn about a potential problem:
 
 ![](./imgs/unreachable-code-detected-macvim.png)
 
-This is same as the following in VSCode:
+This is the same as the following in VSCode:
 
 ![unreachable-code-detected-vscode](./imgs/unreachable-code-detected-vscode.png)
 
-In VScode when you press `⌘.` a  Quick Fix menu appears:
+In VScode when you press `⌘.` a  **Code Action** menu appears:
 
 ![quick-fix-menu-vscode](./imgs/quick-fix-menu-vscode.png)
 
-To get Quick Fix menu in coc.nvim use the command:
-
-```txt
-CocAction
-```
-
-This will bring up the equivelent menu in coc.nvim:
-
-![quick-fix-menu-vscode](./imgs/quick-fix-menu-macvim.png)
-
-My Keybinding mapping for `CocAction` is:
+The **Code Action** menu triggering mapping in my coc.nvim setup is:
 
 ```txt
   "/ Remap for do codeAction of current line
   nmap <space>ac  <Plug>(coc-codeaction)
 ```
+This will bring up the menu:
+
+![quick-fix-menu-vscode](./imgs/quick-fix-menu-macvim.png)
+
+
 
 Also see:
 https://github.com/fannheyward/coc-rust-analyzer/issues/492
