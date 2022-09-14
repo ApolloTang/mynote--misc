@@ -1,4 +1,4 @@
-# Coc IntelliSense: Code Action 
+# Coc.nvim intelliSense: Code Action 
 
 Given the following typescript code:
 
@@ -20,7 +20,7 @@ In VScode when you press `⌘.` a  **Code Action** menu appears:
 
 ![quick-fix-menu-vscode](./imgs/quick-fix-menu-vscode.png)
 
-The **Code Action** menu triggering mapping in my coc.nvim setup is:
+The mapping to trigger **Code Action** in my coc.nvim setup is:
 
 ```txt
   "/ Remap for do codeAction of current line

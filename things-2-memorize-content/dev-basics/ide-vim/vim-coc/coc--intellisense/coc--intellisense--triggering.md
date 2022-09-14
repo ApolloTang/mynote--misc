@@ -48,6 +48,8 @@ inoremap <silent><expr> <C-o><space> coc#refresh()
 
 I can't remember why I added it. Maybe it was not necessary, and I will consider removing it in the future.
 
+## IntelliSence item navigation
+
 The mapping in .vimrc for navigating items in the IntelliSense is as follows:
 
 ```
