@@ -16,14 +16,14 @@ This is the same as the following in VSCode:
 
 ![unreachable-code-detected-vscode](./imgs/unreachable-code-detected-vscode.png)
 
-In VScode when you press `⌘.` a  **Code Action** menu appears:
+In VSCode when you press `⌘.` a  **quick fix** menu appears:
 
 ![quick-fix-menu-vscode](./imgs/quick-fix-menu-vscode.png)
 
-The mapping to trigger **Code Action** in my coc.nvim setup is:
+In Coc-nvim, the equivalent for triggering VSCode's quick-fix menu is to call the **Code Action**. The mapping for this in my coc-vim setup is:
 
 ```txt
-  "/ Remap for do codeAction of current line
+  "/ Remap keys for applying codeAction to the current buffer.
   nmap <space>ac  <Plug>(coc-codeaction)
 ```
 This will bring up the menu:

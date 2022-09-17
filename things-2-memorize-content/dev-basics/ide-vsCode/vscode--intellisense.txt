@@ -1,7 +1,7 @@
 
 [Ctr-Spc]      trigger completion intelliSense
 
-[Cmd-.]        show available options to fix thing.
+[Cmd-.]        Quick Fixes: show available options to fix thing.
 
 [Cmd-Sft-Spc]  Trigger function's actual-arguments hints. Ref:[1][2]
                Place cursor in the fuction parenthesis and press [Cmd-Sft-Spc] (window:[Ctr-Sft-Spc]).
