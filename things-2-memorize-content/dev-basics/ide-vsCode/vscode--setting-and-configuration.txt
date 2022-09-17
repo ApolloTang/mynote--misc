@@ -1,17 +1,30 @@
-My setting repos:
-https://github.com/ApolloTang/vscode-setting
+To open user's settings (JSON) in VSCode: 
+=========================================
+  [Cmd-Shift-p] phrase: "Preferences: Open User Settings (JSON)"
 
-mvim   ~/Library/Application\ Support/Code/User/settings.json
 
------
+To open the user's settings (JSON) in Macvim: 
+=========================================
 
-Depending on your platform, the user settings file is located here:
+  mvim   ~/Library/Application\ Support/Code/User/settings.json
 
-  Windows %APPDATA%\Code\User\settings.json
-  macOS   $HOME/Library/Application Support/Code/User/settings.json
-  Linux   $HOME/.config/Code/User/settings.json
 
-  Ref: https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
+My VSCode setting repository:
+=============================
+
+  https://github.com/ApolloTang/vscode-setting
+
+
+Location:
+=========
+
+  Depending on your platform, the user settings file is located here:
+
+    Windows %APPDATA%\Code\User\settings.json
+    macOS   $HOME/Library/Application Support/Code/User/settings.json
+    Linux   $HOME/.config/Code/User/settings.json
+
+    Ref: https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 
 --eof---
 

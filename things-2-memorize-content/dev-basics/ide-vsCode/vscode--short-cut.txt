@@ -1,3 +1,11 @@
+Open keyboard shortcuts reference in browser:
+=============================================
+  Keybinding: [Cmd-k][Cmd-r] 
+  [Cmd-Shift-p] phrase: "Help: Keyboard Shortcuts Reference"
+  map-to: @command:workbench.action.keybindingsReference 
+ 
+
+
 Switch Tabs [Ref 1]
 ===================
 
