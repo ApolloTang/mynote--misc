@@ -41,21 +41,8 @@ Despite the similarity of both the commands are similar, but the
 use of ENTRYPOINT sends a strong message that this container
 is only intended to run this one command.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
+Ref:
 
 https://www.ctl.io/developers/blog/post/dockerfile-entrypoint-vs-cmd/
 https://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile
