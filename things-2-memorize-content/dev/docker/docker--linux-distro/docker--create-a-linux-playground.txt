@@ -1,21 +1,28 @@
 Summary:
-  docker run --name playground -dit ubuntu
+--------
+
+  docker run --name playground -dit debian
   docker attach playground
   to exit without stopping the container: ^P^Q
 
 ----
-Get a ubuntu container running as a playground:
+Download debian image; create and start a container from this
+image:
 
   docker run -dit ubuntu
+
+Meaning of flag:
+
+  -d: detach, -i: interactive: -t:tty terminal
 
 After it, checked for the processes running using:
 
   docker ps -a
 
-For attaching again the container
+The Container is running in background, attach it to foreground
+so you can interact with the container:
 
   docker attach CONTAINER_NAME
-
 
 TIP:
   For exiting without stopping the container type: ^P^Q
@@ -28,9 +35,10 @@ NOTE:
   into interactive mode. [1] Ubuntu is not the only destro
   config as such, you can do the same with:
 
-    docker run -it ubuntu:latest   (188mb)
-    docker run -it busybox:latest  (2mb)
-    docker run -it debian:latest   (85mb)
+    docker run -it debian:latest  (85mb)
+    docker run -it ubuntu:latest  (188mb)
+    docker run -it alpine:latest  (5.6mb)
+    docker run -it busybox:latest (2mb)
 
 ---
 Ref
