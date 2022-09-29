@@ -1,0 +1,13 @@
+apt vs apt-get
+==============
+
+TL;DR:
+
+apt-get is a low level package manager.
+As a regular Linux user use 'apt'
+
+Ref:
+https://itsfoss.com/apt-vs-apt-get-difference/
+
+---eof---
+
