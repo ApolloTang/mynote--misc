@@ -1,5 +1,7 @@
 to read on pyenv
 
+https://realpython.com/intro-to-pyenv/
+
 https://medium.com/faun/the-right-way-to-set-up-python-on-your-mac-e923ffe8cf8e
 https://medium.com/faun/pyenv-multi-version-python-development-on-mac-578736fb91aa
 
