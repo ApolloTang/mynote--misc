@@ -1,0 +1,15 @@
+dnf vs yum
+==========
+
+TL;DR:
+
+Yum Package Manager has been replaced by DNF Package Manager since
+many long-standing issues in Yum remain unresolved.
+
+Ref:
+https://www.2daygeek.com/comparison-difference-between-dnf-vs-yum/
+https://blog.eldernode.com/what-is-different-between-dnf-and-yum/
+
+
+---eof---
+

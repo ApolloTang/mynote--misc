@@ -36,6 +36,7 @@ NOTE:
   config as such, you can do the same with:
 
     docker run -it debian:latest  (85mb)
+    docker run -it fedora:latest  (163mb)
     docker run -it ubuntu:latest  (188mb)
     docker run -it alpine:latest  (5.6mb)
     docker run -it busybox:latest (2mb)
