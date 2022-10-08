@@ -25,7 +25,7 @@ RUN touch /root/.ssh/known_hosts && \
 
 WORKDIR work_dir
 
-RUN git clone git@github.com:ApolloTang/my-3rd-party-package.git
+RUN git clone git@github.com:ApolloTang/my-private-package.git
 # EOF
 ```
 
@@ -42,7 +42,7 @@ SSH_KEY=`cat ~/.ssh/id_ed25519_for_use_in_read_only_repo` \
 ```sh
 $ docker images
 REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
-insecure     latest    fe3962cfdd8f   9 minutes ago   27MB
+insecure     latest    94e0493f959c   2 minutes ago   27MB
 ```
 
 The image works as expected, and the private repo is available in the container:
@@ -50,7 +50,7 @@ The image works as expected, and the private repo is available in the container:
 ```sh
 $ docker run -it insecure sh
 /work_dir # ls -F
-my-3rd-party-package/
+my-private-package/
 /work_dir # exit
 ```
 
@@ -58,17 +58,17 @@ However, there is a problem: the SSH key is exposed in the docker history:
 
 ```sh
 $ docker history insecure
-IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
-fe3962cfdd8f   10 minutes ago   RUN |1 SSH_KEY=-----BEGIN OPENSSH PRIVATE KE…   23.4kB    buildkit.dockerfile.v0
-<missing>      10 minutes ago   WORKDIR /work_dir                               0B        buildkit.dockerfile.v0
-<missing>      22 minutes ago   RUN |1 SSH_KEY=-----BEGIN OPENSSH PRIVATE KE…   656B      buildkit.dockerfile.v0
-<missing>      22 minutes ago   RUN |1 SSH_KEY=-----BEGIN OPENSSH PRIVATE KE…   419B      buildkit.dockerfile.v0
-<missing>      22 minutes ago   ARG SSH_KEY                                     0B        buildkit.dockerfile.v0
-<missing>      8 hours ago      RUN /bin/sh -c apk add --no-cache git openss…   19MB      buildkit.dockerfile.v0
-<missing>      8 hours ago      RUN /bin/sh -c apk upgrade # buildkit           66.6kB    buildkit.dockerfile.v0
-<missing>      8 hours ago      RUN /bin/sh -c apk update # buildkit            2.46MB    buildkit.dockerfile.v0
-<missing>      8 weeks ago      /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
-<missing>      8 weeks ago      /bin/sh -c #(nop) ADD file:2a949686d9886ac7c…   5.54MB
+IMAGE          CREATED         CREATED BY                                      SIZE      COMMENT
+94e0493f959c   3 minutes ago   RUN |1 SSH_KEY=-----BEGIN OPENSSH PRIVATE KE…   23.8kB    buildkit.dockerfile.v0
+<missing>      3 hours ago     WORKDIR /work_dir                               0B        buildkit.dockerfile.v0
+<missing>      3 hours ago     RUN |1 SSH_KEY=-----BEGIN OPENSSH PRIVATE KE…   656B      buildkit.dockerfile.v0
+<missing>      3 hours ago     RUN |1 SSH_KEY=-----BEGIN OPENSSH PRIVATE KE…   419B      buildkit.dockerfile.v0
+<missing>      3 hours ago     ARG SSH_KEY                                     0B        buildkit.dockerfile.v0
+<missing>      11 hours ago    RUN /bin/sh -c apk add --no-cache git openss…   19MB      buildkit.dockerfile.v0
+<missing>      11 hours ago    RUN /bin/sh -c apk upgrade # buildkit           66.6kB    buildkit.dockerfile.v0
+<missing>      11 hours ago    RUN /bin/sh -c apk update # buildkit            2.46MB    buildkit.dockerfile.v0
+<missing>      8 weeks ago     /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>      8 weeks ago     /bin/sh -c #(nop) ADD file:2a949686d9886ac7c…   5.54MB
 ```
 
 This problem can be avoided if we use [multi stage build](https://docs.docker.com/build/building/multi-stage/). Which we will show you in the next section.
@@ -97,7 +97,7 @@ RUN touch /root/.ssh/known_hosts && \
 
 WORKDIR work_dir
 
-RUN git clone git@github.com:ApolloTang/my-3rd-party-package.git
+RUN git clone git@github.com:ApolloTang/my-private-package.git
 
 # Second Stage
 # ````````````
@@ -119,14 +119,14 @@ SSH_KEY=`cat ~/.ssh/id_ed25519_for_use_in_read_only_repo` \
 
 ```sh
 $ docker images
-REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
-better       latest    9b63ec166188   About a minute ago   5.57MB
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+better       latest    67677e0b811f   52 seconds ago   5.57MB
 ```
 
 ```sh
 $ docker run -it better sh
 /deploy # ls -F
-my-3rd-party-package/
+my-private-package/
 /deploy # exit
 ```
 
@@ -135,13 +135,13 @@ Examining the history, you can see the that SHH key is not present:
 ```sh
 $ docker history better
 IMAGE          CREATED              CREATED BY                                      SIZE      COMMENT
-9b63ec166188   About a minute ago   COPY /work_dir ./ # buildkit                    23.4kB    buildkit.dockerfile.v0
-<missing>      8 hours ago          WORKDIR /deploy                                 0B        buildkit.dockerfile.v0
+67677e0b811f   About a minute ago   COPY /work_dir ./ # buildkit                    23.8kB    buildkit.dockerfile.v0
+<missing>      11 hours ago         WORKDIR /deploy                                 0B        buildkit.dockerfile.v0
 <missing>      8 weeks ago          /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
 <missing>      8 weeks ago          /bin/sh -c #(nop) ADD file:2a949686d9886ac7c…   5.54MB
 ```
 
-In addition, the final image is only 5.57MB in size (compare to 27MB, in the first case). 
+In addition, the final image is only 5.54MB in size (compare to 27MB, in the first case). 
 
 
 
