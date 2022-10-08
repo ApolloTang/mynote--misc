@@ -1,5 +1,13 @@
 # Cloning Private Repositories in Dockerfile Without Exposing SSH Keys
 
+#deployment #ssh-key #docker 
+
+
+
+## Summary
+
+Dockerfile recipe for cloning private repositories (go to  [recipe](#recipe)).
+
 
 
 ## (1) The following is insecure
@@ -77,6 +85,9 @@ This problem can be avoided if we use [multi stage build](https://docs.docker.co
 
 ## (2) A better way by using [multi stage build](https://docs.docker.com/build/building/multi-stage/):
 
+<a name="recipe">recipe</a>
+
+
 ```dockerfile
 # file: Dockerfile--better
 
@@ -107,7 +118,13 @@ COPY --from=temporary /work_dir ./
 #EOF
 ```
 
-The above Dockerfile has two stages each of them creates a separate images under the hood. The one in first stage is called `temporary` . The second images in second stage does not have a name. SSH key is pass into first stage for cloning the private repo.  The cloned repos is then copy into the second stage. Only the second stage goes to become the resulting image. Everything in the first stage is discarded.    
+The above Dockerfile has two stages each of them creates a separate images under the hood. The one in first stage is called `temporary` . The second images in second stage does not have a name. SSH key is pass into first stage for cloning the private repo.  The cloned repos (the artifact) is then copy into the second stage via: 
+
+```docker
+COPY --from=temporary /work_dir ./
+```
+
+Only the second stage goes to become the resulting image. Everything in the first stage is discarded.    
 
 ```sh
 SSH_KEY=`cat ~/.ssh/id_ed25519_for_use_in_read_only_repo` \
@@ -143,11 +160,50 @@ IMAGE          CREATED              CREATED BY                                  
 
 In addition, the final image is only 5.54MB in size (compare to 27MB, in the first case). 
 
+### :warning: Becareful
 
+In your second stage, make sure you starts a new build stage with the `alpine:latest` image as its base: 
 
-#### Reference
+```docker
+# Second Stage
+# ````````````
+FROM alpine:3.16.2
+```
 
-readonly deploy key
+The following is a mistake:  
+
+```dockerfile
+# Second Stage
+# ````````````
+# FROM alpine:3.16.2  # <-- commented out
+FROM temporary        # <-- base this build on previous stage
+```
+
+The above is insecure because you are not starting the new build stage, instead it is based on previously build image layers which contain the layer where you pass in your SSH key.
+
+### :white_check_mark: Additional good practice (deploy SSH key)
+
+Instead of using the SSH key you normally use to push code to github. [Create](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) a separate SSH key for deployment purpose: 
+
+```
+$ ssh-keygen -t ed25519 -C "your_email@example.com Deployment READ ONLY"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/joe/.ssh/id_ed25519): /Users/joe/.ssh/id_ed25519_for_use_in_read_only_repo
+Enter passphrase (empty for no passphrase):  
+Enter same passphrase again:
+```
+
+Do not add passphrase (line 4 above) because you won't be available to type the passphrase during build automation. 
+
+Add this  deploy SSH key to the specific private repo in the setting, for example:
+
+```txt
+https://github.com/joe/my-private-package/settings/keys
+```
+
+:warning: Note that this the setting of a specific private repo, it is not setting for your Github account (`https://github.com/settings/keys`).   
+
+**Referece**
 
 https://docs.github.com/en/developers/overview/managing-deploy-keys
 
