@@ -6,7 +6,7 @@
 
 ## Summary
 
-Dockerfile recipe for cloning private repositories (go to  [recipe](#recipe)).
+Dockerfile recipe for cloning private repositories (go to  [⚓recipe](#recipe)).
 
 
 
@@ -85,7 +85,7 @@ This problem can be avoided if we use [multi stage build](https://docs.docker.co
 
 ## (2) A better way by using [multi stage build](https://docs.docker.com/build/building/multi-stage/):
 
-<a name="recipe">recipe</a>
+<a name="recipe">⚓recipe</a>
 
 
 ```dockerfile
@@ -147,7 +147,7 @@ my-private-package/
 /deploy # exit
 ```
 
-Examining the history, you can see that the SHH key is not present:
+Examining the history, you can see that the SSH key is not present:
 
 ```sh
 $ docker history better
