@@ -1,6 +1,6 @@
 
 
-# Create Alphine linux interactive lab with a Dockerfile
+# Alphine linux playground with Docker
 
 
 Create a file called "Dockerfile-alpine" with the following contents:
