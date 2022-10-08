@@ -193,9 +193,15 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
 
-Do not add a passphrase (line 4 above) because you won't be available to type the passphrase during build automation.
+Do not add a passphrase (line 4 above) because you won't be available to type the passphrase during build automation. 
 
-Add this  deploy SSH key to the specific private repo in the setting, for example:
+Copy the public key:
+
+```sh
+pbcopy < ~/.ssh/id_ed25519_for_use_in_read_only_repo.pub
+```
+
+And add this deployment public SSH key to the specific private repo in the setting, for example:
 
 ```txt
 https://github.com/joe/my-private-package/settings/keys
