@@ -1,6 +1,6 @@
 # Cloning Private Repositories in Dockerfile Without Exposing SSH Keys
 
-#deployment #ssh-key #docker 
+#deployment #ssh-key #docker
 
 
 
@@ -12,7 +12,7 @@ Dockerfile recipe for cloning private repositories (go to  [recipe](#recipe)).
 
 ## (1) The following is insecure
 
-The following Dockerfile attempts to create an image that can clone a pivate repositories into a running container:  
+The following Dockerfile attempts to create an image that can clone a pivate repositories into a running container:
 
 ```dockerfile
 # file: Dockefile--insecure
@@ -37,7 +37,7 @@ RUN git clone git@github.com:ApolloTang/my-private-package.git
 # EOF
 ```
 
-The SSH key from the host computer is passed in during build time via setting a shell variable `SSH_KEY`.  This is acheived with the `--build-arg` flag during build: 
+The SSH key from the host computer is passed in during build time via setting a shell variable `SSH_KEY`.  This is acheived with the `--build-arg` flag during build:
 
 ```sh
 SSH_KEY=`cat ~/.ssh/id_ed25519_for_use_in_read_only_repo` \
@@ -118,13 +118,13 @@ COPY --from=temporary /work_dir ./
 #EOF
 ```
 
-The above Dockerfile has two stages each of them creates a separate images under the hood. The one in first stage is called `temporary` . The second images in second stage does not have a name. SSH key is pass into first stage for cloning the private repo.  The cloned repos (the artifact) is then copy into the second stage via: 
+The above Dockerfile has two stages each of which creates a separate image under the hood. The one in the first stage is called `temporary`. The second image in the second stage does not have a name. An SSH key is passed into the first stage for cloning the private repo.  The cloned repository (the artifact) is then copied into the second stage via the following:
 
 ```docker
 COPY --from=temporary /work_dir ./
 ```
 
-Only the second stage goes to become the resulting image. Everything in the first stage is discarded.    
+Only the second stage goes to become the resulting image. Everything in the first stage is discarded.
 
 ```sh
 SSH_KEY=`cat ~/.ssh/id_ed25519_for_use_in_read_only_repo` \
@@ -147,7 +147,7 @@ my-private-package/
 /deploy # exit
 ```
 
-Examining the history, you can see the that SHH key is not present: 
+Examining the history, you can see that the SHH key is not present:
 
 ```sh
 $ docker history better
@@ -158,11 +158,11 @@ IMAGE          CREATED              CREATED BY                                  
 <missing>      8 weeks ago          /bin/sh -c #(nop) ADD file:2a949686d9886ac7c…   5.54MB
 ```
 
-In addition, the final image is only 5.54MB in size (compare to 27MB, in the first case). 
+In addition, the final image is only 5.54MB in size (compared to 27MB, in the first case).
 
 ### :warning: Becareful
 
-In your second stage, make sure you starts a new build stage with the `alpine:latest` image as its base: 
+In your second stage, make sure you start a new build stage with the `alpine:latest` image as its base:
 
 ```docker
 # Second Stage
@@ -170,30 +170,30 @@ In your second stage, make sure you starts a new build stage with the `alpine:la
 FROM alpine:3.16.2
 ```
 
-The following is a mistake:  
+The following is a mistake:
 
 ```dockerfile
 # Second Stage
 # ````````````
 # FROM alpine:3.16.2  # <-- commented out
-FROM temporary        # <-- base this build on previous stage
+FROM temporary        # <-- base this build on the previous stage
 ```
 
-The above is insecure because you are not starting the new build stage, instead it is based on previously build image layers which contain the layer where you pass in your SSH key.
+The above is insecure because you are not starting the new build stage, instead, it is based on previously built image layers which contain the layer where you pass in your SSH key.
 
 ### :white_check_mark: Additional good practice (deploy SSH key)
 
-Instead of using the SSH key you normally use to push code to github. [Create](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) a separate SSH key for deployment purpose: 
+Instead of using the SSH key you normally use to push code to Github. [Create](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) a separate SSH key for deployment purpose:
 
 ```
 $ ssh-keygen -t ed25519 -C "your_email@example.com Deployment READ ONLY"
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/Users/joe/.ssh/id_ed25519): /Users/joe/.ssh/id_ed25519_for_use_in_read_only_repo
-Enter passphrase (empty for no passphrase):  
+Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 ```
 
-Do not add passphrase (line 4 above) because you won't be available to type the passphrase during build automation. 
+Do not add a passphrase (line 4 above) because you won't be available to type the passphrase during build automation.
 
 Add this  deploy SSH key to the specific private repo in the setting, for example:
 
@@ -201,9 +201,9 @@ Add this  deploy SSH key to the specific private repo in the setting, for exampl
 https://github.com/joe/my-private-package/settings/keys
 ```
 
-:warning: Note that this the setting of a specific private repo, it is not setting for your Github account (`https://github.com/settings/keys`).   
+:warning: Note that this is the setting of a specific private repo; it is not the setting for your Github account (`https://github.com/settings/keys`).
 
-**Referece**
+**Reference**
 
 https://docs.github.com/en/developers/overview/managing-deploy-keys
 
