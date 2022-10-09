@@ -32,7 +32,7 @@ MY_ENV=myEnv
 HOME=/root
 ```
 
-:warning: the above will log your environment variable in history (line 3 below); so be careful when using ARG to pass environmental variable: 
+:warning: the above will log your environment variable in history (line 3 below); so be careful when using ARG to pass environmental variable:
 
 ```
 $ docker history jupiter
@@ -42,6 +42,13 @@ IMAGE          CREATED        CREATED BY                                      SI
 <missing>      2 months ago   /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
 <missing>      2 months ago   /bin/sh -c #(nop) ADD file:2a949686d9886ac7c…   5.54MB
 ```
+
+**Reference**
+https://vsupalov.com/docker-build-time-env-values/
+
+
+
+---
 
 
 
