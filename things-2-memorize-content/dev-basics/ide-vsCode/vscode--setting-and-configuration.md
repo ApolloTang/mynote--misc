@@ -8,12 +8,13 @@
 
 [Cmd-Shift-p] 
 
-phrase: "Preferences: Open User Settings (JSON)"
+type: "Preferences: Open User Settings (JSON)"
 
 #### GUI:
 
-
-Click on the `gear icon` on the bottom-left corner of the window, select `Settings` then you can search the setting. For example type `window.openFilesInNewWindow`
+1. Click on the `gear icon` on the bottom-left corner of the window
+2. select `Settings` 
+3. search the setting, for example type `window.openFilesInNewWindow`
 
 
 
