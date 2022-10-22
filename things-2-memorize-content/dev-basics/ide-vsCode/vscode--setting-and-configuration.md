@@ -1,0 +1,70 @@
+# VScode: setting and configuration
+
+
+
+## Access settings in VSCode:
+
+#### JSON : 
+
+[Cmd-Shift-p] 
+
+phrase: "Preferences: Open User Settings (JSON)"
+
+#### GUI:
+
+
+Click on the `gear icon` on the bottom-left corner of the window, select `Settings` then you can search the setting. For example type `window.openFilesInNewWindow`
+
+
+
+
+
+## Access setting in terminal:
+
+**To locate my setting file type:**
+
+```
+readlink ~/Library/Application\ Support/Code/User/settings.json
+```
+
+**Repo URL:**
+
+[https://github.com/ApolloTang/vscode-setting](https://github.com/ApolloTang/vscode-setting)
+
+**Cd to repo:**
+
+```
+cd $(dirname `readlink ~/Library/Application\ Support/Code/User/settings.json`)
+```
+
+**Open repo in finder:** 
+
+```
+open $(dirname `readlink ~/Library/Application\ Support/Code/User/settings.json`)
+```
+
+**Edit setting:**
+
+```
+mvim   ~/Library/Application\ Support/Code/User/settings.json
+```
+
+
+
+## Location:
+
+Depending on your platform, the user settings file is located here:
+
+```
+Windows %APPDATA%\Code\User\settings.json
+macOS   $HOME/Library/Application\ Support/Code/User/settings.json
+Linux   $HOME/.config/Code/User/settings.json
+```
+
+Ref: https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
+
+
+
+---
+--eof---
+
