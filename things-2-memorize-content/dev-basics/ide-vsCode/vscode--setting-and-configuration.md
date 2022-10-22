@@ -4,13 +4,13 @@
 
 ## Access settings in VSCode:
 
-#### JSON : 
+**JSON :** 
 
-[Cmd-Shift-p] 
+1. [Cmd-Shift-p] 
+2. Then type: "Preferences: Open User Settings (JSON)"
 
-type: "Preferences: Open User Settings (JSON)"
 
-#### GUI:
+**GUI:**
 
 1. Click on the `gear icon` on the bottom-left corner of the window
 2. select `Settings` 
@@ -22,7 +22,7 @@ type: "Preferences: Open User Settings (JSON)"
 
 ## Access setting in terminal:
 
-**To locate my setting file type:**
+**To locate my setting file:**
 
 ```
 readlink ~/Library/Application\ Support/Code/User/settings.json
