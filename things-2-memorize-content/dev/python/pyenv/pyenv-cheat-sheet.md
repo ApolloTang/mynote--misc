@@ -6,13 +6,33 @@ Tutorial: https://realpython.com/intro-to-pyenv/
 
 ---
 
-## Installing a python version
 
-See all the available [CPython](https://realpython.com/cpython-source-code-guide/) 3.6 through 3.8, you can do this:
+
+## List all local versions:
+
+```
+$ pyenv versions
+* system (set by /Users/<user>/.pyenv/version)
+  2.7.15
+  3.6.8
+  3.8-dev
+```
+
+In the above, the `*` indicates that the `system` Python version is active currently.
+
+
+
+## List the available python versions to install
+
+For example, to see all the available [CPython](https://realpython.com/cpython-source-code-guide/) 3.6 through 3.8, you can do this:
 
 ```
 $ pyenv install --list | grep " 3\.[678]"
 ```
+
+
+
+## Installing a python version
 
 To install a version used:
 
@@ -26,47 +46,35 @@ To uninstall a version used:
 pyenv uninstall 2.7.15
 ```
 
-To list all local versions:
 
-```
-$ pyenv versions
-* system (set by /Users/<user>/.pyenv/version)
-  2.7.15
-  3.6.8
-  3.8-dev
-```
 
-In the above, the `*` indicates that the `system` Python version is active currently. 
+## To set a python version for terminal
 
-## To set a python version
-
-To sets the default version (this will be the version when you open a terminal):
+To set the default version of python in the terminal, use the `global` subcommand, for example:
 
 ```
 pyenv global 3.10.6
 ```
 
-To override the global (default) versions, you can use `local` or `shell`:
+There are two ways to override this default version: the `local` and `shell` subcommands:
 
 ```
-pyenv local 2.7.15
+pyenv local 3.8-dev
 ```
 
-This command creates a `.python-version` file in your current directory. When you call python, the version specify in this file is used.
-
-The `shell`  command set the `PYENV_VERSION` shell variable. When you call python, the version specify by this variable is used.
-
 ```
-pyenv shell 3.8-dev 
+pyenv shell 3.8-dev
 ```
 
-To unset the `pyenv shell` used:
+The `pyenv local <version>` creates a `.python-version` file in your current directory and the version of python to use is specified within.
+
+The `pyenv shell <version>` simply set the `PYENV_VERSION` shell variable.  The shell variable can be unset with:
 
 ```
 pyenv shell --unset
 ```
 
-The resolution precedence are:
+So whenever you open a terminal, the python version is resolved in the following order:
 
 | Description | Version specifier |
 | ----------- | -------------- |
@@ -75,9 +83,14 @@ The resolution precedence are:
 | pyenv global  | ~/.pyenv/version     |
 | System Python | ? |
 
-To see the actual path of the current used python, you can run the following:
+
+
+## Path to current python
+
+To see the actual path of the currently used python, you can run the following:
 
 ```
 $ pyenv which python
 /Users/<user>/.pyenv/versions/3.10.6/bin/python
 ```
+
