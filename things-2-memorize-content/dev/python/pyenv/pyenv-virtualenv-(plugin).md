@@ -3,13 +3,11 @@
 
 [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) is a [pyenv](https://github.com/pyenv/pyenv)'s plug-in. It is used to create a python virtual environment. 
 
-A virtual environment act like a sandbox and it has it has an isolated version of python and pip storage.
+A virtual environment acts like a sandbox and it has an isolated version of python and pip storage.
 
-Unlike the virtual enviroment created with `python -m venv <name>` , the vitural enviornment created by `pyenv-virtualenv` is  *share-able* or *reused-able*.
+Unlike the virtual environment created with `python -m venv <name>`, the virtual environment created by `pyenv-virtualenv` is *shared-able* or *reused-able*.
 
-The virtual environments create by this plugin is listed among the python versions when you called `pyenv versions` .   
-
-The listed names can be used with the pyenv commands `local`or `shell`. Both which can be activated  via `pyenv activate`.
+The virtual environments created by this plugin are listed among the python versions when you called `pyenv versions`.  These names can be used with the pyenv commands `local` or `shell` to specify the environment you want to use.  After calling `local` or `shell` you have to activate the environment with `pyenv activate`.
 
 
 
@@ -40,7 +38,7 @@ The signature of the above command is:
 pyenv virtualenv <python-version> <name-of-the-environment>
 ```
 
-List the sandboxes again, you will see two new entries ( `ven3.9.13` and `3.9.13/envs/ven3.9.13` ):
+List the sandboxes again, this time you will see two new entries ( `ven3.9.13` and `3.9.13/envs/ven3.9.13` ):
 
 ```
 $ pyenv versions
