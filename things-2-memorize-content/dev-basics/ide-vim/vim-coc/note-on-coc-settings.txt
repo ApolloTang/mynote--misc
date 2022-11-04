@@ -2,7 +2,7 @@
 coc look for User's coc-settings.json in '~/.vim/'
 
 In 'greentea'
-~/.vim/coc-settings.json -> ~/1/1-sy/configurations/vim/vim-coc-setting-backup/coc-settings.json
+~/.vim/coc-settings.json -> ~/1/1-sy/configurations/vim/vim-coc-settings/greentea/coc-settings.json
 
 
 In 'work computer'
