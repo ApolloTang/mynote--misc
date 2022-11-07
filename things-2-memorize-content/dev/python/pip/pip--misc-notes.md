@@ -26,16 +26,10 @@ $ pip show <some-package>
 python -m pip install <some-package>
 ```
 
-• Unless you are using **pyenv**, install the package with `--user` flag so that the package is not installed on the system:
+• Unless you are using **pyenv**, install the package with the user-install (i.e., the `--user` flag) so that the package is not installed on the system, but in an isolated and clean environment:
 
 ```
 python -m pip install --user <some-package>
 ```
 
-> I have not try this, but the help said the `--user` flag will install the package in `~/.local/` .  This may not be what I want if I am using **pyenv**.  The reason for this is that with pyenv, the packages are installed in the versions folder. Eg: 
->
-> ``` 
-> /Users/USER/.pyenv/versions/3.10.4/lib/python3.10/site-packages
-> ```
->
-
+The `--user` flag will install the package in `~/.local/`. For details see: [https://pip.pypa.io/en/stable/user_guide/#user-installs](https://pip.pypa.io/en/stable/user_guide/#user-installs)
