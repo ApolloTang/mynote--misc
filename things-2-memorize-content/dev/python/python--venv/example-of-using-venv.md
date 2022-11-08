@@ -1,6 +1,4 @@
-
-
-# How to install dependencies for development 
+# Example of using venv in development
 
 (with eg flask):
 
