@@ -1,5 +1,7 @@
 # Exploring pipenv
 
+cheatsheet: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd
+
 
 
 ## Installation
@@ -77,6 +79,38 @@ to remove the virtual environment folder; however; if you delete your project fo
 
 
 
+## Using pipenv on a classical pip venv
+
+If you have a project created previously using the classical `pip -m venv venv`,  you can use pipenv on this project. Simply type: 
+
+```
+PIPENV_VENV_IN_PROJECT=1 pipenv install
+```
+
+Pipenv will read the content of the previous `./venv/` folder and create the `Pipfile` , `Pipfile.lock` file. Pipenv will also create another environment folder called `./.venv` for used by pipenv itself. You can then activate this new virtual environment with:
+
+```
+pipenv shell
+```
+
+Pipenv can also generate a requiements.txt file for `pip's venv` , 
+
+```
+pipenv requirements > requirements.txt  
+```
+
+With the generated `requirements.txt` file, this project can be recreated in another computer without pipenv installed: 
+```
+python -m venv venv
+python -m pip install -r requirements.txt
+```
+
+Note: Prior to pipenv version v2022.8.13, instead of using the command `pipenv requirements > requirements.txt `, you use `pipenv lock -r > requirements.txt` [Ref](https://stackoverflow.com/a/73352657).
+
+
+
+ 
+
 
 
 ## To Read:
@@ -89,40 +123,4 @@ https://mattgosden.medium.com/pipenv-for-easier-virtual-environments-69e1e520cde
 
 
 
-
-
-
-
----
-
-```
-$ mkdir example--pipenv && cd $_
-
-$ pipenv install
-
-$ ls
-Pipfile      Pipfile.lock
-
-$ jq .develop.pytest.version Pipfile.lock
-"==7.2.0"
-
-$ cat test_example.py
-def incr(x):
-    return x + 1
-
-def test_incr():
-    assert incr(3) == 4
-    
-$ pipenv run pytest
-======================== test session starts =========================
-platform darwin -- Python 3.10.8, pytest-7.2.0, pluggy-1.0.0
-rootdir: /Users/apollotang/Desktop/lab-pipenv/example--pipenv
-collected 1 item
-
-test_example.py .                                              [100%]
-
-========================= 1 passed in 0.01s ==========================    
-
-
-```
 
