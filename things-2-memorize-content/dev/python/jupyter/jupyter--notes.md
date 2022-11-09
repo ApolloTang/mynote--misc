@@ -19,7 +19,7 @@ $ pipenv install jupyter
 $ pipenv run jupyter notebook
 ```
 
-Add .gitignore:
+## Add .gitignore:
 
 ```
 $ cat << EOF > .gitignore
