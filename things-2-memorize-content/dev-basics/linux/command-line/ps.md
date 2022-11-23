@@ -6,7 +6,7 @@
 
 ## ps (no flag)
 
-I tested on Fedora; the basic `ps` command (no flag) only shows process status associated with the *current*  terminal session. In **osx Ventura**, the result include all processes associated with a tty terminals.  For example, if I have one iterm2 terminal running in, the `ps` command shows:
+I tested on Fedora; the basic `ps` command (no flag) only shows process status associated with the *current*  terminal session. In **osx Ventura**, the result include all processes associated with all tty terminals.  For example, if I have one iterm2 terminal running in, the `ps` command shows:
 
 ```
 $ ps
@@ -108,6 +108,20 @@ The **osx Ventura** man page mention the `x` flag with a dash:
 ```
 
 Note that the above does not say anything about *owning by you*. It says **include process which do not have a controlling terminal**.
+
+#### Conclusion
+
+In Fedora use `x`without dash:
+
+```
+$ ps x
+```
+
+In osx use `x` with dash:
+
+```
+$ ps -x
+```
 
 
 
