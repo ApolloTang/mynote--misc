@@ -125,7 +125,23 @@ $ ps -x
 
 
 
+## Todo
 
+[ps ef or ps -ef?](https://askubuntu.com/questions/942529/which-to-use-of-ps-ef-or-ps-ef)
 
+[ps -aux or ps -aux](https://askubuntu.com/questions/942529/which-to-use-of-ps-ef-or-ps-ef)
 
+[ps aux](https://stackoverflow.com/questions/7138783/how-to-display-the-current-process-tree-of-a-bash-session)
 
+[ps -ef](https://unix.stackexchange.com/questions/62182/please-explain-this-output-of-ps-ef-command)
+
+[osx ps show hierarchy](https://www.google.com/search?q=osx+ps+show+hierarchy&oq=osx+ps+show+hierarchy&aqs=chrome..69i57j33i10i160.9140j0j7&sourceid=chrome&ie=UTF-8)
+
+[process in tree](https://stackoverflow.com/questions/7138783/how-to-display-the-current-process-tree-of-a-bash-session)
+
+[UNIX-, BSD-, GNU-options in Linux's ps command. Where are they from?](https://unix.stackexchange.com/questions/78691/unix-bsd-gnu-options-in-linuxs-ps-command-where-are-they-from)
+[What is the difference between standard syntax and BSD syntax?](https://askubuntu.com/questions/484982/what-is-the-difference-between-standard-syntax-and-bsd-syntax)
+
+[https://www.linode.com/docs/guides/use-the-ps-aux-command-in-linux/](https://www.linode.com/docs/guides/use-the-ps-aux-command-in-linux/)
+
+[COMMAND_MODE=legacy](https://www.oradba.ch/2011/04/mac-os-x-terminal-compatibility-settings/)
