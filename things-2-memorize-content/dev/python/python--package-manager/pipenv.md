@@ -62,21 +62,23 @@ For npm, location of dependencies are located in `node_modules/`.  For pipenv, d
 $ pipenv --venv
 ```
 
-If you want the virtual environment folder located inside the project folder,  you need to set the shell variable:
+If you want the virtual environment folder located inside the project folder, you need to set the shell variable:
 
 ```
 PIPENV_VENV_IN_PROJECT=1 pipenv install
 ```
+You should avoid using the central location as a default by setting the `PIPENV_VENV_IN_PROJECT` variable in your rc-file (`.bashrc`) so that the virtual environment folder is always locates inside the project folder. This is because pipenv does not clean up the virtual environment folder after you delete your project folder. Clean up the central virtual environment folder after you have deleted your project folder will be a pain (see: [How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted) ). 
 
-You should try set this variable so that the virtual environment folder is located inside the project and avoid using the default central location. This is because pipenv uses your project's file-path to locate you virtual environment -- if you move you project folder you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).)
+You should be aware that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping you need to remove the `.venv/` folder with:  
 
-Also, another reason not to use the central location is that pipenv does not do garbage collection. You can use the command inside your project: 
 ```
 $ pipenv --rm
 ```
+Then reinstall again to regenerate the `.env/` folder:
 
-to remove the virtual environment folder; however; if you delete your project folder, removing the virtual environment folder will be a pain (see: [How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted) ).
-
+```
+$ pipenv install
+```
 
 
 ## Using pipenv on a classical pip venv
@@ -93,7 +95,7 @@ Pipenv will read the content of the previous `./venv/` folder and create the `Pi
 pipenv shell
 ```
 
-Pipenv can also generate a requiements.txt file for `pip's venv` , 
+Pipenv can also generate a requiements.txt file: 
 
 ```
 pipenv requirements > requirements.txt  
