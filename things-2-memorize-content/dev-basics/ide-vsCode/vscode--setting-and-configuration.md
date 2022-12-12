@@ -4,16 +4,16 @@
 
 ## Access settings in VSCode:
 
-**JSON :** 
+**JSON :**
 
-1. [Cmd-Shift-p] 
+1. [Cmd-Shift-p]
 2. Then type: "Preferences: Open User Settings (JSON)"
 
 
 **GUI:**
 
 1. Click on the `gear icon` on the bottom-left corner of the window
-2. select `Settings` 
+2. select `Settings`
 3. search the setting, for example type `window.openFilesInNewWindow`
 
 
@@ -38,7 +38,7 @@ readlink ~/Library/Application\ Support/Code/User/settings.json
 cd $(dirname `readlink ~/Library/Application\ Support/Code/User/settings.json`)
 ```
 
-**Open repo in finder:** 
+**Open repo in finder:**
 
 ```
 open $(dirname `readlink ~/Library/Application\ Support/Code/User/settings.json`)
@@ -64,7 +64,13 @@ Linux   $HOME/.config/Code/User/settings.json
 
 Ref: https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 
+## Extensions directory:
 
+```
+Windows %USERPROFILE%\.vscode\extensions
+macOS   ~/.vscode/extensions
+Linux   ~/.vscode/extensions
+```
 
 ---
 --eof---
