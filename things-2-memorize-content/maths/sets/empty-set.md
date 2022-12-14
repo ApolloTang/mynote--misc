@@ -2,12 +2,13 @@
 
 https://www.math.drexel.edu/~tolya/emptyset.pdf
 
-## Empty set a subset of every set
+## Empty set is a subset of every set
+
+For every set A:
 
 $$
 \begin{align}
 \emptyset \subseteq A  \\ 
-for\ every\ set A
 \end{align}
 $$ 
 
