@@ -4,9 +4,11 @@
 In logic, the following symbols are used to represent "imply", so they are equivalent ([Ref](https://math.stackexchange.com/questions/337245/in-logic-is-%E2%87%92-%E2%86%92-and-%E2%8A%83-basically-the-same-symbol)):
 
 $$
+\begin{align}
 \Rightarrow \\
 \rightarrow \\
 \supset \\
+\end{align}
 $$
 
 
