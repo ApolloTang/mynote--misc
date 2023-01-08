@@ -1,1 +1,0 @@
-see: https://stackoverflow.com/questions/68145142/how-can-i-compile-the-typescript-project-while-ignoring-all-the-errors
