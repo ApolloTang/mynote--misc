@@ -1,10 +1,23 @@
 
-% cat > myscript.sh
+## Manualy create a script file
+```
+cat > myscript.sh
 #!/usr/bin/env sh
 exit 0
 ^D
-
 touch myscript.sh && chmod 744 $_ && vim $_
+```
+
+## Create a script file with here doc
+```
+cat << EOF > myscript.sh
+#!/usr/bin/env sh
+echo Running from \$(dirname -- "\$0")
+cd -- \$(dirname -- "\$0")
+pwd
+EOF
+touch myscript.sh && chmod 744 $_ && vim $_
+```
 
 ---------------------------------------------------------------
 
