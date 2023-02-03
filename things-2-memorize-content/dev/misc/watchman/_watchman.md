@@ -23,3 +23,13 @@ watchman watch-del-all
 > watchman `watch-list` will show you what it is watching. watchman
 > `watch-del-all` will cancel all of those watches until you next
 > use a tool that starts a watch up again.
+
+There is also a folder called:
+
+```
+/usr/local/var/run/watchman/
+```
+This is where watchman write its log to.
+
+
+
