@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-### For a simple case, use JSON.stringify:
+### Use JSON.stringify:
 
 ```js
 console.log(JSON.stringify(myObj, null, 2))
@@ -14,7 +14,7 @@ console.log(JSON.stringify(myObj, null, 2))
 console.dir(myObject, {showHidden: true, depth: null, colors: true});
 ```
 
-Options:
+Useful options:
 - showHidden: If `true` then show the object's non-enumerable properties (default to false).
 - depth: If `null` make it recurse indefinitely (default to 2).
 - colors: If `false` supress ANSI color code (default to true).
