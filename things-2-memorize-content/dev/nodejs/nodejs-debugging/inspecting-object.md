@@ -187,13 +187,5 @@ console.dir(JSON.stringify(myObject,null, 2))
 ---
 *Ref:*
 
-[1] https://stackoverflow.com/a/26813465 <br>
-[2] https://stackoverflow.com/a/27534731 <br>
-
-*Related:*
-
-https://nodejs.org/en/knowledge/getting-started/how-to-use-util-inspect/ <br>
-https://stackoverflow.com/questions/10729276/how-can-i-get-the-full-object-in-node-jss-console-log-rather-than-object/32866532#32866532 <br>
-
-
-
+- [1] https://stackoverflow.com/a/26813465
+- https://stackoverflow.com/questions/10729276/how-can-i-get-the-full-object-in-node-jss-console-log-rather-than-object
