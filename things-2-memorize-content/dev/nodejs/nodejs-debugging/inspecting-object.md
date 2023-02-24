@@ -114,7 +114,7 @@ var myObject = {
       c: { d: { e: 'e' } } }
   }
 }
-console.dir(myObject)
+console.dir(myObject, {depth: null})
 ```
 
 *Result:*
@@ -135,10 +135,28 @@ console.dir(myObject, options);
 
 This option is the same as that used in configuring the `util.inspect()`. See [nodejs.org/api/util.html#utilinspectobject-options](https://nodejs.org/api/util.html#utilinspectobject-options) for details
 
-
 ### Should you use util.inspect() ?
 
   There is no need to use `util.inspect()` because `console.dir(obj, opt)` in most cases is equivalent to `console.log(util.inspect(obj, opt))`.
+
+### Inspecting object's non-enumerable properties
+
+
+```js
+const obj = { enumerable: 'enumerable' }
+const protoObj = { nonEnumerable: 'nonEnumerable' }
+Object.setPrototypeOf(obj, protoObj)
+
+console.dir(obj)
+console.dir(obj, {showHidden: true})
+```
+*Result:*
+```js
+{ enumerable: 'enumerable' }
+{ enumerable: 'enumerable', nonEnumerable: 'nonEnumerable' }
+```
+
+
 
 ### Note:
 
