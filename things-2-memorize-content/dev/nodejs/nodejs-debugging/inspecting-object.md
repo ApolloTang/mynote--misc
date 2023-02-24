@@ -1,96 +1,76 @@
-How to inspect object in node-cli
-=================================
+# How to inspect object in node-cli
 
-TL:DR
------
+## TL;DR
 
-#### Problem with console.log():
+### For a simple case, use JSON.stringify:
 
-  If object is nested deeper than 3 level it is hidden.
+```js
+console.log(JSON.stringify(myObj, null, 2))
+```
 
-##### Solution:
+### If the object contains a circular reference use `console.dir`:
 
-  Use JSON.stringify:
+```js
+console.dir(myObject, {showHidden: true, depth: null, colors: true});
+```
 
-    console.log(JSON.stringify(myObj, null, 2))
-
-#### Problem with JSON.stringify
-
-  If object contains circular reference it will fail.
-
-##### Solution:
-
-
-  Use:
-
-    console.dir(myObject, { depth: null });
-
-  `console.dir` takes an options object in second argument.
-  This option object is the same one that used in configuring the `util.inspect()`.
+Options:
+- showHidden: If `true` then show the object's non-enumerable properties (default to false).
+- depth: If `null` make it recurse indefinitely (default to 2).
+- colors: If `false` supress ANSI color code (default to true).
 
 
-#### Should you use util.inspect() ?
+### Use a logger 3rd party library:
 
-  There is no need to use `util.inspect()` b/c for most use case
-  it’s already included in `console.dir()`:
-
-    console.dir(obj, opt)
-
-  in most case is equivalent to:
-
-    console.log(util.inspect(obj, opt))
-
-#### Note:
-
-  Passing `JSON.stringify` to `console.dir` will return formated string.
-
-  `console.log` a map does not work, you must use `console.dir`
+[pino](https://getpino.io/#/)
 
 
+---
 
+## Problem with console.log()
 
-Details
--------
+If the object is nested deeper than 3 levels it is hidden.
 
-Node's "Console.log" only show 3 levels:
-
-  ```
-  var myObject = {
-    a: {
-      b: {
-        c: { d: { e: 'e' } } }
-    }
+```
+var myObject = {
+  a: {
+    b: {
+      c: { d: { e: 'e' } } }
   }
-  console.log(myObject)
-  ```
+}
+console.log(myObject)
+```
 
-  *Result:*
+*Result:*
 
-  ```js
-  { a: { b: { c: [Object] } } }
-  ```
+```js
+{ a: { b: { c: [Object] } } }
+```
 
-To see a formated nested object use `JSON.stringify`:
+To show nested levels greater than 3, you can use `JSON.stringify`:
 
-  `console.log(JSON.stringify(myObject,null, 2))`
+```js
+console.log(JSON.stringify(myObject, null, 2))
+```
+*Result:*
 
-  *Result:*
-
-  ```js
-    {
-      "a": {
-        "b": {
-          "c": {
-            "d": {
-              "e": "e"
-            }
-          }
+```js
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": {
+          "e": "e"
         }
       }
     }
-  ```
+  }
+}
+```
 
-However, `JSON.stringify` does not work with object with circular reference:
+## Problem with `JSON.stringify`
+
+If the object contains a circular reference `JSON.stringify` will fail:
 
   ```js
   var d = {}; d.d = d // <--- this is a circular referencing object [1]
@@ -104,59 +84,86 @@ However, `JSON.stringify` does not work with object with circular reference:
   console.log(JSON.stringify(circular, null, 2))
   ```
 
-  *Result:*
+ *Result:*
 
   ```js
   TypeError: Converting circular structure to JSON
   ```
 
-To suppress the error you can use `console.dir`:
+To get around this you can use `console.dir`:
 
-  ```js
-  console.dir(circular, {depth:null})
-  ```
+```js
+console.dir(circular, {depth:null})
+```
 
-  *Result:*
-  ```js
-  {
-    a: {
-      b: { c: { d: { e: 'e' } } }
-    }
+*Result:*
+```js
+{
+  a: {
+    b: { c: { d: <ref *1> { d: [Circular *1] } } }
   }
-  ```
+}
+```
+
+The drawback of `console.dir` is that the output is only partially formatted:
+
+```js
+var myObject = {
+  a: {
+    b: {
+      c: { d: { e: 'e' } } }
+  }
+}
+console.dir(myObject)
+```
+
+*Result:*
+```js
+{
+  a: {
+    b: { c: { d: { e: 'e' } } }
+  }
+}
+```
 
 
-The drawback of `console.dir` is that the output is only partially formated.
+`console.dir` takes an option in the second argument:
 
-#### Extra Note:
+```js
+console.dir(myObject, options);
+```
 
-  ###### Note
+This option is the same as that used in configuring the `util.inspect()`. See [nodejs.org/api/util.html#utilinspectobject-options](https://nodejs.org/api/util.html#utilinspectobject-options) for details
 
-  Using `JSON.stringify` with `console.dir` will print formated string string:
 
-  ```js
-  console.dir(JSON.stringify(myObject,null, 2))
-  ```
+### Should you use util.inspect() ?
 
-  *Result:*
+  There is no need to use `util.inspect()` because `console.dir(obj, opt)` in most cases is equivalent to `console.log(util.inspect(obj, opt))`.
 
-  ```js
-  '{\n' +
-    '  "a": {\n' +
-    '    "b": {\n' +
-    '      "c": {\n' +
-    '        "d": {\n' +
-    '          "e": "e"\n' +
-    '        }\n' +
-    '      }\n' +
-    '    }\n' +
-    '  }\n' +
-    '}'
-  ```
+### Note:
 
-  ###### Note
+Passing `JSON.stringify` to `console.dir` will return a formatted string.
 
-  You cannot use `console.log` to inspect `map`.
+```js
+console.dir(JSON.stringify(myObject,null, 2))
+```
+
+*Result:*
+
+```js
+'{\n' +
+  '  "a": {\n' +
+  '    "b": {\n' +
+  '      "c": {\n' +
+  '        "d": {\n' +
+  '          "e": "e"\n' +
+  '        }\n' +
+  '      }\n' +
+  '    }\n' +
+  '  }\n' +
+  '}'
+```
+
 
 
 ---
