@@ -96,9 +96,3 @@ Remove an el by value
   a_ // [0,1,3,4]
 
 
-Check is type array
-````````````````````
-
-  Object.prototype.toString.call( [] )  // '[object Array]'
-  Array.isArray([])  // true
-
