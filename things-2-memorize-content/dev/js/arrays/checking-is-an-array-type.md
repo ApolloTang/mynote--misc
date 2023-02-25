@@ -9,12 +9,17 @@
 ## Call object's `toString()` method on an array:
 
 
-```js
-  Object.prototype.toString([])  // '[object Array]'
-```
 
 Similarly:
 
 ```js
   Object.prototype.toString.call([])  // '[object Array]'
+```
+
+###  💣💣 Becareful!
+
+Make sure you invoke `toString` with `call()`, otherwise you get `[object Object]`:
+
+```js
+  Object.prototype.toString([])  // '[object Object]'
 ```
