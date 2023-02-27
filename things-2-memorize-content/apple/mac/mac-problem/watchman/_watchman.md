@@ -1,6 +1,4 @@
-
-
-
+# Why is watchman watch my entire file system?
 
 
 The watchman on my mac is auto started by this file:
@@ -30,6 +28,12 @@ There is also a folder called:
 /usr/local/var/run/watchman/
 ```
 This is where watchman write its log to.
+
+
+
+2023.02.27
+
+I have quarintined watchman's LaunchAgents to `~/1/1e-apps-device/quarintine/`
 
 
 
