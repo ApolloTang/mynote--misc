@@ -20,7 +20,7 @@ $ python
 $ pip show <some-package>
 ```
 
-• Do not call `pip` directly, instead, always call it as a python parameter of `-m`:
+• Do not call `pip install` directly, instead, always call it as a python parameter of `-m`:
 
 ```
 python -m pip install <some-package>
