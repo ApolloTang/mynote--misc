@@ -1,4 +1,4 @@
-# My first try on scripting
+# My first try at iterm scripting
 
 Following is my first attempt at writing a script. The script will launch iTerm and open vim in it:
 
