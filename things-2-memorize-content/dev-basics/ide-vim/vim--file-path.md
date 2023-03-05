@@ -7,6 +7,7 @@
 ```vimscript
 :echo !empty(findfile(fileName, currentDirectoryPath.';'))
 ```
+the ';' for after `currentDirectoryPath` meansearch upwards (until the root directory). See `:help file-searching`
 
 Ref: [https://vi.stackexchange.com/a/20440/15493](https://vi.stackexchange.com/a/20440/15493)
 
