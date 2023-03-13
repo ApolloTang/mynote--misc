@@ -2,7 +2,7 @@
 
 
 1. Use the command `diskutil list` to get the device path for the external disk you want to unmount.
-2. Then force format with `diskutil unmountDisk force <divice path>`
+2. Then force unmount with `diskutil unmountDisk force <divice path>`
 
 ---
 
