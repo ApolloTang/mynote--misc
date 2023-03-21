@@ -78,17 +78,17 @@ The `align` attribute can be used on a variety of HTML tags
 #### Unordered Lists
 
 ```md
-* ⏩ [Emmet](./emmet.md)
-* 🎛 [Refactoring](./refactoring.md)
-* ✅ [Type-Checking](./type-checking.md)
-* 🐞 [Debugging](./debugging.md)
+* ⏩ [John](./john.md)
+* 🎛 [Peter](./peter.md)
+* ✅ [Merry](./merry.md)
+* 🐞 [Jennifer](./jennifer.md)
 ```
 
 *Results*
-* ⏩ [Emmet](./emmet.md)
-* 🎛 [Refactoring](./refactoring.md)
-* ✅ [Type-Checking](./type-checking.md)
-* 🐞 [Debugging](./debugging.md)
+* ⏩ [John](./john.md)
+* 🎛 [Peter](./peter.md)
+* ✅ [Merry](./merry.md)
+* 🐞 [Jennifer](./jennifer.md)
 
 #### Ordered Lists
 
