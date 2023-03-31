@@ -19,11 +19,11 @@ This article is the note I made while going through this VoiceOver training.
 
 ## 2 Practice what you learn:
 
-## 3 VoiceOver modifier:
+## 3 VoiceOver modifier and VoiceOver-Utitlity:
 
 You can find out the keyboard mapping of VoiceOver modifier in `VoiceOver utility`. 
 
-*If you already know your VoiceOver mapping, you can access this menu with `VO-F8`. (but this required you already know what is your VoiceOver keyboard mapping)*
+*If you already know your VoiceOver mapping, you can go to the VoiceOver utility directly with `VO-F8` when **VoiceOver is ON**. (but this required you already know your VoiceOver keyboard mapping)*
 
 To access the `VoiceOver utility`:
 ```txt
