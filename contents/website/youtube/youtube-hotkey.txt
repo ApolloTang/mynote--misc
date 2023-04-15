@@ -1,7 +1,0 @@
-
-[sft] + [,]/[.]    Speed Increase/decrease.
-[j]/[l]            back/forward 10 sec
-
----eof---
-
-
