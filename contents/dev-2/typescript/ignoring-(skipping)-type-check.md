@@ -64,4 +64,6 @@ REF: [ts-check](https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html
 ```
   ref: https://stackoverflow.com/a/40245490/3136861
 
+## More
 
+[more reference](https://stackoverflow.com/questions/54506744/how-can-i-disable-all-typescript-type-checking)
