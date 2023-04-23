@@ -14,7 +14,7 @@ $ jupyter notebook
 
 ```
 $ mkdir myjupyter && cd $_
-$ PIPENV_VENV_IN_PROJECT=1 
+$ PIPENV_VENV_IN_PROJECT=1
 $ pipenv install jupyter
 $ pipenv run jupyter notebook
 ```
@@ -22,7 +22,7 @@ $ pipenv run jupyter notebook
 ## Add .gitignore:
 
 ```
-$ cat << EOF > .gitignore
+cat << EOF >> .gitignore
 .venv
 venv
 .ipynb_checkpoints
