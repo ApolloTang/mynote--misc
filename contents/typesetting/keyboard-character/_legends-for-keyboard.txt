@@ -1,17 +1,17 @@
 legends for keys in notes:
 --------------------------
 
-  [Ctr] (c) control
-  [Opt] (o) option
-  [Cmd] (m) command
-  [Sft] (f) shift
-  [Fnc] (n) function
-  [Tab] (t) tab
-  [Ret] (r) return
-  [Esc] (e) escape
-  [Del] (d) delete
-  [Bsp] (b) backspace == [fnc][del]
-  [Spc] (p) spacebar
+  [ctr] (c) control
+  [opt] (o) option
+  [cmd] (m) command
+  [sft] (f) shift
+  [fnc] (n) function
+  [tab] (t) tab
+  [ret] (r) return
+  [esc] (e) escape
+  [del] (d) delete
+  [bsp] (b) backspace == [fnc][del]
+  [spc] (p) spacebar
 
   [(^)] up
   [(v)] down
