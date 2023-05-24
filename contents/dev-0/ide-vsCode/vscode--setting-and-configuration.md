@@ -20,7 +20,7 @@
 
 
 
-## Access setting in terminal:
+## Access setting in the terminal:
 
 **To locate my setting file:**
 
@@ -72,6 +72,10 @@ macOS   ~/.vscode/extensions
 Linux   ~/.vscode/extensions
 ```
 
+Not all extensions use `~/.vscode/extensions`; `some extensions` have their dedicated location. One example of this is the [shd101wyy/markdown-preview-enhanced](https://github.com/shd101wyy/markdown-preview-enhanced) extension, whose configuration is located in `~/.mume/`. (see [this](https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css)).
+
+
+
 ---
---eof---
+
 
