@@ -1,7 +1,7 @@
 ### Restart vscode
 
 ```
-[ctr][sft][p]
+[cmd][sft][p]
 type: Reload Window.
 ```
 
