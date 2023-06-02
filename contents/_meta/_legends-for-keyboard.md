@@ -1,6 +1,6 @@
-legends for keys in notes:
---------------------------
+## legends for keys in notes:
 
+```
   [ctr] (c) control
   [opt] (o) option
   [cmd] (m) command
@@ -17,24 +17,25 @@ legends for keys in notes:
   [(v)] down
   [(<)] left
   [(>)] right
+```
 
+## Symbol
 
-  Symbol
-  ------
-
+```
   [⇧]
   [⇩]
   [⇦]
   [⇨]
   [⌘]
   [⌥]
+```
 
-  Black Arrow
-  -----------
+## Black Arrow
+
+```
   [⬇]
   [⬆︎]
   [⬅︎]
   [⮕]
+```
 
-
----eof---
