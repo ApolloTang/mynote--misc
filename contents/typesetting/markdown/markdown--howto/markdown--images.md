@@ -1,0 +1,1 @@
+[Medium: 3 Ways to Add a Caption to an Image Using Markdown](https://towardsdev.com/3-ways-to-add-a-caption-to-an-image-using-markdown-f2ca30562be6)
