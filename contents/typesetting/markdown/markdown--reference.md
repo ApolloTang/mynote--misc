@@ -7,6 +7,8 @@
 
 ## Markdown playground 
 
+[demo.showdownjs.com](http://demo.showdownjs.com/)
+
 [daringfireball.net/projects/markdown/dingus](https://daringfireball.net/projects/markdown/dingus)
 
 [markdown playground demo](https://markdown-it.github.io/)
