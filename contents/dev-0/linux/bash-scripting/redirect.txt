@@ -2,3 +2,6 @@ https://www.cyberciti.biz/faq/redirecting-stderr-to-stdout/
 
 
 
+What does " 2>&1 " mean?
+
+https://stackoverflow.com/questions/818255/what-does-21-mean
