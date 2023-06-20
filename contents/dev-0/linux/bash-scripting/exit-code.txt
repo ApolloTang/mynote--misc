@@ -8,6 +8,9 @@ fix:
   $ echo $?
 
 
+To Read:
+https://stackoverflow.com/questions/24597818/exit-with-error-message-in-bash-oneline
+
 
 
 

@@ -1,4 +1,16 @@
-https://wiki.bash-hackers.org/start
+
+
+Tutorial: 
+
+https://medium.com/sysf/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba
+
+https://guide.bash.academy/
+
+
+
+Cheatsheet:
+
+https://devhints.io/bash
 
 
 
