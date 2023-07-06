@@ -7,15 +7,15 @@ Apply math terminology to Array
   Norminal    (index, naming) : [ 0,   1,   2,   ... <L-2>,   <L-1>   ]
 
   Observation:
-    • The last item's ordinal is cardinality
-    • The last item's norminal is cardinal minus one
-    • The item's norminal is it's ordinal minus one
+    • The ordinal (order) of the last item is the cardinal (length).
+    • The norminal (index) of the last item is cardinal (length) minus one.
+    • The item's norminal (index) is the order minus one.
 
 Refered array element by index
 ==============================
 
-  [ 0,   1,   2, ... L-3, L-2, L-1 ]
-  [ 0,   1,   2, ...  -3,  -2,  -1 ]   <-- drop the 'L'
+  [ 0,   1,   2, ... L-3, L-2, L-1 ]   <-- express index in terms of length
+  [ 0,   1,   2, ...  -3,  -2,  -1 ]   <-- express index using negative index
 
 
 Mutation method
