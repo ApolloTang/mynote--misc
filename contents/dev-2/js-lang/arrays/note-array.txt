@@ -8,7 +8,7 @@ Apply math terminology to Array
 
   Observation:
     • The ordinal (order) of the last item is the cardinal (length).
-    • The norminal (index) of the last item is cardinal (length) minus one.
+    • The norminal (index) of the last item is cardinal (length) minus one (L-1).
     • The item's norminal (index) is the order minus one.
 
 Refered array element by index
