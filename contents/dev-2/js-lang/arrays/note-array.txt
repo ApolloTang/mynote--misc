@@ -23,7 +23,7 @@ Mutation method
 
   pop     : remove the last element
   shift   : remove the first element
-  push    : add one or more elements to the end
+  push    : add one or more elements to the end (returns the resultant length)
   unshift : add one or more elements to the front
   reverse : reverse the order
   sort    : sort the elements

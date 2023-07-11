@@ -37,3 +37,11 @@ Search n replace recursively in a dir
   https://stackoverflow.com/a/2113224/3136861
 
 
+Find node_modules directory
+===========================
+
+   find . -name 'node_modules' -type d
+
+
+
+
