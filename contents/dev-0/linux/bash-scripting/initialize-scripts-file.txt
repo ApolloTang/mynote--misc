@@ -8,15 +8,18 @@ exit 0
 touch myscript.sh && chmod 744 $_ && vim $_
 ```
 
-## Create a script file with here doc
+## Create a script file with Heredoc
 ```
-cat << EOF > myscript.sh
+cat << "EOF" > myscript.sh
 #!/usr/bin/env sh
-echo Running from \$(dirname -- "\$0")
-cd -- \$(dirname -- "\$0")
-pwd
+location=$(dirname -- "$0")
+script_file_name=$(basename $0)
+
+echo This script is located in $location
+echo The name of script file is $script_file_name
+echo Your current location is $(pwd)
 EOF
-touch myscript.sh && chmod 744 $_ && vim $_
+chmod 744 myscript.sh
 ```
 
 ---------------------------------------------------------------
