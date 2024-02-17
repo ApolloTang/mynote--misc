@@ -1,0 +1,1 @@
+ [FZF newcomer: fd or ripgrep? : linux4noobs](https://www.reddit.com/r/linux4noobs/comments/egb644/fzf_newcomer_fd_or_ripgrep/) 
