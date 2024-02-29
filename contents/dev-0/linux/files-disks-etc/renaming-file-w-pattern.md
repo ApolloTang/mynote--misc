@@ -1,0 +1,1 @@
+ [Rename multiple files by replacing a particular pattern in the filenames using a shell script - Stack Overflow](https://stackoverflow.com/questions/6840332/rename-multiple-files-by-replacing-a-particular-pattern-in-the-filenames-using-a) 
