@@ -1,1 +1,1 @@
-![](./assets/unix-like-os-lineage.png)
+![](./assets/unix-like-os-lineage-simplified.png)
