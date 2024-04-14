@@ -1,27 +1,38 @@
-# Exploring pipenv
+# Introducing pipenv to a javascript programer
+
+
+
+## Useful:
 
 cheatsheet: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd
 
 
 
-## Installation
+## What is pipenv?
 
-:warning: The [official pipenv document](https://pipenv.pypa.io/en/latest/#install-pipenv-today) discourages installing pipenv with brew. The [recomended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installation is with  `pipx` or use [pip user install](https://pip.pypa.io/en/stable/user_guide/#user-installs) so that the installation is isolated in its own environment. 
+The concept of **pipenv** for python is similar to that of **npm** for nodeJs.  It create a isolated enviroment for your project and manages the dependency packages your project uses.  
 
-On my computer, I installed it with `pipx`:
-```
-pipx install pipenv
-```
+Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe dependency tree, pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
 
  
 
-## What is pipenv?
+## Installing pipenv
 
-The concept of **pipenv** for python is similar to that of **npm** for nodeJs.  It is used to manage the packages your project depended on.  
+:warning: The [official pipenv document](https://pipenv.pypa.io/en/latest/#install-pipenv-today) discourages installing pipenv with brew. The [recomended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installation is with  [`pipx`](https://github.com/pypa/pipx) (I think `pipx` is analogious to `npx` in the javascript world?)
 
-Pipenv uses two files, [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.  They are analogous to `package.json` and `package-lock.json` in nodeJs. 
+On my computer, I installed it with `pipx`:
 
-To initialize a new project and thus create a `pipfile` and a `pipfile.lock` you simply use the command: 
+```
+pipx install pipenv 
+```
+
+Another recomended way to install pipenv is using [pip user install](https://pip.pypa.io/en/stable/user_guide/#user-installs).  Using this method, the installation is isolated in its own environment. 
+
+
+
+## Example:
+
+To initialize a new project and thus create a `pipfile` and a `pipfile.lock` you use the command: 
 
 ```
 $ pipenv install
@@ -81,6 +92,7 @@ $ pipenv install
 ```
 
 
+
 ## Using pipenv on a classical pip venv
 
 If you have a project created previously using the classical `pip -m venv venv`,  you can use pipenv on this project. Simply type: 
@@ -118,7 +130,6 @@ Note: Prior to pipenv version v2022.8.13, instead of using the command `pipenv r
 ## To Read:
 
 https://mattgosden.medium.com/pipenv-for-easier-virtual-environments-69e1e520cde8
-
 
 
 
