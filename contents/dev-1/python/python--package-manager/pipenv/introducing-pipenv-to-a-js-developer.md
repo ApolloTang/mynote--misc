@@ -12,7 +12,7 @@ cheatsheet: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60
 
 The concept of **pipenv** for python is similar to that of **npm** for nodeJs.  It create a isolated enviroment for your project and manages the dependency packages your project uses.  
 
-Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe dependency tree, pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
+Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe dependency graph; pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
 
  
 
@@ -78,9 +78,9 @@ If you want the virtual environment folder located inside the project folder, yo
 ```
 PIPENV_VENV_IN_PROJECT=1 pipenv install
 ```
-You should avoid using the central location as a default by setting the `PIPENV_VENV_IN_PROJECT` variable in your rc-file (`.bashrc`) so that the virtual environment folder is always locates inside the project folder. This is because pipenv does not clean up the virtual environment folder after you delete your project folder. Clean up the central virtual environment folder after you have deleted your project folder will be a pain (see: [How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted) ). 
+:warning: ​You should avoid using the central location as a default by setting the `PIPENV_VENV_IN_PROJECT` variable in your rc-file (`.bashrc`) so that the virtual environment folder is always locates inside the project folder. This is because pipenv does not clean up the virtual environment folder after you delete your project folder. Clean up the central virtual environment folder after you have deleted your project folder will be a pain (see: [How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted) ). 
 
-You should be aware that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping you need to remove the `.venv/` folder with:  
+:warning: ​You should be aware that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping you need to remove the `.venv/` folder with:  
 
 ```
 $ pipenv --rm
