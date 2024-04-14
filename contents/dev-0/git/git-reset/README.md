@@ -1,0 +1,1 @@
+ [In plain English, what does "git reset" do? - Stack Overflow](https://stackoverflow.com/questions/2530060/in-plain-english-what-does-git-reset-do) 
