@@ -4,7 +4,9 @@
 
 ## Useful:
 
-cheatsheet: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd
+**cheatsheet**: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd
+
+**official CLI reference:**  [Pipenv CLI Reference — pipenv 2023.11.16.dev0 documentation](https://pipenv.pypa.io/en/latest/cli.html#pipenv) 
 
 
 
