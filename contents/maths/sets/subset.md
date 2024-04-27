@@ -50,13 +50,13 @@ Given a set  $ A =\{1,2,3\} $​ ,  we consider $ \{1,2,3\} $​ a subset of $A$
 
 We do not write
 
-$$ \{1,2,3\} \subset A $$​ 
+$$\{1,2,3\} \subset A$$​ 
 
 because the symbol $ \subset $​ is used to denote **proper** subset.  
 
 When we write 
 
-$$ A \subset B $$​
+$$A \subset B$$​
 
 it reads $A$​ is a proper subset of $B$​,  which implies 
 
