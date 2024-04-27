@@ -46,13 +46,13 @@ There are two kinds of subsets:
 
 ## Some confusion on the $ \subset $ symbol:
 
-Given a set  $ A =\{1,2,3\} $​ ,  we consider $ \{1,2,3\} $​ a subset of $A$​.  
+Given a set  $A =\{1,2,3\}$​ ,  we consider $\{1,2,3\}$​ a subset of $A$​.  
 
 We do not write
 
 $$\{1,2,3\} \subset A$$​ 
 
-because the symbol $ \subset $​ is used to denote **proper** subset.  
+because the symbol  $\subset$​ is used to denote **proper** subset.  
 
 When we write 
 
