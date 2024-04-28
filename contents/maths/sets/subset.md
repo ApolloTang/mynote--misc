@@ -46,33 +46,29 @@ There are two kinds of subsets:
 
 ## Some confusion on the $ \subset $ symbol:
 
-Given a set  $A =\lbrace1,2,3\rbrace$​ ,  we consider $\{1,2,3\}$​ a subset of $A$​.  
+Given a set  $A =\lbrace1,2,3\rbrace$​ ,  we know that one of its subset is set $A$ itself.  We sometime mistakenly describe this relation with wrong notation:
 
-We do not write
+$$
+\lbrace 1,2,3 \rbrace \subset A
+$$
 
-$$\{1,2,3\} \subset A$$​ 
+The above is a wrong usage of the symbol  $\subset$.  The symbol  $\subset$  is used to denote **proper** subset.  The correction notation is
 
-because the symbol  $\subset$​ is used to denote **proper** subset.  
+$$
+\lbrace 1,2,3 \rbrace \subseteq A
+$$
 
-When we write 
+The above reads:  *set $\lbrace 1,2,3 \rbrace$​ is an **improper** subset of $A$​*. **Improper subset** implies, the two set in the relationship are identical.  Thus, given two sets $A =\{1,2,3\}$​  and  $B =\{1,2,3\}$​,  since $A = B$  we can write: 
 
-$$A \subset B$$​
+$$
+A \subseteq B
+$$
 
-it reads $A$​ is a proper subset of $B$​,  which implies 
-
-$$A \neq B$$​  
-
-Given two sets A and B, where $A =\{1,2,3\}$  and  $B =\{1,2,3\}$,  since $A = B$  and that identical set are subset of each other,  we say $A$ is an **improper** subset of $B$  and we write:
-
-$$\{1,2,3\} \subseteq B $$​.
-
-or 
-
-$$A \subseteq B $$ 
-
-
-
-
+When we say *set $A$ is an **proper** subset of $B$*:
+$$
+A \subset B
+$$
+$A$ and $B$ are not identical, $A \neq B$. 
 
 - [elementary set theory - What exactly is an improper subset? - Mathematics Stack Exchange](https://math.stackexchange.com/questions/2370884/what-exactly-is-an-improper-subset) 
 
