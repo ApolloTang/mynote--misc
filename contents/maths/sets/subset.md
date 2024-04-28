@@ -58,7 +58,7 @@ $$
 \lbrace 1,2,3 \rbrace \subseteq A
 $$
 
-The above reads:  *set $\lbrace 1,2,3 \rbrace$​ is an **improper** subset of $A$​*. **Improper subset** implies, the two set in the relationship are identical.  Thus, given two sets $A =\{1,2,3\}$​  and  $B =\{1,2,3\}$​,  since $A = B$  we can write: 
+The above reads:  set $\lbrace 1,2,3 \rbrace$​ is an **improper** subset of $A$.  **Improper subset** implies the two set in the relationship are identical.  Thus, given two sets $A =\{1,2,3\}$​  and  $B =\{1,2,3\}$​,  since $A = B$  we can write: 
 
 $$
 A \subseteq B
