@@ -46,7 +46,7 @@ There are two kinds of subsets:
 
 ## Some confusion on the $ \subset $ symbol:
 
-Given a set  $A =\{1,2,3\}$​ ,  we consider $\{1,2,3\}$​ a subset of $A$​.  
+Given a set  $A =\lbrace1,2,3\rbrace$​ ,  we consider $\{1,2,3\}$​ a subset of $A$​.  
 
 We do not write
 
