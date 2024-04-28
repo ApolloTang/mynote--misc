@@ -52,7 +52,7 @@ $$
 \lbrace 1,2,3 \rbrace \subset A
 $$
 
-The above is a wrong usage of the symbol  $\subset$.  The symbol  $\subset$  is used to denote **proper** subset.  The correction notation is
+The above is a wrong usage of the symbol  $\subset$.  The symbol  $\subset$  is used to denote **proper** subset.  The correct notation is:
 
 $$
 \lbrace 1,2,3 \rbrace \subseteq A
@@ -65,10 +65,11 @@ A \subseteq B
 $$
 
 If we wrote $A$ is an **proper** subset of $B$:
+
 $$
 A \subset B
 $$
-$A$ and $B$ are not identical, $A \neq B$.
+we understood that it meant $A$ and $B$ are not identical, $A \neq B$.
 
 
 
