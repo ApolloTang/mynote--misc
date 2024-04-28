@@ -58,17 +58,21 @@ $$
 \lbrace 1,2,3 \rbrace \subseteq A
 $$
 
-The above reads:  set $\lbrace 1,2,3 \rbrace$​ is an **improper** subset of $A$.  **Improper subset** implies the two set in the relationship are identical.  Thus, given two sets $A =\{1,2,3\}$​  and  $B =\{1,2,3\}$​,  since $A = B$  we can write: 
+The above reads:  set $\lbrace 1,2,3 \rbrace$​ is an **improper** subset of $A$.  **Improper subset** implies the two set in the relationship are identical.  Thus, given two sets $A =\lbrace 1,2,3\rbrace$​  and  $B =\{1,2,3\}$​,  since $A = B$  we write: 
 
 $$
 A \subseteq B
 $$
 
-When we say *set $A$ is an **proper** subset of $B$*:
+If we wrote $A$ is an **proper** subset of $B$:
 $$
 A \subset B
 $$
-$A$ and $B$ are not identical, $A \neq B$. 
+$A$ and $B$ are not identical, $A \neq B$.
+
+
+
+## References 
 
 - [elementary set theory - What exactly is an improper subset? - Mathematics Stack Exchange](https://math.stackexchange.com/questions/2370884/what-exactly-is-an-improper-subset) 
 
