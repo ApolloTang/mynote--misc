@@ -19,6 +19,7 @@ Given a set $A = \lbrace 1,2,3,4 \rbrace$, and let us say $B$ be a set that is a
 ```
 
 We often use the **improper subset** notation, $\subseteq$, to denote all possible subset of a set: 
+
 $$
 B \subseteq A
 $$
@@ -26,14 +27,16 @@ $$
 The above is read $B$ is an improper subset of set $A$ . 
 
 We notice that there is one set among the improper subset of set $A$ whose number of elements "n" equal the number of element of $A$.  In fact this set is identical to $A$ itself: 
+
 $$
 B = A
 $$
+
 All other sets where $B \neq A$ is called the **proper subset**, and can be denote with the $\subset$ notation: 
+
 $$
 B \subset A
 $$
-
 
 The above is read *B is an proper subset of A*				
 					
