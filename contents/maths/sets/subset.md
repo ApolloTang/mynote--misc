@@ -2,11 +2,9 @@
 
 
 
-## All subsets of a set
+## Improper and proper subset 
 
-Given, `A = {1,2,3,4}`
-
-All the subsets of set A are:
+Given a set $A = \lbrace 1,2,3,4 \rbrace$, and let us say $B$ be a set that is a subset of $A$, then the following listed all posible $B$: 
 
 ``` 
 {} (the empty set, also denote as Φ)
@@ -20,56 +18,27 @@ All the subsets of set A are:
 {1,2,3,4}
 ```
 
-
-
-Some important properties of subsets are: 
-
-- If a set has “n” elements, then the number of subset is $2^n$
-- An empty set, `Φ`, is a subset of any given set.
-- Given a set, it is considered a subset of itself.
-  - This is a special subset and we called it **improper subset**, and it has a special notation: `{1,2,3,4} ⊆ {1,2,3,4}`.
-
-
-
-## Types of Subsets
-
-There are two kinds of subsets: 
-
-- proper subset
-- Improper subsets
-
-#### Proper subset  :construction::
-
-​	if a set contains `n` elements, then  :construction: 
-
-
-
-## Some confusion on the $ \subset $ symbol:
-
-Given a set  $A =\lbrace1,2,3\rbrace$​ ,  we know that one of its subset is set $A$ itself.  We sometime mistakenly describe this relation with wrong notation:
-
+We often use the **improper subset** notation, $\subseteq$, to denote all possible subset of a set: 
 $$
-\lbrace 1,2,3 \rbrace \subset A
+B \subseteq A
 $$
 
-The above is a wrong usage of the symbol  $\subset$.  The symbol  $\subset$  is used to denote **proper** subset.  The correct notation is:
+The above is read $B$ is an improper subset of set $A$ . 
 
+We notice that there is one set among the improper subset of set $A$ whose number of elements "n" equal the number of element of $A$.  In fact this set is identical to $A$ itself: 
 $$
-\lbrace 1,2,3 \rbrace \subseteq A
+B = A
+$$
+All other sets where $B \neq A$ is called the **proper subset**, and can be denote with the $\subset$ notation: 
+$$
+B \subset A
 $$
 
-The above reads:  set $\lbrace 1,2,3 \rbrace$​ is an **improper** subset of $A$.  **Improper subset** implies the two sets in the relationship are identical.  Thus, given two sets $A =\lbrace 1,2,3\rbrace$​  and  $B =\lbrace 1,2,3\rbrace$​,  since $A = B$  we write: 
 
-$$
-A \subseteq B
-$$
+The above is read *B is an proper subset of A*				
+					
 
-If we wrote $A$ is an **proper** subset of $B$:
-
-$$
-A \subset B
-$$
-we understood that it meant $A$ and $B$ are not identical, $A \neq B$.
+If a set has “n” elements, then the number of improper subset is $2^n$ (proof?).  So there are $2^n$ - 1 proper subset. 
 
 
 
