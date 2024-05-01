@@ -4,10 +4,10 @@
 
 ## Improper and proper subset 
 
-Given a set $A = \lbrace 1,2,3,4 \rbrace$, and let us say $B$ be a set that is a subset of $A$, then the following listed all posible $B$: 
+Given a set $A = \lbrace 1,2,3,4 \rbrace$, the following are the subset of $A$: 
 
 ``` 
-{} (the empty set, also denote as Φ)
+{} (the empty set, also denoted as Φ)
 
 {1}, {2}, {3}, {4},
 
@@ -17,34 +17,56 @@ Given a set $A = \lbrace 1,2,3,4 \rbrace$, and let us say $B$ be a set that is a
 
 {1,2,3,4}
 ```
+If A set has $n$ elements, we say "the cardinal of $A$ is $n$" and we can write:
 
-We often use the **improper subset** notation, $\subseteq$, to denote all possible subset of a set: 
+$$
+n = |A|
+$$
+
+The number of possible subsets is always $2^n$ (reference of proof required).  
+
+If we use the symbol $B$ to represent any of the possible subsets of $A$,  we can write:
 
 $$
 B \subseteq A
 $$
 
-The above is read $B$ is an improper subset of set $A$ . 
+The symbol $\subseteq$ is called the **improper subset**, and the above reads: "$B$ is an improper subset of set $A$." 
 
-We notice that there is one set among the improper subset of set $A$ whose number of elements "n" equal the number of element of $A$.  In fact this set is identical to $A$ itself: 
+Given a set, there is always exactly one improper subset (in the example above $\lbrace 1,2,3,4 \rbrace$) whose number of elements is the same as that of $A$ itself:
+
+$$
+|B| = |A| = n
+$$
+
+In other word, $B$ and $A$ is identical:
 
 $$
 B = A
 $$
 
-All other sets where $B \neq A$ is called the **proper subset**, and can be denote with the $\subset$ notation: 
+All other subsets, where: 
+
+$$
+|B| < |A| 
+$$
+
+or $B$ and $A$ not identical:
+
+$$
+B \neq A
+$$ 
+
+is called the **proper subset**. The proper subset can be denoted with the $\subset$ notation: 
 
 $$
 B \subset A
 $$
 
-The above is read *B is an proper subset of A*				
+The above is read: "$B$ is a proper subset of $A$."
+
+Given a set with $n$ elements, there are always $2^n$ - 1 proper subsets.
 					
-
-If a set has “n” elements, then the number of improper subset is $2^n$ (proof?).  So there are $2^n$ - 1 proper subset. 
-
-
-
 ## References 
 
 - [elementary set theory - What exactly is an improper subset? - Mathematics Stack Exchange](https://math.stackexchange.com/questions/2370884/what-exactly-is-an-improper-subset) 
