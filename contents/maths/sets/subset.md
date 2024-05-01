@@ -31,7 +31,7 @@ $$
 B \subseteq A
 $$
 
-The symbol $\subseteq$ is called the **improper subset**, and the above reads: "$B$ is an improper subset of set $A$." 
+The symbol $\subseteq$ is called the **improper subset**, and the above reads: "$ B $ is an improper subset of set $ A $." 
 
 Given a set, there is always exactly one improper subset (in the example above $\lbrace 1,2,3,4 \rbrace$) whose number of elements is the same as that of $A$ itself:
 
