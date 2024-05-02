@@ -14,7 +14,7 @@
 
 pipenv creates an isolated environment for your project and manages the dependency packages your project uses. This concept is similar to that of **npm**'s node modules in nodeJs eco-system. 
 
-Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe the dependency graph; pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
+Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe the dependency graph; pipenv uses [`Pipfile`](https://github.com/pypa/pipfile) and `Pipfile.lock`.
 
  
 ## Installing pipenv
@@ -29,14 +29,80 @@ pipx install pipenv
 
 Another recommended way to install pipenv is using [pip user install](https://pip.pypa.io/en/stable/user_guide/#user-installs).  This method isolates the installation in its own environment. 
 
+## Initialize a new project
+
+To initialize a new project we use the following command:
+
+```
+pipenv install
+``` 
+
+For example:
+
+```
+$ mkdir example--pipenv && cd $_  
+$ pipenv install
+Creating a virtualenv for this project...
+Pipfile: /...snip.../Desktop/example--pipenv/Pipfile
+Using default python from /...snip.../.local/pipx/venvs/pipenv/bin/python (3.12.2) to create virtualenv...
+⠼ Creating virtual environment...
+
+✔ Successfully created virtual environment!
+Virtualenv location: /...../.local/share/virtualenvs/example--pipenv-2FIKj4NO
+Creating a Pipfile for this project...
+Pipfile.lock not found, creating...
+Locking [packages] dependencies...
+Locking [dev-packages] dependencies...
+Updated Pipfile.lock (...snip.....)!
+Installing dependencies from Pipfile.lock (2110f5)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+```
+
+Note that in the log output, a `Pipfile` file and a `Pipfile.lock` file were created:
+
+```
+....snip...
+Creating a Pipfile for this project...
+Pipfile.lock not found, creating...
+....snip...
+
+```
+
+
+## Where is the location of the installed package?
+
+The dependencies are stored in the `node_modules/` folder for npm.  For pipenv, dependencies are  located in a virtual environment folder.  By default, this folder is located in a central location on your computer.  You can get the path to This virtual environment with: 
+
+```
+$ pipenv --venv
+```
+
+:Warning: If you manually delete your pipenv project folder, your project dependencies in the central virtual environment are not cleaned up; this results in a clattering of unused Python dependency on your computer (see: 
+[How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted)
+). 
+
+If you want the virtual environment folder located inside the project folder (similar to the location of `node_modules/` in a project folder), you can set the shell variable `PIPENV_VENV_IN_PROJECT` during installation:
+
+```
+PIPENV_VENV_IN_PROJECT=1 pipenv install
+```
+By setting this variable, a folder `.venv/` is created inside your project folder to store your project dependencies.
+
+
+
+To avoid clattering, I set `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.  This way, my dependencies are always located locally in the project, and when I delete my project folder, they are removed. 
+
+:warning: Another thing you should be aware of is that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder, you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping, remove the `.venv/` folder with:  
+
+```
+$ pipenv --rm
+```
+
+Then reinstall again with `pipenv install` to regenerate the `.venv/` folder:
 
 ## Working with pipenv, an example:
 
-To initialize a new project, we use the following command to create a `pipfile` and a `pipfile.lock`: 
-
-```
-$ pipenv install
-```
 
 Here is a simple example project called `example--pipenv` that runs a simple test with pytest:
 
@@ -62,37 +128,6 @@ test_example.py .                                              [100%]
 
 ========================= 1 passed in 0.01s ==========================    
 ```
-
-
-## Where is the location of the installed package?
-
-The dependencies are stored in the `node_modules/` folder for npm.  For pipenv, dependencies are  located in a virtual environment folder.  By default, this folder is located in a central location on your computer.  You can get the path to This virtual environment with: 
-
-```
-$ pipenv --venv
-```
-
-If you want the virtual environment folder located inside the project folder (similar to the location of `node_modules/` in a project folder), you can set the shell variable `PIPENV_VENV_IN_PROJECT` during installation:
-
-```
-PIPENV_VENV_IN_PROJECT=1 pipenv install
-```
-By setting this variable, a folder `.venv/` is created inside your project folder to store your project dependencies.
-
-:Warning: When you delete your project folder, your project dependencies in the central virtual environment are now cleaned up; this results in a clattering of unused Python dependency on your computer (see: 
-[How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted)
-). 
-
-To avoid clattering, I set `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.  This way, my dependencies are always located locally in the project, and when I delete my project folder, they are removed. 
-
-:warning: Another thing you should be aware of is that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder, you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping, remove the `.venv/` folder with:  
-
-```
-$ pipenv --rm
-```
-
-Then reinstall again with `pipenv install` to regenerate the `.venv/` folder:
-
 
 ## Do not add  .venv/ folder to your git repo
 
