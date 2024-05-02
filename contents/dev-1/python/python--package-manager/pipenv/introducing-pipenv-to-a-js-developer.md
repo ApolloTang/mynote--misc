@@ -87,11 +87,9 @@ If you want the virtual environment folder located inside the project folder (si
 ```
 PIPENV_VENV_IN_PROJECT=1 pipenv install
 ```
-By setting this variable, a folder `.venv/` is created inside your project folder to store your project dependencies.
+By setting this variable, a folder `.venv/` is created inside your project folder to store your project dependencies. This way, my dependencies are always located locally in the project, and when I delete my project folder, they are removed. 
 
-
-
-To avoid clattering, I set `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.  This way, my dependencies are always located locally in the project, and when I delete my project folder, they are removed. 
+To reduce typing, I add `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.  
 
 :warning: Another thing you should be aware of is that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder, you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping, remove the `.venv/` folder with:  
 
