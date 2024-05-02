@@ -12,16 +12,14 @@
 
 ## What is pipenv?
 
-pipenv creates an isolated environment for your project and manages the dependency packages your project uses. This concept is similar to that of **npm**'s node modules in nodeJs eco-system. 
+Pipenv creates an isolated environment for your project and manages the dependency packages your project uses. This concept is similar to that of npm's node modules in nodeJs eco-system. 
 
-Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe the dependency graph; pipenv uses [`Pipfile`](https://github.com/pypa/pipfile) and `Pipfile.lock`.
+Using the npm analogy, npm uses `package.json` to specify the dependencies and `package-lock.json` to describe the dependency graph; similarly, pipenv uses [`Pipfile`](https://github.com/pypa/pipfile) and `Pipfile.lock` for this purpose respectively.
 
  
 ## Installing pipenv
 
-:warning: The [official pipenv document](https://pipenv.pypa.io/en/latest/#install-pipenv-today) discourages installing pipenv with brew. The [recommended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installation is with  [`pipx`](https://github.com/pypa/pipx) (I think `pipx` is analogous to `npx` in the javascript world?)
-
-On my computer, I installed it with `pipx`:
+The [recommended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installing pipenv on OSX is with [`pipx`](https://github.com/pypa/pipx) (I think `pipx` is analogous to `npx` in the javascript world?):
 
 ```
 pipx install pipenv 
@@ -29,9 +27,12 @@ pipx install pipenv
 
 Another recommended way to install pipenv is using [pip user install](https://pip.pypa.io/en/stable/user_guide/#user-installs).  This method isolates the installation in its own environment. 
 
+:warning: The [official pipenv document](https://pipenv.pypa.io/en/latest/#install-pipenv-today) discourages installing pipenv with brew. 
+
+
 ## Initialize a new project
 
-To initialize a new project we use the following command:
+To initialize a new project, we use the following command:
 
 ```
 pipenv install
