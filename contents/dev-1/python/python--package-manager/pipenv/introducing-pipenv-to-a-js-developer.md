@@ -12,7 +12,8 @@
 
 ## What is pipenv?
 
-The concept of **pipenv** in the Python eco-system is similar to that of **npm** for nodeJs. It creates an isolated environment for your project and manages the dependency packages your project uses.  
+
+pipenv creates an isolated environment for your project and manages the dependency packages your project uses. This concept is similar to that of **npm**'s node modules in nodeJs eco-system. 
 
 Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe the dependency graph; pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
 
@@ -66,7 +67,7 @@ test_example.py .                                              [100%]
 
 ## Where is the location of the installed package?
 
-For npm, the location of dependencies is located in `node_modules/.`  For pipenv, dependencies are  located in a virtual environment folder.  By default, the location of this virtual environment folder is located in a central location on your computer.  You can get the path to This virtual environment with: 
+The dependencies are stored in the `node_modules/` folder for npm.  For pipenv, dependencies are  located in a virtual environment folder.  By default, this folder is located in a central location on your computer.  You can get the path to This virtual environment with: 
 
 ```
 $ pipenv --venv
@@ -91,12 +92,12 @@ To avoid clattering, I set `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.  This way
 $ pipenv --rm
 ```
 
-Then reinstall again with `pipenv install` to regenerate the `.env/` folder:
+Then reinstall again with `pipenv install` to regenerate the `.venv/` folder:
 
 
-## Don't check in the .venv/ folder into your git repo
+## Do not add  .venv/ folder to your git repo
 
-Since the `.venv/` folder can be recreated by `pipenv install`, there is no need to check it into git repo. In fact, when you created your pipenv project, a `.gitignore` is created automatically in the `.venv/` folder: 
+Since the `.venv/` folder can be recreated by `pipenv install`, it is unnecessary add it to git repo. In fact, when you created your pipenv project, a `.gitignore` is created automatically in the `.venv/` folder: 
 
 ```
 $ cat ./.venv/.gitignore
