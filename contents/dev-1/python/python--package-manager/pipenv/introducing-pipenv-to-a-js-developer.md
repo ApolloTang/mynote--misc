@@ -1,26 +1,25 @@
 # Introducing pipenv to a javascript programer
 
 
-
 ## Useful:
 
 **cheatsheet**: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd
 
 **official CLI reference:**  [Pipenv CLI Reference — pipenv 2023.11.16.dev0 documentation](https://pipenv.pypa.io/en/latest/cli.html#pipenv) 
 
+**Issues page on github:** [github.com/pypa/pipenv/issues](https://github.com/pypa/pipenv/issues)
 
 
 ## What is pipenv?
 
-The concept of **pipenv** for python is similar to that of **npm** for nodeJs.  It create a isolated enviroment for your project and manages the dependency packages your project uses.  
+The concept of **pipenv** in the Python eco-system is similar to that of **npm** for nodeJs. It creates an isolated environment for your project and manages the dependency packages your project uses.  
 
-Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe dependency graph; pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
+Using the npm analogy, npm uses `package.json` to specification dependencies and `package-lock.json` to describe the dependency graph; pipenv uses [Pipfile](https://github.com/pypa/pipfile) and `Pipfile.lock`.
 
  
-
 ## Installing pipenv
 
-:warning: The [official pipenv document](https://pipenv.pypa.io/en/latest/#install-pipenv-today) discourages installing pipenv with brew. The [recomended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installation is with  [`pipx`](https://github.com/pypa/pipx) (I think `pipx` is analogious to `npx` in the javascript world?)
+:warning: The [official pipenv document](https://pipenv.pypa.io/en/latest/#install-pipenv-today) discourages installing pipenv with brew. The [recommended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installation is with  [`pipx`](https://github.com/pypa/pipx) (I think `pipx` is analogous to `npx` in the javascript world?)
 
 On my computer, I installed it with `pipx`:
 
@@ -28,19 +27,18 @@ On my computer, I installed it with `pipx`:
 pipx install pipenv 
 ```
 
-Another recomended way to install pipenv is using [pip user install](https://pip.pypa.io/en/stable/user_guide/#user-installs).  Using this method, the installation is isolated in its own environment. 
+Another recommended way to install pipenv is using [pip user install](https://pip.pypa.io/en/stable/user_guide/#user-installs).  This method isolates the installation in its own environment. 
 
 
+## Working with pipenv, an example:
 
-## Example:
-
-To initialize a new project and thus create a `pipfile` and a `pipfile.lock` you use the command: 
+To initialize a new project, we use the following command to create a `pipfile` and a `pipfile.lock`: 
 
 ```
 $ pipenv install
 ```
 
-Here is a simple exmple project called `example--pipenv` running a simple test with pytest:
+Here is a simple example project called `example--pipenv` that runs a simple test with pytest:
 
 ```
 $ mkdir example--pipenv && cd $_            # create a director
@@ -66,44 +64,56 @@ test_example.py .                                              [100%]
 ```
 
 
+## Where is the location of the installed package?
 
-## Where is the location of installed package?
-
-For npm, location of dependencies are located in `node_modules/`.  For pipenv, denpendencies are  located in a virtual environment folder.  By default, the location of this virtual environment folder is located in a central location in your computer.  You can get the path to This virtual environement with: 
+For npm, the location of dependencies is located in `node_modules/.`  For pipenv, dependencies are  located in a virtual environment folder.  By default, the location of this virtual environment folder is located in a central location on your computer.  You can get the path to This virtual environment with: 
 
 ```
 $ pipenv --venv
 ```
 
-If you want the virtual environment folder located inside the project folder, you need to set the shell variable:
+If you want the virtual environment folder located inside the project folder (similar to the location of `node_modules/` in a project folder), you can set the shell variable `PIPENV_VENV_IN_PROJECT` during installation:
 
 ```
 PIPENV_VENV_IN_PROJECT=1 pipenv install
 ```
-:warning: ​You should avoid using the central location as a default by setting the `PIPENV_VENV_IN_PROJECT` variable in your rc-file (`.bashrc`) so that the virtual environment folder is always locates inside the project folder. This is because pipenv does not clean up the virtual environment folder after you delete your project folder. Clean up the central virtual environment folder after you have deleted your project folder will be a pain (see: [How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted) ). 
+By setting this variable, a folder `.venv/` is created inside your project folder to store your project dependencies.
 
-:warning: ​You should be aware that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping you need to remove the `.venv/` folder with:  
+:Warning: When you delete your project folder, your project dependencies in the central virtual environment are now cleaned up; this results in a clattering of unused Python dependency on your computer (see: 
+[How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted)
+). 
+
+To avoid clattering, I set `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.  This way, my dependencies are always located locally in the project, and when I delete my project folder, they are removed. 
+
+:warning: Another thing you should be aware of is that pipenv internally uses your project folder's file path to locate its virtual environment folder. That means if you relocate your project folder, you will lose your virtual environment mapping (see: [How does pipenv know the virtualenv for current project ? #796](https://github.com/pypa/pipenv/issues/796).). To fix the mapping, remove the `.venv/` folder with:  
 
 ```
 $ pipenv --rm
 ```
-Then reinstall again to regenerate the `.env/` folder:
+
+Then reinstall again with `pipenv install` to regenerate the `.env/` folder:
+
+
+## Don't check in the .venv/ folder into your git repo
+
+Since the `.venv/` folder can be recreated by `pipenv install`, there is no need to check it into git repo. In fact, when you created your pipenv project, a `.gitignore` is created automatically in the `.venv/` folder: 
 
 ```
-$ pipenv install
+$ cat ./.venv/.gitignore
+# created by virtualenv automatically
+*
 ```
-
 
 
 ## Using pipenv on a classical pip venv
 
-If you have a project created previously using the classical `pip -m venv venv`,  you can use pipenv on this project. Simply type: 
+If you have a previously created project using the classical `pip -m venv venv`,  you can use install this project with pipenv. Simply type: 
 
 ```
 PIPENV_VENV_IN_PROJECT=1 pipenv install
 ```
 
-Pipenv will read the content of the previous `./venv/` folder and create the `Pipfile` , `Pipfile.lock` file. Pipenv will also create another environment folder called `./.venv` for used by pipenv itself. You can then activate this new virtual environment with:
+Pipenv will read the content of the previous `./venv/` folder to create `Pipfile`, `Pipfile.lock` and a `./.venv/` folder. You can then activate this new virtual environment with:
 
 ```
 pipenv shell
@@ -116,17 +126,13 @@ pipenv requirements > requirements.txt
 ```
 
 With the generated `requirements.txt` file, this project can be recreated in another computer without pipenv installed: 
+
 ```
 python -m venv venv
 python -m pip install -r requirements.txt
 ```
 
-Note: Prior to pipenv version v2022.8.13, instead of using the command `pipenv requirements > requirements.txt `, you use `pipenv lock -r > requirements.txt` [Ref](https://stackoverflow.com/a/73352657).
-
-
-
- 
-
+Note: Prior to pipenv version v2022.8.13, instead of using the command `pipenv requirements > requirements.txt `, you use `pipenv lock -r > requirements.txt` [see this Ref](https://stackoverflow.com/a/73352657).
 
 
 ## To Read:
