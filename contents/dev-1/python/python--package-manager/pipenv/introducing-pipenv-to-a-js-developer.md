@@ -3,15 +3,14 @@
 
 ## Useful:
 
-**cheatsheet**: https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd
+**cheatsheet**: [gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd](https://gist.github.com/theskinnycoder/c8f9aa7b5172f28d9f4268867ae60bfd)
 
-**official CLI reference:**  [Pipenv CLI Reference — pipenv 2023.11.16.dev0 documentation](https://pipenv.pypa.io/en/latest/cli.html#pipenv) 
+**official CLI reference:**  [pipenv.pypa.io/en/latest/cli.html](https://pipenv.pypa.io/en/latest/cli.html#pipenv) 
 
 **Issues page on github:** [github.com/pypa/pipenv/issues](https://github.com/pypa/pipenv/issues)
 
 
 ## What is pipenv?
-
 
 pipenv creates an isolated environment for your project and manages the dependency packages your project uses. This concept is similar to that of **npm**'s node modules in nodeJs eco-system. 
 
