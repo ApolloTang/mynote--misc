@@ -78,7 +78,7 @@ The dependencies are stored in the `node_modules/` folder for npm.  For pipenv, 
 $ pipenv --venv
 ```
 
-:Warning: If you manually delete your pipenv project folder, your project dependencies in the central virtual environment are not cleaned up; this results in a clattering of unused Python dependency on your computer (see: 
+:warning: If you manually delete your pipenv project folder, your project dependencies in the central virtual environment are not cleaned up; this results in a clattering of unused Python dependency on your computer (see: 
 [How to remove all pipenv virtualenvs when the directory was deleted?](https://stackoverflow.com/questions/65126606/how-to-remove-all-pipenv-virtualenvs-when-the-directory-was-deleted)
 ). 
 
