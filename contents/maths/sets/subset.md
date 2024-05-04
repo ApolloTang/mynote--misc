@@ -4,10 +4,12 @@
 
 ## Improper and proper subset 
 
-Given a set $A = \lbrace 1,2,3,4 \rbrace$, the following are the subset of $A$: 
+When we say set $A$ is a subset of set $B$, we mean every element in $A$ is also an element in $B$.
+
+For example, given a set $B = \lbrace 1,2,3,4 \rbrace$, if we call $A$ the subset of $B$, then $A$ can be any of the following: 
 
 ``` 
-{} (the empty set, also denoted as Φ)
+{} 
 
 {1}, {2}, {3}, {4},
 
@@ -17,58 +19,51 @@ Given a set $A = \lbrace 1,2,3,4 \rbrace$, the following are the subset of $A$:
 
 {1,2,3,4}
 ```
-If A set has $n$ elements, we say "the cardinal of $A$ is $n$" and we can write:
+
+
+
+If a set contains $n$ elements, there are $2^n$ possible sets that can be the subset of $B$. 
+
+Notice that the definition of a subset allows two identical sets to be subsets of each other. Thus, every set is a subset of itself. 
+
+If we let the symbol $A_i$ be the set identical to $B$:
 
 $$
-n = |A|
+A_i = B
 $$
 
-The number of possible subsets is always $2^n$ (reference of proof required).  
-
-If we use the symbol $B$ to represent any of the possible subsets of $A$,  we can write:
+and the symbol $A_u$ the remaining $2^n - 1$ unidentical sets: 
 
 $$
-B \subseteq A
+A_u \neq B
 $$
 
-The symbol $\subseteq$ is called the **improper subset**, and the above reads: "$ B $ is an improper subset of set $ A $." 
-
-Given a set, there is always exactly one improper subset (in the example above $\lbrace 1,2,3,4 \rbrace$) whose number of elements is the same as that of $A$ itself:
+we can write: 
 
 $$
-|B| = |A| = n
+A = (A_i \cup A_u) \subseteq B
 $$
 
-In other word, $B$ and $A$ is identical:
+The relationship between $A_u$ and $B$ is written as:
 
 $$
-B = A
+A_u \subset B
 $$
 
-All other subsets, where: 
+The symbol $\subset$ is called the **proper subset**, and the above is read: $A_u$ is a proper subset of $B$. 
+
+And the relationship between $A$ and $B$ written as:
 
 $$
-|B| < |A| 
+A \subseteq B
 $$
 
-or $B$ and $A$ not identical:
-
-$$
-B \neq A
-$$ 
-
-is called the **proper subset**. The proper subset can be denoted with the $\subset$ notation: 
-
-$$
-B \subset A
-$$
-
-The above is read: "$B$ is a proper subset of $A$."
-
-Given a set with $n$ elements, there are always $2^n$ - 1 proper subsets.
+The symbol $\subseteq$ is called the **improper subset**, and the above reads: $A$ is an improper subset of set $B$. 
 					
 ## References 
 
+- [math-only-math.com/subset.html#google_vignette](https://www.math-only-math.com/subset.html#google_vignette)
+- [quora.com/Is-every-set-a-superset-of-itself](https://www.quora.com/Is-every-set-a-superset-of-itself)
 - [elementary set theory - What exactly is an improper subset? - Mathematics Stack Exchange](https://math.stackexchange.com/questions/2370884/what-exactly-is-an-improper-subset) 
 
 - [Subsets- Definition, Symbol, Proper and Improper Subset | Power Set](https://byjus.com/maths/subsets/)
