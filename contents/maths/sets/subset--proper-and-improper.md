@@ -58,7 +58,7 @@ $$
 
 The symbol $\subseteq$ is called the **improper subset**, and the above reads: $A$ is an improper subset of set $B$. 
 
-It seems that when people say $X$ is a subset of $Y$, they mean $X$ is an improper subset of $Y$. Since by definition of subset, every element in $X$ is also an element in $Y$, which include the identical set.
+It seems that when people say $X$ is a subset of $Y$, they mean $X$ is an improper subset of $Y$ (symbolically: $ X \subseteq Y$), since by definition of subset, every element in $X$ is also an element in $Y$, which include the identical set.
 
      
 ## References 
