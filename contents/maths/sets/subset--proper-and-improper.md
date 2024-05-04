@@ -1,12 +1,12 @@
 # Subset
 
-
+This article is my attempt to clarify what an improper subset is.
 
 ## Improper and proper subset 
 
 When we say set $A$ is a subset of set $B$, we mean every element in $A$ is also an element in $B$.
 
-For example, given a set $B = \lbrace 1,2,3,4 \rbrace$, if we call $A$ the subset of $B$, then $A$ can be any of the following: 
+For example, given a set $B = \lbrace 1,2,3,4 \rbrace$, if say $A$ is a subset of $B$, then $A$ can be any of the following: 
 
 ``` 
 {} 
@@ -20,45 +20,43 @@ For example, given a set $B = \lbrace 1,2,3,4 \rbrace$, if we call $A$ the subse
 {1,2,3,4}
 ```
 
-
-
-If a set contains $n$ elements, there are $2^n$ possible sets that can be the subset of $B$. 
+If a given set contains $n$ elements, then there are $2^n$ possible sets that can be the subset of $B$. 
 
 Notice that the definition of a subset allows two identical sets to be subsets of each other. Thus, every set is a subset of itself. 
 
 If we let the symbol $A_i$ be the set identical to $B$:
 
 $$
-A_i = B
+A_i = B,
 $$
 
 and the symbol $A_u$ the remaining $2^n - 1$ unidentical sets: 
 
 $$
-A_u \neq B
+A_u \neq B,
 $$
 
 we can write: 
 
 $$
-A = (A_i \cup A_u) \subseteq B
+A = (A_i \cup A_u) \subseteq B.
 $$
 
 The relationship between $A_u$ and $B$ is written as:
 
 $$
-A_u \subset B
+A_u \subset B.
 $$
 
-The symbol $\subset$ is called the **proper subset**, and the above is read: $A_u$ is a proper subset of $B$. 
-
-And the relationship between $A$ and $B$ written as:
+The symbol $\subset$ is called the **proper subset**, and the above is read: $A_u$ is a proper subset of $B$. The relationship between $A$ and $B$ written as:
 
 $$
 A \subseteq B
 $$
 
 The symbol $\subseteq$ is called the **improper subset**, and the above reads: $A$ is an improper subset of set $B$. 
+
+It seems that when people say $X$ is a subset of $Y$, they mean $X$ is an improper subset of $Y$.
 					
 ## References 
 
