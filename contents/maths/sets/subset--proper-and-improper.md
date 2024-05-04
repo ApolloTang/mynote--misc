@@ -48,7 +48,9 @@ $$
 A_u \subset B.
 $$
 
-The symbol $\subset$ is called the **proper subset**, and the above is read: $A_u$ is a proper subset of $B$. The relationship between $A$ and $B$ written as:
+The symbol $\subset$ is called the **proper subset**, and the above is read: $A_u$ is a proper subset of $B$. 
+
+The relationship between $A$ and $B$ is written as:
 
 $$
 A \subseteq B
