@@ -30,7 +30,7 @@ $$
 A_i = B,
 $$
 
-and the symbol $A_u$ the remaining $2^n - 1$ unidentical sets: 
+and the symbol $A_u$ the remaining $2^n - 1$ unidentical subsets of $B$: 
 
 $$
 A_u \neq B,
