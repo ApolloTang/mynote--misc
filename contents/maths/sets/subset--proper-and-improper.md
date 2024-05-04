@@ -24,7 +24,7 @@ If a given set contains $n$ elements, then there are $2^n$ possible sets that ca
 
 Notice that the definition of a subset allows two identical sets to be subsets of each other. Thus, every set is a subset of itself. 
 
-If we let the symbol $A_i$ be the set identical to $B$:
+If we let the symbol $A_i$ be the subset identical to $B$:
 
 $$
 A_i = B,
