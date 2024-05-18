@@ -16,7 +16,15 @@ pipenv install jupyter
 pipenv run jupyter lab
 ```
 
-In 2024, we should use **JupyterLab** instead of **jupyter notebook**, the  JupyterLab has more feature over the notebook.
+In 2024, we should use **JupyterLab** instead of **jupyter notebook**, the  JupyterLab has more feature over the notebook. [See this](https://stackoverflow.com/questions/50982686/what-is-the-difference-between-jupyter-notebook-and-jupyterlab)
+
+
+
+## Installing Jupyter globally
+
+You can use `pipx` to install jupyter lab globally [see this](https://samedwardes.com/2022/10/23/best-jupyter-lab-install/#virtual-environments)
+
+
 
 
 
@@ -33,6 +41,10 @@ EOF
 Note:
 
 - `.ipynb_checkpoints` is a jupyter's log file for your edit [ref](https://stackoverflow.com/questions/46421663/what-are-jupyter-notebook-checkpoint-files-for)
+
+- if you have create your project with pipenv,  it will create `.venv/.gitignore` to ignore the `.venv/` folder.
+
+   
 
 
 
