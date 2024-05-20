@@ -5,6 +5,23 @@ NOTE: This article is modified after:
 [Link to Clone](https://github.com/ApolloTang/vscode-fundamentals/blob/master/docs/1_using/markdown.md)
 
 
+
+## Typeset  special symbol
+
+### back tick (`) 
+
+#### how do you type back tick inside inline code block? 
+
+Here is a line of text with back tick: `` `...` `` . The actually markdown code is:
+
+```markdown
+Here is a line of text with back tick: `` `...` `` . The actually markdown code is:
+```
+
+ Ref:  [How do I escape a backtick ` within in-line code in Markdown? - Meta Stack Exchange](https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-within-in-line-code-in-markdown) 
+
+
+
 ### Images
 
 #### Markdown images
