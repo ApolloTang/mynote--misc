@@ -1,0 +1,1 @@
+ [How to write LaTeX in IPython Notebook? - Stack Overflow](https://stackoverflow.com/questions/13208286/how-to-write-latex-in-ipython-notebook) 
