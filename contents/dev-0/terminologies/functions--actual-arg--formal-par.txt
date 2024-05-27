@@ -1,9 +1,16 @@
 Actual and Formal
 =================
 
-  foo( 'actual-arguements' );
+  "Actual argument" --> function invocation
+  AAI (mnemonic)
 
-  function foo(  'formal-parameters' ) { };
+      foo( 'actual-arguements' );
+
+
+  "Formal parameter" --> function definition
+  FPD (mnemonic)
+
+      function foo(  'formal-parameters' ) { };
 
   ----
   Ref:
