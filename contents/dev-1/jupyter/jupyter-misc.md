@@ -3,3 +3,10 @@
 
 
  [Multiline editing not working · Issue #10404 · jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab/issues/10404) 
+
+
+
+## Latex in Jupyter
+
+ [How to write LaTeX in IPython Notebook? - Stack Overflow](https://stackoverflow.com/questions/13208286/how-to-write-latex-in-ipython-notebook) 
+
