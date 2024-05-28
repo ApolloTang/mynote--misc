@@ -173,13 +173,9 @@ python -m pip install -r requirements.txt
 Note: Prior to pipenv version v2022.8.13, instead of using the command `pipenv requirements > requirements.txt `, you use `pipenv lock -r > requirements.txt` [see this Ref](https://stackoverflow.com/a/73352657).
 
 
+
 ## To Read:
 
 https://mattgosden.medium.com/pipenv-for-easier-virtual-environments-69e1e520cde8
 
-
-
-
-
-
-
+[Pipenv: A Guide to the New Python Packaging Tool – Real Python](https://realpython.com/pipenv-guide/) 
