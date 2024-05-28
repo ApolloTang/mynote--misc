@@ -10,3 +10,7 @@
 [https://www.infoworld.com/article/3561758/how-to-manage-python-projects-with-pipenv.html](https://www.infoworld.com/article/3561758/how-to-manage-python-projects-with-pipenv.html)
 
 > Note that unlike other Python project management tools ([such as Poetry](https://www.infoworld.com/article/3527850/better-python-project-management-with-poetry.html)), Pipenv does not manage the “scaffolding” of your project. That is, Pipenv does not create the internal structure of the project directory with mock tests, documentation stubs, etc., but focuses chiefly on package and environment management. This makes Pipenv a good choice if you just want a tool to focus on virtual environments and packages, and not an all-in-one solution.
+
+
+
+ [Pipenv vs Conda (for Data Scientists) | by Dr Soumaya Mauthoor | Towards Data Science](https://towardsdatascience.com/pipenv-vs-conda-for-data-scientists-b9a372faf9d9) 
