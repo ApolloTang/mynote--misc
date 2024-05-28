@@ -16,7 +16,7 @@ Pipenv creates an isolated environment for your project and manages the dependen
 
 Using the npm analogy, npm uses `package.json` to specify the dependencies and `package-lock.json` to describe the dependency graph; similarly, pipenv uses [`Pipfile`](https://github.com/pypa/pipfile) and `Pipfile.lock` for this purpose respectively.
 
- 
+
 ## Installing pipenv
 
 The [recommended](https://pipenv.pypa.io/en/latest/install/#isolated-installation-of-pipenv-with-pipx) way of installing pipenv on OSX is with [`pipx`](https://github.com/pypa/pipx) (I think `pipx` is analogous to `npx` in the javascript world?):
@@ -36,7 +36,7 @@ To initialize a new project, we use the following command:
 
 ```
 pipenv install
-``` 
+```
 
 For example:
 
@@ -98,7 +98,11 @@ To reduce typing, I add `PIPENV_VENV_IN_PROJECT=1` in my `.bashrc`.
 $ pipenv --rm
 ```
 
-Then reinstall again with `pipenv install` to regenerate the `.venv/` folder:
+Then reinstall again with `pipenv install` to regenerate the `.venv/` folder.
+
+Update: just discover there is a discussion on this matter on github issue [here](https://github.com/pypa/pipenv/issues/796).
+
+
 
 ## Working with pipenv, an example:
 
