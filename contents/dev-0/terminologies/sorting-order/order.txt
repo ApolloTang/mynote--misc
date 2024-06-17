@@ -9,16 +9,30 @@ Lexicographic vs alphabetical order:
         a < aa < ab < b < c < cc < z
 
 
-Lexicographic vs numeric order:
+Lexicographical vs numeric order:
 
-  Lexicographic order compare strings character by character:
+    Lexicographic order compare strings character by character:
 
-      1, 10, 2
+        1, 10, 2
 
-  Numeric order is order by the magniture:
+    Numeric order is order by the magniture:
 
-      1, 2, 10
+        1, 2, 10
 
+
+Lexicographical vs natural order vs Zero-padded Numeric String:
+
+    Lexicographic order:
+
+       apple10, apple2, apple20
+
+    Natural order:
+
+       apple2, apple10, apple20
+
+    Zero-padded Numeric String:
+
+       apple002, apple010, apple100
 
 
 Ref:
