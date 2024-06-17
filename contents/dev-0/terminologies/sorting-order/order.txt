@@ -1,0 +1,29 @@
+Lexicographic vs alphabetical order:
+
+    lexicographic order, eg:
+
+        a < b < c < z < aa < ab < cc
+
+    alphabetical order, eg:
+
+        a < aa < ab < b < c < cc < z
+
+
+Lexicographic vs numeric order:
+
+  Lexicographic order compare strings character by character:
+
+      1, 10, 2
+
+  Numeric order is order by the magniture:
+
+      1, 2, 10
+
+
+
+Ref:
+https://stackoverflow.com/questions/25801170/lexicographic-order-vs-numeric-order
+https://stackoverflow.com/questions/45950646/what-is-lexicographical-order
+
+---eof---
+
