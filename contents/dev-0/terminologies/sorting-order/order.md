@@ -6,9 +6,9 @@ Alphabetical order that ignore case is called **dictionary order**.
 
 **lexicographic order**  is a more general term that applies to any ordered set, not just letters. For example, lexicographic ordering can apply to strings of numbers, symbols, or any ordered collection of elements, not just letters.
 
-    alphabetical order, eg:
-    
-        a < b < c < z < aa < ab < cc
+Example of alphbetical order:
+
+    a < aa < ab < b < c < ca < z  
 
 
 
