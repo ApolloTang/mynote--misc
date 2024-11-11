@@ -1,0 +1,1 @@
+[To copy a file and preserve its comment | apple.stackexchange.com](https://apple.stackexchange.com/questions/471023/to-copy-a-file-and-preserve-its-comment)
