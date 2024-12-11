@@ -2,3 +2,5 @@ _gsdata_
 .venv
 venv
 .ipynb_checkpoints
+.DS_Store
+
