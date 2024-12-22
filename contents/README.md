@@ -1,2 +1,12 @@
-Path:
-~/0/_g-frequent/things-2-memorize/things-2-memorize-content/main.txt
+# My miscellaneous note
+
+
+
+To install Jupyter notebook:
+
+install pipenv on computer then: 
+
+```
+PIPENV_VENV_IN_PROJECT=1 pipenv install
+```
+
