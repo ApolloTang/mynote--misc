@@ -1,11 +1,19 @@
 # Pyenv cheat sheet
 
+## Ref: 
+
 Wiki for pyenv: https://github.com/pyenv/pyenv/wiki
 
 Tutorial: https://realpython.com/intro-to-pyenv/
 
----
 
+## Installing pyenv
+
+I installed pyenv on my computer with homebrew:
+```
+brew install pyenv
+```
+https://github.com/pyenv/pyenv?tab=readme-ov-file#homebrew-in-macos
 
 
 ## List all local versions:
