@@ -11,20 +11,17 @@
 ## Installing with pipenv (2024)
 
 ```
-PIPENV_VENV_IN_PROJECT=1
+# initialized pipenv 
+export PIPENV_VENV_IN_PROJECT=1 
+pipenv install --python 3.12
+
+# activate pipenv envirnment, to install and run jupyter
+pipenv shell
 pipenv install jupyter
 pipenv run jupyter lab
 ```
 
 In 2024, we should use **JupyterLab** instead of **jupyter notebook**, the  JupyterLab has more feature over the notebook. [See this](https://stackoverflow.com/questions/50982686/what-is-the-difference-between-jupyter-notebook-and-jupyterlab)
-
-
-
-## Installing Jupyter globally
-
-You can use `pipx` to install jupyter lab globally [see this](https://samedwardes.com/2022/10/23/best-jupyter-lab-install/#virtual-environments)
-
-
 
 
 
@@ -45,10 +42,6 @@ Note:
 - if you have create your project with pipenv,  it will create `.venv/.gitignore` to ignore the `.venv/` folder.
 
    
-
-
-
-
 
 
 
