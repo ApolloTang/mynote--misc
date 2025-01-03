@@ -2,17 +2,15 @@
 
 
 
-To install Jupyter notebook:
-
-install pipenv on computer then: 
+Install Jupyter globally using pipx:
 
 ```
-PIPENV_VENV_IN_PROJECT=1 pipenv install
+pipx install --include-deps jupyter
 ```
 
 To run Jupyter lab:
 
 ```
-pipenv run jupyter lab
+jupyter lab
 ```
 
