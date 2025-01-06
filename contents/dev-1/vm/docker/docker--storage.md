@@ -1,0 +1,1 @@
+ [Where are Docker images stored on the host machine? - Stack Overflow](https://stackoverflow.com/questions/19234831/where-are-docker-images-stored-on-the-host-machine) 

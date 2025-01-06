@@ -2,7 +2,13 @@
 
 
 
-## Installation (important)
+## Github repo
+
+[takluyver/bash_kernel: A bash kernel for IPython](https://github.com/takluyver/bash_kernel) 
+
+
+
+## Important note on installation
 
 #### Update: Jan 2025 
 
