@@ -1,0 +1,1 @@
+ [git config - Difference between author and committer in Git? - Stack Overflow](https://stackoverflow.com/questions/18750808/difference-between-author-and-committer-in-git) 
