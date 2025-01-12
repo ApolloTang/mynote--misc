@@ -109,7 +109,7 @@ The missing trees and blobs will be requested when needed, but currently this co
 
 Some operation such as `git merge-base` or basic `git log` does not required historical tree, and will perform efficiently like that in blobless clone.  However, `git log -- <path>` and `git blame` will trigger downloading root trees for all commit in the histrory indescriminately.  
 
-The article also mentioned the `git fetch` operation in a repositories contain submoduleswill can also trigger tree request for all new commits, but this can be avoid if  you configure your git with `git config fetch.recurseSubmodules false`.
+The article also mentioned the `git fetch` operation in a treeless cloned repositories contain submoduleswill can also trigger tree request for all new commits, but this can be avoid if  you configure your git with `git config fetch.recurseSubmodules false`.
 
 ### When to use treeless partial clone?
 
