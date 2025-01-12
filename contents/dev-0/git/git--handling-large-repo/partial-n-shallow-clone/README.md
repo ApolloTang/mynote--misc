@@ -13,7 +13,7 @@ git clone --depth=1 <url>
 If your repos is large use **partial blobless clone**:
 
 ```
-`git clone --filter=blob:none <url>`
+git clone --filter=blob:none <url>
 ```
 
 Don't use partial treeless clone.
@@ -109,11 +109,11 @@ The missing trees and blobs will be requested when needed, but currently this co
 
 Some operation such as `git merge-base` or basic `git log` does not required historical tree, and will perform efficiently like that in blobless clone.  However, `git log -- <path>` and `git blame` will trigger downloading root trees for all commit in the histrory indescriminately.  
 
-The article also mentioned the `git fetch` operation in a treeless cloned repositories contain submoduleswill can also trigger tree request for all new commits, but this can be avoid if  you configure your git with `git config fetch.recurseSubmodules false`.
+The article also mentioned the `git fetch` operation in a treeless cloned repositories contain submodules can also trigger tree request for all new commits, but this can be avoided if  you configure your git with `git config fetch.recurseSubmodules false`.
 
 ### When to use treeless partial clone?
 
-Due to the fact that the server might send the trees again unnecessary to cause very slow performance on some commands, the article discourage usind treeless clones for daily development work. 
+Due to the fact that the server might send the trees request again to cause very slow performance on some commands, the article discourage using treeless clones for daily development work. 
 
 ## Comparison of size used in various clone
 
@@ -126,7 +126,7 @@ git clone --filter=tree:0 git@github.com:git/git.git
 git clone --depth=1 git@github.com:git/git.git
 ```
 
-Here is the comparison of size using  [DaisyDisk | Home](https://daisydiskapp.com/), here is the result:
+Here is the comparison of size using  [DaisyDisk | Home](https://daisydiskapp.com/):
 
 ![content-used-in-various-clone](./assets/content-used-in-various-clone.png)
 
