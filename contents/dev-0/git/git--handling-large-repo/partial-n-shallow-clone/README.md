@@ -64,31 +64,29 @@ Partial clone are achieved with the  the [`--filter` option](https://git-scm.com
 
 ## Blobless partial clone
 
-Blobless clones will download all reachable commits and trees, but only the blobs under the *root tree* of HEAD commit (red in the illustration below): 
+Blobless clones download all reachable commits and tree objects, but download of the blobs (file contents) only limit to that under the *root tree* of the HEAD commit (red in the illustration below): 
 
 ![object-model-partial-blob-clone](./assets/object-model-partial-blob-clone.webp)
 
-Although blobs contain under the history commits are not download; later, when you perform `git checkout` they are downloaded.  However, the download is only for the **blobs under the commit you checkout** .  Similary, when running `git fetch`,  only remote **commit at the tip** point to by the HEAD will be downloaded:
+For commands such as `git checkout` , `git fetch`, `git diff` or `git blame <path>`, blobs are downloaded on demand and are limited to the blobs required for the specific operation, thus minimizing unnecessary data transfer. The following diagram illustrates that `git fetch` only download blobs under the commit pointed to by HEAD: 
 
 ![fetch-in-a-blobless-clone](./assets/fetch-in-a-blobless-clone.jpg)
 
-Since all trees in the history were present In a blobless clone, commands like `git merge-base`, `git log`, or even `git log -- <path>` work just like you had a full clone repository.  This is because trees contains path entries and the object ID for the objects at the required paths.  This information is sufficient for the  detections of which commits changed at a given path to enable these commands to functions fully.
+Blobs fetched on demand are downloaded only once. Subsequent operations that require the same blobs do not trigger additional downloads. 
 
-When using a blobless clone, you will trigger a blob download whenever you need the *contents* of a file. For example commands like `git diff` or `git blame <path>` require the contents to calculate their results, and thus blobs download are triggered.  However, download only happen onces.  There is no need to download them again when you run these command again. 
+Since all trees in the history are available locally, commands like `git merge-base`, `git log`, or `git log -- <path>` work as expected without additional download. This is because tree objects contain path entries and object IDs, which are sufficient for these operations to function fully.
 
 ### When to use blobless partial clone?
 
-Use it when your repository take long time to clone because:
+Use blobless clones when:
 
-- It has built up large amount of codes due to a long history.
-- it is a monorepo that contain many projects
+- Your repository takes a long time to clone due to its size.
+- It is a monorepo containing multiple projects.
+- The repository contains large binary files or assets (e.g., game assets).
 
-- it contains many large blobs assets such as games
+### Trade-offs in blobless partial clone
 
-
-**Trade-off :** 
-
-Some commands such as `git checkout`, `git diff`, or `git blame` will take longer because they require downloading  blob data.
+Some operations (e.g., `git checkout`, `git diff`, or `git blame`) may take longer because they require downloading blob data on demand.
 
 
 
