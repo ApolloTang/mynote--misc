@@ -92,19 +92,19 @@ Some operations (e.g., `git checkout`, `git diff`, or `git blame`) may take long
 
 ## Treeless partial clone
 
-Treeless clones is similar to blobless clone, but only commits are download in the history. Historical trees are not downloaded.  This father improve cloning speed and space saved locally. 
+Treeless clones further improve cloning speed and local storage space by skipping download historical  tree objects:
 
 ![object-model-tree0](./assets/object-model-tree0.webp)
 
-The missing trees and blobs will be requested when needed, but currently this could take long time to download because requesting for missing trees could trigger many unnecessary request.  For example, during `git checkout` operation, git client does not tell the server it already has some of the required root trees, so the server might send the trees again unnecessary. 
+The missing trees and blobs is requested on demand, but they are inefficient.  For example, during `git checkout`, git client does not tell the server it already has some of the required root trees, so the server might send the trees again. 
 
-Some operation such as `git merge-base` or basic `git log` does not required historical tree, and will perform efficiently like that in blobless clone.  However, `git log -- <path>` and `git blame` will trigger downloading root trees for all commit in the histrory indescriminately.  
+Operation such as `git merge-base` or basic `git log` does not required historical tree, and will perform efficiently.  However, `git log -- <path>` and `git blame` require historical tree and thus trigger downloading for all commit in the histrory.  
 
-The article also mentioned the `git fetch` operation in a treeless cloned repositories contain submodules can also trigger tree request for all new commits, but this can be avoided if  you configure your git with `git config fetch.recurseSubmodules false`.
+The article also mentioned for repositories contain submodules, the `git fetch` operation can also trigger tree request for all new commits, but this can be avoided if you add  `fetch.recurseSubmodules false` to your git configuration.
 
 ### When to use treeless partial clone?
 
-Due to the fact that the server might send the trees request again to cause very slow performance on some commands, the article discourage using treeless clones for daily development work. 
+Due to the inefficiencies and performance drawbacks, the article discourages using treeless clones for daily development work.
 
 ## Comparison of size used in various clone
 
@@ -119,11 +119,11 @@ I made some tests cloning [git/git](https://github.com/git/git) with all four me
 
 ## When to use full clone? 
 
-This article does not mean to tell you never using full clone:
+This article does not discourage using full clones entirely. Instead, it suggests that full clones remain the best option for developers who:
 
-> If you need to have a distributed workflow and want all of the data in your local repository, then you should continue using full clones. If you are a developer focused on a single repository and your repository is reasonably-sized, the best approach is to do a full clone.
-
-
+- Need a distributed workflow.
+- Want all data locally for comprehensive history and development.
+- Work with reasonably sized repositories.
 
 
 
