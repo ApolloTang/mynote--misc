@@ -1,8 +1,8 @@
-# Use partial clone instead of shallow clone  
+# Use git partial clone instead of shallow clone  
 
 Reading note for  [Get up to speed with partial clone and shallow clone - The GitHub Blog](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/) 
 
-## TL;DR: 
+## TL;DR:
 
 If you are cloning for CI builds, use **shallow clone**:
 
@@ -10,19 +10,17 @@ If you are cloning for CI builds, use **shallow clone**:
 git clone --depth=1 <url>
 ```
 
-If your repos is large use **partial blobless clone**:
+If your repository is large, use **partial blobless clone**:
 
 ```
 git clone --filter=blob:none <url>
 ```
 
-Don't use partial treeless clone.
-
- 
+Don't use a treeless partial clone.
 
 ## Introduction
 
-Often when cloninging a large repository with long history, not only it takes long time to clone,  the repository also take up a lot of space on our compouter.  Often we just want to clone the reposity quickly and get starting working.  There is no need to download every version of every file in the entire git history.  To achieve this we were often told to use **shallow clone**. However, this article advise not to use shallow clone. Instead, it is advised that we use **partial clone**. 
+When cloning a large repository with a long history, it often takes a significant amount of time and consumes a lot of storage space on your computer. Typically, we just want to clone the repository quickly and start working, without downloading every version of every file in the entire Git history. To achieve this, we were often told to use a **shallow clone**. However, this article advises against relying on shallow clones for most use cases. Instead, it recommends using **partial clones**.
 
 ## What is shallow clone? 
 
@@ -38,34 +36,29 @@ It copies only the content under the *root tree* of HEAD commit.  Connection to 
 
 ### Why don't use shallow clone? 
 
-When you shallow clone a repository, some git functionalities in your shallow cloned repository may have different behaviours. 
+Shallow cloning limits the functionality of certain Git commands due to the lack of local history.  
 
 Commands such as `git merge-base`, `git blame`  or `git log` will give you false results, because the history is not present locally. 
 
-The command `git fetch` will take longer to execuse because it may have to download almost a full history if a newer topic branch to fetch from remote is based historical commit. The following diatram illustrated this:
+The command `git fetch` can take longer because it might need to download almost the full history if a new topic branch is based on older commits. The following diatram illustrated this:
 
 ![expansive-git-shallow-clone](./assets/expansive-git-shallow-clone.png)
 
 ### When to use shallow clone?
 
-Athough the article discouraged the use of shallow clone, it does points out its ideal use case during a CI build. To Quoted from the article:
+Although the article discourages the use of shallow clones for general purposes, it highlights their usefulness in specific workflows. For example, during a CI build, where a single clone and deletion of the repository occur immediately, shallow clones are ideal.
 
->  In workflows such as CI builds when there is a need to do a single clone and delete the repository immediately, shallow clones are a good option. **Shallow clones are the fastest way to get a copy of the working directory at the tip commit**
+To summarize, use shallow clones when:
 
-Thus, to summarize, use shallow clone when you: 
-
-- only want to get a copy of the working directory at the tip commit
-
-- do not plan to use any of git's distributed workflow and functionality
-
-
+- You only need a copy of the working directory at the tip commit.
+- You do not plan to use Git's distributed workflows and functionality extensively.
 
 ## What are partial clones?
 
-Partial clone are achieved with the  the [`--filter` option](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---filterltfilter-specgt)  in your `git clone` command. The article mentions two type of partial clone: 
+Partial clone are achieved with the  the [`--filter` option](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt---filterltfilter-specgt)  in `git clone` command. The article discusses two types of partial clones:
 
-1. blobless partial clone: `git clone --filter=blob:none <url>`
-2. Treeless partial clone:  `git clone --filter=tree:0 <url>`
+1. **Blobless partial clone**: `git clone --filter=blob:none <url>`
+2. **Treeless partial clone**: `git clone --filter=tree:0 <url>`
 
 
 
@@ -117,20 +110,14 @@ Due to the fact that the server might send the trees request again to cause very
 
 ## Comparison of size used in various clone
 
-I made some tests cloning [git/git](https://github.com/git/git)  with all four method: 
+I made some tests cloning [git/git](https://github.com/git/git) with all four methods, and the following table summarizes storage usage:
 
-```
-git clone git@github.com:git/git.git
-git clone --filter=blob:none git@github.com:git/git.git
-git clone --filter=tree:0 git@github.com:git/git.git
-git clone --depth=1 git@github.com:git/git.git
-```
-
-Here is the comparison of size using  [DaisyDisk | Home](https://daisydiskapp.com/):
-
-![content-used-in-various-clone](./assets/content-used-in-various-clone.png)
-
-
+| Method                                                    | Size     |
+| --------------------------------------------------------- | -------- |
+| `git clone git@github.com:git/git.git`                    | 338.9 MB |
+| `git clone --filter=blob:none git@github.com:git/git.git` | 178.5 MB |
+| `git clone --filter=tree:0 git@github.com:git/git.git`    | 178.5 MB |
+| `git clone --depth=1 git@github.com:git/git.git`          | 69.9 MB  |
 
 ## When to use full clone? 
 
