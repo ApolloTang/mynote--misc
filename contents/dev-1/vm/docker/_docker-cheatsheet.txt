@@ -7,6 +7,7 @@ docker stop    <container-name>   # Stop and exist all container SAFELY (issues 
 docker kill    <container-name>   # Stop and exist all container UNSAFE (issues a SIGKILL signal to the process).
 docker restart <container-name>   # Restart a stopped container.
 
+docker run -d -p <host>:<container> --name <container-name> <images-name>
 
 docker rm $(docker ps -aq -f status=exited)  # rm all exited containers.
 docker rm $(docker stop $(docker ps -q))     # rm all running containers.

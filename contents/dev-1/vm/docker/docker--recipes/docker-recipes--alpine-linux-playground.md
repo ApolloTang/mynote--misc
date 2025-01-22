@@ -7,7 +7,7 @@ Create a file called "Dockerfile-alpine" with the following contents:
 
 
 ```
-FROM alphine:latest
+FROM alpine:latest
 ```
 
 Create an docker images
