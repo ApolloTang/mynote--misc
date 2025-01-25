@@ -12,6 +12,8 @@ docker run -d -p <host>:<container> --name <container-name> <images-name>
 docker rm $(docker ps -aq -f status=exited)  # rm all exited containers.
 docker rm $(docker stop $(docker ps -q))     # rm all running containers.
 docker rm $(docker ps -aq)                   # rm all containers (if all container has already stopped).
+docker rm -f $(docker ps -aq)                # rm all containers (even if some container is still running).
+
 
 
 docker pull <IMAGE:TAG>             # download the specified image from Docker registry
