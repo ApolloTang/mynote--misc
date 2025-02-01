@@ -59,3 +59,13 @@ References: [Sparse Disk Image and sizing - Apple Community](https://discussions
 > ```
 > hdiutil compact /path/to/sparseimage
 > ```
+
+
+
+Note:  sparse disk will not strink, but sparse bundle will. see:  [mac - Sparse Bundles grow in file size, but it's not supposed to shrink by deleting data. But my Sparse Bundles is able to auto resize, why is that? - Super User](https://superuser.com/questions/1816563/sparse-bundles-grow-in-file-size-but-its-not-supposed-to-shrink-by-deleting-da/1875369#1875369) 
+
+
+
+## Related references
+
+[Create a disk image using Disk Utility on Mac - Apple Tugi (EE)](https://support.apple.com/et-ee/guide/disk-utility/dskutl11888/mac#:~:text=Sparse%20bundle%20disk%20image%3A%20Same,shrinks%20and%20grows%20as%20needed.) 
