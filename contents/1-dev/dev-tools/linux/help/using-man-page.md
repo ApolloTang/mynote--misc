@@ -30,7 +30,7 @@ man 1 printf  # View the user command
 man 3 printf  # View the C library function
 ```
 
-If you run `man printf` without specifying a section, the `man` command will display the first matching manual page it finds based on the default section search order.
+If you run `man printf` without specifying a section, the `man` command will display the first matching manual page it finds based on the **default section search order**.
 
 ### Default Section Search Order
 
