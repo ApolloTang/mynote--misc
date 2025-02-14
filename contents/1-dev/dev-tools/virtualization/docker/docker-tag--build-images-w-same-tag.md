@@ -62,4 +62,4 @@ green        latest    5a1507e7a832   2 weeks ago   8.17MB
 
 **Conclusion**: 
 
-Shen we recycle tag, previously image with the same tag become annoymous. and the tag is given to the most recent images that we just build 
+When we recycle tag, previously image with the same tag become annoymous. and the tag is given to the most recent images that we just build 
