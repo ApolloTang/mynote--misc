@@ -15,15 +15,18 @@ Disk Utility > File > New image > Blank Image:
 Note: the world "bundle" in sparse bundle disk image means "folder". 
 
 
-## Disk usage change after adding content
 
+## Disk usage change before and after adding content
 
+**Step 1:  Before:**
 
 ![before-adding-content](./assets/before-adding-content.png)
 
-Added 2 video files into the mounted volume:
+**Step 2:  Added 2 video files into the mounted volume:**
 
 ![add-some-file](./assets/add-some-file.png)
+
+**Step 3: After:**
 
 ![after-adding-content](./assets/after-adding-content.png)
 
