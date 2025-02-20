@@ -7,9 +7,9 @@ File: `Dockerfile`
 FROM ubuntu:latest
 
 # Install OpenSSH Server and other necessary packages
-RUN apt-get update && \                      #/ synchronize the package index with the repositories
-    apt-get install -y openssh-server && \   #/ install ssh server
-    rm -rf /var/lib/apt/lists/*              #/ clean up to reduce size
+RUN apt-get update && \                      
+    apt-get install -y openssh-server && \  
+    rm -rf /var/lib/apt/lists/*            
 
 # Create the necessary directories and files for SSH
 RUN mkdir /run/sshd && \
@@ -17,7 +17,7 @@ RUN mkdir /run/sshd && \
     chmod 0755 /run/sshd
 
 # Set the root password (not recommended for production)
-RUN echo 'root:password' | chpasswd
+RUN echo 'root:yourpassword' | chpasswd
 
 # Allow SSH root login (not recommended for production)
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -26,7 +26,7 @@ RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/
 EXPOSE 22
 
 # Start SSH server in the foreground
-CMD ["/usr/sbin/sshd", "-D"]               #/ The -D option to run the SSH server in the foreground 
+CMD ["/usr/sbin/sshd", "-D"]     
 ```
 
 
