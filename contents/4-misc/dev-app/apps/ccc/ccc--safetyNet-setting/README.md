@@ -62,6 +62,6 @@ If wildcard characters ``/**/``  is used (3) make sure drop down is set to "Hide
 
 ![correct-custom-filter-setting](./assets/correct-custom-filter-setting.png)
 
-Also read my email with support@bombich.com on Feb 16, 2025, 6:23 PM, 
+Also read my email with support@bombich.com on Feb 20, 2025, 10:38 PM, 
 Subject: "[Request received] Safety Net is off but deleted item is not removed from backup"
 
