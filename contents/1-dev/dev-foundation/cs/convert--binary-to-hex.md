@@ -1,0 +1,1 @@
+ [How To Convert Binary to Hexadecimal - Computer Science - YouTube](https://www.youtube.com/watch?v=tSLKOKGQq0Y) 
