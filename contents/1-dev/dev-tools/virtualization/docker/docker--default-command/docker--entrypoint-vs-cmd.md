@@ -113,6 +113,14 @@ $ docker run my-echo-app:latest Susie
 hello world! Susie  # "Susie" becomes an additional argument, not an override.
 ```
 
+
+
+## Without CMD or ENTRYPOINT:
+
+If neither CMD nor ENTRYPOINT is specified in the Dockerfile, the container will start and immediately exit because there is no default command to run.
+
+
+
 ## Key Takeaway
 
 *   Use the **exec form** (`["executable", "arg1"]`) for `ENTRYPOINT` and `CMD` whenever possible for predictable behavior and proper signal handling.
