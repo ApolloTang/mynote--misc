@@ -1,0 +1,1 @@
+[Hamming Code Error Detection and Correction Visualization - YouTube](https://www.youtube.com/watch?v=LiGiU7zrLnU) 
